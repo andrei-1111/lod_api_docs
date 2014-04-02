@@ -2,12 +2,13 @@
 Create Account
 ==============
 
-This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
-
 =============  ===================
 **Resource:**  /api/account/create
 **Method:**    POST
 =============  ===================
+
+This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
+
 
 Request Body
 ============

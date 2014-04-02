@@ -31,6 +31,8 @@ import sphinx_rtd_theme
 # ones.
 extensions = []
 
+raw_enabled = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -105,6 +107,9 @@ html_theme = "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #html_theme_options = {}
+#html_theme_options['cssfiles'] = ['_static/css/lod.css']
+#
+#html_theme_options = {'css_files' : ['_static/css/lod.css']}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
