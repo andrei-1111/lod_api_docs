@@ -10,10 +10,6 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
    generate_quote
    authorize_quote
 
-.. toctree::
-   :maxdepth: 2
-
-   release_notes/index
 
 
 Getting Help
