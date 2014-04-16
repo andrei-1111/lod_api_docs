@@ -9,11 +9,25 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
    account_information
    generate_quote
    authorize_quote
+   get_quote
+   reject_quote
+   notification 
+   list_projects
+   get_project
+   list_products
+   get_product
+   get_product_translation
+   list_services
+   get_terms
 
 
 
 Getting Help
 ============
+
+
+Getting API Keys
+================
 
 
 
