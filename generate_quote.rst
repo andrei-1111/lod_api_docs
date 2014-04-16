@@ -63,13 +63,6 @@ Request Body
 |                         |                         |                         |
 |                         |                         | element is optional.    |
 |                         |                         |                         |
-|                         |                         |  If it is not set, the  |
-|                         |                         |                         |
-|                         |                         | quote that is returned  |
-|                         |                         |                         |
-|                         |                         | will contain an eBay    |
-|                         |                         |                         |
-|                         |                         | recommended service.    |
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | Container               | Contains 1 source       |
 |                         |                         |                         |

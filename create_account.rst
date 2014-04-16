@@ -16,7 +16,7 @@ Request Body
 ============  ======  ========
 Parameter     Type    Comments
 ============  ======  ========
-MerchantID    String  Merchant Merchant ID used to connect to the eBay APIs
+MerchantID    String  Merchant system account id
 EmailAddress  String  Email address of the primary user
 FirstName     String  First name of the primary user (optional)
 LastName      String  Last name of the primary user (optional)
@@ -62,7 +62,7 @@ The response body contains information about the newly created merchant.
 ===============   ======   ========
 Property          Type     Comments
 ===============   ======   ========
-MerchantID        String   Merchant ID used to connect to the eBay APIs
+MerchantID        String   Merchant system account id
 EmailAddress      String   Email address of the primary user
 FirstName         String   First name of the primary user (optional)
 LastName          String   Last name of the primary user (optional)
