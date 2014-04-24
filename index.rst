@@ -1,10 +1,12 @@
 Welcome to the Lionbridge onDemand API!
 =======================================
+
 The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Using the API, client applications can submit content to Lionbridge for translation.  The API can be used against the onDemand Retail site or onDemand Enterprise.  
 
 .. toctree::
    :maxdepth: 1
 
+   authentication
    create_account
    account_information
    generate_quote
@@ -25,10 +27,21 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
 Getting Help
 ============
 
+The Lionbridge onDemand integration support team is eager to help you be successful with your integration.
+The best way to reach them is through the `onDemand Support Portal <https://support.liondemand.com/>`_. 
+There you will find support articles and a form to submit a support ticket.
+
 
 Getting API Keys
 ================
 
+You can get API keys on our `sandbox server <https://demo.liondemand.com/>`_ by registering for an account and then visiting the `profile page <https://demo.liondemand.com/user/profile/>`_ to create your API keys.
+
+.. image:: /_static/img/api_keys.png
+   :alt: alternate text
+   :align: center
+
+If you have trouble getting your API keys or need an account on an enterprise site sandbox, please contact `support <https://support.liondemand.com/>`_.
 
 
 High Level Workflow
@@ -53,7 +66,6 @@ This is list of terminology used in this document.
 * Project. Like items are grouped into a Project and delivered to the translation system.  Translation completion notifications is done at the project level.  For translation efficiency, all products in project must be in the same top level category and have the same language and quality settings.
 * Service.  A service defines pricing and quality level for a project.
 * Quote. A quote maps to a transaction which can include 1 or more projects.  
-
 
 
 
