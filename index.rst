@@ -1,12 +1,21 @@
-Welcome to the Lionbridge onDemand API!
-=======================================
+=======================
+Lionbridge onDemand API
+=======================
 
-The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Using the API, client applications can submit content to Lionbridge for translation.  The API can be used against the onDemand Retail site or onDemand Enterprise.  
+**Version:** *2014-03-18*
+
+
+The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Using the API, client applications can submit content to Lionbridge for translation.  The API can be used against the onDemand Retail site or onDemand Enterprise. 
+
+Contents
+========
+
 
 .. toctree::
    :maxdepth: 1
 
    authentication
+   error_handling
    create_account
    account_information
    generate_quote
@@ -21,8 +30,8 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
    get_product_translation
    list_services
    get_terms
-
-
+ 
+   
 
 Getting Help
 ============

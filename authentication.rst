@@ -5,7 +5,7 @@ Authentication
 Every request to the API needs to be authenticated using a signature in the HTTP headers.  
 A good place to start when building out your request signing logic is the :doc:`list_services` API. 
 
-There is a clear example written in PHP `here <https://bitbucket.org/sggottlieb/liox_ondemand_php_client/src/e783a3705c1c3e6230df40e2d24810286e91804e/listServices.php/>`_
+There is a clear example written in PHP `here <https://bitbucket.org/sggottlieb/liox_ondemand_php_client/src/>`_. See listServices.php.
 
 
 
@@ -28,9 +28,9 @@ required x-lod-\* headers are used to compute authorization.
    other than “text/xml” will result in a Bad Request error.
 -  x-lod-timestamp: UNIX timestamp
 -  x-lod-version: version of the API. We will use date strings to label
-   versions. For example: 2013-12-31
+   versions. For example: 2014-03-18
 -  Content-Type should be "text/xml".  Often this will default on GET requests.
-   depending on what libraries you use, you might need to explicitly set Content-Type
+   Depending on what libraries you use, you might need to explicitly set Content-Type
    on POSTs or force it by submitting an empty string in the body if no body is required.
 
 Authorization Header
@@ -89,3 +89,22 @@ Authorization header value.
 |                                      |                                      |
 |                                      | x-lod-timestamp;x-lod-version        |
 +--------------------------------------+--------------------------------------+
+
+Example
+-------
+
+The best place to start when learning how to develop a valid request signature is the 
+:doc:`list_services` API.  In this case, the string to encrypt for the signature is:
+
+::
+
+    GET:/api/services:AAA...AAA:2014-02-21T07:49:24.655024:2014-02-28:text/xml
+
+Where:
+
+- **GET** is the HTTP method you used
+- **/api/services** is the resource you are calling
+- **AAA...AAA** is your secret key
+- **2014-02-21T07:49:24.655024** is the current time stamp. This needs to be the same as x-lod-timestamp.
+- **2014-02-28** is the version of the API you are using. This needs to be the same as x-lod-version.
+- **text/xml** is what you passed in the accept header
