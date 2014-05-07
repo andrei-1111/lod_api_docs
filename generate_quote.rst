@@ -9,6 +9,8 @@ Generate Quote
 
 This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
 
+Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to generating the quote (see :doc:`file_upload`), 
+
 
 Request Body
 ============
@@ -87,7 +89,14 @@ Request Body
 | .LanguageCode           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Products                | List                    | List of Product         |
-|                         |                         | Elements                |
+|                         |                         |                         |
+|                         |                         | Elements. Products      |
+|                         |                         |                         |
+|                         |                         | are only allowed as     |
+|                         |                         |                         |
+|                         |                         | input if the service    |
+|                         |                         |                         |
+|                         |                         | supports products.      |
 +-------------------------+-------------------------+-------------------------+
 | Products                | String                  | The title of the        |
 |                         |                         |                         |
@@ -227,9 +236,41 @@ Request Body
 |                         |                         |                         |
 | .Value                  |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | A collection of file    |
+|                         |                         |                         |
+|                         |                         | elements.               |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | A file is described     |
+|                         |                         |                         |
+| .File                   |                         | with a AssetID of a     |
+|                         |                         |                         |
+|                         |                         | previously uploaded file|
+|                         |                         |                         |
+|                         |                         | (see :doc:`add_file`)   |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | AssetID of previously   |
+|                         |                         |                         |
+| .File                   |                         | uploaded file. Note:    |
+|                         |                         |                         |
+| .AssetID                |                         | the file type needs to  |
+|                         |                         |                         |
+|                         |                         | be consistent with the  |
+|                         |                         |                         |
+|                         |                         | valid file types for    |
+|                         |                         |                         |
+|                         |                         | the service. Also,      |
+|                         |                         |                         |
+|                         |                         | a file cannot be        |
+|                         |                         |                         |
+|                         |                         | associated with more    |
+|                         |                         |                         |
+|                         |                         | that one quote.         |
++-------------------------+-------------------------+-------------------------+
 
-Request Example
-===============
+Product Request Example
+=======================
 
 ::
 
@@ -307,6 +348,37 @@ Request Example
     </GenerateQuote>
 
 
+File Request Example
+====================
+
+::
+
+    <GenerateQuote>
+        <TranslationOptions>
+            <Currency>EUR</Currency>
+            <NotificationURL>
+                    `https://www.example.com/
+            </NotificationURL>
+            <ServiceID>54</ServiceID>
+            <SourceLanguage>
+                <LanguageCode>en-uk</LanguageCode>
+            </SourceLanguage>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>it-it</LanguageCode>
+                </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+             </TargetLanguages>
+        </TranslationOptions>
+        <Files>
+            <File>
+                <AssetID>123456</AssetID>
+            </File>
+        </Files>
+    </GenerateQuote>
+
 Return Codes
 ============
 
@@ -322,7 +394,10 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | parameter such as       |
 |                         |                         |                         |
-|                         |                         | service id.             |
+|                         |                         | service id or           |
+|                         |                         |                         |
+|                         |                         | incompatible files.     |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Unauthorized            | 401                     | The request did not     |
 |                         |                         |                         |
@@ -338,7 +413,8 @@ Return Codes
 Response Body
 =============
 
-The response body contains a quote for a project.
+The response body contains a quote for a project. Please note: the response may
+not contain a price.  If the submitted files 
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
@@ -356,6 +432,32 @@ The response body contains a quote for a project.
 |                         |                         | project was created in  |
 |                         |                         |                         |
 |                         |                         | UTC.                    |
++-------------------------+-------------------------+-------------------------+
+| Status                  | String                  | The status of the quote.|
+|                         |                         |                         |
+|                         |                         | "Ready" means that the  |
+|                         |                         |                         |
+|                         |                         | source content has been |
+|                         |                         |                         |
+|                         |                         | analyzed and the        |
+|                         |                         |                         |
+|                         |                         | project(s) has/have     |
+|                         |                         |                         |
+|                         |                         | been priced.            |
+|                         |                         |                         |
+|                         |                         | "Analyzing" means that  |
+|                         |                         |                         |
+|                         |                         | the price is still      |
+|                         |                         |                         |
+|                         |                         | being determined and    |
+|                         |                         |                         |
+|                         |                         | the client should       |
+|                         |                         |                         |
+|                         |                         | call :doc:`get_quote`   |
+|                         |                         |                         |
+|                         |                         | later to check on the   |
+|                         |                         |                         |
+|                         |                         | status.                 |
 +-------------------------+-------------------------+-------------------------+
 | AuthorizeURL            | String                  | URL to authorize the    |
 |                         |                         |                         |
