@@ -7,8 +7,7 @@ Generate Quote
 **Method:**    POST
 =============  ===================
 
-This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
-
+This interface is used to generate a quote.  A quote can contain multiple projects.
 
 Request Body
 ============
