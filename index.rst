@@ -24,6 +24,7 @@ Contents
    error_handling
    create_account
    account_information
+   add_prepaid_balance
    generate_quote
    authorize_quote
    get_quote
