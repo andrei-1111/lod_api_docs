@@ -178,21 +178,7 @@ Request Body
 |                         |                         |                         |
 | .ItemSpecifics          |                         |                         |
 |                         |                         |                         |
-| .NameValueList          |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Contains a single       |
-|                         |                         |                         |
-| .Product                |                         | name-value pair         |
-|                         |                         |                         |
-| .SKUs                   |                         |                         |
-|                         |                         |                         |
-| .SKU                    |                         |                         |
-|                         |                         |                         |
-| .ItemSpecifics          |                         |                         |
-|                         |                         |                         |
-| .NameValueList          |                         |                         |
-|                         |                         |                         |
-| .NameValue              |                         |                         |
+| .ItemSepecific          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Products                | String                  | The name of the name    |
 |                         |                         |                         |
@@ -204,13 +190,11 @@ Request Body
 |                         |                         |                         |
 | .ItemSpecifics          |                         |                         |
 |                         |                         |                         |
-| .NameValueList          |                         |                         |
-|                         |                         |                         |
-| .NameValue              |                         |                         |
+| .ItemSpecific           |                         |                         |
 |                         |                         |                         |
 | .Name                   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The value of the name   |
+| Products                | String                  | The name of the name    |
 |                         |                         |                         |
 | .Product                |                         | value pair              |
 |                         |                         |                         |
@@ -220,9 +204,7 @@ Request Body
 |                         |                         |                         |
 | .ItemSpecifics          |                         |                         |
 |                         |                         |                         |
-| .NameValueList          |                         |                         |
-|                         |                         |                         |
-| .NameValue              |                         |                         |
+| .ItemSpecific           |                         |                         |
 |                         |                         |                         |
 | .Value                  |                         |                         |
 +-------------------------+-------------------------+-------------------------+
@@ -283,22 +265,18 @@ Request Example
                 <SKUs>
                     <SKU>
                        <SKUNumber>1234</SKUNumber>
-                      <ItemSpecifics>
-                            <NameValueList>
-                                <NameValue>
-                                    <Name>Color</Name>
-                                        <Value>White</Value>
-                                </NameValue>
-                                <NameValue>
-                                    <Name>Size</Name>
-                                    <Value>Large</Value>
-                                </NameValue>
-                            </NameValueList>
+                        <ItemSpecifics>
+                            <ItemSpecific>
+                                <Name>Color</Name>
+                                <Value>White</Value>
+                            </ItemSpecific>
+                            <ItemSpecific>
+                                <Name>Size</Name>
+                                <Value>Large</Value>
+                            </ItemSpecific>
                       </ItemSpecifics>
                     </SKU>
-
                 </SKUs>
-
             </Product>
 
         </Products>
