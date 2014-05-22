@@ -105,7 +105,15 @@ The response body shows information about the project.
 | .LanguageCode           |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container of Items      |
+| Products                | Container               | Container of Products.  |
+|                         |                         |                         |
+|                         |                         | This element will be    |
+|                         |                         |                         |
+|                         |                         | empty if this project   |
+|                         |                         |                         |
+|                         |                         | contiains fils instead  |
+|                         |                         |                         |
+|                         |                         | of products.            |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Products                | Container               | Container of Item       |
@@ -177,8 +185,77 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         | each ItemSpecific       |
 +-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | Contains file elements. |
+|                         |                         |                         |
+|                         |                         | It will be empty on     |
+|                         |                         |                         |
+|                         |                         | projects that have      |
+|                         |                         |                         |
+|                         |                         | products instead of     |
+|                         |                         |                         |
+|                         |                         | files.                  |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+| .File                   |                         |                         |
+|                         |                         |                         |
+| .AssetID                |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | Original name of the    |
+|                         |                         |                         |
+| .File                   |                         | file.                   |
+|                         |                         |                         |
+| .FileName               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | URL to download the     |
+|                         |                         |                         |
+| .File                   |                         | source file.            |
+|                         |                         |                         |
+| .URL                    |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | Container containing    |
+|                         |                         |                         |
+| .File                   |                         | target languages.       |
+|                         |                         |                         |
+| .TargetLanguages        |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | See LanguageCode in     |
+|                         |                         |                         |
+| .File                   |                         | glossary                |
+|                         |                         |                         |
+| .TargetLanguages        |                         |                         |
+|                         |                         |                         |
+| .TargetLanguage         |                         |                         |
+|                         |                         |                         |
+| .LanguageCode           |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | URL to retrieve this    |
+|                         |                         |                         |
+| .File                   |                         | particular translation. |
+|                         |                         |                         |
+| .TargetLanguages        |                         |                         |
+|                         |                         |                         |
+| .TargetLanguage         |                         |                         |
+|                         |                         |                         |
+| .URL                    |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | String representing     |
+|                         |                         |                         |
+| .File                   |                         | the url to download     |
+|                         |                         |                         |
+| .TargetLanguages        |                         | the translated file.    |
+|                         |                         |                         |
+| .TargetLanguage         |                         |                         |
+|                         |                         |                         |
+| .URL                    |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
-  
+
+
+
 
 Response Example
 ================
@@ -247,4 +324,17 @@ Response Example
                 </TargetLanguages>
             </Product>
         </Products>
+        <Files>
+            <File>
+                <AssetID>1111</AssetID>
+                <URL>https...</URL>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                        <URL>https://</URL>
+                    </TargetLanguage>
+                    ...
+                </TargetLanguages>
+            </File>   
+        </Files>
     </Project>

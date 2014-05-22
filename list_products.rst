@@ -36,101 +36,101 @@ Response Body
 The response body includes a list of products.
 
 
-+-------------------------+-------------------------+-------------------------+
-| Property                | Type                    | Comments                |
-+=========================+=========================+=========================+
-| Product                 | Container               | Container of Product    |
-|                         |                         |                         |
-|                         |                         | information             |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | Container               | Container of SKU        |
-|                         |                         |                         |
-| .SKUs                   |                         | elements                |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | Container               | Container of SKU Number |
-|                         |                         |                         |
-| .SKUs                   |                         |                         |
-|                         |                         |                         |
-| .SKU                    |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | SKU Number              |
-|                         |                         |                         |
-| .SKUs                   |                         |                         |
-|                         |                         |                         |
-| .SKU                    |                         |                         |
-|                         |                         |                         |
-| .SKUNumber              |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | Integer                 | Internal onDemand ID    |
-|                         |                         |                         |
-| .AssetID                |                         | for the Asset.          |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | String to download full |
-|                         |                         |                         |
-| .URL                    |                         | details of the product. |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | Integer                 | ID of the project that  |
-|                         |                         |                         |
-| .ProjectID              |                         | was used to translate   |
-|                         |                         |                         |
-|                         |                         | this item.  If SKU was  |
-|                         |                         |                         |
-|                         |                         | submitted multiple      |
-|                         |                         |                         |
-|                         |                         | times, it is the most   |
-|                         |                         |                         |
-|                         |                         | recent project.         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | See LanguageCode in     |
-|                         |                         |                         |
-| .SourceLanguage         |                         | glossary                |
-|                         |                         |                         |
-| .LanguageCode           |                         |                         |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | Container               | Container containing    |
-|                         |                         |                         |
-| .TargetLanguages        |                         | target languages that   |
-|                         |                         |                         |
-|                         |                         | the product was already |
-|                         |                         |                         |
-|                         |                         | translated into.        |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | See LanguageCode in     |
-|                         |                         |                         |
-| .TargetLanguages        |                         | glossary                |
-|                         |                         |                         |
-| .TargetLanguage         |                         |                         |
-|                         |                         |                         |
-| .LanguageCode           |                         |                         |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | The status of the       |
-|                         |                         |                         |
-| .TargetLanguages        |                         | translation             |
-|                         |                         |                         |
-| .TargetLanguage         |                         |                         |
-|                         |                         |                         |
-| .Status                 |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | URL to retrieve the     |
-|                         |                         |                         |
-| .TargetLanguages        |                         | project information.    |
-|                         |                         |                         |
-| .TargetLanguage         |                         |                         |
-|                         |                         |                         |
-| .ProjectURL             |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Product                 | String                  | URL to download the     |
-|                         |                         |                         |
-| .TargetLanguages        |                         | translated file.  See   |
-|                         |                         |                         |
-| .TargetLanguage         |                         | GetTranslation          |
-|                         |                         |                         |
-| .DownloadURL            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
++-------------------------+-------------------------+--------------------------------+
+| Property                | Type                    | Comments                       |
++=========================+=========================+================================+
+| Product                 | Container               | Container of Product           |
+|                         |                         |                                |
+|                         |                         | information                    |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | Container               | Container of SKU               |
+|                         |                         |                                |
+| .SKUs                   |                         | elements                       |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | Container               | Container of SKU Number        |
+|                         |                         |                                |
+| .SKUs                   |                         |                                |
+|                         |                         |                                |
+| .SKU                    |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | SKU Number                     |
+|                         |                         |                                |
+| .SKUs                   |                         |                                |
+|                         |                         |                                |
+| .SKU                    |                         |                                |
+|                         |                         |                                |
+| .SKUNumber              |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | Integer                 | Internal onDemand ID           |
+|                         |                         |                                |
+| .AssetID                |                         | for the Asset.                 |
+|                         |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | String to download full        |
+|                         |                         |                                |
+| .URL                    |                         | details of the product.        |
+|                         |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | Integer                 | ID of the project that         |
+|                         |                         |                                |
+| .ProjectID              |                         | was used to translate          |
+|                         |                         |                                |
+|                         |                         | this item.  If SKU was         |
+|                         |                         |                                |
+|                         |                         | submitted multiple             |
+|                         |                         |                                |
+|                         |                         | times, it is the most          |
+|                         |                         |                                |
+|                         |                         | recent project.                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | See LanguageCode in            |
+|                         |                         |                                |
+| .SourceLanguage         |                         | glossary                       |
+|                         |                         |                                |
+| .LanguageCode           |                         |                                |
+|                         |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | Container               | Container containing           |
+|                         |                         |                                |
+| .TargetLanguages        |                         | target languages that          |
+|                         |                         |                                |
+|                         |                         | the product was already        |
+|                         |                         |                                |
+|                         |                         | translated into.               |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | See LanguageCode in            |
+|                         |                         |                                |
+| .TargetLanguages        |                         | glossary                       |
+|                         |                         |                                |
+| .TargetLanguage         |                         |                                |
+|                         |                         |                                |
+| .LanguageCode           |                         |                                |
+|                         |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | The status of the              |
+|                         |                         |                                |
+| .TargetLanguages        |                         | translation                    |
+|                         |                         |                                |
+| .TargetLanguage         |                         |                                |
+|                         |                         |                                |
+| .Status                 |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | URL to retrieve the            |
+|                         |                         |                                |
+| .TargetLanguages        |                         | project information.           |
+|                         |                         |                                |
+| .TargetLanguage         |                         |                                |
+|                         |                         |                                |
+| .ProjectURL             |                         |                                |
++-------------------------+-------------------------+--------------------------------+
+| Product                 | String                  | URL to download the            |
+|                         |                         |                                |
+| .TargetLanguages        |                         | translated file.  See          |
+|                         |                         |                                |
+| .TargetLanguage         |                         | :doc:`get_product_translation` |
+|                         |                         |                                |
+| .DownloadURL            |                         |                                |
++-------------------------+-------------------------+--------------------------------+
 
   
 

@@ -75,20 +75,55 @@ The response body includes a list of products.
 |                         |                         |                         |
 |                         |                         | service                 |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         |                         | Container for Target    |
+| TargetLanguages         | Container               | Container for Target    |
 |                         |                         |                         |
 | .TargetLanguage         |                         | Language                |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         |                         | See glossary for        |
+| TargetLanguages         | String                  | See glossary for        |
 |                         |                         |                         |
 | .TargetLanguage         |                         | language code.          |
 |                         |                         |                         |
 | .LanguageCode           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| ValidInputs             | Container               | Contains source         |
+|                         |                         |                         |
+|                         |                         | content types that      |
+|                         |                         |                         |
+|                         |                         | this service can        |
+|                         |                         |                         |  
+|                         |                         | process                 |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | EmptyTag                | If this element exists  |
+|                         |                         |                         |
+| .Products               |                         | then this service       |
+|                         |                         |                         |
+|                         |                         | accepts Products        |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | Container               | Contains FileExtension  |
+|                         |                         |                         |
+| .Files                  |                         | elements for each       |
+|                         |                         |                         |
+|                         |                         | accepted file type.     |
+|                         |                         |                         |
+|                         |                         | If files are not        |
+|                         |                         |                         |
+|                         |                         | supported by this       |
+|                         |                         |                         |
+|                         |                         | service, there will     |
+|                         |                         |                         |
+|                         |                         | be no Files element.    |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | String                  | String representing     |
+|                         |                         |                         |
+| .Files                  |                         | an file extension       |
+|                         |                         |                         |
+| .FileExtension          |                         | that is accepted by the |
+|                         |                         |                         |
+|                         |                         | service.                |
++-------------------------+-------------------------+-------------------------+
 
-
-  
 
 Response Example
 ================

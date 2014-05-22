@@ -9,7 +9,8 @@ Generate Quote
 
 This interface is used to generate a quote.  A quote can contain multiple projects.
 
-Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to generating the quote (see :doc:`file_upload`), 
+Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to generating the quote 
+(see :doc:`add_file`)
 
 
 
@@ -239,7 +240,15 @@ Request Body
 +-------------------------+-------------------------+-------------------------+
 | Files                   | Container               | A collection of file    |
 |                         |                         |                         |
-|                         |                         | elements.               |
+|                         |                         | elements. The files     |
+|                         |                         |                         |
+|                         |                         | referenced need to      |
+|                         |                         |                         |
+|                         |                         | supported by the        |
+|                         |                         |                         |
+|                         |                         | selected service.       |
+|                         |                         |                         |
+|                         |                         | See :doc:`list_services`|
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Files                   | Container               | A file is described     |
@@ -269,6 +278,8 @@ Request Body
 |                         |                         |                         |
 |                         |                         | that one quote.         |
 +-------------------------+-------------------------+-------------------------+
+
+
 
 Product Request Example
 =======================
