@@ -7,7 +7,9 @@ Generate Quote
 **Method:**    POST
 =============  ===================
 
-This interface is used to generate a quote.  A quote can contain multiple projects.
+This interface is used to generate a quote.  A quote can contain multiple projects.  
+
+The API client should use an API key set associated with a customer (merchant) account when submitting and retrieving projects on behalf of that customer.  This will establish ownership of that project for access control and also attribute transactions to individual customer accounts. The API client can create an customer account using the :doc:`create_account` API.
 
 Request Body
 ============
