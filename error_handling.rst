@@ -26,5 +26,6 @@ Rate Throttling
 
 To ensure optimum performance for all API consumers, The API is
 throttled to 30 requests per minute per merchant.  Project creation
-requests are throttled to 2 per minute per merchant.
+requests are throttled to 2 per minute per merchant.  If the client reaches the throttling
+limit, the API will return a 429 response.
 
