@@ -33,7 +33,7 @@ Return Codes
 Response Body
 =============
 
-The response body includes a list of products.
+The response body includes a list of file assets.
 
 
 +-------------------------+-------------------------+----------------------------+
@@ -139,5 +139,5 @@ Response Example
                     <DownloadURL>https://liondemand.com<DownloadURL>
                 </TargetLanguage>
             </TargetLanguages>
-        </Product>
-    <Products>
+        </Files>
+    <Files>
