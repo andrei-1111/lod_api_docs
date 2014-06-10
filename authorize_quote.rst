@@ -105,7 +105,7 @@ Request Example
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>
@@ -347,6 +347,76 @@ Response Example
     </QuoteAuthorization>
 
 
-**Conflict**
+Errors
+======
+If Authorize Quote encountered an error, the response will contain an Error element consisting of
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+information.  The most common error will be related to a conflict (HTTP status code 409), which 
+happens when the quote information submitted does not match the information within the onDemand 
+service.
 
-See the response for Generate Quote
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++-------------------------+-------------------------+-------------------------+
+| 300                     | Miscellaneous error     | A miscellaneous or      |
+|                         |                         |                         |
+|                         |                         | unexpected error        |
+|                         |                         |                         |
+|                         |                         | has occured.            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 301                     | The number of available | When this quote was     |
+|                         |                         |                         |
+|                         | translation credits has | created, the number of  |
+|                         |                         |                         |
+|                         | changed.                | available translation   |
+|                         |                         |                         |
+|                         |                         | credit was different    |
+|                         |                         |                         |
+|                         |                         | than are available now. |
++-------------------------+-------------------------+-------------------------+
+| 302                     | The amount of prepaid   | When this quote was     |
+|                         |                         |                         |
+|                         | available pre-paid      | created, the amount of  |
+|                         |                         |                         |
+|                         | has changed.            | prepaid credit was      |
+|                         |                         |                         |
+|                         |                         | different than it is    |
+|                         |                         |                         |
+|                         |                         | now.                    |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 303                     | Wrong quote ID          | The QuoteID in the      |
+|                         |                         |                         |
+|                         |                         | request body does not   |
+|                         |                         |                         |
+|                         |                         | match what was in the   |
+|                         |                         |                         |
+|                         |                         | URL.                    |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 304                     | Wrong language options  | The source or target    |
+|                         |                         |                         |
+|                         |                         | languages are different |
+|                         |                         |                         |
+|                         |                         | that when the quote     |
+|                         |                         |                         |
+|                         |                         | was created.            |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 305                     | Price change            | The source or target    |
+|                         |                         |                         |
+|                         |                         | languages are different |
+|                         |                         |                         |
+|                         |                         | that when the quote     |
+|                         |                         |                         |
+|                         |                         | was created.            |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+

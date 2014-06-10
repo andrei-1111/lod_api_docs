@@ -138,7 +138,7 @@ Incoming Request Sample
             <Error></Error>
         </Errors>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>

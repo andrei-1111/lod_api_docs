@@ -144,7 +144,7 @@ Response Example
         <ProjectURL>https://</ProjectURL>
         <ProjectID>1234</ProjectID>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>

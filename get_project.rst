@@ -273,7 +273,7 @@ Response Example
         <DueDate>2014-01-25T10:32:02Z</DueDate>
         <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>

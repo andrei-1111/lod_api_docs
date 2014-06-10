@@ -149,7 +149,7 @@ Response Example
             <AssetID>9999</AssetID>
             <ProjectID>1234</ProjectID>
             <SourceLanguage>
-                <LanguageCode>en-uk</LanguageCode>
+                <LanguageCode>en-gb</LanguageCode>
             </SourceLanguage>
             <TargetLanguages>
                 <TargetLanguage>

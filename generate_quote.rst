@@ -278,7 +278,7 @@ Product Request Example
             </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
-                <LanguageCode>en-uk</LanguageCode>
+                <LanguageCode>en-gb</LanguageCode>
             </SourceLanguage>
             <TargetLanguages>
                 <TargetLanguage>
@@ -353,7 +353,7 @@ File Request Example
             </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
-                <LanguageCode>en-uk</LanguageCode>
+                <LanguageCode>en-gb</LanguageCode>
             </SourceLanguage>
             <TargetLanguages>
                 <TargetLanguage>
@@ -597,7 +597,7 @@ Response Example
         <RejectURL>https://</RejectURL>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
-        <LanguageCode>en-uk</LanguageCode>
+        <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
                     <TargetLanguage>
@@ -626,3 +626,43 @@ Response Example
                 </Product>
             </Products>
     </Quote>
+
+Errors
+======
+If generate quote encountered an error, the response will contain an Error element consisting of
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+information. Here are some common cases.
+
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++-------------------------+-------------------------+-------------------------+
+| 200                     | Miscellaneous error     | A miscellaneous or      |
+|                         |                         |                         |
+|                         |                         | unexpected error        |
+|                         |                         |                         |
+|                         |                         | has occured.            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 201                     | There was a problem     | Request body could not  |
+|                         |                         |                         |
+|                         | with the source content.| parsed. Please verify   |
+|                         |                         |                         |
+|                         |                         | that the XML is well-   |
+|                         |                         |                         |
+|                         |                         | formd and the encoding  |
+|                         |                         |                         |
+|                         |                         | is correct.             |
++-------------------------+-------------------------+-------------------------+
+| 202                     | This service is not     | The selected service    |
+|                         |                         |                         |
+|                         | compatable with the     | does not support the    |
+|                         |                         |                         |
+|                         | submitted source        | submitted source        |
+|                         |                         |                         |
+|                         | content.                | content.                |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+
+

@@ -105,6 +105,6 @@ Where:
 - **GET** is the HTTP method you used
 - **/api/services** is the resource you are calling
 - **AAA...AAA** is your secret key
-- **2014-02-21T07:49:24.655024** is the current time stamp. This needs to be the same as x-lod-timestamp.
+- **2014-02-21T17:49:24.655024** is the current time stamp. This needs to be the same as x-lod-timestamp. Note, you must use a 24 hour clock.
 - **2014-02-28** is the version of the API you are using. This needs to be the same as x-lod-version.
 - **text/xml** is what you passed in the accept header

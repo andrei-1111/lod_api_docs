@@ -48,6 +48,19 @@ The response body includes a list of file assets.
 | .AssetID                |                         | for the file asset.        |
 |                         |                         |                            |
 +-------------------------+-------------------------+----------------------------+
+| File                    | Integer                 | Internal onDemand ID       |
+|                         |                         |                            |
+| .ProjectID              |                         | of the project that this   |
+|                         |                         |                            |
+|                         |                         | asset has been associated  |
+|                         |                         |                            |
+|                         |                         | with. If not project has   |
+|                         |                         |                            |
+|                         |                         | been associated, this      |
+|                         |                         |                            |
+|                         |                         | element will be empty.     |
+|                         |                         |                            |
++-------------------------+-------------------------+----------------------------+
 | File                    | String                  | Original name of the file. |
 |                         |                         |                            |
 | .Name                   |                         |                            |
@@ -57,6 +70,15 @@ The response body includes a list of file assets.
 | File                    | String                  | URL to download the        |
 |                         |                         |                            |
 | .URL                    |                         | file.                      |
+|                         |                         |                            |
+|                         |                         |                            |
++-------------------------+-------------------------+----------------------------+
+| File                    | String                  | See Language Code          |
+|                         |                         |                            |
+| .SourceLanguage         |                         | in the glossary.           |
+|                         |                         |                            |
+|                         |                         |                            |
+| .LanguageCode           |                         |                            |
 |                         |                         |                            |
 +-------------------------+-------------------------+----------------------------+
 | File                    | Integer                 | String representing the    |
@@ -75,7 +97,16 @@ The response body includes a list of file assets.
 |                         |                         |                            |
 |                         |                         | the file was set to be     |
 |                         |                         |                            |
-|                         |                         | translated into.           |
+|                         |                         | translated into. If the    |
+|                         |                         |                            |
+|                         |                         | file has not been          |
+|                         |                         |                            |
+|                         |                         | associated with a project  |
+|                         |                         |                            |
+|                         |                         | yet, this element will be  |
+|                         |                         |                            |
+|                         |                         |                            |
+|                         |                         | empty.                     |
 +-------------------------+-------------------------+----------------------------+
 | File                    | String                  | See LanguageCode in        |
 |                         |                         |                            |
@@ -124,6 +155,9 @@ Response Example
             <ProjectID>1234</ProjectID>
             <URL>http://</URL>
             <Name>foo.txt</Name>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
             <UploadDate>2014-01-25T10:32:02Z</UploadDate>
             <TargetLanguages>
                 <TargetLanguage>
