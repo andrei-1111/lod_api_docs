@@ -30,6 +30,18 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
+| Not Found               | 404                     | The URL does not relate |
+|                         |                         |                         |
+|                         |                         | to a file that the      |
+|                         |                         |                         |
+|                         |                         | account owns. Or a      |
+|                         |                         |                         |
+|                         |                         | translation in this     |
+|                         |                         |                         |
+|                         |                         | language does not exist |
+|                         |                         |                         |
+|                         |                         | for this file.          |
++-------------------------+-------------------------+-------------------------+
 
 
 Response Body

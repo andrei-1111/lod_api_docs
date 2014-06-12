@@ -36,14 +36,17 @@ In version 2014-06-10, the error element was broken down into three sub-elements
 
 Prior to the 2014-06-10 release, the Error element only contained a single message.
 
-===========  ==============================================
+Here is a list of common ReasonCodes.  See the individual API pages for more details.
+
+==========   =============================================
 ReasonCode   Explanation
 100          User already exists
 201          Malformed product inputs
 301          The number of translation credits has changed
 302          The amount of prepaid credit has changed
 303          Wrong quote id
-304          Wrong language options 
+304          Wrong language options
+==========   =============================================
 
 
 Rate Throttling
