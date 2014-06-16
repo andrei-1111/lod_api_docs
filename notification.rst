@@ -122,8 +122,10 @@ The response body contains information about the newly created merchant.
 
   
 
-Incoming Request Sample
-=======================
+Incoming Request Samples
+========================
+
+Example of notification for product-based projects.
 
 ::
 
@@ -168,4 +170,47 @@ Incoming Request Sample
                     </TargetLanguages>
             </Product>
         </Products>
+    </Project>
+
+Example of notification for file-based projects.
+
+::
+
+   <Project>
+        <ProjectID>12345</ProjectID>
+        <URL>https://...</URL>
+        <Status>Complete</ProjectStatus>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
+        <DueDate>2014-01-25T10:32:02Z</DueDate>
+        <Errors>
+            <Error></Error>
+        </Errors>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <Files>
+            <File>
+                    <AssetID>999</AssetID>
+                    <FileName>foo.txt</FileName>
+                    <TargetLanguages>
+                        <TargetLanguage>
+                            <LanguageCode>it-it</LanguageCode>
+                            <URL>https://</URL>
+                        </TargetLanguage>
+                        <TargetLanguage>
+                            <LanguageCode>fr-fr</LanguageCode>
+                             <URL>https://</URL>
+                        </TargetLanguage>
+                    </TargetLanguages>
+            </File>
+        </Filse>
     </Project>

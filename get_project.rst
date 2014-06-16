@@ -263,8 +263,10 @@ The response body shows information about the project.
 
 
 
-Response Example
-================
+Response Examples
+=================
+
+Example of get project response for product-based projects.
 
 ::
 
@@ -330,9 +332,38 @@ Response Example
                 </TargetLanguages>
             </Product>
         </Products>
+        
+    </Project>
+
+Example of get project response for file-based projects.
+
+::
+
+    <Project>
+        <ProjectID>10001</ProjectID>
+        <Status>Complete</ProjectStatus>
+        <ServiceID>14</ServiceID>
+        <TotalWords>1000</TotalWords>
+        <Price>1000.00</Price>
+        <Currency>EUR</Currency>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <DueDate>2014-01-25T10:32:02Z</DueDate>
+        <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>de-de</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
         <Files>
             <File>
                 <AssetID>1111</AssetID>
+                <FileName>foo.txt</FileName>
                 <URL>https...</URL>
                 <TargetLanguages>
                     <TargetLanguage>

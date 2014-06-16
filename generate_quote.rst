@@ -382,14 +382,9 @@ Return Codes
 +-------------------------+-------------------------+-------------------------+
 | Bad Request             | 400                     | This is probably        |
 |                         |                         |                         |
-|                         |                         | because of an invalid   |
+|                         |                         | because of a malformed  |
 |                         |                         |                         |
-|                         |                         | parameter such as       |
-|                         |                         |                         |
-|                         |                         | service id or           |
-|                         |                         |                         |
-|                         |                         | incompatible files.     |
-|                         |                         |                         |
+|                         |                         | request body.           |
 +-------------------------+-------------------------+-------------------------+
 | Unauthorized            | 401                     | The request did not     |
 |                         |                         |                         |
@@ -401,6 +396,17 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
+| Conflict                | 409                     | This is probably        |
+|                         |                         |                         |
+|                         |                         | because of an invalid   |
+|                         |                         |                         |
+|                         |                         | parameter such as the   |
+|                         |                         |                         |
+|                         |                         | wrong service id or     |
+|                         |                         |                         |
+|                         |                         | incompatible file types.|
++-------------------------+-------------------------+-------------------------+
+
 
 Response Body
 =============
@@ -593,6 +599,7 @@ Response Example
     <Quote>
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
         <ServiceID>54</ServiceID>
@@ -612,6 +619,46 @@ Response Example
         <TotalCost>10.00</TotalCost>
         <PrepaidCredit>5.00</PrepaidCredit>
         <AmountDue>5.00</AmountDue>
+        <Currency>EUR</Currency>
+
+        <Products>
+                <Product>
+                    <AssetID>999</AssetID>
+                    <SKUs>
+                        <SKU>
+                            <SKUNumber>123</SKUNumber>
+                        </SKU>
+                    </SKUs>
+                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
+                </Product>
+            </Products>
+    </Quote>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Calculating</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>1</TranslationCredit>
+        <TotalCost/>
+        <PrepaidCredit/>5.00</PrepaidCredit>
+        <AmountDue/>
         <Currency>EUR</Currency>
 
         <Products>
