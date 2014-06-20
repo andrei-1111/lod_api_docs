@@ -43,7 +43,7 @@ authorization header like
 ::
     
     Authorization: LOD1-BASE64-SHA256
-    KeyID=ChpmKHmUMvtegpEcvFaQ,Signature=cbRgimKByXtv7k+3eI01lcR2VQzSu6vltdB/bSAMgiM=,SignedHeaders=x-lod-timestamp;x-lod-version
+    KeyID=ChpmKHmUMvtegpEcvFaQ,Signature=cbRgimKByXtv7k+3eI01lcR2VQzSu6vltdB/bSAMgiM=,SignedHeaders=x-lod-timestamp;x-lod-version;accept
 
 Note that there is space between the first two components,
 LOD1-BASE64-SHA256 and KeyID, and that the subsequent components, KeyID,
@@ -87,7 +87,7 @@ Authorization header value.
 |                                      |                                      |
 |                                      | alphabetical order. For example,     |
 |                                      |                                      |
-|                                      | x-lod-timestamp;x-lod-version        |
+|                                      | x-lod-timestamp;x-lod-version;accept |
 +--------------------------------------+--------------------------------------+
 
 Example
