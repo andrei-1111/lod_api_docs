@@ -10,6 +10,12 @@ List Services
 This interface lists translation services that are available through the
 API.
 
+**New in version 2014-06-10**
+
+To better support file-based services, version 2014-06-10 now has a valid inputs
+element.  If the service is a file-based service, this element will list the 
+file types that are supported by this service.
+
 Return Codes
 ============
 
@@ -117,7 +123,7 @@ The response body includes a list of products.
 +-------------------------+-------------------------+-------------------------+
 | ValidInputs             | String                  | String representing     |
 |                         |                         |                         |
-| .Files                  |                         | an file extension       |
+| .Files                  |                         | a file extension        |
 |                         |                         |                         |
 | .FileExtension          |                         | that is accepted by the |
 |                         |                         |                         |
@@ -133,13 +139,16 @@ Response Example
     <Services>
         <Service>
             <ServiceID>123</ServiceID>
-            <Name>Service Name</Name>
+            <Name>Product Based Service</Name>
             <Description>
                 Service Description
             </Description>
             <PriceDescription>
                 Around £1 per listing.
             </PriceDescription>
+            <ValidInputs>
+                <Products/>
+            </ValidInputs>
             <SourceLanguages>
                 <SourceLanguage>
                     <LanguageCode>de-de</LanguageCode>
@@ -156,5 +165,38 @@ Response Example
                     <LanguageCode>fr-fr</LanguageCode>
                 </TargetLanguage>
             </TargetLanguages>
-        </Service>          
+        </Service>
+         <Service>
+            <ServiceID>123</ServiceID>
+            <Name>File Based Service</Name>
+            <Description>
+                Service Description
+            </Description>
+            <PriceDescription>
+                Around £1 per listing.
+            </PriceDescription>
+            <ValidInputs>
+                <Files>
+                    <FileExtension>xls</FileExtension>
+                    <FileExtension>docx</FileExtension>
+                </Files>
+            </ValidInputs>
+
+            <SourceLanguages>
+                <SourceLanguage>
+                    <LanguageCode>de-de</LanguageCode>
+                </SourceLanguage>
+                <SourceLanguage>
+                    <LanguageCode>en-us</LanguageCode>
+                </SourceLanguage>
+            </SourceLanguages>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>de-de</LanguageCode>
+                </TargetLanguage>
+                <TargetLanguage>
+                    <LanguageCode>fr-fr</LanguageCode>
+                </TargetLanguage>
+            </TargetLanguages>
+        </Service>                    
     </Services>
