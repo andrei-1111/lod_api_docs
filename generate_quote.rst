@@ -459,19 +459,14 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | AuthorizeURL            | String                  | URL to authorize the    |
 |                         |                         |                         |
-|                         |                         | project.  If AmountDue  |
+|                         |                         | quote.  See             |
 |                         |                         |                         |
-|                         |                         | > 0, this will be a     |
-|                         |                         |                         |
-|                         |                         | link to PayPal to pay   |
-|                         |                         |                         |
-|                         |                         | the translation.        |
-|                         |                         |                         |
-|                         |                         | Otherwise, see          |
-|                         |                         |                         |
-|                         |                         | AuthorizeProject        |
+|                         |                         | :doc:`authorize_quote`  |
 +-------------------------+-------------------------+-------------------------+
-| RejectURL               | String                  | Use this                |
+| RejectURL               | String                  | Use this to reject the  |
+|                         |                         |                         |
+|                         |                         | quote. See              |
+|                         |                         | :doc:`reject_quote`     |
 +-------------------------+-------------------------+-------------------------+
 | ServiceID               | Integer                 | ID of Service           |
 +-------------------------+-------------------------+-------------------------+
