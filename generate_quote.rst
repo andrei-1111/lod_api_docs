@@ -338,11 +338,14 @@ The response body contains a quote for a project.
 +-------------------------+-------------------------+-------------------------+
 | AuthorizeURL            | String                  | URL to authorize the    |
 |                         |                         |                         |
-|                         |                         | project.  See           |
+|                         |                         | quote.  See             |
 |                         |                         |                         |
 |                         |                         | :doc:`authorize_quote`  |
 +-------------------------+-------------------------+-------------------------+
-| RejectURL               | String                  | Use this                |
+| RejectURL               | String                  | Use this to reject the  |
+|                         |                         |                         |
+|                         |                         | quote. See              |
+|                         |                         | :doc:`reject_quote`     |
 +-------------------------+-------------------------+-------------------------+
 | ServiceID               | Integer                 | ID of Service           |
 +-------------------------+-------------------------+-------------------------+
