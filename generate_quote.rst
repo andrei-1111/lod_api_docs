@@ -338,17 +338,9 @@ The response body contains a quote for a project.
 +-------------------------+-------------------------+-------------------------+
 | AuthorizeURL            | String                  | URL to authorize the    |
 |                         |                         |                         |
-|                         |                         | project.  If AmountDue  |
+|                         |                         | project.  See           |
 |                         |                         |                         |
-|                         |                         | > 0, this will be a     |
-|                         |                         |                         |
-|                         |                         | link to PayPal to pay   |
-|                         |                         |                         |
-|                         |                         | the translation.        |
-|                         |                         |                         |
-|                         |                         | Otherwise, see          |
-|                         |                         |                         |
-|                         |                         | AuthorizeProject        |
+|                         |                         | :doc:`authorize_quote`  |
 +-------------------------+-------------------------+-------------------------+
 | RejectURL               | String                  | Use this                |
 +-------------------------+-------------------------+-------------------------+
