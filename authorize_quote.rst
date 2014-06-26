@@ -289,8 +289,8 @@ Response Body
 
 
 
-Response Example
-================
+Product-Based Quote Authorization Response Example
+==================================================
 
 
 **No Payment Required**
@@ -342,6 +342,55 @@ Response Example
                     </SKUs>
                     </Product>
                 </Products>
+            </Project>
+        </Projects>
+    </QuoteAuthorization>
+
+File-Based Quote Authorization Response Example
+==================================================
+
+
+**No Payment Required**
+
+::
+    
+    <QuoteAuthorization>
+        <Status>Authorized</Status>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </QuoteAuthorization>
+
+**Payment Required**
+
+::
+    
+    <QuoteAuthorization>
+        <Status>Pending</Status>
+        <PaymentURL>https://</PaymentURL>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
             </Project>
         </Projects>
     </QuoteAuthorization>

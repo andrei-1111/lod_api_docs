@@ -573,11 +573,37 @@ not contain a price.  If the submitted files
 | .AssetID                |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| DueDate                 | String                  | String representing     |
+| Products                | String                  | String representing     |
 |                         |                         |                         |
-|                         |                         | date/time (ISO 8601     |
+| .Product                |                         | date/time (ISO 8601     |
 |                         |                         |                         |
-|                         |                         | format) that the        |
+| .DueDate                |                         | format) that the        |
+|                         |                         |                         |
+|                         |                         | translation of the item |
+|                         |                         |                         |
+|                         |                         | is scheduled to be      |
+|                         |                         |                         |
+|                         |                         | completed in UTC        |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+| .File                   |                         |                         |
+|                         |                         |                         |
+| .AssetID                |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | Original name of the    |
+|                         |                         |                         |
+| .File                   |                         | file.                   |
+|                         |                         |                         |
+| .FileName               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | String representing     |
+|                         |                         |                         |
+| .File                   |                         | date/time (ISO 8601     |
+|                         |                         |                         |
+| .DueDate                |                         | format) that the        |
 |                         |                         |                         |
 |                         |                         | translation of the item |
 |                         |                         |                         |
@@ -586,8 +612,8 @@ not contain a price.  If the submitted files
 |                         |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
 
-Response Example
-================
+Product-Based Quote Response Example
+====================================
 
 ::
 
@@ -664,10 +690,94 @@ If the price is not yet ready, the response will look like:
                             <SKUNumber>123</SKUNumber>
                         </SKU>
                     </SKUs>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
                 </Product>
             </Products>
     </Quote>
+
+File-Based Quote Response Example
+====================================
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Pending</Status>
+        <AuthorizeURL>https://…</AuthorizeURL>
+        <RejectURL>https://</RejectURL>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+        <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>0</TranslationCredit>
+        <TotalCost>10.00</TotalCost>
+        <PrepaidCredit>5.00</PrepaidCredit>
+        <AmountDue>5.00</AmountDue>
+        <Currency>EUR</Currency>
+
+        <Files>
+                <File>
+                    <AssetID>999</AssetID>
+                    <FileName>example.txt</FileName>
+                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
+                </File>
+        </Files>
+    </Quote>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Calculating</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalCost/>
+        <PrepaidCredit/>5.00</PrepaidCredit>
+        <AmountDue/>
+        <Currency>EUR</Currency>
+
+        <Files>
+                <File>
+                    <AssetID>999</AssetID>
+                    <FileName>example.txt</FileName>
+                </File>
+        </Files>
+    </Quote>
+
+If one of or more files submitted are not compatible with the selected service, the response will look like
+
+::
+
+    <Quote>
+        <Error>
+            <ReasonCode>202</ReasonCode>
+            <SimpleMessage>The file example.txt, is not supported by the Voiceover Translation Service</SimpleMessage>
+            <DetailedMessage>The Video Translation Service only supports the following file types: .mov, .mp4, .flv, and .wmv</DetailedMessage>
+        </Error>
+    </Quote>
+
 
 Errors
 ======

@@ -169,11 +169,25 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 | .AssetID                |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+| .File                   |                         |                         |
+|                         |                         |                         |
+| .AssetID                |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | Original name of the    |
+|                         |                         |                         |
+| .File                   |                         | file.                   |
+|                         |                         |                         |
+| .FileName               |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
   
 
-Response Example
-================
+Product-Based Quote Response Example
+====================================
 
 ::
 
@@ -198,4 +212,39 @@ Response Example
                 </Products>
             </Project>
         </Projects>
+    </Quote>
+
+
+File-Based Quote Response Example
+====================================
+
+::
+
+   <Quote>
+        <QuoteID>132</QuoteID>
+        <Status>Authorized</Status>
+        <TotalCost>10.00</TotalCost>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <AssetID>999</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </Quote>
+
+If the price has not been calculated yet
+
+::
+
+   <Quote>
+        <QuoteID>132</QuoteID>
+        <Status>New</Status>
+        <TotalCost/>
     </Quote>

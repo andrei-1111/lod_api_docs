@@ -110,7 +110,32 @@ The response body contains information about the newly created merchant.
 +--------------------------------------+--------------------------------------+
 | Products                             | Direct link to the translation. See  |
 |                                      |                                      |
-| .Product                             | GetTranslation                       |
+| .Product                             | the :doc:`get_product_translation`   |
+|                                      |                                      |
+| .TargetLanguages                     | API.                                 |
+|                                      |                                      |
+| .TargetLaguage                       |                                      |
+|                                      |                                      |
+| .URL                                 |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| Files                                | Asset ID of the file.                |
+|                                      |                                      |
+| .File                                |                                      |
+|                                      |                                      |
+| .AssetID                             |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| Files                                | Original name of the file            |
+|                                      |                                      |
+| .File                                |                                      |
+|                                      |                                      |
+| .FileName                            |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
+| Files                                | See LanguageCode in glossary         |
+|                                      |                                      |
+| .File                                |                                      |
 |                                      |                                      |
 | .TargetLanguages                     |                                      |
 |                                      |                                      |
@@ -119,7 +144,17 @@ The response body contains information about the newly created merchant.
 | .LanguageCode                        |                                      |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-
+| Files                                | Direct link to the translation. See  |
+|                                      |                                      |
+| .File                                | the :doc:`get_file_translation` API  |
+|                                      |                                      |
+| .TargetLanguages                     |                                      |
+|                                      |                                      |
+| .TargetLaguage                       |                                      |
+|                                      |                                      |
+| .URL                                 |                                      |
+|                                      |                                      |
++--------------------------------------+--------------------------------------+
   
 
 Incoming Request Samples
@@ -212,5 +247,5 @@ Example of notification for file-based projects.
                         </TargetLanguage>
                     </TargetLanguages>
             </File>
-        </Filse>
+        </Files>
     </Project>
