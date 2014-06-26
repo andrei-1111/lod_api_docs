@@ -8,7 +8,7 @@ Add File
 =============  ===========================
 
 This interface adds a file to the system. Files are then used to generate quotes.  If a file is not used in a quote
-within 1 hour of it being uploaded it will be deleted from the system.  Lionbridge onDemand has a general retension 
+within 1 hour of it being uploaded it will be deleted from the system.  Lionbridge onDemand has a general retention 
 policy of 60 days for all customer content.
 
 Content-Type Header
@@ -17,7 +17,7 @@ The Add File interface is different from other interfaces within this API in tha
 Content-Type and Accept headers will not be text/xml.  Instead, use a content type that is consistent
 with the file you are uploading.  
 
-We currently suppport the following file types:
+We currently support the following file types:
 
 +-------------------------+-----------+--------------------------------------------------------------------------------+
 | File Type               | Extension | Mime Type                                                                      |
@@ -87,7 +87,7 @@ We currently suppport the following file types:
 Request Body
 ============
 
-The request body should contain the cotents of the file. 
+The request body should contain the contents of the file. 
 
 
 Return Codes
