@@ -3,7 +3,7 @@ Add File
 ===================
 
 =============  ===========================
-**Resource:**  /api/file/add/<<filename>>
+**Resource:**  /api/files/add/<<filename>>
 **Method:**    POST
 =============  ===========================
 
@@ -13,9 +13,7 @@ policy of 60 days for all customer content.
 
 Content-Type Header
 ===================
-The Add File interface is different from other interfaces within this API in that the 
-Content-Type and Accept headers will not be text/xml.  Instead, use a content type that is consistent
-with the file you are uploading.  
+To ensure proper file handling, send a content-type header that is consistent with the file you are uploading.  
 
 We currently support the following file types:
 
