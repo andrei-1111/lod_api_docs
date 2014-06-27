@@ -52,6 +52,7 @@ copyright = u'2014, Lionbridge Technologies'
 # built documents.
 #
 # The short X.Y version.
+
 version = '2014-06-10'
 # The full version, including alpha/beta/rc tags.
 release = '2014-06-10'

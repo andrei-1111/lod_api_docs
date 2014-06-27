@@ -9,7 +9,6 @@ Earlier Releases:
 - `Version 2014-02-28 <http://api-docs.liondemand.com/archive/2014-02-28/>`_
 
 
-
 The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Using the API, client applications can submit content to Lionbridge for translation.  The API can be used against the onDemand Retail site or onDemand Enterprise. 
 
 
