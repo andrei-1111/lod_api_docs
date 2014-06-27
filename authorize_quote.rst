@@ -8,7 +8,7 @@ Authorize Quote
 **Method:**    POST
 =============  =================================
 
-This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
+This interface authorizes a quote.
 
 
 Request Body
@@ -16,6 +16,9 @@ Request Body
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
++-------------------------+-------------------------+-------------------------+
+| QuoteID                 | String                  | ID of the Quote         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | CreationDate            | String                  | String representing the |
 |                         |                         |                         |
@@ -101,27 +104,28 @@ Request Example
 
 ::
 
-    <AuthorizeQuote>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <ServiceID>54</ServiceID>
+    <Quote>
+        <QuoteID>795</QuoteID>
+        <CreationDate>2014-06-25T16:39:07Z</CreationDate>
+        <ServiceID>112</ServiceID>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>
-                <LanguageCode>it-it</LanguageCode>
+                <LanguageCode>fr-fr</LanguageCode>
             </TargetLanguage>
             <TargetLanguage>
-                <LanguageCode>fr-fr</LanguageCode>
+                <LanguageCode>it-it</LanguageCode>
             </TargetLanguage>
         </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>1</TranslationCredit>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
+        <TranslationCredit>49984</TranslationCredit>
+        <TotalCost>0.00</TotalCost>
+        <PrepaidCredit>118.99</PrepaidCredit>
+        <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
-    </AuthorizeQuote>
+    </Quote>
 
 
 Return Codes
