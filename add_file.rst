@@ -11,6 +11,58 @@ This interface adds a file to the system. Files are then used to generate quotes
 within 1 hour of it being uploaded it will be deleted from the system.  Lionbridge onDemand has a general retention 
 policy of 60 days for all customer content.
 
+Files can only be associated with one project. If you need to translate a file into additional languages, you can upload it again
+and create a new project out of it.
+
+File Lifecycle
+==============
+
+.. file_lifecycle:
+
+Files go through the following lifecycle.
+
+
++-------------------------+------------------------------------------------------+
+| Status                  | Comments                                             |
++=========================+======================================================+
+| Analyzing               | The file has been recently uploaded and onDemand     |
+|                         |                                                      |
+|                         | is still in the process of analyzing it.  At this    |
+|                         |                                                      |
+|                         | point, the file can be added to a quote but the      |
+|                         |                                                      |
+|                         | quote cannot be authorized yet.                      |
++-------------------------+------------------------------------------------------+
+| Analyzed                | The file has been analyzed and onDemand can now      |
+|                         |                                                      |
+|                         | generate a price for it.  Quotes containing this     |
+|                         |                                                      |
+|                         | file can be authorized.                              |
+|                         |                                                      |
++-------------------------+------------------------------------------------------+
+| Analysis Failed         | onDemand could not parse the file and it cannot      |
+|                         |                                                      |
+|                         | be used in a project. Quotes containing this file    |
+|                         |                                                      |
+|                         | cannot be authorized.                                |
+|                         |                                                      |
++-------------------------+------------------------------------------------------+
+| In Translation          | This file has been added to a project and the project|
+|                         |                                                      |
+|                         | is being worked on.  This file cannot be added to    |
+|                         |                                                      |
+|                         | other quotes or projects.                            |
+|                         |                                                      |
++-------------------------+------------------------------------------------------+
+| Translated              | This file has been added to a project and the project|
+|                         |                                                      |
+|                         | is complete. This file cannot be added to other      |
+|                         |                                                      |
+|                         | quotes or projects.                                  |
+|                         |                                                      |
++-------------------------+------------------------------------------------------+
+
+
 Content-Type Header
 ===================
 To ensure proper file handling, send a content-type header that is consistent with the file you are uploading.  

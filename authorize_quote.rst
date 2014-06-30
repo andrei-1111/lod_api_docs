@@ -8,7 +8,8 @@ Authorize Quote
 **Method:**    POST
 =============  =================================
 
-This interface authorizes a quote.
+This interface authorizes a quote.  Only quotes with a status of "Pending" can be authorized.
+
 
 
 Request Body
@@ -368,6 +369,7 @@ File-Based Quote Authorization Response Example
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
                 <Files>
                     <File>
+                        <Status>Analyzed</Status>
                         <AssetID>123</AssetID>
                         <FileName>example.txt</FileName>
                     </File>
@@ -391,6 +393,7 @@ File-Based Quote Authorization Response Example
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
                 <Files>
                     <File>
+                        <Status>Analyzed</Status>
                         <AssetID>123</AssetID>
                         <FileName>example.txt</FileName>
                     </File>
@@ -399,6 +402,45 @@ File-Based Quote Authorization Response Example
         </Projects>
     </QuoteAuthorization>
 
+**Parsing Failed**
+
+If one or more of the files submitted for this quote did not parse properly
+
+::
+
+    <QuoteAuthorization>
+        <Status>Error</Status>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzed</Status>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                    <File>
+                        <Status>Analysis Failed</Status>
+                        <AssetID>124</AssetID>
+                        <FileName>example2.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+        <Error>
+            <ReasonCode>307</ReasonCode>
+            <SimpleMessage>Parsing Failed</SimpleMessage>
+            <DetailedMessage>
+                            One or more of the files                      
+                            encountered a parsing   
+                            error. This quote is    
+                            invalid.
+            </DetailedMessage>
+        </Error>                            
+    </QuoteAuthorization>
 
 Errors
 ======
@@ -471,5 +513,19 @@ service.
 |                         |                         |                         |
 |                         |                         |                         |
 |                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 306                     | Quote Not Ready         | The quote is not yet in |
+|                         |                         |                         |
+|                         |                         | a pending state so      |
+|                         |                         |                         |
+|                         |                         | it cannot be authorized.|
++-------------------------+-------------------------+-------------------------+
+| 307                     | Parsing Failed          | One or more of the files|
+|                         |                         |                         |
+|                         |                         | encountered a parsing   |
+|                         |                         |                         |
+|                         |                         | error. This quote is    |
+|                         |                         |                         |
+|                         |                         | invalid.                |
 +-------------------------+-------------------------+-------------------------+
 

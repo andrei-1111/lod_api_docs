@@ -48,6 +48,12 @@ The response body includes a list of file assets.
 | .AssetID                |                         | for the file asset.        |
 |                         |                         |                            |
 +-------------------------+-------------------------+----------------------------+
+| File                    | Integer                 | The current state in the   |
+|                         |                         |                            |
+| .Status                 |                         | onDemand File Lifecycle    |
+|                         |                         |                            |
+|                         |                         | See :doc:`add_file`.       |
++-------------------------+-------------------------+----------------------------+
 | File                    | Integer                 | Internal onDemand ID       |
 |                         |                         |                            |
 | .ProjectID              |                         | of the project that this   |
@@ -147,11 +153,67 @@ The response body includes a list of file assets.
 Response Example
 ================
 
+The below example shows files in different states.
+
 ::
 
     <Files>
-        <Files>
+        <File>
+            <AssetID>9000</AssetID>
+            <Status>New</Status>
+            <URL>http://</URL>
+            <Name>1.txt</Name>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <UploadDate>2014-01-25T10:32:02Z</UploadDate>
+        </File>
+        <File>
+            <AssetID>9900</AssetID>
+            <Status>Analyzed</Status>
+            <URL>http://</URL>
+            <Name>1.txt</Name>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <UploadDate>2014-01-25T10:32:02Z</UploadDate>
+        </File>
+        <File>
+            <AssetID>9901</AssetID>
+            <Status>Analysis Failed</Status>
+            <URL>http://</URL>
+            <Name>1.txt</Name>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <UploadDate>2014-01-25T10:32:02Z</UploadDate>
+        </File>
+        <File>
+            <AssetID>9910</AssetID>
+            <Status>In Translation</Status>
+            <ProjectID>1234</ProjectID>
+            <URL>http://</URL>
+            <Name>foo.txt</Name>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <UploadDate>2014-01-25T10:32:02Z</UploadDate>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>de-de</LanguageCode>
+                    <Status>Started</Status>
+                    <ProjectURL>https://</ProjectURL>
+                </TargetLanguage>
+                <TargetLanguage>
+                    <LanguageCode>fr-fr</LanguageCode>
+                    <Status>Started</Status>
+                    <ProjectURL>https://</ProjectURL>
+                </TargetLanguage>
+            </TargetLanguages>
+        </File>
+        <File>
             <AssetID>9999</AssetID>
+            <Status>Translated</Status>
             <ProjectID>1234</ProjectID>
             <URL>http://</URL>
             <Name>foo.txt</Name>
@@ -173,5 +235,5 @@ Response Example
                     <DownloadURL>https://liondemand.com<DownloadURL>
                 </TargetLanguage>
             </TargetLanguages>
-        </Files>
+        </File>
     <Files>
