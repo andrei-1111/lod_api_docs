@@ -53,7 +53,13 @@ Return Codes
 +-------------------------+-------------------------+-------------------------+
 | Status                  | Code                    | Comments                |
 +-------------------------+-------------------------+-------------------------+
-| Created                 | 201                     | The project was created |
+| OK                      | 200                     | The request was accepted|
+|                         |                         |                         |
+|                         |                         | the response will       |
+|                         |                         |                         |
+|                         |                         | contain a link to a     |
+|                         |                         |                         |
+|                         |                         | payment page.           |
 +-------------------------+-------------------------+-------------------------+
 | Bad Request             | 400                     | This is probably        |
 |                         |                         |                         |
