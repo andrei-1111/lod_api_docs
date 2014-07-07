@@ -32,7 +32,7 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
-| Conflict                | 401                     | This quote cannot be    |
+| Conflict                | 409                     | This quote cannot be    |
 |                         |                         |                         |
 |                         |                         | rejected at this time.  |
 |                         |                         |                         |
