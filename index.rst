@@ -2,6 +2,19 @@
 Lionbridge onDemand API
 =======================
 
+The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Through the Lionbridge onDemand API you can:
+
+- Create onDemand buyer accounts using :doc:`create_account`. 
+- Find the most cost-effective translation quality level for your content using :doc:`list_services`.
+- Create translation projects using :doc:`generate_quote`.
+- Get a notification when your project is done.
+
+
+The API can be used against the `onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. 
+
+Scroll down for a :ref:`high_level_workflow`
+
+
 **Version:** 2014-06-10 *Latest*
 
 Earlier Releases:
@@ -9,7 +22,6 @@ Earlier Releases:
 - `Version 2014-02-28 <http://api-docs.liondemand.com/archive/2014-02-28/>`_
 
 
-The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  Using the API, client applications can submit content to Lionbridge for translation.  The API can be used against the onDemand Retail site or onDemand Enterprise. 
 
 
 New in This Release
@@ -68,9 +80,11 @@ You can get API keys on our `sandbox server <https://demo.liondemand.com/>`_ by 
 
 If you have trouble getting your API keys or need an account on an enterprise site sandbox, please contact `support <https://support.liondemand.com/>`_.
 
+.. _high_level_workflow:
 
 High Level Workflow
 ===================
+
 
 This high level sequence diagram shows the workflow for creating and completing onDemand projects.  The process starts with an end user building list of content assets to translate within the client application.  Then the merchant selects a service and target languages and requests a quote.  onDemand responds with a quote that contains information about how the work will be broken down into projects and pricing information.  The end user can authorize the quote (and if necessary pay) to start the project.  
 
