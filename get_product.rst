@@ -30,6 +30,12 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
+| Not Found               | 404                     | The URL does not relate |
+|                         |                         |                         |
+|                         |                         | to a product that the   |
+|                         |                         |                         |
+|                         |                         | merchant owns.          |
++-------------------------+-------------------------+-------------------------+
 
 Response Body
 =============
@@ -144,7 +150,7 @@ Response Example
         <ProjectURL>https://</ProjectURL>
         <ProjectID>1234</ProjectID>
         <SourceLanguage>
-            <LanguageCode>en-uk</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
             <TargetLanguage>

@@ -8,7 +8,8 @@ Authorize Quote
 **Method:**    POST
 =============  =================================
 
-This interface authorizes a quote.
+This interface authorizes a quote.  Only quotes with a status of "Pending" can be authorized.
+
 
 
 Request Body
@@ -165,6 +166,12 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | merchant owns.          |
 +-------------------------+-------------------------+-------------------------+
+| Method not Allowed      | 405                     | The Quote is not ready  |
+|                         |                         |                         |
+|                         |                         | to be paid because the  |
+|                         |                         |                         |
+|                         |                         | price is not set.       |
++-------------------------+-------------------------+-------------------------+
 | Conflict                | 409                     | The quote is no longer  |
 |                         |                         |                         |
 |                         |                         | valid.  The response    |
@@ -293,8 +300,8 @@ Response Body
 
 
 
-Response Example
-================
+Product-Based Quote Authorization Response Example
+==================================================
 
 
 **No Payment Required**
@@ -350,7 +357,191 @@ Response Example
         </Projects>
     </QuoteAuthorization>
 
+File-Based Quote Authorization Response Example
+==================================================
 
-**Conflict**
 
-See the response for Generate Quote
+**No Payment Required**
+
+::
+    
+    <QuoteAuthorization>
+        <Status>Authorized</Status>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzed</Status>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </QuoteAuthorization>
+
+**Payment Required**
+
+::
+    
+    <QuoteAuthorization>
+        <Status>Pending</Status>
+        <PaymentURL>https://</PaymentURL>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzed</Status>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </QuoteAuthorization>
+
+**Parsing Failed**
+
+If one or more of the files submitted for this quote did not parse properly
+
+::
+
+    <QuoteAuthorization>
+        <Status>Error</Status>
+        <QuoteURL>https://</QuoteURL>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzed</Status>
+                        <AssetID>123</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                    <File>
+                        <Status>Analysis Failed</Status>
+                        <AssetID>124</AssetID>
+                        <FileName>example2.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+        <Error>
+            <ReasonCode>307</ReasonCode>
+            <SimpleMessage>Parsing Failed</SimpleMessage>
+            <DetailedMessage>
+                            One or more of the files                      
+                            encountered a parsing   
+                            error. This quote is    
+                            invalid.
+            </DetailedMessage>
+        </Error>                            
+    </QuoteAuthorization>
+
+Errors
+======
+If Authorize Quote encountered an error, the response will contain an Error element consisting of
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+information.  The most common error will be related to a conflict (HTTP status code 409), which 
+happens when the quote information submitted does not match the information within the onDemand 
+service.
+
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++-------------------------+-------------------------+-------------------------+
+| 300                     | Miscellaneous error     | A miscellaneous or      |
+|                         |                         |                         |
+|                         |                         | unexpected error        |
+|                         |                         |                         |
+|                         |                         | has occured.            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 301                     | The number of available | When this quote was     |
+|                         |                         |                         |
+|                         | translation credits has | created, the number of  |
+|                         |                         |                         |
+|                         | changed.                | available translation   |
+|                         |                         |                         |
+|                         |                         | credit was different    |
+|                         |                         |                         |
+|                         |                         | than are available now. |
++-------------------------+-------------------------+-------------------------+
+| 302                     | The amount of prepaid   | When this quote was     |
+|                         |                         |                         |
+|                         | available pre-paid      | created, the amount of  |
+|                         |                         |                         |
+|                         | has changed.            | prepaid credit was      |
+|                         |                         |                         |
+|                         |                         | different than it is    |
+|                         |                         |                         |
+|                         |                         | now.                    |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 303                     | Wrong quote ID          | The QuoteID in the      |
+|                         |                         |                         |
+|                         |                         | request body does not   |
+|                         |                         |                         |
+|                         |                         | match what was in the   |
+|                         |                         |                         |
+|                         |                         | URL.                    |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 304                     | Wrong language options  | The source or target    |
+|                         |                         |                         |
+|                         |                         | languages are different |
+|                         |                         |                         |
+|                         |                         | that when the quote     |
+|                         |                         |                         |
+|                         |                         | was created.            |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 305                     | Price change            | The price has changed.  |
+|                         |                         |                         |
+|                         |                         | This could be because   |
+|                         |                         |                         |
+|                         |                         | less credit is available|
+|                         |                         |                         |
+|                         |                         | or it could be because  |
+|                         |                         |                         |
+|                         |                         | the information sent    |
+|                         |                         |                         |
+|                         |                         | in the quote has been   |
+|                         |                         |                         |
+|                         |                         | been altered.           |
++-------------------------+-------------------------+-------------------------+
+| 306                     | Quote Not Ready         | The quote is not yet in |
+|                         |                         |                         |
+|                         |                         | a pending state so      |
+|                         |                         |                         |
+|                         |                         | it cannot be authorized.|
+|                         |                         |                         |
+|                         |                         | This reason code will   |
+|                         |                         |                         |
+|                         |                         | be accompanied by an    |
+|                         |                         |                         |
+|                         |                         | HTTP status code of 405.|
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 307                     | Parsing Failed          | One or more of the files|
+|                         |                         |                         |
+|                         |                         | encountered a parsing   |
+|                         |                         |                         |
+|                         |                         | error. This quote is    |
+|                         |                         |                         |
+|                         |                         | invalid.                |
++-------------------------+-------------------------+-------------------------+
+

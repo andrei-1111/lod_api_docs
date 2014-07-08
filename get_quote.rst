@@ -7,7 +7,7 @@ Get Quote
 **Method:**    GET
 =============  ======================
 
-Returns information about the merchant’s account
+Returns information about a quote.  This API is useful for polling 
 
 Return Codes
 ============
@@ -28,6 +28,12 @@ Return Codes
 |                         |                         | member of an enterprise |
 |                         |                         |                         |
 |                         |                         | site.                   |
++-------------------------+-------------------------+-------------------------+
+| Not Found               | 404                     | The URL does not relate |
+|                         |                         |                         |
+|                         |                         | to a quote that the     |
+|                         |                         |                         |
+|                         |                         | account owns.           |
 +-------------------------+-------------------------+-------------------------+
 
 Response Body
@@ -163,11 +169,31 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 | .AssetID                |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+| .File                   |                         |                         |
+|                         |                         |                         |
+| .AssetID                |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | Original name of the    |
+|                         |                         |                         |
+| .File                   |                         | file.                   |
+|                         |                         |                         |
+| .FileName               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | See :doc:`list_files`   |
+|                         |                         |                         |
+| .File                   |                         | for a list of file      |
+|                         |                         |                         |
+| .Statuys                |                         | statuses .              |
++-------------------------+-------------------------+-------------------------+
 
   
 
-Response Example
-================
+Product-Based Quote Response Example
+====================================
 
 ::
 
@@ -193,3 +219,79 @@ Response Example
             </Project>
         </Projects>
     </Quote>
+
+
+File-Based Quote Response Example
+====================================
+
+**Quote is ready for payment**
+::
+
+   <Quote>
+        <QuoteID>132</QuoteID>
+        <Status>Pending</Status>
+        <TotalCost>10.00</TotalCost>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzed</Status>
+                        <AssetID>999</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </Quote>
+
+**Price has not been calculated yet**
+
+::
+
+   <Quote>
+        <QuoteID>132</QuoteID>
+        <Status>New</Status>
+        <TotalCost>/>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analyzing</Status>
+                        <AssetID>999</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </Quote>
+
+**Quote contains a file that could not be parsed**
+
+::
+
+   <Quote>
+        <QuoteID>132</QuoteID>
+        <Status>Error</Status>
+        <TotalCost>/>
+        <Projects>
+            <Project>
+                <ProjectID>123</ProjectID>
+                <ProjectURL>https://</ProjectURL>
+                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <Files>
+                    <File>
+                        <Status>Analysis Failed</Status>
+                        <AssetID>999</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+            </Project>
+        </Projects>
+    </Quote>
+

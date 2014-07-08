@@ -11,6 +11,11 @@ This interface is used to generate a quote.  A quote can contain multiple projec
 
 The API client should use an API key set associated with a customer (merchant) account when submitting and retrieving projects on behalf of that customer.  This will establish ownership of that project for access control and also attribute transactions to individual customer accounts. The API client can create an customer account using the :doc:`create_account` API.
 
+Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to generating the quote 
+(see :doc:`add_file`)
+
+
+
 Request Body
 ============
 
@@ -88,7 +93,14 @@ Request Body
 | .LanguageCode           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | Products                | List                    | List of Product         |
-|                         |                         | Elements                |
+|                         |                         |                         |
+|                         |                         | Elements. Products      |
+|                         |                         |                         |
+|                         |                         | are only allowed as     |
+|                         |                         |                         |
+|                         |                         | input if the service    |
+|                         |                         |                         |
+|                         |                         | supports products.      |
 +-------------------------+-------------------------+-------------------------+
 | Products                | String                  | The title of the        |
 |                         |                         |                         |
@@ -210,9 +222,51 @@ Request Body
 |                         |                         |                         |
 | .Value                  |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | A collection of file    |
+|                         |                         |                         |
+|                         |                         | elements. The files     |
+|                         |                         |                         |
+|                         |                         | referenced need to      |
+|                         |                         |                         |
+|                         |                         | supported by the        |
+|                         |                         |                         |
+|                         |                         | selected service.       |
+|                         |                         |                         |
+|                         |                         | See :doc:`list_services`|
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Container               | A file is described     |
+|                         |                         |                         |
+| .File                   |                         | with a AssetID of a     |
+|                         |                         |                         |
+|                         |                         | previously uploaded file|
+|                         |                         |                         |
+|                         |                         | (see :doc:`add_file`)   |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | AssetID of previously   |
+|                         |                         |                         |
+| .File                   |                         | uploaded file. Note:    |
+|                         |                         |                         |
+| .AssetID                |                         | the file type needs to  |
+|                         |                         |                         |
+|                         |                         | be consistent with the  |
+|                         |                         |                         |
+|                         |                         | valid file types for    |
+|                         |                         |                         |
+|                         |                         | the service. Also,      |
+|                         |                         |                         |
+|                         |                         | a file cannot be        |
+|                         |                         |                         |
+|                         |                         | associated with more    |
+|                         |                         |                         |
+|                         |                         | that one quote.         |
++-------------------------+-------------------------+-------------------------+
 
-Request Example
-===============
+
+
+Product Request Example
+=======================
 
 ::
 
@@ -224,7 +278,7 @@ Request Example
             </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
-                <LanguageCode>en-uk</LanguageCode>
+                <LanguageCode>en-gb</LanguageCode>
             </SourceLanguage>
             <TargetLanguages>
                 <TargetLanguage>
@@ -286,6 +340,37 @@ Request Example
     </GenerateQuote>
 
 
+File Request Example
+====================
+
+::
+
+    <GenerateQuote>
+        <TranslationOptions>
+            <Currency>EUR</Currency>
+            <NotificationURL>
+                    `https://www.example.com/
+            </NotificationURL>
+            <ServiceID>54</ServiceID>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>it-it</LanguageCode>
+                </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+             </TargetLanguages>
+        </TranslationOptions>
+        <Files>
+            <File>
+                <AssetID>123456</AssetID>
+            </File>
+        </Files>
+    </GenerateQuote>
+
 Return Codes
 ============
 
@@ -297,11 +382,9 @@ Return Codes
 +-------------------------+-------------------------+-------------------------+
 | Bad Request             | 400                     | This is probably        |
 |                         |                         |                         |
-|                         |                         | because of an invalid   |
+|                         |                         | because of a malformed  |
 |                         |                         |                         |
-|                         |                         | parameter such as       |
-|                         |                         |                         |
-|                         |                         | service id.             |
+|                         |                         | request body.           |
 +-------------------------+-------------------------+-------------------------+
 | Unauthorized            | 401                     | The request did not     |
 |                         |                         |                         |
@@ -313,11 +396,23 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
+| Conflict                | 409                     | This is probably        |
+|                         |                         |                         |
+|                         |                         | because of an invalid   |
+|                         |                         |                         |
+|                         |                         | parameter such as the   |
+|                         |                         |                         |
+|                         |                         | wrong service id or     |
+|                         |                         |                         |
+|                         |                         | incompatible file types.|
++-------------------------+-------------------------+-------------------------+
+
 
 Response Body
 =============
 
-The response body contains a quote for a project.
+The response body contains a quote for a project. Please note: the response may
+not contain a price.  If the submitted files 
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
@@ -335,6 +430,32 @@ The response body contains a quote for a project.
 |                         |                         | project was created in  |
 |                         |                         |                         |
 |                         |                         | UTC.                    |
++-------------------------+-------------------------+-------------------------+
+| Status                  | String                  | The status of the quote.|
+|                         |                         |                         |
+|                         |                         | "Ready" means that the  |
+|                         |                         |                         |
+|                         |                         | source content has been |
+|                         |                         |                         |
+|                         |                         | analyzed and the        |
+|                         |                         |                         |
+|                         |                         | project(s) has/have     |
+|                         |                         |                         |
+|                         |                         | been priced.            |
+|                         |                         |                         |
+|                         |                         | "Analyzing" means that  |
+|                         |                         |                         |
+|                         |                         | the price is still      |
+|                         |                         |                         |
+|                         |                         | being determined and    |
+|                         |                         |                         |
+|                         |                         | the client should       |
+|                         |                         |                         |
+|                         |                         | call :doc:`get_quote`   |
+|                         |                         |                         |
+|                         |                         | later to check on the   |
+|                         |                         |                         |
+|                         |                         | status.                 |
 +-------------------------+-------------------------+-------------------------+
 | AuthorizeURL            | String                  | URL to authorize the    |
 |                         |                         |                         |
@@ -452,11 +573,37 @@ The response body contains a quote for a project.
 | .AssetID                |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| DueDate                 | String                  | String representing     |
+| Products                | String                  | String representing     |
 |                         |                         |                         |
-|                         |                         | date/time (ISO 8601     |
+| .Product                |                         | date/time (ISO 8601     |
 |                         |                         |                         |
-|                         |                         | format) that the        |
+| .DueDate                |                         | format) that the        |
+|                         |                         |                         |
+|                         |                         | translation of the item |
+|                         |                         |                         |
+|                         |                         | is scheduled to be      |
+|                         |                         |                         |
+|                         |                         | completed in UTC        |
++-------------------------+-------------------------+-------------------------+
+| Files                   | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+| .File                   |                         |                         |
+|                         |                         |                         |
+| .AssetID                |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | Original name of the    |
+|                         |                         |                         |
+| .File                   |                         | file.                   |
+|                         |                         |                         |
+| .FileName               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Files                   | String                  | String representing     |
+|                         |                         |                         |
+| .File                   |                         | date/time (ISO 8601     |
+|                         |                         |                         |
+| .DueDate                |                         | format) that the        |
 |                         |                         |                         |
 |                         |                         | translation of the item |
 |                         |                         |                         |
@@ -465,19 +612,20 @@ The response body contains a quote for a project.
 |                         |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
 
-Response Example
-================
+Product-Based Quote Response Example
+====================================
 
 ::
 
     <Quote>
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
-        <LanguageCode>en-uk</LanguageCode>
+        <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
                     <TargetLanguage>
@@ -506,3 +654,167 @@ Response Example
                 </Product>
             </Products>
     </Quote>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Calculating</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>1</TranslationCredit>
+        <TotalCost/>
+        <PrepaidCredit/>5.00</PrepaidCredit>
+        <AmountDue/>
+        <Currency>EUR</Currency>
+
+        <Products>
+                <Product>
+                    <AssetID>999</AssetID>
+                    <SKUs>
+                        <SKU>
+                            <SKUNumber>123</SKUNumber>
+                        </SKU>
+                    </SKUs>
+                </Product>
+            </Products>
+    </Quote>
+
+File-Based Quote Response Example
+====================================
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Pending</Status>
+        <AuthorizeURL>https://…</AuthorizeURL>
+        <RejectURL>https://</RejectURL>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+        <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>0</TranslationCredit>
+        <TotalCost>10.00</TotalCost>
+        <PrepaidCredit>5.00</PrepaidCredit>
+        <AmountDue>5.00</AmountDue>
+        <Currency>EUR</Currency>
+
+        <Files>
+                <File>
+                    <AssetID>999</AssetID>
+                    <FileName>example.txt</FileName>
+                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
+                </File>
+        </Files>
+    </Quote>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Quote>
+        <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>Calculating</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+        </TargetLanguages>
+        <TotalCost/>
+        <PrepaidCredit/>5.00</PrepaidCredit>
+        <AmountDue/>
+        <Currency>EUR</Currency>
+
+        <Files>
+                <File>
+                    <AssetID>999</AssetID>
+                    <FileName>example.txt</FileName>
+                </File>
+        </Files>
+    </Quote>
+
+If one of or more files submitted are not compatible with the selected service, the response will look like
+
+::
+
+    <Quote>
+        <Error>
+            <ReasonCode>202</ReasonCode>
+            <SimpleMessage>The file example.txt, is not supported by the Voiceover Translation Service</SimpleMessage>
+            <DetailedMessage>The Video Translation Service only supports the following file types: .mov, .mp4, .flv, and .wmv</DetailedMessage>
+        </Error>
+    </Quote>
+
+
+Errors
+======
+If generate quote encountered an error, the response will contain an Error element consisting of
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+information. Here are some common cases.
+
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++-------------------------+-------------------------+-------------------------+
+| 200                     | Miscellaneous error     | A miscellaneous or      |
+|                         |                         |                         |
+|                         |                         | unexpected error        |
+|                         |                         |                         |
+|                         |                         | has occured.            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 201                     | There was a problem     | Request body could not  |
+|                         |                         |                         |
+|                         | with the source content.| parsed. Please verify   |
+|                         |                         |                         |
+|                         |                         | that the XML is well-   |
+|                         |                         |                         |
+|                         |                         | formd and the encoding  |
+|                         |                         |                         |
+|                         |                         | is correct.             |
++-------------------------+-------------------------+-------------------------+
+| 202                     | This service is not     | The selected service    |
+|                         |                         |                         |
+|                         | compatable with the     | does not support the    |
+|                         |                         |                         |
+|                         | submitted source        | submitted source        |
+|                         |                         |                         |
+|                         | content.                | content.                |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+
+

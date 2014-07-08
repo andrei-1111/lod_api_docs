@@ -7,8 +7,17 @@ List Services
 **Method:**    GET
 =============  ======================
 
+
+A key benefit of integrating with the Lionbridge onDemand API is that it gives you access to many different services.  At Lionbridge, we define a service as a set of processes that we can execute for you.  We have services for different quality levels (ranging from raw machine translation to professional translation by domain specialists).  We also have content-specific services. For example, we can `subtitle your videos<https://ondemand.lionbridge.com/service-detail/1/video-translation-multilingual-video-subtitling>`_.
+
 This interface lists translation services that are available through the
 API.
+
+**New in version 2014-06-10**
+
+To better support file-based services, version 2014-06-10 now has a valid inputs
+element.  If the service is a file-based service, this element will list the 
+file types that are supported by this service.
 
 Return Codes
 ============
@@ -75,20 +84,55 @@ The response body includes a list of products.
 |                         |                         |                         |
 |                         |                         | service                 |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         |                         | Container for Target    |
+| TargetLanguages         | Container               | Container for Target    |
 |                         |                         |                         |
 | .TargetLanguage         |                         | Language                |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         |                         | See glossary for        |
+| TargetLanguages         | String                  | See glossary for        |
 |                         |                         |                         |
 | .TargetLanguage         |                         | language code.          |
 |                         |                         |                         |
 | .LanguageCode           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| ValidInputs             | Container               | Contains source         |
+|                         |                         |                         |
+|                         |                         | content types that      |
+|                         |                         |                         |
+|                         |                         | this service can        |
+|                         |                         |                         |  
+|                         |                         | process                 |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | EmptyTag                | If this element exists  |
+|                         |                         |                         |
+| .Products               |                         | then this service       |
+|                         |                         |                         |
+|                         |                         | accepts Products        |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | Container               | Contains FileExtension  |
+|                         |                         |                         |
+| .Files                  |                         | elements for each       |
+|                         |                         |                         |
+|                         |                         | accepted file type.     |
+|                         |                         |                         |
+|                         |                         | If files are not        |
+|                         |                         |                         |
+|                         |                         | supported by this       |
+|                         |                         |                         |
+|                         |                         | service, there will     |
+|                         |                         |                         |
+|                         |                         | be no Files element.    |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| ValidInputs             | String                  | String representing     |
+|                         |                         |                         |
+| .Files                  |                         | a file extension        |
+|                         |                         |                         |
+| .FileExtension          |                         | that is accepted by the |
+|                         |                         |                         |
+|                         |                         | service.                |
++-------------------------+-------------------------+-------------------------+
 
-
-  
 
 Response Example
 ================
@@ -98,13 +142,16 @@ Response Example
     <Services>
         <Service>
             <ServiceID>123</ServiceID>
-            <Name>Service Name</Name>
+            <Name>Product Based Service</Name>
             <Description>
                 Service Description
             </Description>
             <PriceDescription>
                 Around £1 per listing.
             </PriceDescription>
+            <ValidInputs>
+                <Products/>
+            </ValidInputs>
             <SourceLanguages>
                 <SourceLanguage>
                     <LanguageCode>de-de</LanguageCode>
@@ -121,5 +168,38 @@ Response Example
                     <LanguageCode>fr-fr</LanguageCode>
                 </TargetLanguage>
             </TargetLanguages>
-        </Service>          
+        </Service>
+         <Service>
+            <ServiceID>123</ServiceID>
+            <Name>File Based Service</Name>
+            <Description>
+                Service Description
+            </Description>
+            <PriceDescription>
+                Around £1 per listing.
+            </PriceDescription>
+            <ValidInputs>
+                <Files>
+                    <FileExtension>xls</FileExtension>
+                    <FileExtension>docx</FileExtension>
+                </Files>
+            </ValidInputs>
+
+            <SourceLanguages>
+                <SourceLanguage>
+                    <LanguageCode>de-de</LanguageCode>
+                </SourceLanguage>
+                <SourceLanguage>
+                    <LanguageCode>en-us</LanguageCode>
+                </SourceLanguage>
+            </SourceLanguages>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>de-de</LanguageCode>
+                </TargetLanguage>
+                <TargetLanguage>
+                    <LanguageCode>fr-fr</LanguageCode>
+                </TargetLanguage>
+            </TargetLanguages>
+        </Service>                    
     </Services>

@@ -30,6 +30,18 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
+| Not Found               | 404                     | The URL does not relate |
+|                         |                         |                         |
+|                         |                         | to a product that the   |
+|                         |                         |                         |
+|                         |                         | account owns. Or a      |
+|                         |                         |                         |
+|                         |                         | translation in this     |
+|                         |                         |                         |
+|                         |                         | language does not exist |
+|                         |                         |                         |
+|                         |                         | for this product.       |
++-------------------------+-------------------------+-------------------------+
 
 Response Body
 =============
