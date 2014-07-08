@@ -21,7 +21,7 @@ EmailAddress  String  Email address of the primary user
 FirstName     String  First name of the primary user (optional)
 LastName      String  Last name of the primary user (optional)
 CompanyName   String  Merchant Company
-Country       String  Country that the merchant is headquartered in.  ISO 3166-1 2  character country code.
+Country       String  Country that the merchant is headquartered in.  `ISO 3166-1 2  character country code <http://en.wikipedia.org/wiki/ISO_3166-1>`_.
 VATID         String  Tax ID for VAT accounting.  Required for Irish merchants only
 ============  ======  ========
 
@@ -31,15 +31,15 @@ Request Example
 
 ::
 
-    <CreateAccount>
+    <Account>
         <MerchantID>123233244</MerchantID>
         <EmailAddress>example@example.com</EmailAddress>
         <FirstName>Joe</FirstName>
         <LastName>Bloggs</LastName>
         <CompanyName>ACME Coyote Products, Ltd.</CompanyName>
-        <Country>uk</Country>
+        <Country>GB</Country>
         <VATID>12334455544</VATID>
-    </CreateAccount> 
+    </Account> 
 
 
 Return Codes
