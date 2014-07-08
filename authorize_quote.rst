@@ -166,6 +166,12 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | merchant owns.          |
 +-------------------------+-------------------------+-------------------------+
+| Method not Allowed      | 405                     | The Quote is not ready  |
+|                         |                         |                         |
+|                         |                         | to be paid because the  |
+|                         |                         |                         |
+|                         |                         | price is not set.       |
++-------------------------+-------------------------+-------------------------+
 | Conflict                | 409                     | The quote is no longer  |
 |                         |                         |                         |
 |                         |                         | valid.  The response    |
@@ -503,22 +509,32 @@ service.
 |                         |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| 305                     | Price change            | The source or target    |
+| 305                     | Price change            | The price has changed.  |
 |                         |                         |                         |
-|                         |                         | languages are different |
+|                         |                         | This could be because   |
 |                         |                         |                         |
-|                         |                         | that when the quote     |
+|                         |                         | less credit is available|
 |                         |                         |                         |
-|                         |                         | was created.            |
+|                         |                         | or it could be because  |
 |                         |                         |                         |
+|                         |                         | the information sent    |
 |                         |                         |                         |
+|                         |                         | in the quote has been   |
 |                         |                         |                         |
+|                         |                         | been altered.           |
 +-------------------------+-------------------------+-------------------------+
 | 306                     | Quote Not Ready         | The quote is not yet in |
 |                         |                         |                         |
 |                         |                         | a pending state so      |
 |                         |                         |                         |
 |                         |                         | it cannot be authorized.|
+|                         |                         |                         |
+|                         |                         | This reason code will   |
+|                         |                         |                         |
+|                         |                         | be accompanied by an    |
+|                         |                         |                         |
+|                         |                         | HTTP status code of 405.|
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | 307                     | Parsing Failed          | One or more of the files|
 |                         |                         |                         |
