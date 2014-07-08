@@ -84,7 +84,7 @@ Response Example
         <FirstName>Joe</FirstName>
         <LastName>Bloggs</LastName>
         <CompanyName>ACME Coyote Products, Ltd.</CompanyName>
-        <Country>uk</Country>
+        <Country>GB</Country>
         <AccessKeyID>qzwBzqCiMsuHoUrZEcLqgH</AccessKeyID>
         <SecretAccessKey>znkcyBjEWKQFIELAkotspHDoJbwHJyRPXChFYWDn</SecretAccessKey>
     </Account> 
