@@ -31,7 +31,7 @@ Request Example
 
 ::
 
-    <Account>
+    <CreateAccount>
         <MerchantID>123233244</MerchantID>
         <EmailAddress>example@example.com</EmailAddress>
         <FirstName>Joe</FirstName>
@@ -39,7 +39,7 @@ Request Example
         <CompanyName>ACME Coyote Products, Ltd.</CompanyName>
         <Country>GB</Country>
         <VATID>12334455544</VATID>
-    </Account> 
+    </CreateAccount> 
 
 
 Return Codes
