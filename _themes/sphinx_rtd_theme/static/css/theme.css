@@ -3226,3 +3226,5 @@ img {
 .admonition.warning span[id*='MathJax-Span'] {
     color: #fff;
 }
+
+#contents {display: none;}
