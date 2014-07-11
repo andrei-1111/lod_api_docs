@@ -12,10 +12,10 @@ return a data structure like this:
 
 ::
     
-    <CreateMerchantAccount>
+    <Account>
         <Status>Not Created</Status>
         <Error>
-            <ReasonCode>1</ReasonCode>
+            <ReasonCode>403</ReasonCode>
             <SimpleMessage>
                 This account already exists.
             </SimpleMessage>
@@ -25,7 +25,7 @@ return a data structure like this:
                 add it to the client system manually.
             </DetailedMessage>
         </Error>
-    </CreateMerchantAccount>
+    </Account>
 
 
 In version 2014-06-10, the error element was broken down into three sub-elements: 

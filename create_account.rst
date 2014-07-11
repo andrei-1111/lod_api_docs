@@ -80,6 +80,7 @@ Response Example
 
     <Account>
         <MerchantID>123233244</MerchantID>
+        <Status>Created</Status>
         <EmailAddress>example@example.com</EmailAddress>
         <FirstName>Joe</FirstName>
         <LastName>Bloggs</LastName>
@@ -88,3 +89,49 @@ Response Example
         <AccessKeyID>qzwBzqCiMsuHoUrZEcLqgH</AccessKeyID>
         <SecretAccessKey>znkcyBjEWKQFIELAkotspHDoJbwHJyRPXChFYWDn</SecretAccessKey>
     </Account> 
+
+
+Errors
+======
+If generate quote encountered an error, the response will contain an Error element consisting of
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+information. Here are some common cases.
+
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++-------------------------+-------------------------+-------------------------+
+| 400                     | Miscellaneous error     | A miscellaneous or      |
+|                         |                         |                         |
+|                         |                         | unexpected error        |
+|                         |                         |                         |
+|                         |                         | has occured.            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 401                     | There was a problem     | Request body could not  |
+|                         |                         |                         |
+|                         | data in the request body| parsed. Please verify   |
+|                         |                         |                         |
+|                         |                         | that the XML is well-   |
+|                         |                         |                         |
+|                         |                         | formd and the encoding  |
+|                         |                         |                         |
+|                         |                         | is correct.             |
++-------------------------+-------------------------+-------------------------+
+| 403                     | An account already      | A user account with     |
+|                         |                         |                         |
+|                         | exists.                 | this email already      |
+|                         |                         |                         |
+|                         |                         | exists. The user should |
+|                         |                         |                         |
+|                         |                         | log into onDemand and   |
+|                         |                         |                         |
+|                         |                         | copy his access keys.   |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 404                     | Merchant ID already in  | A user  account with    |
+|                         |                         |                         |
+|                         | use.                    | this merchant id        |
+|                         |                         |                         |
+|                         |                         | already exists.         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
