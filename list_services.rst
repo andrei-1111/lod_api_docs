@@ -49,7 +49,7 @@ The response body includes a list of products.
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
-| ServiceName             | String                  | Name of the sevice      |
+| Name                    | String                  | Name of the sevice      |
 +-------------------------+-------------------------+-------------------------+
 | Description             | String                  | Description of the      |
 |                         |                         |                         |
