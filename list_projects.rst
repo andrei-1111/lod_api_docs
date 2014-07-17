@@ -105,7 +105,22 @@ credentials.
 |                         |                         |                         |
 |                         |                         | completed.              |
 +-------------------------+-------------------------+-------------------------+
-
+| SourceLanguage.Language | String                  | See LanguageCode in     |
+|                         |                         |                         |
+| Code                    |                         | glossary                |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| TargetLanguages         | Container               | Container containing    |
+|                         |                         |                         |
+|                         |                         | target languages.       |
++-------------------------+-------------------------+-------------------------+
+| TargetLanguages         | String                  | See LanguageCode in     |
+|                         |                         |                         |
+| .TargetLanguages        |                         | glossary                |
+|                         |                         |                         |
+| .LanguageCode           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
   
 
 Response Example

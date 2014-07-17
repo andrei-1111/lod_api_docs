@@ -48,7 +48,7 @@ The response body includes a list of file assets.
 | .AssetID                |                         | for the file asset.        |
 |                         |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | Integer                 | The current state in the   |
+| File                    | String                  | The current state in the   |
 |                         |                         |                            |
 | .Status                 |                         | onDemand File Lifecycle    |
 |                         |                         |                            |

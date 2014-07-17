@@ -816,5 +816,20 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| 203                     | Asset does not exist.   | A file with this asset  |
+|                         |                         |                         |
+|                         |                         | ID does not exist in    |
+|                         |                         |                         |
+|                         |                         | the system.             |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 204                     | Asset is already in use.| One or more of the      |
+|                         |                         |                         |
+|                         |                         | referenced assets is    |
+|                         |                         |                         |
+|                         |                         | being used in another   |
+|                         |                         |                         |
+|                         |                         | project.                |
++-------------------------+-------------------------+-------------------------+
 
 

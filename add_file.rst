@@ -3,11 +3,19 @@ Add File
 ===================
 
 =============  ===========================
-**Resource:**  /api/files/add/<<filename>>
+**Resource:**  /api/files/add/<<language_code>>/<<filename>>
 **Method:**    POST
 =============  ===========================
 
-This interface adds a file to the system. Files are then used to generate quotes.  If a file is not used in a quote
+This interface adds a file to the system. 
+
+The URL for this method includes two parameters.  
+
+
+- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain.
+- filename is the original name of the file.  It needs to be url encoded.
+
+Files are then used to generate quotes.  If a file is not used in a quote
 within 1 hour of it being uploaded it will be deleted from the system.  Lionbridge onDemand has a general retention 
 policy of 60 days for all customer content.
 
@@ -187,7 +195,7 @@ including a payment URL.  The user must follow this URL to a payment page.
 |                         |                         | when creating a quote   |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| FileName                | String                  | Name of the file passed |
+| Name                    | String                  | Name of the file passed |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
@@ -203,5 +211,5 @@ Response Example
 
     <File>
         <AssetID>1235</AssetID>
-        <FileName>foo.txt</FileName>
+        <Name>foo.txt</Name>
     </File>
