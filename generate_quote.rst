@@ -717,8 +717,6 @@ File-Based Quote Response Example
                         <LanguageCode>fr-fr</LanguageCode>
                     </TargetLanguage>
         </TargetLanguages>
-        <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>0</TranslationCredit>
         <TotalCost>10.00</TotalCost>
         <PrepaidCredit>5.00</PrepaidCredit>
         <AmountDue>5.00</AmountDue>
@@ -831,5 +829,10 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         | project.                |
 +-------------------------+-------------------------+-------------------------+
-
+| 205                     | Incompatible Source     | File with id {id} is in |
+|                         |                         |                         |
+|                         | Language.               | the wrong language for  |
+|                         |                         |                         |
+|                         |                         | this project            |
++-------------------------+-------------------------+-------------------------+
 
