@@ -11,6 +11,11 @@ Retrieves information about a project.  If the project is complete, the
 request will return all of the translated products associated with the
 project.
 
+Arguments
+=========
+
+- **Project ID:** The onDemand Project ID.  You will receive this ID from :doc:`generate_quote` 
+
 
 Return Codes
 ============

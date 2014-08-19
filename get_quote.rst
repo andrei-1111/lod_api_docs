@@ -9,6 +9,11 @@ Get Quote
 
 Returns information about a quote.  This API is useful for polling 
 
+Arguments
+=========
+
+- **Project ID:** The onDemand Quote ID.  You will receive this ID from :doc:`generate_quote` 
+
 Return Codes
 ============
 
