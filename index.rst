@@ -13,12 +13,12 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
 The API can be used against the `onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
 
 
-**Version:** 2014-06-10 *Latest*
+**Version:** 2014-09-04 *Latest*
 
 Earlier Releases:
 
+- `Version 2014-06-10 <http://api-docs.liondemand.com/archive/2014-06-10/>`_
 - `Version 2014-02-28 <http://api-docs.liondemand.com/archive/2014-02-28/>`_
-
 
 
 

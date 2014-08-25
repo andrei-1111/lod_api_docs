@@ -14,6 +14,12 @@ A key benefit of integrating with the Lionbridge onDemand API is that it gives y
 This interface lists translation services that are available through the
 API.
 
+**New in version 2014-09-04**
+
+The list services api now includes a minimum units element.  If the minimum units is 500 words,
+a 400 word project would be priced the same as a 500 word project.  The unit minimum is applied
+at the project level.
+
 **New in version 2014-06-10**
 
 To better support file-based services, version 2014-06-10 now has a valid inputs
@@ -21,6 +27,8 @@ element.  If the service is a file-based service, this element will list the
 file types that are supported by this service.
 
 Services can be filtered by their support of different input formats by using the URL /api/services?extension=<<extension>>.  See the extension argument below.
+
+
 
 Arguments
 =========
@@ -142,6 +150,25 @@ The response body includes a list of products.
 |                         |                         |                         |
 |                         |                         | service.                |
 +-------------------------+-------------------------+-------------------------+
+| MinimumUnits            | Integer                 | The minimum project size|
+|                         |                         |                         |
+|                         |                         | expressed in the number |
+|                         |                         |                         |
+|                         |                         | of units.               |
++-------------------------+-------------------------+-------------------------+
+| UnitType                | String                  | The unit of measure for |
+|                         |                         |                         |
+|                         |                         | pricing the service.    |
+|                         |                         |                         |
+|                         |                         | Options are: words,     |
+|                         |                         |                         |
+|                         |                         | pages, standardized     |
+|                         |                         |                         |
+|                         |                         | pages, minutes, rows,   |
+|                         |                         |                         |
+|                         |                         | products, and files.    |
++-------------------------+-------------------------+-------------------------+
+
 
 
 Response Example
@@ -162,6 +189,9 @@ Response Example
             <ValidInputs>
                 <Products/>
             </ValidInputs>
+            <UnitType>products</UnitType>
+            <MinimumUnits>10</MinimumUnits>
+
             <SourceLanguages>
                 <SourceLanguage>
                     <LanguageCode>de-de</LanguageCode>
@@ -194,6 +224,8 @@ Response Example
                     <FileExtension>docx</FileExtension>
                 </Files>
             </ValidInputs>
+            <UnitType>words</UnitType>
+            <MinimumUnits>500</MinimumUnits>
 
             <SourceLanguages>
                 <SourceLanguage>
