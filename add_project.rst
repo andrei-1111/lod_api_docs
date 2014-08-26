@@ -1,22 +1,17 @@
-==============
-Generate Quote
-==============
+=============
+Add Project
+=============
 
-=============  ===================
-**Resource:**  /api/quote/generate
+=============  ============================
+**Resource:**  /api/projects/add
 **Method:**    POST
-=============  ===================
+=============  ============================
 
-This interface is used to generate a quote.  A quote can contain multiple projects. 
+Adds a new project to onDemand.  Should be used in conjunction with :doc:`generate_quote` to
+make a purchase.
 
-Quotes can be generated using different inputs:
-
-- Product elements, which are are inserted into the generate quote request
-- Files that were uploading using the :doc:`add_file` API.
-- Projects that were added using the :doc:`add_project` API.  These projects contain either files or products.  The advantage of generating a quote out of individual projects is that it allows you more flexibility.  For example, you can have different source languages, target languages, and even services.   
-
-The API client should use an API key set associated with a customer (merchant) account when submitting and retrieving projects on behalf of that customer.  This will establish ownership of that project for access control and also attribute transactions to individual customer accounts. The API client can create an customer account using the :doc:`create_account` API.
-
+Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to creating the project.
+(see :doc:`add_file`)
 
 
 
@@ -26,11 +21,39 @@ Request Body
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
 +-------------------------+-------------------------+-------------------------+
+| ProjectName             | String                  | Optional. String        |
+|                         |                         |                         |
+|                         |                         | representing the name   |
+|                         |                         |                         |
+|                         |                         | of the project.         |
+|                         |                         |                         |
+|                         |                         | Maximum 75 characters.  |
+|                         |                         |                         |
+|                         |                         | If this element is not  |
+|                         |                         |                         |
+|                         |                         | included, a name will   |
+|                         |                         |                         |
+|                         |                         | be generated.           |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | Container               | Contains information    |
 |                         |                         |                         |
 |                         |                         | specifying the          |
 |                         |                         |                         |
 |                         |                         | translation project.    |
++-------------------------+-------------------------+-------------------------+
+| TranslationOptions      | String                  | Optional. String        |
+|                         |                         |                         |
+| .ProjectName            |                         | representing the name   |
+|                         |                         |                         |
+|                         |                         | of the project.  If     |
+|                         |                         |                         |
+|                         |                         | this element is not     |
+|                         |                         |                         |
+|                         |                         | included, a name will   |
+|                         |                         |                         |
+|                         |                         | be generated.           |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | String                  | String representing     |
 |                         |                         |                         |
@@ -71,25 +94,12 @@ Request Body
 |                         |                         |                         |
 |                         |                         | on the body.  This      |
 |                         |                         |                         |
-|                         |                         | element is optional     |
+|                         |                         | element is optional.    |
 |                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | projects.               |
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | Container               | Contains 1 source       |
 |                         |                         |                         |
-| .SourceLanguage         |                         | language. This          |
-|                         |                         |                         |
-|                         |                         | element is optional     |
-|                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | projects.               |
+| .SourceLanguage         |                         | language                |
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | String                  | See LanguageCode in     |
 |                         |                         |                         |
@@ -99,15 +109,7 @@ Request Body
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | Container               | Contains 1 or more      |
 |                         |                         |                         |
-| .TargetLanguages        |                         | target languages. This  |
-|                         |                         |                         |
-|                         |                         | element is optional     |
-|                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | projects.               |
+| .TargetLanguages        |                         | target languages        |
 +-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | String                  | See LanguageCode in     |
 |                         |                         |                         |
@@ -295,7 +297,8 @@ Product Request Example
 
 ::
 
-    <GenerateQuote>
+    <AddProject>
+        <ProjectName>
         <TranslationOptions>
             <Currency>EUR</Currency>
             <NotificationURL>
@@ -362,7 +365,7 @@ Product Request Example
 
         </Products>
 
-    </GenerateQuote>
+    </AddProject>
 
 
 File Request Example
@@ -370,11 +373,11 @@ File Request Example
 
 ::
 
-    <GenerateQuote>
+    <AddProject>
         <TranslationOptions>
             <Currency>EUR</Currency>
             <NotificationURL>
-                    https://www.example.com/
+                    `https://www.example.com/
             </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
@@ -394,31 +397,7 @@ File Request Example
                 <AssetID>123456</AssetID>
             </File>
         </Files>
-    </GenerateQuote>
-
-
-Project Request Example
-=======================
-
-::
-
-    <GenerateQuote>
-        <TranslationOptions>
-            <Currency>EUR</Currency>
-            <NotificationURL>
-                https://www.example.com/
-            </NotificationURL>
-        </TranslationOptions>
-        <Projects>
-            <Project>
-                <ProjectID>123456</ProjectID>
-            </Project>
-        </Projects>
-    </GenerateQuote>
-
-
-
-
+    </AddProject>
 
 Return Codes
 ============
@@ -466,9 +445,15 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +-------------------------+-------------------------+-------------------------+
-| QuoteID                 | Integer                 | onDemand ID of the      |
+| ProjectID               | Integer                 | onDemand ID of the      |
 |                         |                         |                         |
-|                         |                         | Quote.                  |
+|                         |                         | Project.                |
++-------------------------+-------------------------+-------------------------+
+| ProjectName             | String                  | Either the submitted or |
+|                         |                         |                         |
+|                         |                         | or generated project    |
+|                         |                         |                         |
+|                         |                         | name.                   |
 +-------------------------+-------------------------+-------------------------+
 | CreationDate            | String                  | String representing the |
 |                         |                         |                         |
@@ -480,9 +465,9 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | UTC.                    |
 +-------------------------+-------------------------+-------------------------+
-| Status                  | String                  | The status of the quote.|
+| Status                  | String                  | The status of the       |
 |                         |                         |                         |
-|                         |                         | "Ready" means that the  |
+|                         |                         | project.                |
 |                         |                         |                         |
 |                         |                         | source content has been |
 |                         |                         |                         |
@@ -506,17 +491,6 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | status.                 |
 +-------------------------+-------------------------+-------------------------+
-| AuthorizeURL            | String                  | URL to authorize the    |
-|                         |                         |                         |
-|                         |                         | quote.  See             |
-|                         |                         |                         |
-|                         |                         | :doc:`authorize_quote`  |
-+-------------------------+-------------------------+-------------------------+
-| RejectURL               | String                  | Use this to reject the  |
-|                         |                         |                         |
-|                         |                         | quote. See              |
-|                         |                         | :doc:`reject_quote`     |
-+-------------------------+-------------------------+-------------------------+
 | ServiceID               | Integer                 | ID of Service           |
 +-------------------------+-------------------------+-------------------------+
 | SourceLanguage          | String                  | See LanguageCode in     |
@@ -533,57 +507,11 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 | .LanguageCode           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TotalTranslations       | Integer                 | The number of           |
-|                         |                         |                         |
-|                         |                         | translations requested. |
-|                         |                         |                         |
-|                         |                         | For example, if the     |
-|                         |                         |                         |
-|                         |                         | merchant sends 5        |
-|                         |                         |                         |
-|                         |                         | products to be          |
-|                         |                         |                         |
-|                         |                         | translated into 3       |
-|                         |                         |                         |
-|                         |                         | languages, the value of |
-|                         |                         |                         |
-|                         |                         | TotalTranslations would |
-|                         |                         |                         |
-|                         |                         | be 15.                  |
-+-------------------------+-------------------------+-------------------------+
-| TranslationCredit       | Integer                 | Number of free          |
-|                         |                         |                         |
-|                         |                         | translations available  |
-|                         |                         |                         |
-|                         |                         | at the selected service |
-|                         |                         |                         |
-|                         |                         | level.                  |
-+-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency used to pay    |
-|                         |                         |                         |
-|                         |                         | for the project. See    |
-|                         |                         |                         |
-|                         |                         | glossary for list of    |
-|                         |                         |                         |
-|                         |                         | valid currencies.       |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | TotalPrice              | Decimal                 | Total price that needs  |
 |                         |                         |                         |
 |                         |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
-+-------------------------+-------------------------+-------------------------+
-| PrepaidCredit           | Decimal                 | If a merchant has a     |
-|                         |                         |                         |
-|                         |                         | positive credit balance |
-|                         |                         |                         |
-|                         |                         | with onDemand, it will  |
-|                         |                         |                         |
-|                         |                         | be reported here.       |
-+-------------------------+-------------------------+-------------------------+
-| AmountDue               | Decimal                 | TotalPrice -            |
-|                         |                         | PrepaidCredit           |
 +-------------------------+-------------------------+-------------------------+
 |                         |                         |                         |
 | Products                | Container               | Container of products   |
@@ -660,65 +588,16 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
-| Projects                | Integer                 | ProjectID of included   |
-|                         |                         |                         |
-| .Project                |                         | project                 |
-|                         |                         |                         |
-| .ProjectID              |                         |                         |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 
-Product-Based Quote Response Example
+Product-Based Project Response Example
 ====================================
 
 ::
 
-    <Quote>
-        <QuoteID>132</QuoteID>
+    <Project>
+        <ProjectID>132</ProjectID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
-        <ServiceID>54</ServiceID>
-        <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
-        <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>1</TranslationCredit>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-
-        <Products>
-                <Product>
-                    <AssetID>999</AssetID>
-                    <SKUs>
-                        <SKU>
-                            <SKUNumber>123</SKUNumber>
-                        </SKU>
-                    </SKUs>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
-                </Product>
-        </Products>
-    </Quote>
-
-If the price is not yet ready, the response will look like:
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
+        <Status>New</Status>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
@@ -731,11 +610,7 @@ If the price is not yet ready, the response will look like:
                         <LanguageCode>fr-fr</LanguageCode>
                     </TargetLanguage>
         </TargetLanguages>
-        <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>1</TranslationCredit>
-        <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
-        <AmountDue/>
+        <TotalCost>10.00</TotalCost>
         <Currency>EUR</Currency>
 
         <Products>
@@ -746,69 +621,100 @@ If the price is not yet ready, the response will look like:
                             <SKUNumber>123</SKUNumber>
                         </SKU>
                     </SKUs>
+                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
                 </Product>
             </Products>
-    </Quote>
-
-File-Based Quote Response Example
-====================================
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
-        <ServiceID>54</ServiceID>
-        <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-
-        <Files>
-                <File>
-                    <AssetID>999</AssetID>
-                    <FileName>example.txt</FileName>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
-                </File>
-        </Files>
-    </Quote>
+    </Project>
 
 If the price is not yet ready, the response will look like:
 
 ::
 
-    <Quote>
-        <QuoteID>132</QuoteID>
+    <Project>
+        <ProjectID>132</ProjectID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
+        <Status>New</Status>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
         </TargetLanguages>
         <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
+        <Currency>EUR</Currency>
+
+        <Products>
+            <Product>
+                <AssetID>999</AssetID>
+                <SKUs>
+                    <SKU>
+                        <SKUNumber>123</SKUNumber>
+                    </SKU>
+                </SKUs>
+            </Product>
+        </Products>
+    </Project>
+
+File-Based Project Response Example
+====================================
+
+::
+
+    <Project>
+        <ProjectID>132</ProjectID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>New</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <TotalCost>10.00</TotalCost>
+        <Currency>EUR</Currency>
+
+        <Files>
+            <File>
+                <AssetID>999</AssetID>
+                <FileName>example.txt</FileName>
+                <DueDate>2014-02-11T10:22:46Z</DueDate> 
+            </File>
+        </Files>
+    </Project>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Project>
+        <ProjectID>132</ProjectID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>New</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <TotalCost/>
         <AmountDue/>
         <Currency>EUR</Currency>
 
@@ -818,114 +724,19 @@ If the price is not yet ready, the response will look like:
                     <FileName>example.txt</FileName>
                 </File>
         </Files>
-    </Quote>
+    </Project>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
 
 ::
 
-    <Quote>
+    <Project>
         <Error>
             <ReasonCode>202</ReasonCode>
             <SimpleMessage>The file example.txt, is not supported by the Voiceover Translation Service</SimpleMessage>
             <DetailedMessage>The Video Translation Service only supports the following file types: .mov, .mp4, .flv, and .wmv</DetailedMessage>
         </Error>
-    </Quote>
-
-Project Based Quote Response Example
-====================================
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
-    </Quote>
-
-If the price is not yet ready, the response will look like:
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
-        <ServiceID>54</ServiceID>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
-        <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
-        <AmountDue/>
-        <Currency>EUR</Currency>
-
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
-    </Quote>
-
-If one of or more of the projects is already included in another quote, the response will look like this:
-::
-
-    <Quote>
-        <Error>
-            <ReasonCode>207</ReasonCode>
-            <SimpleMessage>The Project(s) with IDs 1223, 2222 are already in use.</SimpleMessage>
-            <DetailedMessage>
-                Projects with the following IDs are already associated with another quote.
-            </DetailedMessage>
-        </Error>
-    </Quote>
-
+    </Project>
 
 
 Errors
@@ -986,18 +797,4 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         | this project            |
 +-------------------------+-------------------------+-------------------------+
-| 206                     | Project does not exist. | A project with this     |
-|                         |                         |                         |
-|                         |                         | ID does not exist in    |
-|                         |                         |                         |
-|                         |                         | the system.             |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| 207                     | Project is already in   | One or more of the      |
-|                         |                         |                         |
-|                         | use.                    | referenced projects is  |
-|                         |                         |                         |
-|                         |                         | being used in another   |
-|                         |                         |                         |
-|                         |                         | quote.                  |
-+-------------------------+-------------------------+-------------------------+
+

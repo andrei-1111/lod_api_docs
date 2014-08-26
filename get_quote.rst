@@ -239,6 +239,7 @@ File-Based Quote Response Example
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
+                <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
                 <Files>
@@ -263,6 +264,7 @@ File-Based Quote Response Example
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
+                <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
                 <Files>
@@ -287,6 +289,7 @@ File-Based Quote Response Example
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
+                <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
                 <Files>

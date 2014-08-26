@@ -45,9 +45,11 @@ Contents
    get_quote
    reject_quote
    notification 
+   add_project
    list_projects
    get_project
    add_file
+   add_file_by_reference
    list_files
    get_file
    get_file_translation

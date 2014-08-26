@@ -50,6 +50,12 @@ credentials.
 |                         |                         |                         |
 |                         |                         | GetProject.             |
 +-------------------------+-------------------------+-------------------------+
+| Project                 | String                  | The name of the project |
+|                         |                         |                         |
+| .ProjectName            |                         | Either provided or      |
+|                         |                         |                         |
+|                         |                         | system generated.       |
++-------------------------+-------------------------+-------------------------+
 | Project                 | String                  | The status of the       |
 |                         |                         |                         |
 | .Status                 |                         | Project                 |
