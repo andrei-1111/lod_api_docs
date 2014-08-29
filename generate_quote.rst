@@ -149,7 +149,7 @@ Request Body
 |                         |                         |                         |
 | .Product                |                         | showing the path        |
 |                         |                         |                         |
-| .Category               |                         | through the category    |
+| .CategoryPath           |                         | through the category    |
 |                         |                         |                         |
 |                         |                         | hierarchy to the        |
 |                         |                         |                         |
