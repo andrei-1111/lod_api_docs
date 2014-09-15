@@ -55,19 +55,6 @@ Request Body
 |                         |                         | be generated.           |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | String                  | String representing     |
-|                         |                         |                         |
-|  .Currency              |                         | currency that the       |
-|                         |                         |                         |
-|                         |                         | merchant wishes to pay  |
-|                         |                         |                         |
-|                         |                         | with. See glossary for  |
-|                         |                         |                         |
-|                         |                         | list of valid           |
-|                         |                         |                         |
-|                         |                         | currencies.             |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | TranslationOptions      | String                  | When the item has been  |
 |                         |                         |                         |
 | .NotificationURL        |                         | translated, the API     |
@@ -298,7 +285,7 @@ Product Request Example
 ::
 
     <AddProject>
-        <ProjectName>
+        <ProjectName>Name of the project</ProjectName>
         <TranslationOptions>
             <Currency>EUR</Currency>
             <NotificationURL>
@@ -374,8 +361,8 @@ File Request Example
 ::
 
     <AddProject>
+        <ProjectName>Name of the project</ProjectName>
         <TranslationOptions>
-            <Currency>EUR</Currency>
             <NotificationURL>
                     `https://www.example.com/
             </NotificationURL>
@@ -513,6 +500,14 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
+| Currency                | String                  | Currency of the price   |
+|                         |                         |                         |
+|                         |                         | This is taken from the  |
+|                         |                         |                         |
+|                         |                         | default currency of the |
+|                         |                         |                         |
+|                         |                         | account profile         |
++-------------------------+-------------------------+-------------------------+
 |                         |                         |                         |
 | Products                | Container               | Container of products   |
 |                         |                         |                         |
@@ -596,6 +591,7 @@ Product-Based Project Response Example
 
     <Project>
         <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <ServiceID>54</ServiceID>
@@ -603,12 +599,12 @@ Product-Based Project Response Example
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
         </TargetLanguages>
         <TotalCost>10.00</TotalCost>
         <Currency>EUR</Currency>
@@ -632,6 +628,7 @@ If the price is not yet ready, the response will look like:
 
     <Project>
         <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <ServiceID>54</ServiceID>
@@ -668,6 +665,7 @@ File-Based Project Response Example
 
     <Project>
         <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <ServiceID>54</ServiceID>
@@ -700,6 +698,7 @@ If the price is not yet ready, the response will look like:
 
     <Project>
         <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <ServiceID>54</ServiceID>
