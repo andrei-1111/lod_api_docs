@@ -2,11 +2,15 @@
 Authorize Quote
 ===============
 
-=============  =================================
-**Resource:**  /api/quote/<<quote id>>/authorize
-
-**Method:**    POST
-=============  =================================
++---------------+--------------------------------------+
+| **Resource:** | .. container:: notrans               |
+|               |                                      |
+|               |    /api/quote/<<quote id>>/authorize |
++---------------+--------------------------------------+
+| **Method:**   | .. container:: notrans               |
+|               |                                      |
+|               |    POST                              |
++---------------+--------------------------------------+
 
 This interface authorizes a quote.  Only quotes with a status of "Pending" can be authorized.
 
@@ -17,39 +21,44 @@ Request Body
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| QuoteID                 | String                  | ID of the Quote         |
++=========================+=========================+=========================+
+| .. container:: notrans  | String                  | ID of the Quote         |
 |                         |                         |                         |
+|    QuoteID              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| CreationDate            | String                  | String representing the |
+| .. container:: notrans  | String                  | String representing the |
 |                         |                         |                         |
-|                         |                         | date/time (ISO 8601)    |
+|    CreationDate         |                         | date/time (ISO 8601)    |
 |                         |                         |                         |
 |                         |                         | that the project was    |
 |                         |                         |                         |
 |                         |                         | created in UTC.         |
 +-------------------------+-------------------------+-------------------------+
-| ServiceID               | Integer                 | ID of Service           |
+| .. container:: notrans  | Integer                 | ID of Service           |
+|                         |                         |                         |
+|    ServiceID            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguage.Language | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| Code                    |                         | glossary                |
+|    SourceLanguage       |                         | glossary                |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-|                         |                         | target languages.       |
+|    TargetLanguages      |                         | target languages.       |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages.TargetL | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .TargetLangauages       |                         | glossary                |
+|    TargetLanguages      |                         | glossary                |
 |                         |                         |                         |
-| .TargetLangauge         |                         |                         |
+|      .TargetLangauge    |                         |                         |
 |                         |                         |                         |
-| .LanaguageCode          |                         |                         |
+|      .LanaguageCode     |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TotalTranslations       | Integer                 | The number of           |
+| .. container:: notrans  | Integer                 | The number of           |
 |                         |                         |                         |
-|                         |                         | translations requested. |
+|    TotalTranslations    |                         | translations requested. |
 |                         |                         |                         |
 |                         |                         |  For example, if the    |
 |                         |                         |                         |
@@ -65,39 +74,40 @@ Request Body
 |                         |                         |                         |
 |                         |                         | be 15.                  |
 +-------------------------+-------------------------+-------------------------+
-| TranslationCredit       | Integer                 | Number of free          |
+| .. container:: notrans  | Integer                 | Number of free          |
 |                         |                         |                         |
-|                         |                         | translations available  |
+|    TranslationCredit    |                         | translations available  |
 |                         |                         |                         |
 |                         |                         | at the selected service |
 |                         |                         |                         |
 |                         |                         | level.                  |
 +-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency used to pay    |
+| .. container:: notrans  | String                  | Currency used to pay    |
 |                         |                         |                         |
-|                         |                         | for the project. See    |
+|    Currency             |                         | for the project. See    |
 |                         |                         |                         |
 |                         |                         | glossary for list of    |
 |                         |                         |                         |
 |                         |                         | valid currencies.       |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TotalPrice              | Decimal                 | Total price that needs  |
+| .. container:: notrans  | Decimal                 | Total price that needs  |
 |                         |                         |                         |
-|                         |                         | to be paid. Exclude     |
+|    TotalPrice           |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
-| PrepaidCredit           | Decimal                 | If a merchant has a     |
+| .. container:: notrans  | Decimal                 | If a merchant has a     |
 |                         |                         |                         |
-|                         |                         | positive credit balance |
+|    PrepaidCredit        |                         | positive credit balance |
 |                         |                         |                         |
 |                         |                         | with onDemand, it will  |
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| AmountDue               | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalPrice -            |
 |                         |                         | PrepaidCredit           |
+|    AmountDue            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 Request Example
@@ -135,7 +145,7 @@ Return Codes
 
 +-------------------------+-------------------------+-------------------------+
 | Status                  | Code                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | Created                 | 202                     | The approval was        |
 |                         |                         |                         |
 |                         |                         | accepted.               |
@@ -189,10 +199,10 @@ Response Body
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comment                 |
-+-------------------------+-------------------------+-------------------------+
-| Status                  | String                  | Status of the quote.    |
++=========================+=========================+=========================+
+| .. container:: notrans  | String                  | Status of the quote.    |
 |                         |                         |                         |
-|                         |                         |  Authorized means that  |
+|    Status               |                         |  Authorized means that  |
 |                         |                         |                         |
 |                         |                         | the projects have been  |
 |                         |                         |                         |
@@ -214,9 +224,9 @@ Response Body
 |                         |                         |                         |
 |                         |                         | through.                |
 +-------------------------+-------------------------+-------------------------+
-| PaymentURL              | String                  | If additional funds are |
+| .. container:: notrans  | String                  | If additional funds are |
 |                         |                         |                         |
-|                         |                         | required, the status    |
+|    PaymentURL           |                         | required, the status    |
 |                         |                         |                         |
 |                         |                         | code of 402 will be     |
 |                         |                         |                         |
@@ -230,9 +240,9 @@ Response Body
 |                         |                         |                         |
 |                         |                         | paypal page.            |
 +-------------------------+-------------------------+-------------------------+
-| QuoteURL                | String                  | URL that can be used to |
+| .. container:: notrans  | String                  | URL that can be used to |
 |                         |                         |                         |
-|                         |                         | check the status of the |
+|    QuoteURL             |                         | check the status of the |
 |                         |                         |                         |
 |                         |                         | quote.  This is useful  |
 |                         |                         |                         |
@@ -242,59 +252,67 @@ Response Body
 |                         |                         |                         |
 |                         |                         | for.  See Get Quote.    |
 +-------------------------+-------------------------+-------------------------+
-| Projects                | Container               | A list of projects that |
+| .. container:: notrans  | Container               | A list of projects that |
 |                         |                         |                         |
-|                         |                         | have been generated by  |
+|    Projects             |                         | have been generated by  |
 |                         |                         |                         |
 |                         |                         | this transaction.       |
 +-------------------------+-------------------------+-------------------------+
-| Projects.Project.Projec | Integer                 | onDemand Project ID for |
+| .. container:: notrans  | Integer                 | onDemand Project ID for |
 |                         |                         |                         |
-| .Project                |                         | the project.            |
+|    Projects             |                         | the project.            |
 |                         |                         |                         |
-| .ProjectID              |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ProjectID         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Projects                | String                  | A URL that can be       |
+| .. container:: notrans  | String                  | A URL that can be       |
 |                         |                         |                         |
-| .Project                |                         | checked for the status  |
+|    Projects             |                         | checked for the status  |
 |                         |                         |                         |
-| .ProjectURL             |                         | of the project.         |
+|      .Project           |                         | of the project.         |
 |                         |                         |                         |
-|                         |                         |                         |
+|      .ProjectURL        |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Projects                | String                  | String representing the |
+| .. container:: notrans  | String                  | String representing the |
 |                         |                         |                         |
-| .Project                |                         | date/time (ISO 8601)    |
+|    Projects             |                         | date/time (ISO 8601)    |
 |                         |                         |                         |
-| .ProjectDueDate         |                         | that the project will   |
+|      .Project           |                         | that the project will   |
 |                         |                         |                         |
-|                         |                         | be completed by.        |
+|      .ProjectDueDate    |                         | be completed by.        |
 +-------------------------+-------------------------+-------------------------+
-| Projects.               | Container               | List of products        |
+| .. container:: notrans  | Container               | List of products        |
 |                         |                         |                         |
-| .Project                |                         | included in the         |
+|    Projects             |                         | included in the         |
 |                         |                         |                         |
-| .Products               |                         | product.                |
+|      .Project           |                         | product.                |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Projects.               | String                  | Client supplied SKU     |
+| .. container:: notrans  | String                  | Client supplied SKU     |
 |                         |                         |                         |
-| .Project                |                         | Number                  |
+|    Projects             |                         | Number                  |
 |                         |                         |                         |
-| .Products               |                         |                         |
+|      .Project           |                         |                         |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
-| .SKUNumber              |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .SKUNumber         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Projects.               | Integer                 | Internal onDemand ID    |
+| .. container:: notrans  | Integer                 | Internal onDemand ID    |
 |                         |                         |                         |
-| .Project                |                         | for this product.       |
+|    Projects             |                         | for this product.       |
 |                         |                         |                         |
-| .Products               |                         |                         |
+|      .Project           |                         |                         |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
-| .AssetID                |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 
@@ -458,7 +476,7 @@ service.
 
 +-------------------------+-------------------------+-------------------------+
 | ReasonCode              | SimpleMessage           | DetailedMessage         |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | 300                     | Miscellaneous error     | A miscellaneous or      |
 |                         |                         |                         |
 |                         |                         | unexpected error        |

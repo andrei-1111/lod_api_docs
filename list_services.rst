@@ -2,11 +2,15 @@
 List Services
 =============
 
-+---------------+---------------------------------------+
-| **Resource:** | /api/services                         |
-+---------------+---------------------------------------+
-| **Method:**   | GET                                   |
-+---------------+---------------------------------------+
++---------------+------------------------+
+| **Resource:** | .. container:: notrans |
+|               |                        |
+|               |    /api/services       |
++---------------+------------------------+
+| **Method:**   | .. container:: notrans |
+|               |                        |
+|               |    GET                 |
++---------------+------------------------+
 
 
 A key benefit of integrating with the Lionbridge onDemand API is that it gives you access to many different services.  At Lionbridge, we define a service as a set of processes that we can execute for you.  We have services for different quality levels (ranging from raw machine translation to professional translation by domain specialists).  We also have content-specific services. For example, we can `subtitle your videos <https://ondemand.lionbridge.com/service-detail/1/video-translation-multilingual-video-subtitling>`_.
@@ -62,76 +66,86 @@ Response Body
 =============
 
 The response body includes a list of products.
-
+ 
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
-| Name                    | String                  | Name of the sevice      |
-+-------------------------+-------------------------+-------------------------+
-| Description             | String                  | Description of the      |
+| .. container:: notrans  | String                  | Name of the sevice      |
 |                         |                         |                         |
-|                         |                         | service                 |
+|    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| PriceDescription        | String                  | Description of how      |
+| .. container:: notrans  | String                  | Description of the      |
 |                         |                         |                         |
-|                         |                         | pricing works.          |
+|    Description          |                         | service                 |
 +-------------------------+-------------------------+-------------------------+
-| ServiceID               | Integer                 | ID of the service       |
-+-------------------------+-------------------------+-------------------------+
-| SourceLanguages         | Container               | Source languages        |
+| .. container:: notrans  | String                  | Description of how      |
 |                         |                         |                         |
-|                         |                         | available for this this |
+|    PriceDescription     |                         | pricing works.          |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | ID of the service       |
+|                         |                         |                         |
+|    ServiceID            |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Source languages        |
+|                         |                         |                         |
+|    SourceLanguages      |                         | available for this this |
 |                         |                         |                         |
 |                         |                         | service.                |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguages         | Container               | Container for Source    |
+| .. container:: notrans  | Container               | Container for Source    |
 |                         |                         |                         |
-| .SourceLanguage         |                         | Language                |
+|    SourceLanguages      |                         | Language                |
 |                         |                         |                         |
+|      .SourceLanguage    |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguages         | String                  | See glossary for        |
+| .. container:: notrans  | String                  | See glossary for        |
 |                         |                         |                         |
-| .SourceLanguage         |                         | language code.          |
+|    SourceLanguages      |                         | language code.          |
 |                         |                         |                         |
-| .LangaugeCode           |                         |                         |
+|      .SourceLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LangaugeCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Target languages        |
+| .. container:: notrans  | Container               | Target languages        |
 |                         |                         |                         |
-|                         |                         | available for this      |
+|    TargetLanguages      |                         | available for this      |
 |                         |                         |                         |
 |                         |                         | service                 |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Container for Target    |
+| .. container:: notrans  | Container               | Container for Target    |
 |                         |                         |                         |
-| .TargetLanguage         |                         | Language                |
+|    TargetLanguages      |                         | Language                |
 |                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | String                  | See glossary for        |
+| .. container:: notrans  | String                  | See glossary for        |
 |                         |                         |                         |
-| .TargetLanguage         |                         | language code.          |
+|    TargetLanguages      |                         | language code.          |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| ValidInputs             | Container               | Contains source         |
+| .. container:: notrans  | Container               | Contains source         |
 |                         |                         |                         |
-|                         |                         | content types that      |
+|    ValidInputs          |                         | content types that      |
 |                         |                         |                         |
 |                         |                         | this service can        |
 |                         |                         |                         |  
 |                         |                         | process                 |
 +-------------------------+-------------------------+-------------------------+
-| ValidInputs             | EmptyTag                | If this element exists  |
+| .. container:: notrans  | EmptyTag                | If this element exists  |
 |                         |                         |                         |
-| .Products               |                         | then this service       |
+|    ValidInputs          |                         | then this service       |
 |                         |                         |                         |
-|                         |                         | accepts Products        |
+|      .Products          |                         | accepts Products        |
 +-------------------------+-------------------------+-------------------------+
-| ValidInputs             | Container               | Contains FileExtension  |
+| .. container:: notrans  | Container               | Contains FileExtension  |
 |                         |                         |                         |
-| .Files                  |                         | elements for each       |
+|    ValidInputs          |                         | elements for each       |
 |                         |                         |                         |
-|                         |                         | accepted file type.     |
+|      .Files             |                         | accepted file type.     |
 |                         |                         |                         |
 |                         |                         | If files are not        |
 |                         |                         |                         |
@@ -142,13 +156,13 @@ The response body includes a list of products.
 |                         |                         | be no Files element.    |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| ValidInputs             | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-| .Files                  |                         | a file extension        |
+|    ValidInputs          |                         | a file extension        |
 |                         |                         |                         |
-| .FileExtension          |                         | that is accepted by the |
+|      .Files             |                         | that is accepted by the |
 |                         |                         |                         |
-|                         |                         | service.                |
+|      .FileExtension     |                         | service.                |
 +-------------------------+-------------------------+-------------------------+
 | MinimumUnits            | Integer                 | The minimum project size|
 |                         |                         |                         |

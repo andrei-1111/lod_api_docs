@@ -2,10 +2,16 @@
 Get Product Translation
 =======================
 
-=============  ============================================
-**Resource:**  /api/products/<<asset id>>/<<Language Code>>
-**Method:**    GET
-=============  ============================================
++---------------+-------------------------------------------------+
+| **Resource:** | .. container:: notrans                          |
+|               |                                                 |
+|               |    /api/products/<<asset id>>/<<Language Code>> |
++---------------+-------------------------------------------------+
+| **Method:**   | .. container:: notrans                          |
+|               |                                                 |
+|               |    GET                                          |
++---------------+-------------------------------------------------+
+
 
 Retrieves the translation of an item
 
@@ -59,42 +65,45 @@ The response body shows information about the product.
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
-| SKUs                    | Container               | Container of SKU        |
+| .. container:: notrans  | Container               | Container of SKU        |
 |                         |                         |                         |
-|                         |                         | elements                |
+|    SKUs                 |                         | elements.               |
 +-------------------------+-------------------------+-------------------------+
-| SKUs                    | Container               | Container of a SKU      |
+| .. container:: notrans  | Container               | Container of a SKU.     |
 |                         |                         |                         |
+|    SKUs                 |                         |                         |
 |                         |                         |                         |
+|      .SKU               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | SKU Number              |
+|                         |                         |                         |
+|    SKUS                 |                         |                         |
+|                         |                         |                         |
+|      .SKU               |                         |                         |
+|                         |                         |                         |
+|      .SKUNumber         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | The internal onDemand   |
+|                         |                         |                         |
+|    AssetID              |                         | ID for the product.     |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | The title of the source |
+|                         |                         |                         |
+|    SourceTitle          |                         | listing.                |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| SKUS                    | String                  | SKU Number              |
+| .. container:: notrans  | Integer                 | The service used to     |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
-|                         |                         |                         |
-| .SKUNumber              |                         |                         |
+|    Service              |                         | translate the item.     |
 +-------------------------+-------------------------+-------------------------+
-| AssetID                 | Integer                 | The internal onDemand   |
+| .. container:: notrans  | String                  | Language Code of        |
 |                         |                         |                         |
-|                         |                         | ID for the product.     |
-+-------------------------+-------------------------+-------------------------+
-| SourceTitle             | String                  | The title of the source |
-|                         |                         |                         |
-|                         |                         |                         |
-|                         |                         | listing                 |
-+-------------------------+-------------------------+-------------------------+
-| Service                 | Integer                 | The service used to     |
-|                         |                         |                         |
-|                         |                         | translate the item.     |
-+-------------------------+-------------------------+-------------------------+
-| Language                | String                  | Language Code of        |
-|                         |                         |                         |
-|                         |                         | language translated     |
+|    Language             |                         | language translated     |
 |                         |                         | into.                   |
 +-------------------------+-------------------------+-------------------------+
-| TranslatedFields        | Container               | Contains translations   |
+| .. container:: notrans  | Container               | Contains translations   |
 |                         |                         |                         |
-|                         |                         | of all of the           |
+|    TranslatedFields     |                         | of all of the           |
 |                         |                         |                         |
 |                         |                         | translated fields.      |
 +-------------------------+-------------------------+-------------------------+

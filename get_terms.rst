@@ -2,10 +2,16 @@
 Get Terms and Conditions
 ========================
 
-=============  ======================
-**Resource:**  /api/terms
-**Method:**    GET
-=============  ======================
++---------------+------------------------+
+| **Resource:** | .. container:: notrans |
+|               |                        |
+|               |    /api/terms          |
++---------------+------------------------+
+| **Method:**   | .. container:: notrans |
+|               |                        |
+|               |    GET                 |
++---------------+------------------------+
+
 
 This interface retrieves the terms and conditions.
 

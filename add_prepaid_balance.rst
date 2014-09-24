@@ -2,10 +2,15 @@
 Add Prepaid Balance
 ===================
 
-=============  ===============================
-**Resource:**  /api/account/credit-balance/add
-**Method:**    POST
-=============  ===============================
++-----------------+------------------------------------+
+| **Resource:**   | .. container:: notrans             |
+|                 |                                    |
+|                 |    /api/account/credit-balance/add |
++-----------------+------------------------------------+
+| **Method:**     | .. container:: notrans             |
+|                 |                                    |
+|                 |    POST                            |
++-----------------+------------------------------------+
 
 This interface adds money to a prepaid balance that can be used to pay for 
 onDemand projects.  The general flow is like this.
@@ -20,15 +25,15 @@ Request Body
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
++=========================+=========================+=========================+
+| .. container:: notrans  | Decimal (2 digits)      | Amount of of money to   |
+|                         |                         |                         |
+|    Amount               |                         | add to the balance      |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Amount                  | Decimal (2 digits)      | Amount of of money to   |
+| .. container:: notrans  | String                  | Currency used to pay    |
 |                         |                         |                         |
-|                         |                         | add to the balance      |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency used to pay    |
-|                         |                         |                         |
-|                         |                         | for the project. See    |
+|    Currency             |                         | for the project. See    |
 |                         |                         |                         |
 |                         |                         | glossary for list of    |
 |                         |                         |                         |
@@ -52,7 +57,7 @@ Return Codes
 
 +-------------------------+-------------------------+-------------------------+
 | Status                  | Code                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | OK                      | 200                     | The request was accepted|
 |                         |                         |                         |
 |                         |                         | the response will       |
@@ -88,23 +93,24 @@ including a payment URL.  The user must follow this URL to a payment page.
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
++=========================+=========================+=========================+
+| .. container:: notrans  | Decimal (2 digits)      | Amount of of money to   |
+|                         |                         |                         |
+|    Amount               |                         | add to the balance      |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Amount                  | Decimal (2 digits)      | Amount of of money to   |
+| .. container:: notrans  | String                  | Currency used to pay    |
 |                         |                         |                         |
-|                         |                         | add to the balance      |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency used to pay    |
-|                         |                         |                         |
-|                         |                         | for the project. See    |
+|    Currency             |                         | for the project. See    |
 |                         |                         |                         |
 |                         |                         | glossary for list of    |
 |                         |                         |                         |
 |                         |                         | valid currencies.       |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| PaymentURL              | String                  | URL of payment page     |
+| .. container:: notrans  | String                  | URL of payment page     |
 |                         |                         |                         |
+|    PaymentURL           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 

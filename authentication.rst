@@ -56,9 +56,9 @@ Authorization header value.
 +--------------------------------------+--------------------------------------+
 | Component                            | Description                          |
 +======================================+======================================+
-| LOD1-BASE64-SHA256                   | The algorithm that was used to       |
+| .. container:: notrans               | The algorithm that was used to       |
 |                                      |                                      |
-|                                      | calculate the signature.             |
+|    LOD1-BASE64-SHA256                | calculate the signature.             |
 |                                      |                                      |
 |                                      | The string specifies LOD Signature   |
 |                                      |                                      |
@@ -67,17 +67,19 @@ Authorization header value.
 |                                      | algorithm (BASE64-SHA256).           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| KeyID                                | A valid Access Key ID.               |
-+--------------------------------------+--------------------------------------+
-| Signature                            | A signature in the form of           |
+| .. container:: notrans               | A valid Access Key ID.               |
 |                                      |                                      |
-|                                      | BASE64(SHA256(METHOD:RESOURCE:secret |
+|    KeyID                             |                                      |
++--------------------------------------+--------------------------------------+
+| .. container:: notrans               | A signature in the form of           |
+|                                      |                                      |
+|    Signature                         | BASE64(SHA256(METHOD:RESOURCE:secret |
 |                                      |                                      |
 |                                      | key:x-lod-header-a:x-lod-header-b))  |
 +--------------------------------------+--------------------------------------+
-| SignedHeaders                        | A semicolon-separated list of        |
+| .. container:: notrans               | A semicolon-separated list of        |
 |                                      |                                      |
-|                                      | request headers used to compute      |
+|    SignedHeaders                     | request headers used to compute      |
 |                                      |                                      |
 |                                      | Signature. The list includes header  |
 |                                      |                                      |

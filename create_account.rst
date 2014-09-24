@@ -2,10 +2,15 @@
 Create Account
 ==============
 
-=============  ===================
-**Resource:**  /api/account/create
-**Method:**    POST
-=============  ===================
++-----------------+------------------------+
+| **Resource:**   | .. container:: notrans |
+|                 |                        |
+|                 |    /api/account/create |
++-----------------+------------------------+
+| **Method:**     | .. container:: notrans |
+|                 |                        |
+|                 |    POST                |
++-----------------+------------------------+
 
 This interface creates a new Account.  Access is restricted to an API account with create merchant privileges.  
 
@@ -13,17 +18,37 @@ This interface creates a new Account.  Access is restricted to an API account wi
 Request Body
 ============
 
-============  ======  ========
-Parameter     Type    Comments
-============  ======  ========
-MerchantID    String  Merchant system account id
-EmailAddress  String  Email address of the primary user
-FirstName     String  First name of the primary user (optional)
-LastName      String  Last name of the primary user (optional)
-CompanyName   String  Merchant Company
-Country       String  Country that the merchant is headquartered in.  `ISO 3166-1 2  character country code <http://en.wikipedia.org/wiki/ISO_3166-1>`_.
-VATID         String  Tax ID for VAT accounting.  Required for Irish merchants only
-============  ======  ========
++-------------------------+--------+------------------------------------------------+
+| Parameter               | Type   | Comments                                       |
++=========================+========+================================================+
+| .. container:: notrans  | String | Merchant system account id                     |
+|                         |        |                                                |
+|    MerchantID           |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Email address of the primary user              |
+|                         |        |                                                |
+|    EmailAddress         |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | First name of the primary user (optional)      |
+|                         |        |                                                |
+|    FirstName            |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Last name of the primary user (optional)       |
+|                         |        |                                                |
+|    LastName             |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Merchant Company                               |
+|                         |        |                                                |
+|    CompanyName          |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Country that the merchant is headquartered in. |
+|                         |        | `ISO 3166-1 2  character country code          |
+|    Country              |        | <http://en.wikipedia.org/wiki/ISO_3166-1>`_.   |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Tax ID for VAT accounting.  Required for Irish |
+|                         |        | merchants only                                 |
+|    VATID                |        |                                                |
++-------------------------+--------+------------------------------------------------+
 
 
 Request Example
@@ -59,18 +84,41 @@ Response Body
 
 The response body contains information about the newly created merchant. 
 
-===============   ======   ========
-Property          Type     Comments
-===============   ======   ========
-MerchantID        String   Merchant system account id
-EmailAddress      String   Email address of the primary user
-FirstName         String   First name of the primary user (optional)
-LastName          String   Last name of the primary user (optional)
-CompanyName       String   Merchant Company
-Country           String   Country that the merchant is headquartered in.  ISO 3166-1 2 character country code.    
-AccessKeyID       String   String representing the 20 character access key id
-SecretAccessKey   String   String representing the 40 character secret key.
-===============   ======   ========
++-------------------------+--------+------------------------------------------------+
+| Property                | Type   | Comments                                       |
++=========================+========+================================================+
+| .. container:: notrans  | String | Merchant system account id                     |
+|                         |        |                                                |
+|    MerchantID           |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Email address of the primary user              |
+|                         |        |                                                |
+|    EmailAddress         |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | First name of the primary user (optional)      |
+|                         |        |                                                |
+|    FirstName            |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Last name of the primary user (optional)       |
+|                         |        |                                                |
+|    LastName             |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Merchant Company                               |
+|                         |        |                                                |
+|    CompanyName          |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | Country that the merchant is headquartered in. |
+|                         |        | ISO 3166-1 2  character country code.          |
+|    Country              |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | String representing the 20 character access    |
+|                         |        | key id                                         |
+|    AccessKeyID          |        |                                                |
++-------------------------+--------+------------------------------------------------+
+| .. container:: notrans  | String | String representing the 40 character secret    |
+|                         |        | key.                                           |
+|    SecretAccessKey      |        |                                                |
++-------------------------+--------+------------------------------------------------+
   
 
 Response Example
@@ -99,7 +147,7 @@ information. Here are some common cases.
 
 +-------------------------+-------------------------+-------------------------+
 | ReasonCode              | SimpleMessage           | DetailedMessage         |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | 400                     | Miscellaneous error     | A miscellaneous or      |
 |                         |                         |                         |
 |                         |                         | unexpected error        |

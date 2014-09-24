@@ -2,10 +2,15 @@
 Account Information
 ===================
 
-=============  ===================
-**Resource:**  /api/account/info
-**Method:**    GET
-=============  ===================
++-----------------+------------------------+
+| **Resource:**   | .. container:: notrans |
+|                 |                        |
+|                 |    /api/account/info   |
++-----------------+------------------------+
+| **Method:**     | .. container:: notrans |
+|                 |                        |
+|                 |    GET                 |
++-----------------+------------------------+
 
 Returns information about the merchant’s account
 
@@ -25,49 +30,59 @@ Response Body
 
 The response body contains information the buyer account.
 
-+----------------------+----------+----------------------------------------------+
-| Property             |Type      |Comments                                      |
-+======================+==========+==============================================+
-| Email                | String   | Email address associated with the address    |
-+----------------------+----------+----------------------------------------------+
-| Currency             | String   | Currency that the merchant is configured to  |
-|                      |          |                                              |
-|                      |          | transact in. See glossary for list of valid  |
-|                      |          |                                              |
-|                      |          | currencies.                                  |
-+----------------------+----------+----------------------------------------------+
-| TotalSpent           | Decimal  | Total money spent in the merchant's currency |
-|                      |          |                                              |
-+----------------------+----------+----------------------------------------------+
-| TranslationCredit    | Integer  | Number of translations granted to the        |
-|                      |          | merchant.                                    |
-+----------------------+----------+----------------------------------------------+
-| TranslationCreditUsed| Integer  | Number of credit translations used.          |
-+----------------------+----------+----------------------------------------------+
-| PrepaidCredit        | Decimal  | Amount of pre-paid funds in the merchant’s   |
-|                      |          |                                              |
-|                      |          | account.                                     |
-+----------------------+----------+----------------------------------------------+
-| ProductCount         | Integer  | Number of Products that have been submitted  |
-|                      |          |                                              |
-|                      |          | to the service.                              |
-+----------------------+----------+----------------------------------------------+
-|TargetLanguages       | Container| Contains languages that the merchant has     |
-|                      |          |                                              |
-|                      |          | translated into.                             |
-+----------------------+----------+----------------------------------------------+
-|TargetLanguages       | String   | See LanguageCode in glossary                 |
-|                      |          |                                              |
-| .TargetLanguage      |          |                                              |
-|                      |          |                                              |
-| .LanguageCode        |          |                                              |
-+----------------------+----------+----------------------------------------------+
-| TargetLanguages      | String   | Number of products translated into this      |
-|                      |          |                                              |
-|  .TargetLanguage     |          | language                                     |
-|                      |          |                                              |
-|  .Count              |          |                                              |
-+----------------------+----------+----------------------------------------------+
++--------------------------+-----------+----------------------------------------------+
+| Property                 | Type      | Comments                                     |
++==========================+===========+==============================================+
+| .. container:: notrans   | String    | Email address associated with the address    |
+|                          |           |                                              |
+|    Email                 |           |                                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | String    | Currency that the merchant is configured to  |
+|                          |           |                                              |
+|    Currency              |           | transact in. See glossary for list of valid  |
+|                          |           |                                              |
+|                          |           | currencies.                                  |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Decimal   | Total money spent in the merchant's currency |
+|                          |           |                                              |
+|    TotalSpent            |           |                                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Integer   | Number of translations granted to the        |
+|                          |           | merchant.                                    |
+|    TranslationCredit     |           |                                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Integer   | Number of credit translations used.          |
+|                          |           |                                              |
+|    TranslationCreditUsed |           |                                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Decimal   | Amount of pre-paid funds in the merchant’s   |
+|                          |           |                                              |
+|    PrepaidCredit         |           | account.                                     |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Integer   | Number of Products that have been submitted  |
+|                          |           |                                              |
+|    ProductCount          |           | to the service.                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | Container | Contains languages that the merchant has     |
+|                          |           |                                              |
+|    TargetLanguages       |           | translated into.                             |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | String    | See LanguageCode in glossary                 |
+|                          |           |                                              |
+|    TargetLanguages       |           |                                              |
+|                          |           |                                              |
+|      .TargetLanguage     |           |                                              |
+|                          |           |                                              |
+|      .LanguageCode       |           |                                              |
++--------------------------+-----------+----------------------------------------------+
+| .. container:: notrans   | String    | Number of products translated into this      |
+|                          |           |                                              |
+|    TargetLanguages       |           | language                                     |
+|                          |           |                                              |
+|      .TargetLanguage     |           |                                              |
+|                          |           |                                              |
+|      .Count              |           |                                              |
++--------------------------+-----------+----------------------------------------------+
 
   
 

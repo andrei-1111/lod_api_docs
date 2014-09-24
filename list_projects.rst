@@ -2,10 +2,15 @@
 List Projects
 =============
 
-=============  ======================
-**Resource:**  /api/projects
-**Method:**    GET
-=============  ======================
++---------------+------------------------+
+| **Resource:** | .. container:: notrans |
+|               |                        |
+|               |    /api/projects       |
++---------------+------------------------+
+| **Method:**   | .. container:: notrans |
+|               |                        |
+|               |    GET                 |
++---------------+------------------------+
 
 Returns information about the merchant’s account
 
@@ -39,61 +44,64 @@ credentials.
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
-| Project                 | Integer                 | The onDemand ID of the  |
+| .. container:: notrans  | Integer                 | The onDemand ID of the  |
 |                         |                         |                         |
-| .ProjectID              |                         | Project                 |
+|    Project              |                         | Project                 |
 |                         |                         |                         |
+|      .ProjectID         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | String                  | The URL to retrieve the |
+| .. container:: notrans  | String                  | The URL to retrieve the |
 |                         |                         |                         |
-| .URL                    |                         | project. See            |
+|    Project              |                         | project. See            |
 |                         |                         |                         |
-|                         |                         | GetProject.             |
+|      .URL               |                         | GetProject.             |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | String                  | The name of the project |
+| .. container:: notrans  | String                  | The name of the project |
 |                         |                         |                         |
-| .ProjectName            |                         | Either provided or      |
+|    Project              |                         | Either provided or      |
 |                         |                         |                         |
-|                         |                         | system generated.       |
+|      .ProjectName       |                         | system generated.       |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | String                  | The status of the       |
+| .. container:: notrans  | String                  | The status of the       |
 |                         |                         |                         |
-| .Status                 |                         | Project                 |
+|    Project              |                         | Project                 |
 |                         |                         |                         |
+|      .Status            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | Integer                 | The onDemand service    |
+| .. container:: notrans  | Integer                 | The onDemand service    |
 |                         |                         |                         |
-| .ServiceID              |                         | configuration used for  |
+|    Project              |                         | configuration used for  |
 |                         |                         |                         |
-|                         |                         | the project             |
+|      .ServiceID         |                         | the project             |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | Decimal                 | Price charged for the   |
+| .. container:: notrans  | Decimal                 | Price charged for the   |
 |                         |                         |                         |
-| .TotalPrice             |                         | project                 |
+|    Project              |                         | project                 |
 |                         |                         |                         |
+|      .TotalPrice        |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | String                  | The currency that the   |
+| .. container:: notrans  | String                  | The currency that the   |
 |                         |                         |                         |
-| .Currency               |                         | project was paid in.    |
+|    Project              |                         | project was paid in.    |
 |                         |                         |                         |
-|                         |                         |  See glossary for list  |
+|      .Currency          |                         |  See glossary for list  |
 |                         |                         |                         |
 |                         |                         | of valid currencies.    |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | DateTime                | String representing     |
+| .. container:: notrans  | DateTime                | String representing     |
 |                         |                         |                         |
-| .CreationDate           |                         | Date/Time (ISO 8601)    |
+|    Project              |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
-|                         |                         |  that the Item was      |
+|      .CreationDate      |                         |  that the Item was      |
 |                         |                         |                         |
 |                         |                         | added to onDemand.      |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | DateTime                | String representing     |
+| .. container:: notrans  | DateTime                | String representing     |
 |                         |                         |                         |
-| .DueDate                |                         | Date/Time (ISO 8601)    |
+|    Project              |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
-|                         |                         |  that the translation   |
+|      .DueDate           |                         |  that the translation   |
 |                         |                         |                         |
 |                         |                         | of the item is          |
 |                         |                         |                         |
@@ -101,31 +109,33 @@ credentials.
 |                         |                         |                         |
 |                         |                         | completed.              |
 +-------------------------+-------------------------+-------------------------+
-| Project                 | DateTime                | String representing     |
+| .. container:: notrans  | DateTime                | String representing     |
 |                         |                         |                         |
-| .CompletionDate         |                         | Date/Time (ISO 8601)    |
+|    Project              |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
-|                         |                         |  that the translation   |
+|      .CompletionDate    |                         |  that the translation   |
 |                         |                         |                         |
 |                         |                         | of the item was         |
 |                         |                         |                         |
 |                         |                         | completed.              |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguage.Language | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| Code                    |                         | glossary                |
+|    SourceLanguage       |                         | glossary                |
 |                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-|                         |                         | target languages.       |
+|    TargetLanguages      |                         | target languages.       |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .TargetLanguages        |                         | glossary                |
+|    TargetLanguages      |                         | glossary                |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
   
 
