@@ -2,10 +2,16 @@
 Add File By Reference
 ======================
 
-=============  ==========================================================
-**Resource:**  /api/files/add_by_reference/<<language_code>>/<<filename>>
-**Method:**    POST
-=============  ==========================================================
++---------------+---------------------------------------------------------------+
+| **Resource:** | .. container:: notrans                                        |
+|               |                                                               |
+|               |    /api/files/add_by_reference/<<language_code>>/<<filename>> |
++---------------+---------------------------------------------------------------+
+| **Method:**   | .. container:: notrans                                        |
+|               |                                                               |
+|               |    POST                                                       |
++---------------+---------------------------------------------------------------+
+
 
 This interface adds a file to onDemand by providing an external URL that onDemand can download from.  This is a good alternative to the :doc:`add_file` API for cases when the files are very large.
 
@@ -84,12 +90,12 @@ Request Body
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| File                    | String                  | The full URL to the     |
++=========================+=========================+=========================+
+| .. container:: notrans  | String                  | The full URL to the     |
 |                         |                         |                         |
-|  .URL                   |                         | file.  The URL must be  |
+|    File                 |                         | file.  The URL must be  |
 |                         |                         |                         |
-|                         |                         | publicly accessible.    |
+|      .URL               |                         | publicly accessible.    |
 |                         |                         |                         |
 |                         |                         | It can use use http,    |
 |                         |                         |                         |
@@ -153,19 +159,18 @@ including a payment URL.  The user must follow this URL to a payment page.
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| AssetID                 | Integer                 | ID of the uploaded file |
++=========================+=========================+=========================+
+| .. container:: notrans  | Integer                 | ID of the uploaded file |
 |                         |                         |                         |
-|                         |                         | this ID will be used    |
+|    AssetID              |                         | this ID will be used    |
 |                         |                         |                         |
 |                         |                         | when creating a quote   |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Name                    | String                  | Name of the file passed |
+| .. container:: notrans  | String                  | Name of the file passed |
 |                         |                         |                         |
+|    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-
-
 
 
 Response Example
@@ -187,7 +192,7 @@ information. Here are some common cases.
 
 +-------------------------+-------------------------+-------------------------+
 | ReasonCode              | SimpleMessage           | DetailedMessage         |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | 200                     | Miscellaneous error     | A miscellaneous or      |
 |                         |                         |                         |
 |                         |                         | unexpected error        |
