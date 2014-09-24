@@ -2,10 +2,15 @@
 Get Project
 =============
 
-=============  ============================
-**Resource:**  /api/projects/<<project id>>
-**Method:**    GET
-=============  ============================
++---------------+---------------------------------+
+| **Resource:** | .. container:: notrans          |
+|               |                                 |
+|               |    /api/projects/<<project id>> |
++---------------+---------------------------------+
+| **Method:**   | .. container:: notrans          |
+|               |                                 |
+|               |    GET                          |
++---------------+---------------------------------+
 
 Retrieves information about a project.  If the project is complete, the
 request will return all of the translated products associated with the
@@ -47,36 +52,42 @@ The response body shows information about the project.
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
-| ProjectID               | Integer                 | onDemand ID of the      |
+| .. container:: notrans  | Integer                 | onDemand ID of the      |
 |                         |                         |                         | 
-|                         |                         | project                 |
+|    ProjectID            |                         | project                 |
 +-------------------------+-------------------------+-------------------------+
-| Status                  | String                  | Status of the project   |
+| .. container:: notrans  | String                  | Status of the project   |
+|                         |                         |                         | 
+|    Status               |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
-| ServiceID               | Integer                 |                         |
+| .. container:: notrans  | Integer                 |                         |
+|                         |                         |                         | 
+|    ServiceID            |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
-| TotalPrice              | Decimal                 |                         |
+| .. container:: notrans  | Decimal                 |                         |
+|                         |                         |                         | 
+|    TotalPrice           |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency paid for the   |
+| .. container:: notrans  | String                  | Currency paid for the   |
 |                         |                         |                         |
-|                         |                         | project.  See glossary  |
+|    Currency             |                         | project.  See glossary  |
 |                         |                         |                         |
 |                         |                         | for list of valid       |
 |                         |                         |                         |
 |                         |                         | currencies.             |
 +-------------------------+-------------------------+-------------------------+
-| CreationDate            | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-|                         |                         | Date/Time (ISO 8601)    |
+|    CreationDate         |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
 |                         |                         |  that the Item was      |
 |                         |                         |                         |
 |                         |                         | added to onDemand.      |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| DueDate                 | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-|                         |                         | Date/Time (ISO 8601)    |
+|    DueDate              |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
 |                         |                         |  that the translation   |
 |                         |                         |                         |
@@ -86,96 +97,108 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         | completed.              |
 +-------------------------+-------------------------+-------------------------+
-| CompletionDate          | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-|                         |                         | Date/Time (ISO 8601)    |
+|    CompletionDate       |                         | Date/Time (ISO 8601)    |
 |                         |                         |                         |
 |                         |                         | that the translation of |
 |                         |                         |                         |
 |                         |                         | the item was completed. |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguage.Language | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| Code                    |                         | glossary                |
-|                         |                         |                         |
+|    SourceLanguage       |                         | glossary                |
+|                         |                         |                         | 
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-|                         |                         | target languages.       |
+|    TargetLanguages      |                         | target languages.       |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .TargetLanguages        |                         | glossary                |
+|    TargetLanguages      |                         | glossary                |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
+|      .LanguageCode      |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container of Products.  |
+| .. container:: notrans  | Container               | Container of Products.  |
 |                         |                         |                         |
-|                         |                         | This element will be    |
+|    Products             |                         | This element will be    |
 |                         |                         |                         |
 |                         |                         | empty if this project   |
 |                         |                         |                         |
 |                         |                         | contiains fils instead  |
 |                         |                         |                         |
 |                         |                         | of products.            |
-|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container of Item       |
+| .. container:: notrans  | Container               | Container of Item       |
 |                         |                         |                         |
-| .Product                |                         | information             |
+|    Products             |                         | information             |
+|                         |                         |                         |
+|      .Product           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The SKU of the item     |
+| .. container:: notrans  | String                  | The SKU of the item     |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|    Products             |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .SKU               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Integer                 | The internal Asset ID   |
+| .. container:: notrans  | Integer                 | The internal Asset ID   |
 |                         |                         |                         |
-| .Product                |                         | of the product.         |
+|    Products             |                         | of the product.         |
 |                         |                         |                         |
-| .AssetID                |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-| .Product                |                         | target languages.       |
+|    Products             |                         | target languages.       |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .Product                |                         | glossary                |
+|    Products             |                         | glossary                |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .TargetLanguage         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | URL to retrieve this    |
+| .. container:: notrans  | String                  | URL to retrieve this    |
 |                         |                         |                         |
-| .Product                |                         | particular translation. |
+|    Products             |                         | particular translation. |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .TargetLanguage         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
-| .URL                    |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container Element for   |
+| .. container:: notrans  | Container               | Container Element for   |
 |                         |                         |                         |
-| .Product                |                         | translated content. The |
+|    Products             |                         | translated content. The |
 |                         |                         |                         |
-| .TargetLanguages        |                         | description will use    |
+|      .Product           |                         | description will use    |
 |                         |                         |                         |
-| .TargetLanguage         |                         | the same structure as   |
+|      .TargetLanguages   |                         | the same structure as   |
 |                         |                         |                         |
-| .Translation            |                         | the source content.     |
+|      .TargetLanguage    |                         | the source content.     |
 |                         |                         |                         |
-|                         |                         |  Only ItemSpecifics     |
+|      .Translation       |                         |  Only ItemSpecifics     |
 |                         |                         |                         |
 |                         |                         | that are recommended or |
 |                         |                         |                         |
@@ -191,9 +214,9 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         | each ItemSpecific       |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Container               | Contains file elements. |
+| .. container:: notrans  | Container               | Contains file elements. |
 |                         |                         |                         |
-|                         |                         | It will be empty on     |
+|    Files                |                         | It will be empty on     |
 |                         |                         |                         |
 |                         |                         | projects that have      |
 |                         |                         |                         |
@@ -201,62 +224,61 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         | files.                  |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Integer                 | Asset ID of the file.   |
+| .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
-| .File                   |                         |                         |
+|    Files                |                         |                         |
 |                         |                         |                         |
-| .AssetID                |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
-|                         |                         |                         |
+|      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | Original name of the    |
+| .. container:: notrans  | String                  | Original name of the    |
 |                         |                         |                         |
-| .File                   |                         | file.                   |
+|    Files                |                         | file.                   |
 |                         |                         |                         |
-| .FileName               |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | URL to download the     |
+| .. container:: notrans  | String                  | URL to download the     |
 |                         |                         |                         |
-| .File                   |                         | source file.            |
+|    Files                |                         | source file.            |
 |                         |                         |                         |
-| .URL                    |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-| .File                   |                         | target languages.       |
+|    Files                |                         | target languages.       |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .File                   |                         | glossary                |
+|    Files                |                         | glossary                |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
-| .TargetLanguage         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | URL to retrieve this    |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-| .File                   |                         | particular translation. |
+|    Files                |                         | the url to download     |
 |                         |                         |                         |
-| .TargetLanguages        |                         |                         |
+|      .File              |                         | the translated file.    |
 |                         |                         |                         |
-| .TargetLanguage         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
-| .URL                    |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | String representing     |
+|      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
-| .File                   |                         | the url to download     |
-|                         |                         |                         |
-| .TargetLanguages        |                         | the translated file.    |
-|                         |                         |                         |
-| .TargetLanguage         |                         |                         |
-|                         |                         |                         |
-| .URL                    |                         |                         |
+|      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 

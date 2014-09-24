@@ -2,10 +2,15 @@
 Add File
 ===================
 
-=============  ===========================
-**Resource:**  /api/files/add/<<language_code>>/<<filename>>
-**Method:**    POST
-=============  ===========================
++-----------------+--------------------------------------------------+
+| **Resource:**   | .. container:: notrans                           |
+|                 |                                                  |
+|                 |    /api/files/add/<<language_code>>/<<filename>> |
++-----------------+--------------------------------------------------+
+| **Method:**     | .. container:: notrans                           |
+|                 |                                                  |
+|                 |    POST                                          |
++-----------------+--------------------------------------------------+
 
 This interface adds a file to the system. 
 
@@ -28,7 +33,6 @@ File Lifecycle
 .. file_lifecycle:
 
 Files go through the following lifecycle.
-
 
 +-------------------------+------------------------------------------------------+
 | Status                  | Comments                                             |
@@ -80,65 +84,125 @@ We currently support the following file types:
 +-------------------------+-----------+--------------------------------------------------------------------------------+
 | File Type               | Extension | Mime Type                                                                      |
 +=========================+===========+================================================================================+
-| Comma separated files   | csv       | text/csv                                                                       |
+| Comma separated files   | csv       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/csv                                                                    |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Microsoft Word          | docx      | application/vnd.openxmlformats-officedocument.wordprocessingml.document        |
+| Microsoft Word          | docx      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/vnd.openxmlformats-officedocument.wordprocessingml.document     |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Flash Video             | flv       | video/x-flv                                                                    |
+| Flash Video             | flv       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    video/x-flv                                                                 |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| HTML                    | htm/html  | text/html                                                                      |
+| HTML                    | htm/html  | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/html                                                                   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| InDesign Export         | idml      | application/xml                                                                |
+| InDesign Export         | idml      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| INI                     | ini       | text/plain                                                                     |
+| INI                     | ini       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| InDesign Exchange       | inx       | application/xml                                                                |
+| InDesign Exchange       | inx       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| JSON                    | json      | application/json                                                               |
+| JSON                    | json      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/json                                                            |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| M4V                     | m4v       | video/x-m4v                                                                    |
+| M4V                     | m4v       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    video/x-m4v                                                                 |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| FrameMaker Interchange  | mif       | application/vnd.mif                                                            |
+| FrameMaker Interchange  | mif       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/vnd.mif                                                         |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Apple QuickTime         | mov       | video/quicktime                                                                |
+| Apple QuickTime         | mov       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    video/quicktime                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| MP4                     | mp4       | video/mp4                                                                      |
+| MP4                     | mp4       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    video/mp4                                                                   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Portable Document Format| pdf       | application/pdf                                                                |
+| Portable Document Format| pdf       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/pdf                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| GetText                 | po        | text/plain                                                                     |
+| GetText                 | po        | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Microsoft PowerPoint    | pptx      | application/vnd.openxmlformats-officedocument.presentationml.presentation      |
+| Microsoft PowerPoint    | pptx      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/vnd.openxmlformats-officedocument.presentationml.presentation   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Properties              | properties| text/plain                                                                     |
+| Properties              | properties| .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Photoshop               | psd       | image/vnd.adobe.photoshop                                                      |
+| Photoshop               | psd       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    image/vnd.adobe.photoshop                                                   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| RESJSON                 | resjson   | application/json                                                               |
+| RESJSON                 | resjson   | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/json                                                            |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| RESW                    | resw      | application/xml                                                                |
+| RESW                    | resw      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| RESX                    | resx      | application/xml                                                                |
+| RESX                    | resx      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Rich Text Format        | rtf       | application/rtf                                                                |
+| Rich Text Format        | rtf       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/rtf                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| SubRip                  | srt       | text/plain                                                                     |
+| SubRip                  | srt       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Strings                 | strings   | text/plain                                                                     |
+| Strings                 | strings   | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Text                    | txt       | text/plain                                                                     |
+| Text                    | txt       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| WebVTT                  | vtt       | text/plain                                                                     |
+| WebVTT                  | vtt       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/plain                                                                  |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Microsoft Media Video   | wmv       | video/x-ms-wmv                                                                 |
+| Microsoft Media Video   | wmv       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    video/x-ms-wmv                                                              |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| XLIFF                   | xlf/xliff | application/xml                                                                |
+| XLIFF                   | xlf/xliff | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml                                                             |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| Microsoft Excel         | xlsx      | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet              |
+| Microsoft Excel         | xlsx      | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet           |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| XML                     | XML       | application/xml, text/xml                                                      |
+| XML                     | XML       | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    application/xml, text/xml                                                   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
-| YAML                    | yml/yaml  | text/yaml                                                                      |
+| YAML                    | yml/yaml  | .. container:: notrans                                                         |
+|                         |           |	                                                                               |
+|                         |           |    text/yaml                                                                   |
 +-------------------------+-----------+--------------------------------------------------------------------------------+
 
 
@@ -187,16 +251,17 @@ including a payment URL.  The user must follow this URL to a payment page.
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| AssetID                 | Integer                 | ID of the uploaded file |
++=========================+=========================+=========================+
+| .. container:: notrans  | Integer                 | ID of the uploaded file |
 |                         |                         |                         |
-|                         |                         | this ID will be used    |
+|    AssetID              |                         | this ID will be used    |
 |                         |                         |                         |
 |                         |                         | when creating a quote   |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Name                    | String                  | Name of the file passed |
+| .. container:: notrans  | String                  | Name of the file passed |
 |                         |                         |                         |
+|    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 

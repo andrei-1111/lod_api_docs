@@ -2,10 +2,16 @@
 List Products
 =============
 
-=============  ======================
-**Resource:**  /api/products
-**Method:**    GET
-=============  ======================
++---------------+------------------------+
+| **Resource:** | .. container:: notrans |
+|               |                        |
+|               |    /api/products       |
++---------------+------------------------+
+| **Method:**   | .. container:: notrans |
+|               |                        |
+|               |    GET                 |
++---------------+------------------------+
+
 
 Returns a list of all products submitted by the merchant
 
@@ -39,43 +45,51 @@ The response body includes a list of products.
 +-------------------------+-------------------------+--------------------------------+
 | Property                | Type                    | Comments                       |
 +=========================+=========================+================================+
-| Product                 | Container               | Container of Product           |
+| .. container:: notrans  | Container               | Container of Product           |
 |                         |                         |                                |
-|                         |                         | information                    |
+|    Product              |                         | information                    |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | Container               | Container of SKU               |
+| .. container:: notrans  | Container               | Container of SKU               |
 |                         |                         |                                |
-| .SKUs                   |                         | elements                       |
+|    Product              |                         | elements                       |
+|                         |                         |                                |
+|      .SKUs              |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | Container               | Container of SKU Number        |
+| .. container:: notrans  | Container               | Container of SKU Number        |
 |                         |                         |                                |
-| .SKUs                   |                         |                                |
+|    Product              |                         |                                |
 |                         |                         |                                |
-| .SKU                    |                         |                                |
+|      .SKUs              |                         |                                |
+|                         |                         |                                |
+|      .SKU               |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | SKU Number                     |
+| .. container:: notrans  | String                  | SKU Number                     |
 |                         |                         |                                |
-| .SKUs                   |                         |                                |
+|    Product              |                         |                                |
 |                         |                         |                                |
-| .SKU                    |                         |                                |
+|      .SKUs              |                         |                                |
 |                         |                         |                                |
-| .SKUNumber              |                         |                                |
+|      .SKU               |                         |                                |
+|                         |                         |                                |
+|      .SKUNumber         |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | Integer                 | Internal onDemand ID           |
+| .. container:: notrans  | Integer                 | Internal onDemand ID           |
 |                         |                         |                                |
-| .AssetID                |                         | for the Asset.                 |
+|    Product              |                         | for the Asset.                 |
 |                         |                         |                                |
+|      .AssetID           |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | String to download full        |
+| .. container:: notrans  | String                  | String to download full        |
 |                         |                         |                                |
-| .URL                    |                         | details of the product.        |
+|    Product              |                         | details of the product.        |
 |                         |                         |                                |
+|      .URL               |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | Integer                 | ID of the project that         |
+| .. container:: notrans  | Integer                 | ID of the project that         |
 |                         |                         |                                |
-| .ProjectID              |                         | was used to translate          |
+|    Product              |                         | was used to translate          |
 |                         |                         |                                |
-|                         |                         | this item.  If SKU was         |
+|      .ProjectID         |                         | this item.  If SKU was         |
 |                         |                         |                                |
 |                         |                         | submitted multiple             |
 |                         |                         |                                |
@@ -83,53 +97,61 @@ The response body includes a list of products.
 |                         |                         |                                |
 |                         |                         | recent project.                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | See LanguageCode in            |
+| .. container:: notrans  | String                  | See LanguageCode in            |
 |                         |                         |                                |
-| .SourceLanguage         |                         | glossary                       |
+|    Product              |                         | glossary                       |
 |                         |                         |                                |
-| .LanguageCode           |                         |                                |
+|      .SourceLanguage    |                         |                                |
 |                         |                         |                                |
+|      .LanguageCode      |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | Container               | Container containing           |
+| .. container:: notrans  | Container               | Container containing           |
 |                         |                         |                                |
-| .TargetLanguages        |                         | target languages that          |
+|    Product              |                         | target languages that          |
 |                         |                         |                                |
-|                         |                         | the product was already        |
+|      .TargetLanguages   |                         | the product was already        |
 |                         |                         |                                |
 |                         |                         | translated into.               |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | See LanguageCode in            |
+| .. container:: notrans  | String                  | See LanguageCode in            |
 |                         |                         |                                |
-| .TargetLanguages        |                         | glossary                       |
+|    Product              |                         | glossary                       |
 |                         |                         |                                |
-| .TargetLanguage         |                         |                                |
+|      .TargetLanguages   |                         |                                |
 |                         |                         |                                |
-| .LanguageCode           |                         |                                |
+|      .TargetLanguage    |                         |                                |
 |                         |                         |                                |
+|      .LanguageCode      |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | The status of the              |
+| .. container:: notrans  | String                  | The status of the              |
 |                         |                         |                                |
-| .TargetLanguages        |                         | translation                    |
+|    Product              |                         | translation                    |
 |                         |                         |                                |
-| .TargetLanguage         |                         |                                |
+|      .TargetLanguages   |                         |                                |
 |                         |                         |                                |
-| .Status                 |                         |                                |
+|      .TargetLanguage    |                         |                                |
+|                         |                         |                                |
+|      .Status            |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | URL to retrieve the            |
+| .. container:: notrans  | String                  | URL to retrieve the            |
 |                         |                         |                                |
-| .TargetLanguages        |                         | project information.           |
+|    Product              |                         | project information.           |
 |                         |                         |                                |
-| .TargetLanguage         |                         |                                |
+|      .TargetLanguages   |                         |                                |
 |                         |                         |                                |
-| .ProjectURL             |                         |                                |
+|      .TargetLanguage    |                         |                                |
+|                         |                         |                                |
+|      .ProjectURL        |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
-| Product                 | String                  | URL to download the            |
+| .. container:: notrans  | String                  | URL to download the            |
 |                         |                         |                                |
-| .TargetLanguages        |                         | translated file.  See          |
+|    Product              |                         | translated file.  See          |
 |                         |                         |                                |
-| .TargetLanguage         |                         | :doc:`get_product_translation` |
+|      .TargetLanguages   |                         | :doc:`get_product_translation` |
 |                         |                         |                                |
-| .DownloadURL            |                         |                                |
+|      .TargetLanguage    |                         |                                |
+|                         |                         |                                |
+|      .DownloadURL       |                         |                                |
 +-------------------------+-------------------------+--------------------------------+
 
   

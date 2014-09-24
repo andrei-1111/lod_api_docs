@@ -2,10 +2,15 @@
 Reject Quote
 ==============
 
-=============  =============================
-**Resource:**  /api/quote/<<quote id>/reject
-**Method:**    POST
-=============  =============================
++---------------+-----------------------------------+
+| **Resource:** | .. container:: notrans            |
+|               |                                   |
+|               |    /api/quote/<<quote id>>/reject |
++---------------+-----------------------------------+
+| **Method:**   | .. container:: notrans            |
+|               |                                   |
+|               |    POST                           |
++---------------+-----------------------------------+
 
 This interface rejects a quote that has already been created.  This deletes the quote.
 

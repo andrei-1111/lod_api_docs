@@ -2,10 +2,15 @@
 Generate Quote
 ==============
 
-=============  ===================
-**Resource:**  /api/quote/generate
-**Method:**    POST
-=============  ===================
++-----------------+------------------------+
+| **Resource:**   | .. container:: notrans |
+|                 |                        |
+|                 |    /api/quote/generate |
++-----------------+------------------------+
+| **Method:**     | .. container:: notrans |
+|                 |                        |
+|                 |    POST                |
++-----------------+------------------------+
 
 This interface is used to generate a quote.  A quote can contain multiple projects.  
 
@@ -21,18 +26,18 @@ Request Body
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | Container               | Contains information    |
++=========================+=========================+=========================+
+| .. container:: notrans  | Container               | Contains information    |
 |                         |                         |                         |
-|                         |                         | specifying the          |
+|    TranslationOptions   |                         | specifying the          |
 |                         |                         |                         |
 |                         |                         | translation project.    |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-|  .Currency              |                         | currency that the       |
+|  TranslationOptions     |                         | currency that the       |
 |                         |                         |                         |
-|                         |                         | merchant wishes to pay  |
+|    .Currency            |                         | merchant wishes to pay  |
 |                         |                         |                         |
 |                         |                         | with. See glossary for  |
 |                         |                         |                         |
@@ -41,19 +46,19 @@ Request Body
 |                         |                         | currencies.             |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | String                  | When the item has been  |
+| .. container:: notrans  | String                  | When the item has been  |
 |                         |                         |                         |
-| .NotificationURL        |                         | translated, the API     |
+|    TranslationOptions   |                         | translated, the API     |
 |                         |                         |                         |
-|                         |                         | will send a POST        |
+|      .NotificationURL   |                         | will send a POST        |
 |                         |                         |                         |
 |                         |                         | request to this URL.    |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | Integer                 | Numeric service code    |
+| .. container:: notrans  | Integer                 | Numeric service code    |
 |                         |                         |                         |
-| .ServiceID              |                         | for the translation     |
+|    TranslationOptions   |                         | for the translation     |
 |                         |                         |                         |
-|                         |                         | service.  The service   |
+|      .ServiceID         |                         | service.  The service   |
 |                         |                         |                         |
 |                         |                         | defines a set of        |
 |                         |                         |                         |
@@ -70,31 +75,39 @@ Request Body
 |                         |                         | element is optional.    |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | Container               | Contains 1 source       |
+| .. container:: notrans  | Container               | Contains 1 source       |
 |                         |                         |                         |
-| .SourceLanguage         |                         | language                |
+|    TranslationOptions   |                         | language                |
+|                         |                         |                         |
+|      .SourceLanguage    |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .SourceLanguage         |                         | glossary                |
+|    TranslationOptions   |                         | glossary                |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .SourceLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | Container               | Contains 1 or more      |
+| .. container:: notrans  | Container               | Contains 1 or more      |
 |                         |                         |                         |
-| .TargetLanguages        |                         | target languages        |
+|    TranslationOptions   |                         | target languages        |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TranslationOptions      | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .TargetLanguages        |                         | glossary                |
+|    TranslationOptions   |                         | glossary                |
 |                         |                         |                         |
-| .TargetLanguage         |                         |                         |
+|      .TargetLanguages   |                         |                         |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | List                    | List of Product         |
+| .. container:: notrans  | List                    | List of Product         |
 |                         |                         |                         |
-|                         |                         | Elements. Products      |
+|    Products             |                         | Elements. Products      |
 |                         |                         |                         |
 |                         |                         | are only allowed as     |
 |                         |                         |                         |
@@ -102,31 +115,37 @@ Request Body
 |                         |                         |                         |
 |                         |                         | supports products.      |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The title of the        |
+| .. container:: notrans  | String                  | The title of the        |
 |                         |                         |                         |
-| .Product                |                         | product                 |
+|    Products             |                         | product                 |
 |                         |                         |                         |
-| .Title                  |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .Title             |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Integer                 | ID of the product’s     |
+| .. container:: notrans  | Integer                 | ID of the product’s     |
 |                         |                         |                         |
-| .Product                |                         | primary category        |
+|    Products             |                         |                         |
+|                         |                         | primary category        |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .PrimaryCategory        |                         |                         |
+|      .PrimaryCategory   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Integer                 | ID of the top level     |
+| .. container:: notrans  | Integer                 | ID of the top level     |
 |                         |                         |                         |
-| .Product                |                         | category that the       |
+|    Products             |                         | category that the       |
 |                         |                         |                         |
-| .TopLevelCategory       |                         | product sits in         |
+|      .Product           |                         | product sits in         |
+|                         |                         |                         |
+|      .TopLevelCategory  |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | Delimited string        |
+| .. container:: notrans  | String                  | Delimited string        |
 |                         |                         |                         |
-| .Product                |                         | showing the path        |
+|    Products             |                         | showing the path        |
 |                         |                         |                         |
-| .CategoryPath           |                         | through the category    |
+|      .Product           |                         | through the category    |
 |                         |                         |                         |
-|                         |                         | hierarchy to the        |
+|      .CategoryPath      |                         | hierarchy to the        |
 |                         |                         |                         |
 |                         |                         | primary category.  This |
 |                         |                         |                         |
@@ -136,95 +155,109 @@ Request Body
 |                         |                         |                         |
 |                         |                         | for the translators.    |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The description of the  |
+| .. container:: notrans  | String                  | The description of the  |
 |                         |                         |                         |
-| .Product                |                         | item.  This element can |
+|    Products             |                         | item.  This element can |
 |                         |                         |                         |
-| .Description            |                         | contain sub-elements.   |
+|      .Product           |                         | contain sub-elements.   |
 |                         |                         |                         |
-|                         |                         | HTML that is not well   |
+|      .Description       |                         | HTML that is not well   |
 |                         |                         |                         |
 |                         |                         | formed XML should be    |
 |                         |                         |                         |
 |                         |                         | wrapped in CDATA tags.  |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Contains a SKU elements |
+| .. container:: notrans  | Container               | Contains a SKU elements |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|    Products             |                         |                         |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
+|                         |                         |                         |
+|      .SKUs              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Contains a SKU Number   |
+| .. container:: notrans  | Container               | Contains a SKU Number   |
 |                         |                         |                         |
-| .Product                |                         | and a list of           |
+|    Products             |                         | and a list of           |
 |                         |                         |                         |
-| .SKUs                   |                         | ItemSpecifics that are  |
+|      .Product           |                         | ItemSpecifics that are  |
 |                         |                         |                         |
-| .SKU                    |                         | relevant to the SKU     |
+|      .SKUs              |                         | relevant to the SKU     |
+|                         |                         |                         |
+|      .SKU               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | SKU Number              |
+| .. container:: notrans  | String                  | SKU Number              |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|    Products             |                         |                         |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .SKUNumber              |                         |                         |
+|      .SKU               |                         |                         |
+|                         |                         |                         |
+|      .SKUNumber         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Contains elements       |
+| .. container:: notrans  | Container               | Contains elements       |
 |                         |                         |                         |
-| .Product                |                         | representing            |
+|    Products             |                         | representing            |
 |                         |                         |                         |
-| .SKUs                   |                         | specifications.         |
+|      .Product           |                         | specifications.         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .ItemSpecifics          |                         |                         |
+|      .SKU               |                         |                         |
+|                         |                         |                         |
+|      .ItemSpecifics     |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Contains elements       |
+| .. container:: notrans  | Container               | Contains elements       |
 |                         |                         |                         |
-| .Product                |                         | representing name-value |
+|    Products             |                         | representing name-value |
 |                         |                         |                         |
-| .SKUs                   |                         | pairs                   |
+|      .Product           |                         | pairs                   |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .ItemSpecifics          |                         |                         |
+|      .SKU               |                         |                         |
 |                         |                         |                         |
-| .ItemSepecific          |                         |                         |
+|      .ItemSpecifics     |                         |                         |
+|                         |                         |                         |
+|      .ItemSepecific     |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The name of the name    |
+| .. container:: notrans  | String                  | The name of the name    |
 |                         |                         |                         |
-| .Product                |                         | value pair              |
+|    Products             |                         | value pair              |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .ItemSpecifics          |                         |                         |
+|      .SKU               |                         |                         |
 |                         |                         |                         |
-| .ItemSpecific           |                         |                         |
+|      .ItemSpecifics     |                         |                         |
 |                         |                         |                         |
-| .Name                   |                         |                         |
+|      .ItemSpecific      |                         |                         |
+|                         |                         |                         |
+|      .Name              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | The name of the name    |
+| .. container:: notrans  | String                  | The name of the name    |
 |                         |                         |                         |
-| .Product                |                         | value pair              |
+|    Products             |                         | value pair              |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .ItemSpecifics          |                         |                         |
+|      .SKU               |                         |                         |
 |                         |                         |                         |
-| .ItemSpecific           |                         |                         |
+|      .ItemSpecifics     |                         |                         |
 |                         |                         |                         |
-| .Value                  |                         |                         |
+|      .ItemSpecific      |                         |                         |
+|                         |                         |                         |
+|      .Value             |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Container               | A collection of file    |
+| .. container:: notrans  | Container               | A collection of file    |
 |                         |                         |                         |
-|                         |                         | elements. The files     |
+|    Files                |                         | elements. The files     |
 |                         |                         |                         |
 |                         |                         | referenced need to      |
 |                         |                         |                         |
@@ -235,22 +268,22 @@ Request Body
 |                         |                         | See :doc:`list_services`|
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Container               | A file is described     |
+| .. container:: notrans  | Container               | A file is described     |
 |                         |                         |                         |
-| .File                   |                         | with a AssetID of a     |
+|    Files                |                         | with a AssetID of a     |
 |                         |                         |                         |
-|                         |                         | previously uploaded file|
+|      .File              |                         | previously uploaded file|
 |                         |                         |                         |
 |                         |                         | (see :doc:`add_file`)   |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Integer                 | AssetID of previously   |
+| .. container:: notrans  | Integer                 | AssetID of previously   |
 |                         |                         |                         |
-| .File                   |                         | uploaded file. Note:    |
+|    Files                |                         | uploaded file. Note:    |
 |                         |                         |                         |
-| .AssetID                |                         | the file type needs to  |
+|      .File              |                         | the file type needs to  |
 |                         |                         |                         |
-|                         |                         | be consistent with the  |
+|      .AssetID           |                         | be consistent with the  |
 |                         |                         |                         |
 |                         |                         | valid file types for    |
 |                         |                         |                         |
@@ -377,7 +410,7 @@ Return Codes
 
 +-------------------------+-------------------------+-------------------------+
 | Status                  | Code                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | Created                 | 201                     | The project was created |
 +-------------------------+-------------------------+-------------------------+
 | Bad Request             | 400                     | This is probably        |
@@ -416,14 +449,14 @@ not contain a price.  If the submitted files
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
-+-------------------------+-------------------------+-------------------------+
-| QuoteID                 | Integer                 | onDemand ID of the      |
++=========================+=========================+=========================+
+| .. container:: notrans  | Integer                 | onDemand ID of the      |
 |                         |                         |                         |
-|                         |                         | Quote.                  |
+|    QuoteID              |                         | Quote.                  |
 +-------------------------+-------------------------+-------------------------+
-| CreationDate            | String                  | String representing the |
+| .. container:: notrans  | String                  | String representing the |
 |                         |                         |                         |
-|                         |                         | date/time in the ISO    |
+|    CreationDate         |                         | date/time in the ISO    |
 |                         |                         |                         |
 |                         |                         | 8601 format. that the   |
 |                         |                         |                         |
@@ -431,9 +464,9 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | UTC.                    |
 +-------------------------+-------------------------+-------------------------+
-| Status                  | String                  | The status of the quote.|
+| .. container:: notrans  | String                  | The status of the quote.|
 |                         |                         |                         |
-|                         |                         | "Ready" means that the  |
+|    Status               |                         | "Ready" means that the  |
 |                         |                         |                         |
 |                         |                         | source content has been |
 |                         |                         |                         |
@@ -457,36 +490,42 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | status.                 |
 +-------------------------+-------------------------+-------------------------+
-| AuthorizeURL            | String                  | URL to authorize the    |
+| .. container:: notrans  | String                  | URL to authorize the    |
 |                         |                         |                         |
-|                         |                         | quote.  See             |
+|    AuthorizeURL         |                         | quote.  See             |
 |                         |                         |                         |
 |                         |                         | :doc:`authorize_quote`  |
 +-------------------------+-------------------------+-------------------------+
-| RejectURL               | String                  | Use this to reject the  |
+| .. container:: notrans  | String                  | Use this to reject the  |
 |                         |                         |                         |
-|                         |                         | quote. See              |
+|    RejectURL            |                         | quote. See              |
 |                         |                         | :doc:`reject_quote`     |
 +-------------------------+-------------------------+-------------------------+
-| ServiceID               | Integer                 | ID of Service           |
+| .. container:: notrans  | Integer                 | ID of Service           |
+|                         |                         |                         |
+|    ServiceID            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| SourceLanguage          | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .LanguageCode           |                         | glossary                |
+|    SourceLanguage       |                         | glossary                |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | Container               | Container containing    |
+| .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-|                         |                         | target languages.       |
+|    TargetLanguages      |                         | target languages.       |
 +-------------------------+-------------------------+-------------------------+
-| TargetLanguages         | String                  | See LanguageCode in     |
+| .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-| .TargetLanguage         |                         | glossary                |
+|    TargetLanguages      |                         | glossary                |
 |                         |                         |                         |
-| .LanguageCode           |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TotalTranslations       | Integer                 | The number of           |
+| .. container:: notrans  | Integer                 | The number of           |
 |                         |                         |                         |
-|                         |                         | translations requested. |
+|    TotalTranslations    |                         | translations requested. |
 |                         |                         |                         |
 |                         |                         | For example, if the     |
 |                         |                         |                         |
@@ -502,110 +541,118 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | be 15.                  |
 +-------------------------+-------------------------+-------------------------+
-| TranslationCredit       | Integer                 | Number of free          |
+| .. container:: notrans  | Integer                 | Number of free          |
 |                         |                         |                         |
-|                         |                         | translations available  |
+|    TranslationCredit    |                         | translations available  |
 |                         |                         |                         |
 |                         |                         | at the selected service |
 |                         |                         |                         |
 |                         |                         | level.                  |
 +-------------------------+-------------------------+-------------------------+
-| Currency                | String                  | Currency used to pay    |
+| .. container:: notrans  | String                  | Currency used to pay    |
 |                         |                         |                         |
-|                         |                         | for the project. See    |
+|    Currency             |                         | for the project. See    |
 |                         |                         |                         |
 |                         |                         | glossary for list of    |
 |                         |                         |                         |
 |                         |                         | valid currencies.       |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| TotalPrice              | Decimal                 | Total price that needs  |
+| .. container:: notrans  | Decimal                 | Total price that needs  |
 |                         |                         |                         |
-|                         |                         | to be paid. Exclude     |
+|    TotalPrice           |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
-| PrepaidCredit           | Decimal                 | If a merchant has a     |
+| .. container:: notrans  | Decimal                 | If a merchant has a     |
 |                         |                         |                         |
-|                         |                         | positive credit balance |
+|    PrepaidCredit        |                         | positive credit balance |
 |                         |                         |                         |
 |                         |                         | with onDemand, it will  |
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| AmountDue               | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalPrice -            |
 |                         |                         | PrepaidCredit           |
+|    AmountDue            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-|                         |                         |                         |
-| Products                | Container               | Container of products   |
-|                         |                         |                         |
+| .. container:: notrans  |                         |                         |
+|                         | Container               | Container of products   |
+|    Products             |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container of SKU        |
+| .. container:: notrans  | Container               | Container of SKU        |
 |                         |                         |                         |
-| .Product                |                         | elements                |
+|    Products             |                         | elements                |
 |                         |                         |                         |
-| .SKUs                   |                         |                         | 
+|      .Product           |                         |                         | 
+|                         |                         |                         |
+|      .SKUs              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Container               | Container of a SKU      |
+| .. container:: notrans  | Container               | Container of a SKU      |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|    Products             |                         |                         |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
+|      .SKU               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | Item SKU                |
+| .. container:: notrans  | String                  | Item SKU                |
 |                         |                         |                         |
-| .Product                |                         |                         |
+|    Products             |                         |                         |
 |                         |                         |                         |
-| .SKUs                   |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
-| .SKU                    |                         |                         |
+|      .SKUs              |                         |                         |
 |                         |                         |                         |
-| .SKUNumber              |                         |                         |
+|      .SKU               |                         |                         |
 |                         |                         |                         |
+|      .SKUNumber         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | Integer                 | onDemand internal ID    |
+| .. container:: notrans  | Integer                 | onDemand internal ID    |
 |                         |                         |                         |
-| .Product                |                         | for the listing         |
+|    Products             |                         | for the listing         |
 |                         |                         |                         |
-| .AssetID                |                         |                         |
+|      .Product           |                         |                         |
 |                         |                         |                         |
+|      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Products                | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-| .Product                |                         | date/time (ISO 8601     |
+|    Products             |                         | date/time (ISO 8601     |
 |                         |                         |                         |
-| .DueDate                |                         | format) that the        |
+|      .Product           |                         | format) that the        |
 |                         |                         |                         |
-|                         |                         | translation of the item |
+|      .DueDate           |                         | translation of the item |
 |                         |                         |                         |
 |                         |                         | is scheduled to be      |
 |                         |                         |                         |
 |                         |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | Integer                 | Asset ID of the file.   |
+| .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
-| .File                   |                         |                         |
+|    Files                |                         |                         |
 |                         |                         |                         |
-| .AssetID                |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
-|                         |                         |                         |
+|      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | Original name of the    |
+| .. container:: notrans  | String                  | Original name of the    |
 |                         |                         |                         |
-| .File                   |                         | file.                   |
+|    Files                |                         | file.                   |
 |                         |                         |                         |
-| .FileName               |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| Files                   | String                  | String representing     |
+| .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-| .File                   |                         | date/time (ISO 8601     |
+|    Files                |                         | date/time (ISO 8601     |
 |                         |                         |                         |
-| .DueDate                |                         | format) that the        |
+|      .File              |                         | format) that the        |
 |                         |                         |                         |
-|                         |                         | translation of the item |
+|      .DueDate           |                         | translation of the item |
 |                         |                         |                         |
 |                         |                         | is scheduled to be      |
 |                         |                         |                         |
@@ -785,7 +832,7 @@ information. Here are some common cases.
 
 +-------------------------+-------------------------+-------------------------+
 | ReasonCode              | SimpleMessage           | DetailedMessage         |
-+-------------------------+-------------------------+-------------------------+
++=========================+=========================+=========================+
 | 200                     | Miscellaneous error     | A miscellaneous or      |
 |                         |                         |                         |
 |                         |                         | unexpected error        |

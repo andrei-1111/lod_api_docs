@@ -2,10 +2,15 @@
 List Files
 =============
 
-=============  ======================
-**Resource:**  /api/files
-**Method:**    GET
-=============  ======================
++---------------+------------------------+
+| **Resource:** | .. container:: notrans |
+|               |                        |
+|               |    /api/files          |
++---------------+------------------------+
+| **Method:**   | .. container:: notrans |
+|               |                        |
+|               |    GET                 |
++---------------+------------------------+
 
 Returns a list of all files submitted by user.
 
@@ -39,26 +44,27 @@ The response body includes a list of file assets.
 +-------------------------+-------------------------+----------------------------+
 | Property                | Type                    | Comments                   |
 +=========================+=========================+============================+
-| File                    | Container               | Container of File          |
+| .. container:: notrans  | Container               | Container of File          |
 |                         |                         |                            |
-|                         |                         | information                |
+|    File                 |                         | information                |
 +-------------------------+-------------------------+----------------------------+
-| File                    | Integer                 | Internal onDemand ID       |
+| .. container:: notrans  | Integer                 | Internal onDemand ID       |
 |                         |                         |                            |
-| .AssetID                |                         | for the file asset.        |
+|    File                 |                         | for the file asset.        |
 |                         |                         |                            |
+|      .AssetID           |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | The current state in the   |
+| .. container:: notrans  | String                  | The current state in the   |
 |                         |                         |                            |
-| .Status                 |                         | onDemand File Lifecycle    |
+|    File                 |                         | onDemand File Lifecycle    |
 |                         |                         |                            |
-|                         |                         | See :doc:`add_file`.       |
+|      .Status            |                         | See :doc:`add_file`.       |
 +-------------------------+-------------------------+----------------------------+
-| File                    | Integer                 | Internal onDemand ID       |
+| .. container:: notrans  | Integer                 | Internal onDemand ID       |
 |                         |                         |                            |
-| .ProjectID              |                         | of the project that this   |
+|    File                 |                         | of the project that this   |
 |                         |                         |                            |
-|                         |                         | asset has been associated  |
+|      .ProjectID         |                         | asset has been associated  |
 |                         |                         |                            |
 |                         |                         | with. If not project has   |
 |                         |                         |                            |
@@ -67,41 +73,41 @@ The response body includes a list of file assets.
 |                         |                         | element will be empty.     |
 |                         |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | Original name of the file. |
+| .. container:: notrans  | String                  | Original name of the file. |
 |                         |                         |                            |
-| .Name                   |                         |                            |
+|    File                 |                         |                            |
 |                         |                         |                            |
-|                         |                         |                            |
+|      .Name              |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | URL to download the        |
+| .. container:: notrans  | String                  | URL to download the        |
 |                         |                         |                            |
-| .URL                    |                         | file.                      |
+|    File                 |                         | file.                      |
 |                         |                         |                            |
-|                         |                         |                            |
+|      .URL               |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | See Language Code          |
+| .. container:: notrans  | String                  | See Language Code          |
 |                         |                         |                            |
-| .SourceLanguage         |                         | in the glossary.           |
+|    File                 |                         | in the glossary.           |
 |                         |                         |                            |
+|      .SourceLanguage    |                         |                            |
 |                         |                         |                            |
-| .LanguageCode           |                         |                            |
-|                         |                         |                            |
+|      .LanguageCode      |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | Integer                 | String representing the    |
+| .. container:: notrans  | Integer                 | String representing the    |
 |                         |                         |                            |
-| .UploadDate             |                         | date/time in the ISO       |
+|    File                 |                         | date/time in the ISO       |
 |                         |                         |                            |
-|                         |                         | 8601 format. that the      |
+|      .UploadDate        |                         | 8601 format. that the      |
 |                         |                         |                            |
 |                         |                         | project was created in     |
 |                         |                         |                            |
 |                         |                         | UTC.                       |
 +-------------------------+-------------------------+----------------------------+
-| File                    | Container               | Container containing       |
+| .. container:: notrans  | Container               | Container containing       |
 |                         |                         |                            |
-| .TargetLanguages        |                         | target languages that      |
+|    File                 |                         | target languages that      |
 |                         |                         |                            |
-|                         |                         | the file was set to be     |
+|      .TargetLanguages   |                         | the file was set to be     |
 |                         |                         |                            |
 |                         |                         | translated into. If the    |
 |                         |                         |                            |
@@ -114,38 +120,45 @@ The response body includes a list of file assets.
 |                         |                         |                            |
 |                         |                         | empty.                     |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | See LanguageCode in        |
+| .. container:: notrans  | String                  | See LanguageCode in        |
 |                         |                         |                            |
-| .TargetLanguages        |                         | glossary                   |
+|    File                 |                         | glossary                   |
 |                         |                         |                            |
-| .TargetLanguage         |                         |                            |
+|      .TargetLanguages   |                         |                            |
 |                         |                         |                            |
-| .LanguageCode           |                         |                            |
+|      .TargetLanguage    |                         |                            |
 |                         |                         |                            |
+|      .LanguageCode      |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | The status of the          |
+| .. container:: notrans  | String                  | The status of the          |
 |                         |                         |                            |
-| .TargetLanguages        |                         | translation                |
+|    File                 |                         | translation                |
 |                         |                         |                            |
-| .TargetLanguage         |                         |                            |
+|      .TargetLanguages   |                         |                            |
 |                         |                         |                            |
-| .Status                 |                         |                            |
+|      .TargetLanguage    |                         |                            |
+|                         |                         |                            |
+|      .Status            |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | URL to retrieve the        |
+| .. container:: notrans  | String                  | URL to retrieve the        |
 |                         |                         |                            |
-| .TargetLanguages        |                         | project information.       |
+|    File                 |                         | project information.       |
 |                         |                         |                            |
-| .TargetLanguage         |                         |                            |
+|      .TargetLanguages   |                         |                            |
 |                         |                         |                            |
-| .ProjectURL             |                         |                            |
+|      .TargetLanguage    |                         |                            |
+|                         |                         |                            |
+|      .ProjectURL        |                         |                            |
 +-------------------------+-------------------------+----------------------------+
-| File                    | String                  | URL to download the        |
+| .. container:: notrans  | String                  | URL to download the        |
 |                         |                         |                            |
-| .TargetLanguages        |                         | translated file.  See      |
+|    File                 |                         | translated file.  See      |
 |                         |                         |                            |
-| .TargetLanguage         |                         | :doc:`get_file_translation`|
+|      .TargetLanguages   |                         | :doc:`get_file_translation`|
 |                         |                         |                            |
-| .DownloadURL            |                         |                            |
+|      .TargetLanguage    |                         |                            |
+|                         |                         |                            |
+|      .DownloadURL       |                         |                            |
 +-------------------------+-------------------------+----------------------------+
 
   
