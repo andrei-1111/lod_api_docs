@@ -12,7 +12,7 @@ List Projects
 |               |    GET                 |
 +---------------+------------------------+
 
-Returns information about the merchant’s account
+Returns a list of all a user's projects.
 
 Return Codes
 ============

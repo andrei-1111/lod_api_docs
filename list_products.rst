@@ -13,7 +13,7 @@ List Products
 +---------------+------------------------+
 
 
-Returns a list of all products submitted by the merchant
+Returns a list of all products submitted from the user account.
 
 Return Codes
 ============

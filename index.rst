@@ -59,6 +59,7 @@ Contents
    get_product
    get_product_translation
    list_services
+   list_locales
    get_terms
  
    
