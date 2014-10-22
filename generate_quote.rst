@@ -28,294 +28,339 @@ The API client should use an API key set associated with a customer (merchant) a
 Request Body
 ============
 
-+-------------------------+-------------------------+-------------------------+
-| Parameter               | Type                    | Comments                |
-+=========================+=========================+=========================+
-| .. container:: notrans  | Container               | Contains information    |
-|                         |                         |                         |
-|    TranslationOptions   |                         | specifying the          |
-|                         |                         |                         |
-|                         |                         | translation project.    |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | String representing     |
-|                         |                         |                         |
-|  TranslationOptions     |                         | currency that the       |
-|                         |                         |                         |
-|    .Currency            |                         | merchant wishes to pay  |
-|                         |                         |                         |
-|                         |                         | with. See glossary for  |
-|                         |                         |                         |
-|                         |                         | list of valid           |
-|                         |                         |                         |
-|                         |                         | currencies.             |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | When the item has been  |
-|                         |                         |                         |
-|    TranslationOptions   |                         | translated, the API     |
-|                         |                         |                         |
-|      .NotificationURL   |                         | will send a POST        |
-|                         |                         |                         |
-|                         |                         | request to this URL.    |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | Numeric service code    |
-|                         |                         |                         |
-|    TranslationOptions   |                         | for the translation     |
-|                         |                         |                         |
-|      .ServiceID         |                         | service.  The service   |
-|                         |                         |                         |
-|                         |                         | defines a set of        |
-|                         |                         |                         |
-|                         |                         | options such as machine |
-|                         |                         |                         |
-|                         |                         | translation with post   |
-|                         |                         |                         |
-|                         |                         | edit on the title and   |
-|                         |                         |                         |
-|                         |                         | raw machine translation |
-|                         |                         |                         |
-|                         |                         | on the body.  This      |
-|                         |                         |                         |
-|                         |                         | element is optional     |
-|                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | projects.               |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains 1 source       |
-|                         |                         |                         |
-|    TranslationOptions   |                         | language. This          |
-|                         |                         |                         |
-|      .SourceLanguage    |                         | element is optional     |
-|                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | prjoects.               |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    TranslationOptions   |                         | glossary                |
-|                         |                         |                         |
-|      .SourceLanguage    |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains 1 or more      |
-|                         |                         |                         |
-|    TranslationOptions   |                         | target languages. This  |
-|                         |                         |                         |
-|      .TargetLanguages   |                         | element is optional     |
-|                         |                         |                         |
-|                         |                         | and ignored for quotes  |
-|                         |                         |                         |
-|                         |                         | that are generated from |
-|                         |                         |                         |
-|                         |                         | projects.               |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    TranslationOptions   |                         | glossary                |
-|                         |                         |                         |
-|      .TargetLanguages   |                         |                         |
-|                         |                         |                         |
-|      .TargetLanguage    |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | List                    | List of Product         |
-|                         |                         |                         |
-|    Products             |                         | Elements. Products      |
-|                         |                         |                         |
-|                         |                         | are only allowed as     |
-|                         |                         |                         |
-|                         |                         | input if the service    |
-|                         |                         |                         |
-|                         |                         | supports products.      |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The title of the        |
-|                         |                         |                         |
-|    Products             |                         | product                 |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .Title             |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | ID of the product’s     |
-|                         |                         |                         |
-|    Products             |                         |                         |
-|                         |                         | primary category        |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .PrimaryCategory   |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | ID of the top level     |
-|                         |                         |                         |
-|    Products             |                         | category that the       |
-|                         |                         |                         |
-|      .Product           |                         | product sits in         |
-|                         |                         |                         |
-|      .TopLevelCategory  |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Delimited string        |
-|                         |                         |                         |
-|    Products             |                         | showing the path        |
-|                         |                         |                         |
-|      .Product           |                         | through the category    |
-|                         |                         |                         |
-|      .CategoryPath      |                         | hierarchy to the        |
-|                         |                         |                         |
-|                         |                         | primary category.  This |
-|                         |                         |                         |
-|                         |                         | is mainly for           |
-|                         |                         |                         |
-|                         |                         | contextual information  |
-|                         |                         |                         |
-|                         |                         | for the translators.    |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The description of the  |
-|                         |                         |                         |
-|    Products             |                         | item.  This element can |
-|                         |                         |                         |
-|      .Product           |                         | contain sub-elements.   |
-|                         |                         |                         |
-|      .Description       |                         | HTML that is not well   |
-|                         |                         |                         |
-|                         |                         | formed XML should be    |
-|                         |                         |                         |
-|                         |                         | wrapped in CDATA tags.  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains a SKU elements |
-|                         |                         |                         |
-|    Products             |                         |                         |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains a SKU Number   |
-|                         |                         |                         |
-|    Products             |                         | and a list of           |
-|                         |                         |                         |
-|      .Product           |                         | ItemSpecifics that are  |
-|                         |                         |                         |
-|      .SKUs              |                         | relevant to the SKU     |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | SKU Number              |
-|                         |                         |                         |
-|    Products             |                         |                         |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-|                         |                         |                         |
-|      .SKUNumber         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains elements       |
-|                         |                         |                         |
-|    Products             |                         | representing            |
-|                         |                         |                         |
-|      .Product           |                         | specifications.         |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecifics     |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Contains elements       |
-|                         |                         |                         |
-|    Products             |                         | representing name-value |
-|                         |                         |                         |
-|      .Product           |                         | pairs                   |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecifics     |                         |                         |
-|                         |                         |                         |
-|      .ItemSepecific     |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The name of the name    |
-|                         |                         |                         |
-|    Products             |                         | value pair              |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecifics     |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecific      |                         |                         |
-|                         |                         |                         |
-|      .Name              |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The name of the name    |
-|                         |                         |                         |
-|    Products             |                         | value pair              |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .SKUs              |                         |                         |
-|                         |                         |                         |
-|      .SKU               |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecifics     |                         |                         |
-|                         |                         |                         |
-|      .ItemSpecific      |                         |                         |
-|                         |                         |                         |
-|      .Value             |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | A collection of file    |
-|                         |                         |                         |
-|    Files                |                         | elements. The files     |
-|                         |                         |                         |
-|                         |                         | referenced need to      |
-|                         |                         |                         |
-|                         |                         | supported by the        |
-|                         |                         |                         |
-|                         |                         | selected service.       |
-|                         |                         |                         |
-|                         |                         | See :doc:`list_services`|
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | A file is described     |
-|                         |                         |                         |
-|    Files                |                         | with a AssetID of a     |
-|                         |                         |                         |
-|      .File              |                         | previously uploaded file|
-|                         |                         |                         |
-|                         |                         | (see :doc:`add_file`)   |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | AssetID of previously   |
-|                         |                         |                         |
-|    Files                |                         | uploaded file. Note:    |
-|                         |                         |                         |
-|      .File              |                         | the file type needs to  |
-|                         |                         |                         |
-|      .AssetID           |                         | be consistent with the  |
-|                         |                         |                         |
-|                         |                         | valid file types for    |
-|                         |                         |                         |
-|                         |                         | the service. Also,      |
-|                         |                         |                         |
-|                         |                         | a file cannot be        |
-|                         |                         |                         |
-|                         |                         | associated with more    |
-|                         |                         |                         |
-|                         |                         | that one quote.         |
-+-------------------------+-------------------------+-------------------------+
++-------------------------+-------------------------+---------------------------------+
+| Parameter               | Type                    | Comments                        |
++=========================+=========================+=================================+
+| .. container:: notrans  | Container               | Contains information            |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | specifying the                  |
+|                         |                         |                                 |
+|                         |                         | translation project.            |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | String representing             |
+|                         |                         |                                 |
+|  TranslationOptions     |                         | currency that the               |
+|                         |                         |                                 |
+|    .Currency            |                         | merchant wishes to pay          |
+|                         |                         |                                 |
+|                         |                         | with. See glossary for          |
+|                         |                         |                                 |
+|                         |                         | list of valid                   |
+|                         |                         |                                 |
+|                         |                         | currencies.                     |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String (optional)       | When a project is               |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | complete, the API               |
+|                         |                         |                                 |
+|      .NotificationURL   |                         | will send a POST                |
+|                         |                         |                                 |
+|                         |                         | request to this URL.            |
+|                         |                         |                                 |
+|                         |                         | *deprecated* please use         |
+|                         |                         |                                 |
+|                         |                         | NotifyCompleteURL               |
+|                         |                         |                                 |
+|                         |                         | instead. See the                |
+|                         |                         |                                 |
+|                         |                         | :doc:`notify_project_complete`  |
+|                         |                         |                                 |
+|                         |                         | API documentation for the       |
+|                         |                         |                                 |
+|                         |                         | structure of the post body.     |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String (optional)       | When a project is               |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | complete, the API               |
+|                         |                         |                                 |
+|     .NotifyCompleteURL  |                         | will send a POST                |
+|                         |                         |                                 |
+|                         |                         | request to this URL. See the    |
+|                         |                         |                                 |
+|                         |                         | :doc:`notify_project_complete`  |
+|                         |                         |                                 |
+|                         |                         | API documentation for the       |
+|                         |                         |                                 |
+|                         |                         | structure of the post body.     |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String (optional)       | When the quote has been         |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | priced and is ready for         |
+|                         |                         |                                 |
+|     .NotifyQuoteReadyURL|                         | purchase, the API will          |
+|                         |                         |                                 |
+|                         |                         | send a post request to          |
+|                         |                         |                                 |
+|                         |                         | this URL.                       |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String (optional)       | When the quote has been         |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | paid, the API will send         |
+|                         |                         |                                 |
+|      .NotifyQuotePaidURL|                         | a POST to this URL.             |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Integer                 | Numeric service code            |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | for the translation             |
+|                         |                         |                                 |
+|      .ServiceID         |                         | service.  The service           |
+|                         |                         |                                 |
+|                         |                         | defines a set of                |
+|                         |                         |                                 |
+|                         |                         | options such as machine         |
+|                         |                         |                                 |
+|                         |                         | translation with post           |
+|                         |                         |                                 |
+|                         |                         | edit on the title and           |
+|                         |                         |                                 |
+|                         |                         | raw machine translation         |
+|                         |                         |                                 |
+|                         |                         | on the body.  This              |
+|                         |                         |                                 |
+|                         |                         | element is optional             |
+|                         |                         |                                 |
+|                         |                         | and ignored for quotes          |
+|                         |                         |                                 |
+|                         |                         | that are generated from         |
+|                         |                         |                                 |
+|                         |                         | projects.                       |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains 1 source               |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | language. This                  |
+|                         |                         |                                 |
+|      .SourceLanguage    |                         | element is optional             |
+|                         |                         |                                 |
+|                         |                         | and ignored for quotes          |
+|                         |                         |                                 |
+|                         |                         | that are generated from         |
+|                         |                         |                                 |
+|                         |                         | prjoects.                       |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in             |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | glossary                        |
+|                         |                         |                                 |
+|      .SourceLanguage    |                         |                                 |
+|                         |                         |                                 |
+|      .LanguageCode      |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains 1 or more              |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | target languages. This          |
+|                         |                         |                                 |
+|      .TargetLanguages   |                         | element is optional             |
+|                         |                         |                                 |
+|                         |                         | and ignored for quotes          |
+|                         |                         |                                 |
+|                         |                         | that are generated from         |
+|                         |                         |                                 |
+|                         |                         | projects.                       |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in             |
+|                         |                         |                                 |
+|    TranslationOptions   |                         | glossary                        |
+|                         |                         |                                 |
+|      .TargetLanguages   |                         |                                 |
+|                         |                         |                                 |
+|      .TargetLanguage    |                         |                                 |
+|                         |                         |                                 |
+|      .LanguageCode      |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | List                    | List of Product                 |
+|                         |                         |                                 |
+|    Products             |                         | Elements. Products              |
+|                         |                         |                                 |
+|                         |                         | are only allowed as             |
+|                         |                         |                                 |
+|                         |                         | input if the service            |
+|                         |                         |                                 |
+|                         |                         | supports products.              |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | The title of the                |
+|                         |                         |                                 |
+|    Products             |                         | product                         |
+|                         |                         |                                 |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .Title             |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Integer                 | ID of the product’s             |
+|                         |                         |                                 |
+|    Products             |                         |                                 |
+|                         |                         | primary category                |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .PrimaryCategory   |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Integer                 | ID of the top level             |
+|                         |                         |                                 |
+|    Products             |                         | category that the               |
+|                         |                         |                                 |
+|      .Product           |                         | product sits in                 |
+|                         |                         |                                 |
+|      .TopLevelCategory  |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | Delimited string                |
+|                         |                         |                                 |
+|    Products             |                         | showing the path                |
+|                         |                         |                                 |
+|      .Product           |                         | through the category            |
+|                         |                         |                                 |
+|      .CategoryPath      |                         | hierarchy to the                |
+|                         |                         |                                 |
+|                         |                         | primary category.  This         |
+|                         |                         |                                 |
+|                         |                         | is mainly for                   |
+|                         |                         |                                 |
+|                         |                         | contextual information          |
+|                         |                         |                                 |
+|                         |                         | for the translators.            |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | The description of the          |
+|                         |                         |                                 |
+|    Products             |                         | item.  This element can         |
+|                         |                         |                                 |
+|      .Product           |                         | contain sub-elements.           |
+|                         |                         |                                 |
+|      .Description       |                         | HTML that is not well           |
+|                         |                         |                                 |
+|                         |                         | formed XML should be            |
+|                         |                         |                                 |
+|                         |                         | wrapped in CDATA tags.          |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains a SKU elements         |
+|                         |                         |                                 |
+|    Products             |                         |                                 |
+|                         |                         |                                 |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains a SKU Number           |
+|                         |                         |                                 |
+|    Products             |                         | and a list of                   |
+|                         |                         |                                 |
+|      .Product           |                         | ItemSpecifics that are          |
+|                         |                         |                                 |
+|      .SKUs              |                         | relevant to the SKU             |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | SKU Number                      |
+|                         |                         |                                 |
+|    Products             |                         |                                 |
+|                         |                         |                                 |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
+|                         |                         |                                 |
+|      .SKUNumber         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains elements               |
+|                         |                         |                                 |
+|    Products             |                         | representing                    |
+|                         |                         |                                 |
+|      .Product           |                         | specifications.                 |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecifics     |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | Contains elements               |
+|                         |                         |                                 |
+|    Products             |                         | representing name-value         |
+|                         |                         |                                 |
+|      .Product           |                         | pairs                           |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecifics     |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSepecific     |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | The name of the name            |
+|                         |                         |                                 |
+|    Products             |                         | value pair                      |
+|                         |                         |                                 |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecifics     |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecific      |                         |                                 |
+|                         |                         |                                 |
+|      .Name              |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String                  | The name of the name            |
+|                         |                         |                                 |
+|    Products             |                         | value pair                      |
+|                         |                         |                                 |
+|      .Product           |                         |                                 |
+|                         |                         |                                 |
+|      .SKUs              |                         |                                 |
+|                         |                         |                                 |
+|      .SKU               |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecifics     |                         |                                 |
+|                         |                         |                                 |
+|      .ItemSpecific      |                         |                                 |
+|                         |                         |                                 |
+|      .Value             |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | A collection of file            |
+|                         |                         |                                 |
+|    Files                |                         | elements. The files             |
+|                         |                         |                                 |
+|                         |                         | referenced need to              |
+|                         |                         |                                 |
+|                         |                         | supported by the                |
+|                         |                         |                                 |
+|                         |                         | selected service.               |
+|                         |                         |                                 |
+|                         |                         | See :doc:`list_services`        |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Container               | A file is described             |
+|                         |                         |                                 |
+|    Files                |                         | with a AssetID of a             |
+|                         |                         |                                 |
+|      .File              |                         | previously uploaded file        |
+|                         |                         |                                 |
+|                         |                         | (see :doc:`add_file`)           |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Integer                 | AssetID of previously           |
+|                         |                         |                                 |
+|    Files                |                         | uploaded file. Note:            |
+|                         |                         |                                 |
+|      .File              |                         | the file type needs to          |
+|                         |                         |                                 |
+|      .AssetID           |                         | be consistent with the          |
+|                         |                         |                                 |
+|                         |                         | valid file types for            |
+|                         |                         |                                 |
+|                         |                         | the service. Also,              |
+|                         |                         |                                 |
+|                         |                         | a file cannot be                |
+|                         |                         |                                 |
+|                         |                         | associated with more            |
+|                         |                         |                                 |
+|                         |                         | that one quote.                 |
++-------------------------+-------------------------+---------------------------------+
 
 
 
@@ -594,13 +639,13 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | level.                  |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Currency used to pay    |
+| .. container:: notrans  | String                  | Currency that the price |
 |                         |                         |                         |
-|    Currency             |                         | for the project. See    |
+|    Currency             |                         | is in. See glossary     |
 |                         |                         |                         |
-|                         |                         | glossary for list of    |
+|                         |                         | for list of valid       |
 |                         |                         |                         |
-|                         |                         | valid currencies.       |
+|                         |                         | currencies.             |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 | Total price that needs  |

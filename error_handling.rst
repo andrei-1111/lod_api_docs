@@ -6,8 +6,71 @@ Error Handling
 ==============
 
 
-The onDemand API uses standard HTTP response codes to indicate success
-and various failure states.  In the case of a failure, the API will
+The onDemand API is RESTful and uses standard HTTP response codes to indicate success
+and various failure states. Common HTTP status codes used by the API are:
+
+
++-------------------------+-------------------------+-------------------------+
+| Status                  | Code                    | Comments                |
++=========================+=========================+=========================+
+| OK                      | 200                     | Returned on             |
+|                         |                         |                         |
+|                         |                         | succesfull get request. |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Created                 | 201                     | Returned when a new     |
+|                         |                         |                         |
+|                         |                         | object (such as a quote |
+|                         |                         |                         |
+|                         |                         | or a file) is created.  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Accepted                | 202                     | Returned in cases like  |
+|                         |                         |                         |
+|                         |                         | an accepted payment.    |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Bad Request             | 400                     | This is probably        |
+|                         |                         |                         |
+|                         |                         | because of a malformed  |
+|                         |                         |                         |
+|                         |                         | request body.           |
++-------------------------+-------------------------+-------------------------+
+| Unauthorized            | 401                     | The request did not     |
+|                         |                         |                         |
+|                         |                         | pass authentication or  |
+|                         |                         |                         |
+|                         |                         | the customer is not a   |
+|                         |                         |                         |
+|                         |                         | member of an enterprise |
+|                         |                         |                         |
+|                         |                         | site.                   |
++-------------------------+-------------------------+-------------------------+
+| Conflict                | 409                     | This is probably        |
+|                         |                         |                         |
+|                         |                         | because of an invalid   |
+|                         |                         |                         |
+|                         |                         | parameter such as the   |
+|                         |                         |                         |
+|                         |                         | wrong service id or     |
+|                         |                         |                         |
+|                         |                         | incompatible file types.|
++-------------------------+-------------------------+-------------------------+
+| System Error            | 500                     | This is probably caused |
+|                         |                         |                         |
+|                         |                         | by a poorly handled     |
+|                         |                         |                         |
+|                         |                         | exception or validation.|
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+
+
+
+
+
+In the case of a failure, the API will
 return a data structure like this:
 
 ::

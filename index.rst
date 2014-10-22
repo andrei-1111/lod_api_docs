@@ -44,7 +44,9 @@ Contents
    authorize_quote
    get_quote
    reject_quote
-   notification 
+   notify_project_complete
+   notify_quote_ready
+   notify_quote_paid
    add_project
    list_projects
    get_project
