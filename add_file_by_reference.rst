@@ -144,7 +144,7 @@ Return Codes
 +-------------------------+-------------------------+-------------------------+
 | Conflict                | 409                     | The URL does not appear |
 |                         |                         |                         |
-|                         |                         | to be accesspible to    |
+|                         |                         | to be accessible to     |
 |                         |                         |                         |
 |                         |                         | onDemand.               |
 |                         |                         |                         |

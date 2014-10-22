@@ -54,6 +54,7 @@ Contents
    add_file_by_reference
    list_files
    get_file
+   get_file_details
    get_file_translation
    list_products
    get_product

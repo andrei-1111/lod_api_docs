@@ -289,7 +289,30 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file. A       |
+|                         |                         |                         |
+|      .ReferenceFile     |                         | reference file is used  |
+|                         |                         |                         |
+|                         |                         | to inform the work that |
+|                         |                         |                         |
+|                         |                         | is being done. There is |
+|                         |                         |                         |
+|                         |                         | no charge for reference |
+|                         |                         |                         |
+|                         |                         | files.                  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file.         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 
 
@@ -364,6 +387,14 @@ Example of get project response for product-based projects.
             </Product>
         </Products>
         
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Project>
 
 Example of get project response for file-based projects.
@@ -405,4 +436,12 @@ Example of get project response for file-based projects.
                 </TargetLanguages>
             </File>   
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Project>
