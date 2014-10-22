@@ -361,7 +361,29 @@ Request Body
 |                         |                         |                                 |
 |                         |                         | that one quote.                 |
 +-------------------------+-------------------------+---------------------------------+
-
+| .. container:: notrans  | Container               | Container for a reference file. |
+|                         |                         |                                 |
+|    ReferenceFiles       |                         | A reference file is used to     |
+|                         |                         |                                 |
+|      .ReferenceFile     |                         | inform the work that is being   |
+|                         |                         |                                 |
+|                         |                         | done.  There is no charge for   |
+|                         |                         |                                 |
+|                         |                         | reference files. Reference      |
+|                         |                         |                                 |
+|                         |                         | are always optional.            |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the reference file. |
+|                         |                         |                                 |
+|    ReferenceFiles       |                         |                                 |
+|                         |                         |                                 |
+|      .ReferenceFile     |                         |                                 |
+|                         |                         |                                 |
+|      .AssetID           |                         |                                 |
+|                         |                         |                                 |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
 
 
 Product Request Example
@@ -433,9 +455,15 @@ Product Request Example
                     </SKU>
                 </SKUs>
             </Product>
-
         </Products>
-
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </GenerateQuote>
 
 
@@ -468,6 +496,14 @@ File Request Example
                 <AssetID>123456</AssetID>
             </File>
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </GenerateQuote>
 
 
@@ -755,6 +791,30 @@ not contain a price.  If the submitted files
 | .ProjectID              |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file. A       |
+|                         |                         |                         |
+|      .ReferenceFile     |                         | reference file is used  |
+|                         |                         |                         |
+|                         |                         | to inform the work that |
+|                         |                         |                         |
+|                         |                         | is being done. There is |
+|                         |                         |                         |
+|                         |                         | no charge for reference |
+|                         |                         |                         |
+|                         |                         | files.                  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file.         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 Product-Based Quote Response Example
 ====================================
@@ -797,6 +857,14 @@ Product-Based Quote Response Example
                     <DueDate>2014-02-11T10:22:46Z</DueDate> 
                 </Product>
         </Products>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -835,7 +903,15 @@ If the price is not yet ready, the response will look like:
                         </SKU>
                     </SKUs>
                 </Product>
-            </Products>
+        </Products>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Quote>
 
 File-Based Quote Response Example
@@ -873,6 +949,14 @@ File-Based Quote Response Example
                     <DueDate>2014-02-11T10:22:46Z</DueDate> 
                 </File>
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -906,6 +990,14 @@ If the price is not yet ready, the response will look like:
                     <FileName>example.txt</FileName>
                 </File>
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Quote>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like

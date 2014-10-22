@@ -309,6 +309,30 @@ Request Body
 |                         |                         |                         |
 |                         |                         | that one quote.         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file. A       |
+|                         |                         |                         |
+|      .ReferenceFile     |                         | reference file is used  |
+|                         |                         |                         |
+|                         |                         | to inform the work that |
+|                         |                         |                         |
+|                         |                         | is being done. There is |
+|                         |                         |                         |
+|                         |                         | no charge for reference |
+|                         |                         |                         |
+|                         |                         | files.                  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file.         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 
 
@@ -384,6 +408,14 @@ Product Request Example
             </Product>
 
         </Products>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
 
     </AddProject>
 
@@ -417,6 +449,14 @@ File Request Example
                 <AssetID>123456</AssetID>
             </File>
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </AddProject>
 
 Return Codes
@@ -628,6 +668,30 @@ not contain a price.  If the submitted files
 |                         |                         | is scheduled to be      |
 |                         |                         |                         |
 |                         |                         | completed in UTC        |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file. A       |
+|                         |                         |                         |
+|      .ReferenceFile     |                         | reference file is used  |
+|                         |                         |                         |
+|                         |                         | to inform the work that |
+|                         |                         |                         |
+|                         |                         | is being done. There is |
+|                         |                         |                         |
+|                         |                         | no charge for reference |
+|                         |                         |                         |
+|                         |                         | files.                  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file.         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
 Product-Based Project Response Example
