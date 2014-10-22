@@ -162,17 +162,21 @@ The response body shows information about the product.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-|    SourceLanguage       |                         | glossary                |
+|    Project              |                         | the glossary.           |
+|                         |                         |                         |
+|      .SourceLanguage    |                         |                         |
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container containing    |
 |                         |                         |                         |
-|    TargetLanguages      |                         | target languages.       |
+|    Project              |                         | target languages.       |
+|                         |                         |                         |
+|       .TargetLanguages  |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-|    TargetLanguages      |                         | glossary                |
+|    Project              |                         | the glossary.           |
 |                         |                         |                         |
 |      .TargetLanguages   |                         |                         |
 |                         |                         |                         |

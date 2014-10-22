@@ -18,7 +18,7 @@ This interface adds a file to onDemand by providing an external URL that onDeman
 The URL for this method includes two parameters.  
 
 
-- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain.
+- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain. If you don't know the language code, you can use "detect-language" instead of a language code and onDemand will attempt to detect the language.
 - filename is the original name of the file.  It needs to be url encoded.
 
 Files are then used to generate quotes.  If a file is not used in a quote
@@ -171,6 +171,16 @@ including a payment URL.  The user must follow this URL to a payment page.
 |                         |                         |                         |
 |    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    SourceLanguage       |                         | glossary                |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+
+
+
+
 
 
 Response Example
@@ -181,7 +191,11 @@ Response Example
     <File>
         <AssetID>1235</AssetID>
         <Name>foo.txt</Name>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
     </File>
+
 
 
 Errors
