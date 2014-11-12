@@ -152,7 +152,7 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         | unexpected error        |
 |                         |                         |                         |
-|                         |                         | has occured.            |
+|                         |                         | has occurred.           |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | 401                     | There was a problem     | Request body could not  |
