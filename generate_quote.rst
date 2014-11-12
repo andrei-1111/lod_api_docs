@@ -70,9 +70,8 @@ Request Body
 |                         |                         |                         |
 |                         |                         | raw machine translation |
 |                         |                         |                         |
-|                         |                         | on the body.  This      |
+|                         |                         | on the body.            |
 |                         |                         |                         |
-|                         |                         | element is optional.    |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Contains 1 source       |
