@@ -66,7 +66,7 @@ The response body includes a list of file assets.
 |                         |                         |                            |
 |      .ProjectID         |                         | asset has been associated  |
 |                         |                         |                            |
-|                         |                         | with. If not project has   |
+|                         |                         | with. If no project has    |
 |                         |                         |                            |
 |                         |                         | been associated, this      |
 |                         |                         |                            |

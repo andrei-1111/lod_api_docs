@@ -21,7 +21,7 @@ Request Body
 +-------------------------+--------+------------------------------------------------+
 | Parameter               | Type   | Comments                                       |
 +=========================+========+================================================+
-| .. container:: notrans  | String | Merchant system account id                     |
+| .. container:: notrans  | String | Merchant system account id (optional)          |
 |                         |        |                                                |
 |    MerchantID           |        |                                                |
 +-------------------------+--------+------------------------------------------------+
@@ -29,11 +29,11 @@ Request Body
 |                         |        |                                                |
 |    EmailAddress         |        |                                                |
 +-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | First name of the primary user (optional)      |
+| .. container:: notrans  | String | First name of the primary user                 |
 |                         |        |                                                |
 |    FirstName            |        |                                                |
 +-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Last name of the primary user (optional)       |
+| .. container:: notrans  | String | Last name of the primary user                  |
 |                         |        |                                                |
 |    LastName             |        |                                                |
 +-------------------------+--------+------------------------------------------------+
@@ -157,15 +157,15 @@ information. Here are some common cases.
 +-------------------------+-------------------------+-------------------------+
 | 401                     | There was a problem     | Request body could not  |
 |                         |                         |                         |
-|                         | data in the request body| parsed. Please verify   |
+|                         | data in the request body| be parsed. Please verify|
 |                         |                         |                         |
 |                         |                         | that the XML is well-   |
 |                         |                         |                         |
-|                         |                         | formd and the encoding  |
+|                         |                         | formed and the encoding |
 |                         |                         |                         |
 |                         |                         | is correct.             |
 +-------------------------+-------------------------+-------------------------+
-| 403                     | An account already      | A user account with     |
+| 404                     | An account already      | A user account with     |
 |                         |                         |                         |
 |                         | exists.                 | this email already      |
 |                         |                         |                         |
@@ -174,12 +174,5 @@ information. Here are some common cases.
 |                         |                         | log into onDemand and   |
 |                         |                         |                         |
 |                         |                         | copy his access keys.   |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| 404                     | Merchant ID already in  | A user  account with    |
-|                         |                         |                         |
-|                         | use.                    | this merchant id        |
-|                         |                         |                         |
-|                         |                         | already exists.         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+

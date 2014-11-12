@@ -20,8 +20,7 @@ Return Codes
 ============  ====   ========
 Status        Code   Comments
 ============  ====   ========
-Successs      200    The project was created
-Bad Request   400    Potentially from an invalid country code or a missing VATID.
+Successs      200    The account information was retrieved
 Unauthorized  401    The request did not pass authentication or the customer is not a member of an enterprise   site.
 ============  ====   ========
 
