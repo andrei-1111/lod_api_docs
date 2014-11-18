@@ -46,13 +46,15 @@ Request Body
 |                         |                         | currencies.             |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | When the item has been  |
+| .. container:: notrans  | String (optional)       | When the item has been  |
 |                         |                         |                         |
 |    TranslationOptions   |                         | translated, the API     |
 |                         |                         |                         |
 |      .NotificationURL   |                         | will send a POST        |
 |                         |                         |                         |
 |                         |                         | request to this URL.    |
+|                         |                         |                         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Numeric service code    |
 |                         |                         |                         |
