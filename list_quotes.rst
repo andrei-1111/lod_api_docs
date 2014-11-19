@@ -1,23 +1,19 @@
-=========
-Get Quote
-=========
+===========
+List Quotes
+===========
 
 +---------------+----------------------------+
 | **Resource:** | .. container:: notrans     |
 |               |                            |
-|               |    /api/quote/<<quote id>> |
+|               |    /api/quote              |
 +---------------+----------------------------+
 | **Method:**   | .. container:: notrans     |
 |               |                            |
 |               |    GET                     |
 +---------------+----------------------------+
 
-Returns information about a quote.  This API is useful for polling 
+Returns a list of all of the quotes owned by a user. 
 
-Arguments
-=========
-
-- **Quote ID:** The onDemand Quote ID.  You will receive this ID from :doc:`generate_quote` 
 
 Return Codes
 ============
@@ -38,12 +34,6 @@ Return Codes
 |                         |                         | member of an enterprise |
 |                         |                         |                         |
 |                         |                         | site.                   |
-+-------------------------+-------------------------+-------------------------+
-| Not Found               | 404                     | The URL does not relate |
-|                         |                         |                         |
-|                         |                         | to a quote that the     |
-|                         |                         |                         |
-|                         |                         | account owns.           |
 +-------------------------+-------------------------+-------------------------+
 
 Response Body
@@ -301,190 +291,88 @@ Quote is ready for payment.
 
 ::
 
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>Pending</Status>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Products>
-                    <Product>
-                        <AssetID>999</AssetID>
-                        <SKUs>
-                            <SKU>
-                                <SKUNumber>123</SKUNumber>
-                            </SKU>
-                        </SKUs>
-                    </Product>
-                </Products>
-            </Project>
-        </Projects>
-    </Quote>
+	<Quotes>
+	   <Quote>
+	        <QuoteID>132</QuoteID>
+	        <Status>Pending</Status>
+	        <TotalCost>10.00</TotalCost>
+	        <PrepaidCredit>5.00</PrepaidCredit>
+	        <AmountDue>5.00</AmountDue>
+	        <Currency>EUR</Currency>
+	        <Projects>
+	            <Project>
+	                <ProjectID>123</ProjectID>
+	                <ProjectURL>https://</ProjectURL>
+	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <Products>
+	                    <Product>
+	                        <AssetID>999</AssetID>
+	                        <SKUs>
+	                            <SKU>
+	                                <SKUNumber>123</SKUNumber>
+	                            </SKU>
+	                        </SKUs>
+	                    </Product>
+	                </Products>
+	            </Project>
+	        </Projects>
+	    </Quote>
+	   <Quote>
+	        <QuoteID>132</QuoteID>
+	        <Status>Authorized</Status>
+	        <TotalCost>10.00</TotalCost>
+	        <Currency>EUR</Currency>
+	        <Payments>
+	            <Payment>
+	                <PaymentType>PayPal</PaymentType>
+	                <PaymentDescription>PayPal charge to buyer@example.com</PaymentDescription>
+	                <PaymentAmount>10.00</PaymentAmount>
+	                <PaymentCurrency>EURO</PaymentCurrency>
+	            </Payment>
+	        <Payments>
+	        <Projects>
+	            <Project>
+	                <ProjectID>123</ProjectID>
+	                <ProjectURL>https://</ProjectURL>
+	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <Products>
+	                    <Product>
+	                        <AssetID>999</AssetID>
+	                        <SKUs>
+	                            <SKU>
+	                                <SKUNumber>123</SKUNumber>
+	                            </SKU>
+	                        </SKUs>
+	                    </Product>
+	                </Products>
+	            </Project>
+	        </Projects>
+	    </Quote>
+	   <Quote>
+	        <QuoteID>132</QuoteID>
+	        <Status>Pending</Status>
+	        <AuthorizeURL>https://…</AuthorizeURL>
+	        <RejectURL>https://…</RejectURL>
+	        <TotalCost>10.00</TotalCost>
+	        <PrepaidCredit>5.00</PrepaidCredit>
+	        <AmountDue>5.00</AmountDue>
+	        <Currency>EUR</Currency>
+	        <Projects>
+	            <Project>
+	                <ProjectID>123</ProjectID>
+	                <ProjectName>Name of project</ProjectName>
+	                <ProjectURL>https://</ProjectURL>
+	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <Files>
+	                    <File>
+	                        <Status>Analyzed</Status>
+	                        <AssetID>999</AssetID>
+	                        <FileName>example.txt</FileName>
+	                    </File>
+	                </Files>
+	            </Project>
+	        </Projects>
+	    </Quote>
+	</Quotes>
 
-
-
-Quote is has been authorized.
-
-::
-
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>Authorized</Status>
-        <TotalCost>10.00</TotalCost>
-        <Currency>EUR</Currency>
-        <Payments>
-            <Payment>
-                <PaymentType>PayPal</PaymentType>
-                <PaymentDescription>PayPal charge to buyer@example.com</PaymentDescription>
-                <PaymentAmount>10.00</PaymentAmount>
-                <PaymentCurrency>EURO</PaymentCurrency>
-            </Payment>
-        <Payments>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Products>
-                    <Product>
-                        <AssetID>999</AssetID>
-                        <SKUs>
-                            <SKU>
-                                <SKUNumber>123</SKUNumber>
-                            </SKU>
-                        </SKUs>
-                    </Product>
-                </Products>
-            </Project>
-        </Projects>
-    </Quote>
-
-
-
-File-Based Quote Response Example
-====================================
-
-
-**Quote is ready for payment**
-::
-
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://…</RejectURL>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectName>Name of project</ProjectName>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Files>
-                    <File>
-                        <Status>Analyzed</Status>
-                        <AssetID>999</AssetID>
-                        <FileName>example.txt</FileName>
-                    </File>
-                </Files>
-            </Project>
-        </Projects>
-    </Quote>
-
-
-**Quote has been authorized**
-::
-
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://…</RejectURL>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>0.00</AmountDue>
-        <Currency>EUR</Currency>
-        <Payments>
-            <Payment>
-                <PaymentType>PayPal</PaymentType>
-                <PaymentDescription>PayPal charge to buyer@example.com</PaymentDescription>
-                <PaymentAmount>10.00</PaymentAmount>
-                <PaymentCurrency>EURO</PaymentCurrency>
-            </Payment>
-        <Payments>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectName>Name of project</ProjectName>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Files>
-                    <File>
-                        <Status>Analyzed</Status>
-                        <AssetID>999</AssetID>
-                        <FileName>example.txt</FileName>
-                    </File>
-                </Files>
-            </Project>
-        </Projects>
-    </Quote>
-
-**Price has not been calculated yet**
-
-::
-
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>New</Status>
-        <TotalCost/>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectName>Name of project</ProjectName>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Files>
-                    <File>
-                        <Status>Analyzing</Status>
-                        <AssetID>999</AssetID>
-                        <FileName>example.txt</FileName>
-                    </File>
-                </Files>
-            </Project>
-        </Projects>
-    </Quote>
-
-**Quote contains a file that could not be parsed**
-
-::
-
-   <Quote>
-        <QuoteID>132</QuoteID>
-        <Status>Error</Status>
-        <TotalCost>/>
-        <Projects>
-            <Project>
-                <ProjectID>123</ProjectID>
-                <ProjectName>Name of project</ProjectName>
-                <ProjectURL>https://</ProjectURL>
-                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
-                <Files>
-                    <File>
-                        <Status>Analysis Failed</Status>
-                        <AssetID>999</AssetID>
-                        <FileName>example.txt</FileName>
-                    </File>
-                </Files>
-            </Project>
-        </Projects>
-    </Quote>
 

@@ -100,7 +100,7 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         |  that the translation   |
 |                         |                         |                         |
-|                         |                         | of the item is          |
+|                         |                         | of the project is       |
 |                         |                         |                         |
 |                         |                         | scheduled to be         |
 |                         |                         |                         |

@@ -43,6 +43,7 @@ Contents
    generate_quote
    authorize_quote
    get_quote
+   list_quotes
    reject_quote
    notify_project_complete
    notify_quote_ready
@@ -60,6 +61,8 @@ Contents
    get_product
    get_product_translation
    list_services
+   get_service
+   get_estimate
    list_locales
    get_terms
  

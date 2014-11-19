@@ -18,37 +18,37 @@ This interface creates a new Account.  Access is restricted to an API account wi
 Request Body
 ============
 
-+-------------------------+--------+------------------------------------------------+
-| Parameter               | Type   | Comments                                       |
-+=========================+========+================================================+
-| .. container:: notrans  | String | Merchant system account id (optional)          |
-|                         |        |                                                |
-|    MerchantID           |        |                                                |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Email address of the primary user              |
-|                         |        |                                                |
-|    EmailAddress         |        |                                                |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | First name of the primary user                 |
-|                         |        |                                                |
-|    FirstName            |        |                                                |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Last name of the primary user                  |
-|                         |        |                                                |
-|    LastName             |        |                                                |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Merchant Company                               |
-|                         |        |                                                |
-|    CompanyName          |        |                                                |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Country that the merchant is headquartered in. |
-|                         |        | `ISO 3166-1 2  character country code          |
-|    Country              |        | <http://en.wikipedia.org/wiki/ISO_3166-1>`_.   |
-+-------------------------+--------+------------------------------------------------+
-| .. container:: notrans  | String | Tax ID for VAT accounting.  Required for Irish |
-|                         |        | merchants only                                 |
-|    VATID                |        |                                                |
-+-------------------------+--------+------------------------------------------------+
++-------------------------+-------------------+------------------------------------------------+
+| Parameter               | Type              | Comments                                       |
++=========================+===================+================================================+
+| .. container:: notrans  | String (optional) | Merchant system account id (optional)          |
+|                         |                   |                                                |
+|    MerchantID           |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String            | Email address of the primary user              |
+|                         |                   |                                                |
+|    EmailAddress         |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String            | First name of the primary user                 |
+|                         |                   |                                                |
+|    FirstName            |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String            | Last name of the primary user                  |
+|                         |                   |                                                |
+|    LastName             |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String            | Merchant Company                               |
+|                         |                   |                                                |
+|    CompanyName          |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String            | Country that the merchant is headquartered in. |
+|                         |                   | `ISO 3166-1 2  character country code          |
+|    Country              |                   | <http://en.wikipedia.org/wiki/ISO_3166-1>`_.   |
++-------------------------+-------------------+------------------------------------------------+
+| .. container:: notrans  | String (optional) | Tax ID for VAT accounting.  Required for Irish |
+|                         |                   | merchants only                                 |
+|    VATID                |                   |                                                |
++-------------------------+-------------------+------------------------------------------------+
 
 
 Request Example
