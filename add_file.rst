@@ -263,11 +263,36 @@ including a payment URL.  The user must follow this URL to a payment page.
 |                         |                         |                         |
 |    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | The status of the file. |
+|                         |                         |                         |
+|    Status               |                         | Possible values:        |
+|                         |                         |                         |
+|                         |                         | - Analyzing             |
+|                         |                         | - Analyzed              |
+|                         |                         | - Analysis Failed       |
+|                         |                         | - In Translation        |
+|                         |                         | - Translated            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    SourceLanguage       |                         | glossary                |
 |                         |                         |                         |
-|      .LanguageCode      |                         |                         |
+|      .LanguageCode      |                         | The LanguageCode element|
+|                         |                         |                         |
+|                         |                         | will be empty if the    |
+|                         |                         |                         |
+|                         |                         | client requested        |
+|                         |                         |                         |
+|                         |                         | language detection and  |
+|                         |                         |                         |
+|                         |                         | the file has not been   |
+|                         |                         |                         |
+|                         |                         | analyzed yet or if      |
+|                         |                         |                         |
+|                         |                         | language detection      |
+|                         |                         |                         |
+|                         |                         | failed.                 |
 +-------------------------+-------------------------+-------------------------+
 
 
@@ -275,15 +300,31 @@ including a payment URL.  The user must follow this URL to a payment page.
 
 
 
-Response Example
-================
+Response Example (File Analyzed)
+================================
 
 ::
 
     <File>
         <AssetID>1235</AssetID>
         <Name>foo.txt</Name>
+        <Status>Analyzed</Status>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+    </File>
+
+
+Response Example (Anaylsis Incomplete)
+======================================
+
+::
+
+    <File>
+        <AssetID>1235</AssetID>
+        <Name>foo.txt</Name>
+        <Status>Analyzing</Status>
+        <SourceLanguage>
+            <LanguageCode/>
         </SourceLanguage>
     </File>
