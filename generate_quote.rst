@@ -387,7 +387,6 @@ Request Body
 +-------------------------+-------------------------+---------------------------------+
 
 
-
 Product Request Example
 =======================
 
@@ -700,7 +699,7 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalCost -             |
 |                         |                         | PrepaidCredit           |
 |    AmountDue            |                         |                         |
 +-------------------------+-------------------------+-------------------------+

@@ -93,7 +93,7 @@ Request Body
 +-------------------------+-------------------------+-----------------------------------+
 | .. container:: notrans  | Decimal                 | Total price that needs            |
 |                         |                         |                                   |
-|    TotalPrice           |                         | to be paid. Exclude               |
+|    TotalCost            |                         | to be paid. Exclude               |
 |                         |                         |                                   |
 |                         |                         | translation credit.               |
 +-------------------------+-------------------------+-----------------------------------+
@@ -158,11 +158,12 @@ Request Body
 |                         |                         |                                   |
 +-------------------------+-------------------------+-----------------------------------+
 |                         |                         |                                   |
-| .. container:: notrans  | Decimal                 | TotalPrice -                      |
+| .. container:: notrans  | Decimal                 | TotalCost -                       |
 |                         |                         | PrepaidCredit                     |
 |    AmountDue            |                         |                                   |
 +-------------------------+-------------------------+-----------------------------------+
           
+
 Pay As You Go Request Example          
 =============================
 
