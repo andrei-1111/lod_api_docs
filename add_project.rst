@@ -546,7 +546,7 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 | Total price that needs  |
 |                         |                         |                         |
-|    TotalPrice           |                         | to be paid. Exclude     |
+|    Price                |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
@@ -761,7 +761,7 @@ File-Based Project Response Example
                 <LanguageCode>fr-fr</LanguageCode>
             </TargetLanguage>
         </TargetLanguages>
-        <TotalCost>10.00</TotalCost>
+        <Price>10.00</Price>
         <Currency>EUR</Currency>
 
         <Files>
@@ -794,7 +794,7 @@ If the price is not yet ready, the response will look like:
                 <LanguageCode>fr-fr</LanguageCode>
             </TargetLanguage>
         </TargetLanguages>
-        <TotalCost/>
+        <Price/>
         <AmountDue/>
         <Currency>EUR</Currency>
 
