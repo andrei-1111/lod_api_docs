@@ -62,9 +62,9 @@ The response body contains information about the newly created merchant.
 |                         |                         | currencies.             |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | Total price that needs  |
+| .. container:: notrans  | Decimal                 | Total amount that needs |
 |                         |                         |                         |
-|    TotalPrice           |                         | to be paid. Exclude     |
+|    TotalCost            |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
@@ -76,7 +76,7 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalCost -             |
 |                         |                         |                         |
 |    AmountDue            |                         | Prepaid Credit          |
 +-------------------------+-------------------------+-------------------------+

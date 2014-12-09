@@ -75,7 +75,7 @@ The response body shows information about the project.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 |                         |
 |                         |                         |                         | 
-|    TotalPrice           |                         |                         | 
+|    Price                |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Currency paid for the   |
 |                         |                         |                         |

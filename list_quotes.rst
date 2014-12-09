@@ -105,7 +105,7 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalCost -             |
 |                         |                         |                         |
 |    AmountDue            |                         | Prepaid Credit          |
 +-------------------------+-------------------------+-------------------------+
