@@ -561,7 +561,7 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 | Total price that needs  |
 |                         |                         |                         |
-|    TotalPrice           |                         | to be paid. Exclude     |
+|    TotalCost            |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+

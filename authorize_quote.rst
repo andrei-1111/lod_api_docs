@@ -91,9 +91,9 @@ Request Body
 |                         |                         | valid currencies.       |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | Total price that needs  |
+| .. container:: notrans  | Decimal                 | Total amount that needs |
 |                         |                         |                         |
-|    TotalPrice           |                         | to be paid. Exclude     |
+|    TotalCost            |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
@@ -105,7 +105,7 @@ Request Body
 |                         |                         |                         |
 |                         |                         | be reported here.       |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalPrice -            |
+| .. container:: notrans  | Decimal                 | TotalCost -             |
 |                         |                         | PrepaidCredit           |
 |    AmountDue            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
