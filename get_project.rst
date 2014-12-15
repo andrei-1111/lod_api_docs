@@ -249,6 +249,16 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Status of individual    |
+|                         |                         |                         |
+|    Files                |                         | file.  Options include  |
+|                         |                         |                         |
+|      .File              |                         | Analyzing, Analyzed,    |
+|                         |                         |                         |
+|      .Status            |                         | Analysis Failed, In     |
+|                         |                         |                         |
+|                         |                         | Translation, Translated |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | URL to download the     |
 |                         |                         |                         |
 |    Files                |                         | source file.            |
@@ -427,6 +437,7 @@ Example of get project response for file-based projects.
                 <AssetID>1111</AssetID>
                 <FileName>foo.txt</FileName>
                 <URL>https...</URL>
+                <Status>Translated</Status>
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
