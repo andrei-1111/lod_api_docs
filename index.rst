@@ -1,8 +1,8 @@
 =======================================
-Lionbridge onDemand API (V. 2014-09-04) 
+Lionbridge Content API (V. 2014-09-04) 
 =======================================
 
-The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  With the Lionbridge onDemand API you can:
+The Lionbridge Content API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  With the Lionbridge Content API you can:
 
 - Create onDemand buyer accounts using :doc:`create_account`. 
 - Find the most cost-effective translation quality level for your content using :doc:`list_services`.
@@ -10,7 +10,7 @@ The Lionbridge onDemand API is a RESTful programming interface to Lionbridge's o
 - Get a notification when your project is done.
 
 
-The API can be used against the `onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
+The API can be used against the `Lionbridge onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `Lionbridge onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
 
 
 **Version:** 2014-09-04 *Latest*
@@ -71,7 +71,7 @@ Contents
 Getting Help
 ============
 
-The Lionbridge onDemand integration support team is eager to help you be successful with your integration.
+The Lionbridge Content API integration support team is eager to help you be successful with your integration.
 The best way to reach them is through the `onDemand Support Portal <https://support.liondemand.com/>`_. 
 There you will find support articles and a form to submit a support ticket.
 

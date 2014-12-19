@@ -6,7 +6,7 @@ Error Handling
 ==============
 
 
-The onDemand API is RESTful and uses standard HTTP response codes to indicate success
+The Lionbridge Content API is RESTful and uses standard HTTP response codes to indicate success
 and various failure states. Common HTTP status codes used by the API are:
 
 

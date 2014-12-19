@@ -13,7 +13,7 @@ List Services
 +---------------+------------------------+
 
 
-A key benefit of integrating with the Lionbridge onDemand API is that it gives you access to many different services.  At Lionbridge, we define a service as a set of processes that we can execute for you.  We have services for different quality levels (ranging from raw machine translation to professional translation by domain specialists).  We also have content-specific services. For example, we can `subtitle your videos <https://ondemand.lionbridge.com/service-detail/1/video-translation-multilingual-video-subtitling>`_.
+A key benefit of integrating with the Lionbridge Content API is that it gives you access to many different services.  At Lionbridge, we define a service as a set of processes that we can execute for you.  We have services for different quality levels (ranging from raw machine translation to professional translation by domain specialists).  We also have content-specific services. For example, we can `subtitle your videos <https://ondemand.lionbridge.com/service-detail/1/video-translation-multilingual-video-subtitling>`_.
 
 This interface lists translation services that are available through the
 API.
