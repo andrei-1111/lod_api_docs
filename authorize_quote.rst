@@ -105,7 +105,7 @@ Request Body
 |                         |                         |                                   |
 |                         |                         | be reported here.                 |
 +-------------------------+-------------------------+-----------------------------------+
-| .. container:  notrans  | String                  | If the site has been set up as a  |
+| .. container:: notrans  | String                  | If the site has been set up as a  |
 |                         |                         |                                   |
 |    InternalBillingCode  |                         | "provisioning" or "charge back"   |
 |                         |                         |                                   |
