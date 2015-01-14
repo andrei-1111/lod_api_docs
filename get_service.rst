@@ -5,7 +5,7 @@ Get Service
 +---------------+---------------------------------+
 | **Resource:** | .. container:: notrans          |
 |               |                                 |
-|               |    /api/service/<<service id>>  |
+|               |    /api/services/<<service id>>  |
 +---------------+---------------------------------+
 | **Method:**   | .. container:: notrans          |
 |               |                                 |
@@ -18,7 +18,7 @@ Provides detailed information about a single service
 Arguments
 =========
 
-- **Service ID:** The ID of the Service. 
+- **Service ID:** The ID of the Service.
 
 
 Return Codes
@@ -46,7 +46,7 @@ Response Body
 =============
 
 The response body details about a single service.
- 
+
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
@@ -112,7 +112,7 @@ The response body details about a single service.
 |    ValidInputs          |                         | content types that      |
 |                         |                         |                         |
 |                         |                         | this service can        |
-|                         |                         |                         |  
+|                         |                         |                         |
 |                         |                         | process                 |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | EmptyTag                | If this element exists  |
