@@ -5,7 +5,7 @@ Get Service
 +---------------+---------------------------------+
 | **Resource:** | .. container:: notrans          |
 |               |                                 |
-|               |    /api/services/<<service id>>  |
+|               |    /api/services/<<service id>> |
 +---------------+---------------------------------+
 | **Method:**   | .. container:: notrans          |
 |               |                                 |
