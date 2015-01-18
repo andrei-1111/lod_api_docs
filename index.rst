@@ -25,8 +25,15 @@ Earlier Releases:
 New in This Release
 ===================
 
-- Files Support
-- Improved error messages
+- New payment options for paying with purchase orders. See :doc:`authorize_quote`.
+- Improvements to the :doc:`list_services` API including the ability to filter services by file type.
+- A new :doc:`list_locales` API.
+- A new :doc:`add_file_by_reference` API.
+- Support for reference files in the :doc:`add_project` and :doc:`generate_quote` APIs.
+- A new :doc:`add_project` API and the ability to create quotes out of projects.
+- A new :doc:`get_estimate` API.
+- A new :doc:`get_file_details` API.
+
 
 Contents
 ========
