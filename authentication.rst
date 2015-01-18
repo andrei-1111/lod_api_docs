@@ -32,6 +32,8 @@ required x-lod-\* headers are used to compute authorization.
 -  Content-Type should be "text/xml".  Often this will default on GET requests.
    Depending on what libraries you use, you might need to explicitly set Content-Type
    on POSTs or force it by submitting an empty string in the body if no body is required.
+   Please note: the :doc:`add_file` API requires you to set the Content-Type to the mime-type of
+   the file you are uploading.  
 
 Authorization Header
 --------------------
@@ -53,44 +55,60 @@ The following table describes the various components of the
 Authorization header value.
 
 
-+--------------------------------------+--------------------------------------+
-| Component                            | Description                          |
-+======================================+======================================+
-| .. container:: notrans               | The algorithm that was used to       |
-|                                      |                                      |
-|    LOD1-BASE64-SHA256                | calculate the signature.             |
-|                                      |                                      |
-|                                      | The string specifies LOD Signature   |
-|                                      |                                      |
-|                                      | Version 1 (LOD1) and the signing     |
-|                                      |                                      |
-|                                      | algorithm (BASE64-SHA256).           |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
-| .. container:: notrans               | A valid Access Key ID.               |
-|                                      |                                      |
-|    KeyID                             |                                      |
-+--------------------------------------+--------------------------------------+
-| .. container:: notrans               | A signature in the form of           |
-|                                      |                                      |
-|    Signature                         | BASE64(SHA256(METHOD:RESOURCE:secret |
-|                                      |                                      |
-|                                      | key:x-lod-header-a:x-lod-header-b))  |
-+--------------------------------------+--------------------------------------+
-| .. container:: notrans               | A semicolon-separated list of        |
-|                                      |                                      |
-|    SignedHeaders                     | request headers used to compute      |
-|                                      |                                      |
-|                                      | Signature. The list includes header  |
-|                                      |                                      |
-|                                      | names only. The required x-lod-\*    |
-|                                      |                                      |
-|                                      | headers must be first and in         |
-|                                      |                                      |
-|                                      | alphabetical order. For example,     |
-|                                      |                                      |
-|                                      | x-lod-timestamp;x-lod-version;accept |
-+--------------------------------------+--------------------------------------+
++--------------------------------------+-------------------------------------------------+
+| Component                            | Description                                     |
++======================================+=================================================+
+| .. container:: notrans               | The algorithm that was used to                  |
+|                                      |                                                 |
+|    LOD1-BASE64-SHA256                | calculate the signature.                        |
+|                                      |                                                 |
+|                                      | The string specifies LOD Signature              |
+|                                      |                                                 |
+|                                      | Version 1 (LOD1) and the signing                |
+|                                      |                                                 |
+|                                      | algorithm (BASE64-SHA256).                      |
+|                                      |                                                 |
++--------------------------------------+-------------------------------------------------+
+| .. container:: notrans               | A valid Access Key ID.                          |
+|                                      |                                                 |
+|    KeyID                             |                                                 |
++--------------------------------------+-------------------------------------------------+
+| .. container:: notrans               | A signature in the form of                      |
+|                                      |                                                 |
+|    Signature                         | BASE64(SHA256(                                  |
+|                                      |                                                 |
+|                                      | method:                                         |
+|                                      |                                                 |
+|                                      | resource:                                       |
+|                                      |                                                 |
+|                                      | secret key:                                     |
+|                                      |                                                 |
+|                                      | x-lod-timestamp:                                |
+|                                      |                                                 |
+|                                      | x-lod-version:                                  |
+|                                      |                                                 |
+|                                      | accept                                          |
+|                                      |                                                 |
+|                                      | ))                                              |
+|                                      |                                                 |
+|                                      | See example below                               |
+|                                      |                                                 |
+|                                      |                                                 |
++--------------------------------------+-------------------------------------------------+
+| .. container:: notrans               | A semicolon-separated list of                   |
+|                                      |                                                 |
+|    SignedHeaders                     | request headers used to compute                 |
+|                                      |                                                 |
+|                                      | Signature. The list includes header             |
+|                                      |                                                 |
+|                                      | names only. The required x-lod-\*               |
+|                                      |                                                 |
+|                                      | headers must be first and in                    |
+|                                      |                                                 |
+|                                      | alphabetical order. For example,                |
+|                                      |                                                 |
+|                                      | x-lod-timestamp;x-lod-version;accept            |
++--------------------------------------+-------------------------------------------------+
 
 Example
 -------
@@ -105,7 +123,8 @@ The best place to start when learning how to develop a valid request signature i
 Where:
 
 - **GET** is the HTTP method you used
-- **/api/services** is the resource you are calling
+- **/api/services** is the resource you are calling. This is the URL path without any querystring arguments.  If the URL uses a querystring argument, such as 
+  the "extension" filter in the :doc:`list_services` API, you must leave out the query string. 
 - **AAA...AAA** is your secret key
 - **2014-02-21T17:49:24.655024** is the current time stamp. This needs to be the same as x-lod-timestamp. Note, you must use a 24 hour clock.
 - **2014-02-28** is the version of the API you are using. This needs to be the same as x-lod-version.

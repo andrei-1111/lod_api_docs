@@ -15,6 +15,11 @@ Get Product
 
 Returns a product
 
+Arguments
+=========
+
+- **Product ID:** The onDemand Project ID.  You will receive this ID from :doc:`get_project` 
+
 
 Return Codes
 ============

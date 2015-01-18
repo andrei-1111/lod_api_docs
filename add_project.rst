@@ -1,108 +1,49 @@
-==============
-Generate Quote
-==============
+=============
+Add Project
+=============
 
 +-----------------+------------------------+
 | **Resource:**   | .. container:: notrans |
 |                 |                        |
-|                 |    /api/quote/generate |
+|                 |    /api/projects/add   |
 +-----------------+------------------------+
 | **Method:**     | .. container:: notrans |
 |                 |                        |
 |                 |    POST                |
 +-----------------+------------------------+
 
-This interface is used to generate a quote.  A quote can contain multiple projects. 
+Adds a new project to onDemand.  Should be used in conjunction with :doc:`generate_quote` to
+make a purchase.
 
-Quotes can be generated using different inputs:
-
-- Product elements, which are are inserted into the generate quote request
-- Files that were uploading using the :doc:`add_file` API.
-- Projects that were added using the :doc:`add_project` API.  These projects contain either files or products.  The advantage of generating a quote out of individual projects is that it allows you more flexibility.  For example, you can have different source languages, target languages, and even services.   
-
-The API client should use an API key set associated with a customer (merchant) account when submitting and retrieving projects on behalf of that customer.  This will establish ownership of that project for access control and also attribute transactions to individual customer accounts. The API client can create an customer account using the :doc:`create_account` API.
-
+Depending on the service, either files or products can be submitted to be translated. Files can be uploaded prior to creating the project.
+(see :doc:`add_file`)
 
 
 
 Request Body
 ============
 
-
 +-------------------------+-------------------------+---------------------------------+
 | Parameter               | Type                    | Comments                        |
 +=========================+=========================+=================================+
+| .. container:: notrans  | String (optional)       | String representing the         |
+|                         |                         |                                 |
+|    ProjectName          |                         | name of the project.            |
+|                         |                         |                                 |
+|                         |                         | Maximum 75 characters.          |
+|                         |                         |                                 |
+|                         |                         | If this element is not          |
+|                         |                         |                                 |
+|                         |                         | included, a name will           |
+|                         |                         |                                 |
+|                         |                         | be generated.                   |
+|                         |                         |                                 |
++-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Container               | Contains information            |
 |                         |                         |                                 |
 |    TranslationOptions   |                         | specifying the                  |
 |                         |                         |                                 |
 |                         |                         | translation project.            |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | String representing             |
-|                         |                         |                                 |
-|  TranslationOptions     |                         | currency that the               |
-|                         |                         |                                 |
-|    .Currency            |                         | merchant wishes to pay          |
-|                         |                         |                                 |
-|                         |                         | with. See glossary for          |
-|                         |                         |                                 |
-|                         |                         | list of valid                   |
-|                         |                         |                                 |
-|                         |                         | currencies.                     |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | When a project is               |
-|                         |                         |                                 |
-|    TranslationOptions   |                         | complete, the API               |
-|                         |                         |                                 |
-|      .NotificationURL   |                         | will send a POST                |
-|                         |                         |                                 |
-|                         |                         | request to this URL.            |
-|                         |                         |                                 |
-|                         |                         | *deprecated* please use         |
-|                         |                         |                                 |
-|                         |                         | NotifyCompleteURL               |
-|                         |                         |                                 |
-|                         |                         | instead. See the                |
-|                         |                         |                                 |
-|                         |                         | :doc:`notify_project_complete`  |
-|                         |                         |                                 |
-|                         |                         | API documentation for the       |
-|                         |                         |                                 |
-|                         |                         | structure of the post body.     |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | When a project is               |
-|                         |                         |                                 |
-|    TranslationOptions   |                         | complete, the API               |
-|                         |                         |                                 |
-|     .NotifyCompleteURL  |                         | will send a POST                |
-|                         |                         |                                 |
-|                         |                         | request to this URL. See the    |
-|                         |                         |                                 |
-|                         |                         | :doc:`notify_project_complete`  |
-|                         |                         |                                 |
-|                         |                         | API documentation for the       |
-|                         |                         |                                 |
-|                         |                         | structure of the post body.     |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | When the quote has been         |
-|                         |                         |                                 |
-|    TranslationOptions   |                         | priced and is ready for         |
-|                         |                         |                                 |
-|     .NotifyQuoteReadyURL|                         | purchase, the API will          |
-|                         |                         |                                 |
-|                         |                         | send a post request to          |
-|                         |                         |                                 |
-|                         |                         | this URL.                       |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | When the quote has been         |
-|                         |                         |                                 |
-|    TranslationOptions   |                         | paid, the API will send         |
-|                         |                         |                                 |
-|      .NotifyQuotePaidURL|                         | a POST to this URL.             |
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Integer                 | Numeric service code            |
 |                         |                         |                                 |
@@ -122,25 +63,14 @@ Request Body
 |                         |                         |                                 |
 |                         |                         | on the body.  This              |
 |                         |                         |                                 |
-|                         |                         | element is optional             |
+|                         |                         | element is optional.            |
 |                         |                         |                                 |
-|                         |                         | and ignored for quotes          |
-|                         |                         |                                 |
-|                         |                         | that are generated from         |
-|                         |                         |                                 |
-|                         |                         | projects.                       |
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Container               | Contains 1 source               |
 |                         |                         |                                 |
-|    TranslationOptions   |                         | language. This                  |
+|    TranslationOptions   |                         | language                        |
 |                         |                         |                                 |
-|      .SourceLanguage    |                         | element is optional             |
-|                         |                         |                                 |
-|                         |                         | and ignored for quotes          |
-|                         |                         |                                 |
-|                         |                         | that are generated from         |
-|                         |                         |                                 |
-|                         |                         | prjoects.                       |
+|      .SourceLanguage    |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in             |
 |                         |                         |                                 |
@@ -152,15 +82,9 @@ Request Body
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Container               | Contains 1 or more              |
 |                         |                         |                                 |
-|    TranslationOptions   |                         | target languages. This          |
+|    TranslationOptions   |                         | target languages                |
 |                         |                         |                                 |
-|      .TargetLanguages   |                         | element is optional             |
-|                         |                         |                                 |
-|                         |                         | and ignored for quotes          |
-|                         |                         |                                 |
-|                         |                         | that are generated from         |
-|                         |                         |                                 |
-|                         |                         | projects.                       |
+|      .TargetLanguages   |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in             |
 |                         |                         |                                 |
@@ -192,8 +116,8 @@ Request Body
 +-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Integer                 | ID of the product’s             |
 |                         |                         |                                 |
-|    Products             |                         |                                 |
-|                         |                         | primary category                |
+|    Products             |                         | primary category                |
+|                         |                         |                                 |
 |      .Product           |                         |                                 |
 |                         |                         |                                 |
 |      .PrimaryCategory   |                         |                                 |
@@ -212,7 +136,7 @@ Request Body
 |                         |                         |                                 |
 |      .Product           |                         | through the category            |
 |                         |                         |                                 |
-|      .CategoryPath      |                         | hierarchy to the                |
+|      .Category          |                         | hierarchy to the                |
 |                         |                         |                                 |
 |                         |                         | primary category.  This         |
 |                         |                         |                                 |
@@ -362,29 +286,31 @@ Request Body
 |                         |                         |                                 |
 |                         |                         | that one quote.                 |
 +-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Container               | Container for a reference file. |
+| .. container:: notrans  | Container               | Container for a                 |
 |                         |                         |                                 |
-|    ReferenceFiles       |                         | A reference file is used to     |
+|    ReferenceFiles       |                         | reference file. A               |
 |                         |                         |                                 |
-|      .ReferenceFile     |                         | inform the work that is being   |
+|      .ReferenceFile     |                         | reference file is used          |
 |                         |                         |                                 |
-|                         |                         | done.  There is no charge for   |
+|                         |                         | to inform the work that         |
 |                         |                         |                                 |
-|                         |                         | reference files. Reference      |
+|                         |                         | is being done. There is         |
 |                         |                         |                                 |
-|                         |                         | are always optional.            |
+|                         |                         | no charge for reference         |
+|                         |                         |                                 |
+|                         |                         | files.                          |
 |                         |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Integer                 | Asset ID of the reference file. |
+| .. container:: notrans  | Integer                 | Asset ID of the                 |
 |                         |                         |                                 |
-|    ReferenceFiles       |                         |                                 |
+|    ReferenceFiles       |                         | reference file.                 |
 |                         |                         |                                 |
 |      .ReferenceFile     |                         |                                 |
 |                         |                         |                                 |
 |      .AssetID           |                         |                                 |
 |                         |                         |                                 |
-|                         |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
+        
 
 
 Product Request Example
@@ -392,12 +318,10 @@ Product Request Example
 
 ::
 
-    <GenerateQuote>
+    <AddProject>
+        <ProjectName>Name of the project</ProjectName>
         <TranslationOptions>
             <Currency>EUR</Currency>
-            <NotificationURL>
-                    `https://www.example.com/
-            </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
                 <LanguageCode>en-gb</LanguageCode>
@@ -456,6 +380,7 @@ Product Request Example
                     </SKU>
                 </SKUs>
             </Product>
+
         </Products>
         <ReferenceFiles>
             <ReferenceFile>
@@ -465,7 +390,8 @@ Product Request Example
                 <AssetID>12346</Asset>
             </ReferenceFile>
         </ReferenceFiles>
-    </GenerateQuote>
+
+    </AddProject>
 
 
 File Request Example
@@ -473,12 +399,9 @@ File Request Example
 
 ::
 
-    <GenerateQuote>
+    <AddProject>
+        <ProjectName>Name of the project</ProjectName>
         <TranslationOptions>
-            <Currency>EUR</Currency>
-            <NotificationURL>
-                    https://www.example.com/
-            </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
                 <LanguageCode>en-gb</LanguageCode>
@@ -505,31 +428,7 @@ File Request Example
                 <AssetID>12346</Asset>
             </ReferenceFile>
         </ReferenceFiles>
-    </GenerateQuote>
-
-
-Project Request Example
-=======================
-
-::
-
-    <GenerateQuote>
-        <TranslationOptions>
-            <Currency>EUR</Currency>
-            <NotificationURL>
-                https://www.example.com/
-            </NotificationURL>
-        </TranslationOptions>
-        <Projects>
-            <Project>
-                <ProjectID>123456</ProjectID>
-            </Project>
-        </Projects>
-    </GenerateQuote>
-
-
-
-
+    </AddProject>
 
 Return Codes
 ============
@@ -579,7 +478,13 @@ not contain a price.  If the submitted files
 +=========================+=========================+=========================+
 | .. container:: notrans  | Integer                 | onDemand ID of the      |
 |                         |                         |                         |
-|    QuoteID              |                         | Quote.                  |
+|    ProjectID            |                         | Project.                |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Either the submitted or |
+|                         |                         |                         |
+|    ProjectName          |                         | or generated project    |
+|                         |                         |                         |
+|                         |                         | name.                   |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | String representing the |
 |                         |                         |                         |
@@ -591,9 +496,9 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | UTC.                    |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The status of the quote.|
+| .. container:: notrans  | String                  | The status of the       |
 |                         |                         |                         |
-|    Status               |                         | "Ready" means that the  |
+|    Status               |                         | project.                |
 |                         |                         |                         |
 |                         |                         | source content has been |
 |                         |                         |                         |
@@ -617,17 +522,6 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | status.                 |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | URL to authorize the    |
-|                         |                         |                         |
-|    AuthorizeURL         |                         | quote.  See             |
-|                         |                         |                         |
-|                         |                         | :doc:`authorize_quote`  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Use this to reject the  |
-|                         |                         |                         |
-|    RejectURL            |                         | quote. See              |
-|                         |                         | :doc:`reject_quote`     |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | ID of Service           |
 |                         |                         |                         |
 |    ServiceID            |                         |                         |
@@ -650,70 +544,31 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | The number of           |
-|                         |                         |                         |
-|    TotalTranslations    |                         | translations requested. |
-|                         |                         |                         |
-|                         |                         | For example, if the     |
-|                         |                         |                         |
-|                         |                         | merchant sends 5        |
-|                         |                         |                         |
-|                         |                         | products to be          |
-|                         |                         |                         |
-|                         |                         | translated into 3       |
-|                         |                         |                         |
-|                         |                         | languages, the value of |
-|                         |                         |                         |
-|                         |                         | TotalTranslations would |
-|                         |                         |                         |
-|                         |                         | be 15.                  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | Number of free          |
-|                         |                         |                         |
-|    TranslationCredit    |                         | translations available  |
-|                         |                         |                         |
-|                         |                         | at the selected service |
-|                         |                         |                         |
-|                         |                         | level.                  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Currency that the price |
-|                         |                         |                         |
-|    Currency             |                         | is in. See glossary     |
-|                         |                         |                         |
-|                         |                         | for list of valid       |
-|                         |                         |                         |
-|                         |                         | currencies.             |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 | Total price that needs  |
 |                         |                         |                         |
-|    TotalCost            |                         | to be paid. Exclude     |
+|    Price                |                         | to be paid. Exclude     |
 |                         |                         |                         |
 |                         |                         | translation credit.     |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | If a merchant has a     |
+| .. container:: notrans  | String                  | Currency of the price   |
 |                         |                         |                         |
-|    PrepaidCredit        |                         | positive credit balance |
+|    Currency             |                         | This is taken from the  |
 |                         |                         |                         |
-|                         |                         | with onDemand, it will  |
+|                         |                         | default currency of the |
 |                         |                         |                         |
-|                         |                         | be reported here.       |
+|                         |                         | account profile         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalCost -             |
-|                         |                         | PrepaidCredit           |
-|    AmountDue            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  |                         |                         |
-|                         | Container               | Container of products   |
+| .. container:: notrans  | Container               | Container of products   |
+|                         |                         |                         |
 |    Products             |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of SKU        |
 |                         |                         |                         |
 |    Products             |                         | elements                |
 |                         |                         |                         |
-|      .Product           |                         |                         | 
+|      .Product           |                         |                         |
 |                         |                         |                         |
-|      .SKUs              |                         |                         |
+|      .SKUs              |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of a SKU      |
 |                         |                         |                         |
@@ -785,13 +640,6 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |                         |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
-| Projects                | Integer                 | ProjectID of included   |
-|                         |                         |                         |
-| .Project                |                         | project                 |
-|                         |                         |                         |
-| .ProjectID              |                         |                         |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container for a         |
 |                         |                         |                         |
 |    ReferenceFiles       |                         | reference file. A       |
@@ -817,34 +665,29 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
-Product-Based Quote Response Example
-====================================
+Product-Based Project Response Example
+=======================================
 
 ::
 
-    <Quote>
-        <QuoteID>132</QuoteID>
+    <Project>
+        <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
+        <Status>New</Status>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
+            <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
         </TargetLanguages>
-        <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>1</TranslationCredit>
         <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
 
         <Products>
@@ -857,131 +700,101 @@ Product-Based Quote Response Example
                     </SKUs>
                     <DueDate>2014-02-11T10:22:46Z</DueDate> 
                 </Product>
-        </Products>
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
-    </Quote>
+            </Products>
+    </Project>
 
 If the price is not yet ready, the response will look like:
 
 ::
 
-    <Quote>
-        <QuoteID>132</QuoteID>
+    <Project>
+        <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
+        <Status>New</Status>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
         </TargetLanguages>
-        <TotalTranslations>2</TotalTranslations>
-        <TranslationCredit>1</TranslationCredit>
         <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
-        <AmountDue/>
         <Currency>EUR</Currency>
 
         <Products>
-                <Product>
-                    <AssetID>999</AssetID>
-                    <SKUs>
-                        <SKU>
-                            <SKUNumber>123</SKUNumber>
-                        </SKU>
-                    </SKUs>
-                </Product>
+            <Product>
+                <AssetID>999</AssetID>
+                <SKUs>
+                    <SKU>
+                        <SKUNumber>123</SKUNumber>
+                    </SKU>
+                </SKUs>
+            </Product>
         </Products>
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
-    </Quote>
+    </Project>
 
-File-Based Quote Response Example
+File-Based Project Response Example
 ====================================
 
 ::
 
-    <Quote>
-        <QuoteID>132</QuoteID>
+    <Project>
+        <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
-        <ServiceID>54</ServiceID>
-        <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-
-        <Files>
-                <File>
-                    <AssetID>999</AssetID>
-                    <FileName>example.txt</FileName>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
-                </File>
-        </Files>
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
-    </Quote>
-
-If the price is not yet ready, the response will look like:
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
+        <Status>New</Status>
         <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
         <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
         </TargetLanguages>
-        <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
+        <Price>10.00</Price>
+        <Currency>EUR</Currency>
+
+        <Files>
+            <File>
+                <AssetID>999</AssetID>
+                <FileName>example.txt</FileName>
+                <DueDate>2014-02-11T10:22:46Z</DueDate> 
+            </File>
+        </Files>
+    </Project>
+
+If the price is not yet ready, the response will look like:
+
+::
+
+    <Project>
+        <ProjectID>132</ProjectID>
+        <ProjectName>Name of the project</ProjectName>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+        <Status>New</Status>
+        <ServiceID>54</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <Price/>
         <AmountDue/>
         <Currency>EUR</Currency>
 
@@ -991,122 +804,19 @@ If the price is not yet ready, the response will look like:
                     <FileName>example.txt</FileName>
                 </File>
         </Files>
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
-    </Quote>
+    </Project>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
 
 ::
 
-    <Quote>
+    <Project>
         <Error>
             <ReasonCode>202</ReasonCode>
             <SimpleMessage>The file example.txt, is not supported by the Voiceover Translation Service</SimpleMessage>
             <DetailedMessage>The Video Translation Service only supports the following file types: .mov, .mp4, .flv, and .wmv</DetailedMessage>
         </Error>
-    </Quote>
-
-Project Based Quote Response Example
-====================================
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Pending</Status>
-        <AuthorizeURL>https://…</AuthorizeURL>
-        <RejectURL>https://</RejectURL>
-        <TotalCost>10.00</TotalCost>
-        <PrepaidCredit>5.00</PrepaidCredit>
-        <AmountDue>5.00</AmountDue>
-        <Currency>EUR</Currency>
-
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
-    </Quote>
-
-If the price is not yet ready, the response will look like:
-
-::
-
-    <Quote>
-        <QuoteID>132</QuoteID>
-        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-        <Status>Calculating</Status>
-        <ServiceID>54</ServiceID>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
-        <TotalCost/>
-        <PrepaidCredit/>5.00</PrepaidCredit>
-        <AmountDue/>
-        <Currency>EUR</Currency>
-
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
-    </Quote>
-
-If one of or more of the projects is already included in another quote, the response will look like this:
-::
-
-    <Quote>
-        <Error>
-            <ReasonCode>207</ReasonCode>
-            <SimpleMessage>The Project(s) with IDs 1223, 2222 are already in use.</SimpleMessage>
-            <DetailedMessage>
-                Projects with the following IDs are already associated with another quote.
-            </DetailedMessage>
-        </Error>
-    </Quote>
-
+    </Project>
 
 
 Errors
@@ -1167,18 +877,4 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         | this project            |
 +-------------------------+-------------------------+-------------------------+
-| 206                     | Project does not exist. | A project with this     |
-|                         |                         |                         |
-|                         |                         | ID does not exist in    |
-|                         |                         |                         |
-|                         |                         | the system.             |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| 207                     | Project is already in   | One or more of the      |
-|                         |                         |                         |
-|                         | use.                    | referenced projects is  |
-|                         |                         |                         |
-|                         |                         | being used in another   |
-|                         |                         |                         |
-|                         |                         | quote.                  |
-+-------------------------+-------------------------+-------------------------+
+

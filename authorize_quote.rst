@@ -19,99 +19,153 @@ This interface authorizes a quote.  Only quotes with a status of "Pending" can b
 Request Body
 ============
 
-+-------------------------+-------------------------+-------------------------+
-| Property                | Type                    | Comments                |
-+=========================+=========================+=========================+
-| .. container:: notrans  | String                  | ID of the Quote         |
-|                         |                         |                         |
-|    QuoteID              |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | String representing the |
-|                         |                         |                         |
-|    CreationDate         |                         | date/time (ISO 8601)    |
-|                         |                         |                         |
-|                         |                         | that the project was    |
-|                         |                         |                         |
-|                         |                         | created in UTC.         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | ID of Service           |
-|                         |                         |                         |
-|    ServiceID            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    SourceLanguage       |                         | glossary                |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Container containing    |
-|                         |                         |                         |
-|    TargetLanguages      |                         | target languages.       |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    TargetLanguages      |                         | glossary                |
-|                         |                         |                         |
-|      .TargetLangauge    |                         |                         |
-|                         |                         |                         |
-|      .LanaguageCode     |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | The number of           |
-|                         |                         |                         |
-|    TotalTranslations    |                         | translations requested. |
-|                         |                         |                         |
-|                         |                         |  For example, if the    |
-|                         |                         |                         |
-|                         |                         | merchant sends 5        |
-|                         |                         |                         |
-|                         |                         | products to be          |
-|                         |                         |                         |
-|                         |                         | translated into 3       |
-|                         |                         |                         |
-|                         |                         | languages, the value of |
-|                         |                         |                         |
-|                         |                         | TotalTranslations would |
-|                         |                         |                         |
-|                         |                         | be 15.                  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | Number of free          |
-|                         |                         |                         |
-|    TranslationCredit    |                         | translations available  |
-|                         |                         |                         |
-|                         |                         | at the selected service |
-|                         |                         |                         |
-|                         |                         | level.                  |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Currency used to pay    |
-|                         |                         |                         |
-|    Currency             |                         | for the project. See    |
-|                         |                         |                         |
-|                         |                         | glossary for list of    |
-|                         |                         |                         |
-|                         |                         | valid currencies.       |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | Total amount that needs |
-|                         |                         |                         |
-|    TotalCost            |                         | to be paid. Exclude     |
-|                         |                         |                         |
-|                         |                         | translation credit.     |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | If a merchant has a     |
-|                         |                         |                         |
-|    PrepaidCredit        |                         | positive credit balance |
-|                         |                         |                         |
-|                         |                         | with onDemand, it will  |
-|                         |                         |                         |
-|                         |                         | be reported here.       |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | TotalCost -             |
-|                         |                         | PrepaidCredit           |
-|    AmountDue            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
++-------------------------+-------------------------+-----------------------------------+
+| Property                | Type                    | Comments                          |
++=========================+=========================+===================================+
+| .. container:: notrans  | String                  | ID of the Quote                   |
+|                         |                         |                                   |
+|    QuoteID              |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | String representing the           |
+|                         |                         |                                   |
+|    CreationDate         |                         | date/time (ISO 8601)              |
+|                         |                         |                                   |
+|                         |                         | that the project was              |
+|                         |                         |                                   |
+|                         |                         | created in UTC.                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | ID of Service                     |
+|                         |                         |                                   |
+|    ServiceID            |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in               |
+|                         |                         |                                   |
+|    SourceLanguage       |                         | glossary                          |
+|                         |                         |                                   |
+|      .LanguageCode      |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Container               | Container containing              |
+|                         |                         |                                   |
+|    TargetLanguages      |                         | target languages.                 |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in               |
+|                         |                         |                                   |
+|    TargetLanguages      |                         | glossary                          |
+|                         |                         |                                   |
+|      .TargetLangauge    |                         |                                   |
+|                         |                         |                                   |
+|      .LanaguageCode     |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | The number of                     |
+|                         |                         |                                   |
+|    TotalTranslations    |                         | translations requested.           |
+|                         |                         |                                   |
+|                         |                         |  For example, if the              |
+|                         |                         |                                   |
+|                         |                         | merchant sends 5                  |
+|                         |                         |                                   |
+|                         |                         | products to be                    |
+|                         |                         |                                   |
+|                         |                         | translated into 3                 |
+|                         |                         |                                   |
+|                         |                         | languages, the value of           |
+|                         |                         |                                   |
+|                         |                         | TotalTranslations would           |
+|                         |                         |                                   |
+|                         |                         | be 15.                            |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | Number of free                    |
+|                         |                         |                                   |
+|    TranslationCredit    |                         | translations available            |
+|                         |                         |                                   |
+|                         |                         | at the selected service           |
+|                         |                         |                                   |
+|                         |                         | level.                            |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | Currency used to pay              |
+|                         |                         |                                   |
+|    Currency             |                         | for the project. See              |
+|                         |                         |                                   |
+|                         |                         | glossary for list of              |
+|                         |                         |                                   |
+|                         |                         | valid currencies.                 |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Decimal                 | Total price that needs            |
+|                         |                         |                                   |
+|    TotalCost            |                         | to be paid. Exclude               |
+|                         |                         |                                   |
+|                         |                         | translation credit.               |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Decimal                 | If a merchant has a               |
+|                         |                         |                                   |
+|    PrepaidCredit        |                         | positive credit balance           |
+|                         |                         |                                   |
+|                         |                         | with onDemand, it will            |
+|                         |                         |                                   |
+|                         |                         | be reported here.                 |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | If the site has been set up as a  |
+|                         |                         |                                   |
+|    InternalBillingCode  |                         | "provisioning" or "charge back"   |
+|                         |                         |                                   |
+|                         |                         | site, you have the option to be   |
+|                         |                         |                                   |
+|                         |                         | invoiced for transactions at a    |
+|                         |                         |                                   |
+|                         |                         | later date.  If the site is       |
+|                         |                         |                                   |
+|                         |                         | configured as a charge back site, |
+|                         |                         |                                   |
+|                         |                         | adding an InternalBillingCode to  |
+|                         |                         |                                   |
+|                         |                         | the request will automatically    |
+|                         |                         |                                   |
+|                         |                         | authorize the request and bill    |
+|                         |                         |                                   |
+|                         |                         | the transaction to a global       |
+|                         |                         |                                   |
+|                         |                         | purchase order. If the site has   |
+|                         |                         |                                   |
+|                         |                         | been configured to be a           |
+|                         |                         |                                   |
+|                         |                         | provisioning site,                |
+|                         |                         |                                   |
+|                         |                         | InternalBillingCode can be used   |
+|                         |                         |                                   |
+|                         |                         | optionally with                   |
+|                         |                         |                                   |
+|                         |                         | PurchaseOrderNumber to group      |
+|                         |                         |                                   |
+|                         |                         | transactions.                     |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | If the site has been set up as a  |
+|                         |                         |                                   |
+|    PurchaseOrderNumber  |                         | "provisioning" site, you have the |
+|                         |                         |                                   |
+|                         |                         | option to be invoiced for         |
+|                         |                         |                                   |
+|                         |                         | transactions at a later date. To  |
+|                         |                         |                                   |
+|                         |                         | do so, the authorization request  |
+|                         |                         |                                   |
+|                         |                         | has to contain a                  |
+|                         |                         |                                   |
+|                         |                         | PurchaseOrderNumber that matches  |
+|                         |                         |                                   |
+|                         |                         | a purchase order we have on file. |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+|                         |                         |                                   |
+| .. container:: notrans  | Decimal                 | TotalCost -                       |
+|                         |                         | PrepaidCredit                     |
+|    AmountDue            |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+          
 
-Request Example
-===============
+Pay As You Go Request Example          
+=============================
 
 ::
 
@@ -139,6 +193,68 @@ Request Example
     </Quote>
 
 
+Chargeback Request Example          
+==========================
+
+::
+
+    <Quote>
+        <QuoteID>795</QuoteID>
+        <CreationDate>2014-06-25T16:39:07Z</CreationDate>
+        <ServiceID>112</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>49984</TranslationCredit>
+        <TotalCost>0.00</TotalCost>
+        <PrepaidCredit>118.99</PrepaidCredit>
+        <AmountDue>0.00</AmountDue>
+        <Currency>EUR</Currency>
+        <InternalBillingCode>ABCD100001</InternalBillingCode>
+    </Quote>
+
+Provisioning Request Example          
+============================
+
+::
+
+    <Quote>
+        <QuoteID>795</QuoteID>
+        <CreationDate>2014-06-25T16:39:07Z</CreationDate>
+        <ServiceID>112</ServiceID>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+        <TargetLanguages>
+            <TargetLanguage>
+                <LanguageCode>fr-fr</LanguageCode>
+            </TargetLanguage>
+            <TargetLanguage>
+                <LanguageCode>it-it</LanguageCode>
+            </TargetLanguage>
+        </TargetLanguages>
+        <TotalTranslations>2</TotalTranslations>
+        <TranslationCredit>49984</TranslationCredit>
+        <TotalCost>0.00</TotalCost>
+        <PrepaidCredit>118.99</PrepaidCredit>
+        <AmountDue>0.00</AmountDue>
+        <Currency>EUR</Currency>
+        <PurchaseOrderNumber>001-005-100</PurchaseOrderNumber>
+        <InternalBillingCode>ABCD100001</InternalBillingCode>
+    </Quote>
+
+
+
+
 Return Codes
 ============
 
@@ -146,7 +262,7 @@ Return Codes
 +-------------------------+-------------------------+-------------------------+
 | Status                  | Code                    | Comments                |
 +=========================+=========================+=========================+
-| Created                 | 202                     | The approval was        |
+| Accepted                | 202                     | The approval was        |
 |                         |                         |                         |
 |                         |                         | accepted.               |
 +-------------------------+-------------------------+-------------------------+
@@ -561,5 +677,33 @@ service.
 |                         |                         | error. This quote is    |
 |                         |                         |                         |
 |                         |                         | invalid.                |
++-------------------------+-------------------------+-------------------------+
+| 308                     | Invalid Purchase Order  | The purchase order      |
+|                         |                         |                         |
+|                         |                         | number submitted is     |
+|                         |                         |                         |
+|                         |                         | either invalid or the   |
+|                         |                         |                         |
+|                         |                         | purchase order has an   |
+|                         |                         |                         |
+|                         |                         | insufficient remaining  |
+|                         |                         |                         |
+|                         |                         | balance.                |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 309                     | Buyer not authorized    | This buyer is not       |
+|                         |                         |                         |
+|                         | for purchase orders.    | authorized to use       |
+|                         |                         |                         |
+|                         |                         | purchase orders.        |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| 310                     | Improperly configured   | The billing information |
+|                         |                         |                         |
+|                         | site billing information| on this site is not     |
+|                         |                         |                         |
+|                         |                         | properly configured.    |
+|                         |                         |                         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 

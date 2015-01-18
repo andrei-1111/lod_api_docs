@@ -16,6 +16,11 @@ Retrieves information about a project.  If the project is complete, the
 request will return all of the translated products associated with the
 project.
 
+Arguments
+=========
+
+- **Project ID:** The onDemand Project ID.  You will receive this ID from :doc:`generate_quote` 
+
 
 Return Codes
 ============
@@ -60,13 +65,17 @@ The response body shows information about the project.
 |                         |                         |                         | 
 |    Status               |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Name of the project     |
+|                         |                         |                         | 
+|    ProjectName          |                         |                         | 
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 |                         |
 |                         |                         |                         | 
 |    ServiceID            |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 |                         |
 |                         |                         |                         | 
-|    TotalPrice           |                         |                         | 
+|    Price                |                         |                         | 
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Currency paid for the   |
 |                         |                         |                         |
@@ -91,7 +100,7 @@ The response body shows information about the project.
 |                         |                         |                         |
 |                         |                         |  that the translation   |
 |                         |                         |                         |
-|                         |                         | of the item is          |
+|                         |                         | of the project is       |
 |                         |                         |                         |
 |                         |                         | scheduled to be         |
 |                         |                         |                         |
@@ -240,6 +249,16 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Status of individual    |
+|                         |                         |                         |
+|    Files                |                         | file.  Options include  |
+|                         |                         |                         |
+|      .File              |                         | Analyzing, Analyzed,    |
+|                         |                         |                         |
+|      .Status            |                         | Analysis Failed, In     |
+|                         |                         |                         |
+|                         |                         | Translation, Translated |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | URL to download the     |
 |                         |                         |                         |
 |    Files                |                         | source file.            |
@@ -280,7 +299,30 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file. A       |
+|                         |                         |                         |
+|      .ReferenceFile     |                         | reference file is used  |
+|                         |                         |                         |
+|                         |                         | to inform the work that |
+|                         |                         |                         |
+|                         |                         | is being done. There is |
+|                         |                         |                         |
+|                         |                         | no charge for reference |
+|                         |                         |                         |
+|                         |                         | files.                  |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the         |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | reference file.         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 
 
@@ -355,6 +397,14 @@ Example of get project response for product-based projects.
             </Product>
         </Products>
         
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Project>
 
 Example of get project response for file-based projects.
@@ -387,6 +437,7 @@ Example of get project response for file-based projects.
                 <AssetID>1111</AssetID>
                 <FileName>foo.txt</FileName>
                 <URL>https...</URL>
+                <Status>Translated</Status>
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
@@ -396,4 +447,12 @@ Example of get project response for file-based projects.
                 </TargetLanguages>
             </File>   
         </Files>
+        <ReferenceFiles>
+            <ReferenceFile>
+                <AssetID>12345</Asset>
+            </ReferenceFile>
+            <ReferenceFile>
+                <AssetID>12346</Asset>
+            </ReferenceFile>
+        </ReferenceFiles>
     </Project>

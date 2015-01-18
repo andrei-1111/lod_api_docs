@@ -1,8 +1,8 @@
-====================
-Project Notification
-====================
+=============================
+Project Complete Notification
+=============================
 
-If the quote creation request included a NotificationURL, when a project
+If the quote creation request included a NotificationURL or NotifyCompleteURL, when a project
 within the quote is complete, onDemand will POST to that URL.  
 
 Incoming POST Body

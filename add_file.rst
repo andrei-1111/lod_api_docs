@@ -17,7 +17,7 @@ This interface adds a file to the system.
 The URL for this method includes two parameters.  
 
 
-- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain.
+- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain.  If you don't know the language code, you can use "detect-language" instead of a language code and onDemand will attempt to detect the language.
 - filename is the original name of the file.  It needs to be url encoded.
 
 Files are then used to generate quotes.  If a file is not used in a quote
@@ -263,18 +263,68 @@ including a payment URL.  The user must follow this URL to a payment page.
 |                         |                         |                         |
 |    Name                 |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | The status of the file. |
+|                         |                         |                         |
+|    Status               |                         | Possible values:        |
+|                         |                         |                         |
+|                         |                         | - Analyzing             |
+|                         |                         | - Analyzed              |
+|                         |                         | - Analysis Failed       |
+|                         |                         | - In Translation        |
+|                         |                         | - Translated            |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    SourceLanguage       |                         | glossary                |
+|                         |                         |                         |
+|      .LanguageCode      |                         | The LanguageCode element|
+|                         |                         |                         |
+|                         |                         | will be empty if the    |
+|                         |                         |                         |
+|                         |                         | client requested        |
+|                         |                         |                         |
+|                         |                         | language detection and  |
+|                         |                         |                         |
+|                         |                         | the file has not been   |
+|                         |                         |                         |
+|                         |                         | analyzed yet or if      |
+|                         |                         |                         |
+|                         |                         | language detection      |
+|                         |                         |                         |
+|                         |                         | failed.                 |
++-------------------------+-------------------------+-------------------------+
 
 
 
 
 
 
-Response Example
-================
+Response Example (File Analyzed)
+================================
 
 ::
 
     <File>
         <AssetID>1235</AssetID>
         <Name>foo.txt</Name>
+        <Status>Analyzed</Status>
+        <SourceLanguage>
+            <LanguageCode>en-gb</LanguageCode>
+        </SourceLanguage>
+    </File>
+
+
+Response Example (Anaylsis Incomplete)
+======================================
+
+::
+
+    <File>
+        <AssetID>1235</AssetID>
+        <Name>foo.txt</Name>
+        <Status>Analyzing</Status>
+        <SourceLanguage>
+            <LanguageCode/>
+        </SourceLanguage>
     </File>

@@ -15,6 +15,13 @@ Get Product Translation
 
 Retrieves the translation of an item
 
+Arguments
+=========
+
+- **Asset ID:** The onDemand Asset ID of the source product.
+- **Language Code:** The locale code in the format en-us where EN is the 2 character ISO language code and US is the 2 character ISO country code.
+
+
 
 Return Codes
 ============

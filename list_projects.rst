@@ -12,7 +12,7 @@ List Projects
 |               |    GET                 |
 +---------------+------------------------+
 
-Returns information about the merchant’s account
+Returns a list of all a user's projects.
 
 Return Codes
 ============
@@ -56,6 +56,12 @@ credentials.
 |                         |                         |                         |
 |      .URL               |                         | GetProject.             |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | The name of the project |
+|                         |                         |                         |
+|    Project              |                         | Either provided or      |
+|                         |                         |                         |
+|      .ProjectName       |                         | system generated.       |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | The status of the       |
 |                         |                         |                         |
 |    Project              |                         | Project                 |
@@ -72,7 +78,7 @@ credentials.
 |                         |                         |                         |
 |    Project              |                         | project                 |
 |                         |                         |                         |
-|      .TotalPrice        |                         |                         |
+|      .Price             |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | The currency that the   |
 |                         |                         |                         |
@@ -144,7 +150,7 @@ Response Example
                 <URL>https://ondemand...</URL>
                 <Status>Complete</Status>
                 <ServiceID>14</ServiceID>
-                <TotalPrice>100.00</TotalPrice>
+                <Price>100.00</Price>
                 <Currency>USD</Currency>
                 <CreationDate>2014-01-25T10:32:02Z</CreationDate>
                 <DueDate>2014-01-25T10:32:02Z</DueDate>

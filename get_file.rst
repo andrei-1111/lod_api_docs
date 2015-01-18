@@ -15,6 +15,11 @@ Get File
 
 Returns a source file
 
+Arguments
+=========
+
+- **Asset ID:** The onDemand Asset ID.  You will receive this ID from :doc:`get_project` 
+
 
 Return Codes
 ============
