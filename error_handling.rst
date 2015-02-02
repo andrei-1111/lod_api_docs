@@ -74,28 +74,30 @@ In the case of a failure, the API will
 return a data structure like this:
 
 ::
-    
+
     <Account>
         <Status>Not Created</Status>
-        <Error>
-            <ReasonCode>403</ReasonCode>
-            <SimpleMessage>
-                This account already exists.
-            </SimpleMessage>
-            <DetailedMessage>
-                A user with this email address already exists in the system.  
-                The user should log into onDemand to find his API keys and 
-                add it to the client system manually.
-            </DetailedMessage>
-        </Error>
+        <Errors>
+            <Error>
+                <ReasonCode>403</ReasonCode>
+                <SimpleMessage>
+                    This account already exists.
+                </SimpleMessage>
+                <DetailedMessage>
+                    A user with this email address already exists in the system.
+                    The user should log into onDemand to find his API keys and
+                    add it to the client system manually.
+                </DetailedMessage>
+            </Error>
+        </Errors>
     </Account>
 
 
-In version 2014-06-10, the error element was broken down into three sub-elements: 
+In version 2014-06-10, the error element was broken down into three sub-elements:
 
 * Reason code is intended to streamline client error handling logic.
 * SimpleMessage is recommended for the end user.
-* DetailedMessage can be used for troubleshooting.  
+* DetailedMessage can be used for troubleshooting.
 
 Prior to the 2014-06-10 release, the Error element only contained a single message.
 
