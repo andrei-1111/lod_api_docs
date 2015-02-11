@@ -74,7 +74,7 @@ Request Body
 |                         |                         |                                   |
 |                         |                         | be 15.                            |
 +-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | Integer                 | Number of free                    |
+| .. container:: notrans  | Integer (optional)      | Number of free                    |
 |                         |                         |                                   |
 |    TranslationCredit    |                         | translations available            |
 |                         |                         |                                   |
