@@ -30,7 +30,7 @@ Request Body
 |                         |                         |                                   |
 |    CreationDate         |                         | date/time (ISO 8601)              |
 |                         |                         |                                   |
-|                         |                         | that the project was              |
+|                         |                         | that the quote was                |
 |                         |                         |                                   |
 |                         |                         | created in UTC.                   |
 +-------------------------+-------------------------+-----------------------------------+
