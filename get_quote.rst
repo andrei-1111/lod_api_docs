@@ -49,7 +49,7 @@ Return Codes
 Response Body
 =============
 
-The response body contains information about the newly created merchant. 
+The response body contains information about the quote. 
 
 +-------------------------+-------------------------+-------------------------+
 | Parameter               | Type                    | Comment                 |
@@ -329,7 +329,7 @@ Quote is ready for payment.
 
 
 
-Quote is has been authorized.
+Quote that has been authorized.
 
 ::
 

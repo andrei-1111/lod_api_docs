@@ -30,7 +30,7 @@ Request Body
 |                         |                         |                                   |
 |    CreationDate         |                         | date/time (ISO 8601)              |
 |                         |                         |                                   |
-|                         |                         | that the project was              |
+|                         |                         | that the quote was                |
 |                         |                         |                                   |
 |                         |                         | created in UTC.                   |
 +-------------------------+-------------------------+-----------------------------------+
@@ -74,7 +74,7 @@ Request Body
 |                         |                         |                                   |
 |                         |                         | be 15.                            |
 +-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | Integer                 | Number of free                    |
+| .. container:: notrans  | Integer (optional)      | Number of free                    |
 |                         |                         |                                   |
 |    TranslationCredit    |                         | translations available            |
 |                         |                         |                                   |
