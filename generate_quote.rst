@@ -12,13 +12,13 @@ Generate Quote
 |                 |    POST                |
 +-----------------+------------------------+
 
-This interface is used to generate a quote.  A quote can contain multiple projects. 
+This interface is used to generate a quote.  A quote can contain multiple projects.
 
 Quotes can be generated using different inputs:
 
 - Product elements, which are are inserted into the generate quote request
 - Files that were uploading using the :doc:`add_file` API.
-- Projects that were added using the :doc:`add_project` API.  These projects contain either files or products.  The advantage of generating a quote out of individual projects is that it allows you more flexibility.  For example, you can have different source languages, target languages, and even services.   
+- Projects that were added using the :doc:`add_project` API.  These projects contain either files or products.  The advantage of generating a quote out of individual projects is that it allows you more flexibility.  For example, you can have different source languages, target languages, and even services.
 
 The API client should use an API key set associated with a customer (merchant) account when submitting and retrieving projects on behalf of that customer.  This will establish ownership of that project for access control and also attribute transactions to individual customer accounts. The API client can create an customer account using the :doc:`create_account` API.
 
@@ -419,7 +419,7 @@ Product Request Example
                 <CategoryPath>Clothing : Menswear : Shoes</CategoryPath>
                 <Description>
                     <!--
-                        This can be an XML block containing arbitrary, 
+                        This can be an XML block containing arbitrary,
                         well formed sub elements.
                     -->
 
@@ -572,7 +572,7 @@ Response Body
 =============
 
 The response body contains a quote for a project. Please note: the response may
-not contain a price.  If the submitted files 
+not contain a price.  If the submitted files
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
@@ -711,7 +711,7 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |    Products             |                         | elements                |
 |                         |                         |                         |
-|      .Product           |                         |                         | 
+|      .Product           |                         |                         |
 |                         |                         |                         |
 |      .SKUs              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
@@ -792,6 +792,42 @@ not contain a price.  If the submitted files
 | .ProjectID              |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| Projects                | String                  | The name of the project |
+|                         |                         |                         |
+| .Project                |                         |                         |
+|                         |                         |                         |
+| .ProjectName            |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Projects                | Integer                 | The ID of the service   |
+|                         |                         |                         |
+| .Project                |                         | used.                   |
+|                         |                         |                         |
+| .ServiceID              |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Projects                | String                  | The language code of    |
+|                         |                         |                         |
+| .Project                |                         | source language.        |
+|                         |                         |                         |
+| .SourceLanguage         |                         |                         |
+|                         |                         |                         |
+| .LanguageCode           |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| Projects                | String                  | The language code of    |
+|                         |                         |                         |
+| .Project                |                         | a target language.      |
+|                         |                         |                         |
+| .TargetLanguages        |                         |                         |
+|                         |                         |                         |
+| .TargetLanguage         |                         |                         |
+|                         |                         |                         |
+| .LanguageCode           |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container for a         |
 |                         |                         |                         |
 |    ReferenceFiles       |                         | reference file. A       |
@@ -855,7 +891,7 @@ Product-Based Quote Response Example
                             <SKUNumber>123</SKUNumber>
                         </SKU>
                     </SKUs>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
+                    <DueDate>2014-02-11T10:22:46Z</DueDate>
                 </Product>
         </Products>
         <ReferenceFiles>
@@ -983,7 +1019,7 @@ File-Based Quote Response Example
                 <File>
                     <AssetID>999</AssetID>
                     <FileName>example.txt</FileName>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
+                    <DueDate>2014-02-11T10:22:46Z</DueDate>
                 </File>
         </Files>
         <ReferenceFiles>
@@ -1166,7 +1202,7 @@ If one of or more of the projects is already included in another quote, the resp
 Errors
 ======
 If generate quote encountered an error, the response will contain an Error element consisting of
-a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more
 information. Here are some common cases.
 
 +-------------------------+-------------------------+-------------------------+
