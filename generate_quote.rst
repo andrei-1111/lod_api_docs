@@ -55,27 +55,6 @@ Request Body
 |                         |                         |                                 |
 |    TranslationOptions   |                         | complete, the API               |
 |                         |                         |                                 |
-|      .NotificationURL   |                         | will send a POST                |
-|                         |                         |                                 |
-|                         |                         | request to this URL.            |
-|                         |                         |                                 |
-|                         |                         | *deprecated* please use         |
-|                         |                         |                                 |
-|                         |                         | NotifyCompleteURL               |
-|                         |                         |                                 |
-|                         |                         | instead. See the                |
-|                         |                         |                                 |
-|                         |                         | :doc:`notify_project_complete`  |
-|                         |                         |                                 |
-|                         |                         | API documentation for the       |
-|                         |                         |                                 |
-|                         |                         | structure of the post body.     |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | When a project is               |
-|                         |                         |                                 |
-|    TranslationOptions   |                         | complete, the API               |
-|                         |                         |                                 |
 |     .NotifyCompleteURL  |                         | will send a POST                |
 |                         |                         |                                 |
 |                         |                         | request to this URL. See the    |
@@ -395,9 +374,6 @@ Product Request Example
     <GenerateQuote>
         <TranslationOptions>
             <Currency>EUR</Currency>
-            <NotificationURL>
-                    `https://www.example.com/
-            </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
                 <LanguageCode>en-gb</LanguageCode>
@@ -476,9 +452,6 @@ File Request Example
     <GenerateQuote>
         <TranslationOptions>
             <Currency>EUR</Currency>
-            <NotificationURL>
-                    https://www.example.com/
-            </NotificationURL>
             <ServiceID>54</ServiceID>
             <SourceLanguage>
                 <LanguageCode>en-gb</LanguageCode>
@@ -516,9 +489,6 @@ Project Request Example
     <GenerateQuote>
         <TranslationOptions>
             <Currency>EUR</Currency>
-            <NotificationURL>
-                https://www.example.com/
-            </NotificationURL>
         </TranslationOptions>
         <Projects>
             <Project>
