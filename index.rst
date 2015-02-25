@@ -1,5 +1,5 @@
 =======================================
-Lionbridge Content API (V. 2014-09-04)
+Lionbridge Content API (V. 2015-02-23)
 =======================================
 
 The Lionbridge Content API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  With the Lionbridge Content API you can:
@@ -13,10 +13,11 @@ The Lionbridge Content API is a RESTful programming interface to Lionbridge's on
 The API can be used against the `Lionbridge onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `Lionbridge onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
 
 
-**Version:** 2014-09-04 *Latest*
+**Version:** 2015-02-23 *Latest*
 
 Earlier Releases:
 
+- `Version 2014-09-04 <./archive/2014-09-04/>`_
 - `Version 2014-06-10 <./archive/2014-06-10/>`_
 - `Version 2014-02-28 <./archive/2014-02-28/>`_
 
@@ -25,14 +26,11 @@ Earlier Releases:
 New in This Release
 ===================
 
-- New payment options for paying with purchase orders. See :doc:`authorize_quote`.
-- Improvements to the :doc:`list_services` API including the ability to filter services by file type.
-- A new :doc:`list_locales` API.
-- A new :doc:`add_file_by_reference` API.
-- Support for reference files in the :doc:`add_project` and :doc:`generate_quote` APIs.
-- A new :doc:`add_project` API and the ability to create quotes out of projects.
-- A new :doc:`get_estimate` API.
-- A new :doc:`get_file_details` API.
+- Responses from GenerateQuote now include ``<Project/>`` data, to be more
+  consistent with other quote responses.
+- Responses from GenerateQuote and GetQuote have been homogenized. Previously
+  GetQuote did not return as much information as GenerateQuote, and it was not
+  always possible to authorize a quote with that data.
 
 
 Contents
