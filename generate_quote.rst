@@ -872,24 +872,6 @@ Product-Based Quote Response Example
                 <AssetID>12346</Asset>
             </ReferenceFile>
         </ReferenceFiles>
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -937,24 +919,6 @@ If the price is not yet ready, the response will look like:
                 <AssetID>12346</Asset>
             </ReferenceFile>
         </ReferenceFiles>
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
     </Quote>
 
 File-Based Quote Response Example
@@ -1000,24 +964,6 @@ File-Based Quote Response Example
                 <AssetID>12346</Asset>
             </ReferenceFile>
         </ReferenceFiles>
-        <Projects>
-                <Project>
-                    <ProjectID>999</ProjectID>
-                    <ProjectName>Name of project</ProjectName>
-                    <ServiceID>54</ServiceID>
-                    <SourceLanguage>
-                        <LanguageCode>en-gb</LanguageCode>
-                    </SourceLanguage>
-                    <TargetLanguages>
-                                <TargetLanguage>
-                                    <LanguageCode>it-it</LanguageCode>
-                                </TargetLanguage>
-                                <TargetLanguage>
-                                    <LanguageCode>fr-fr</LanguageCode>
-                                </TargetLanguage>
-                    </TargetLanguages>
-                </Project>
-        </Projects>
     </Quote>
 
 If the price is not yet ready, the response will look like:
