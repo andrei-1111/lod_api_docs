@@ -18,7 +18,7 @@ Returns a source file
 Arguments
 =========
 
-- **Asset ID:** The onDemand Asset ID.  You will receive this ID from :doc:`get_project`
+- **Asset ID:** The onDemand Asset ID.  You will receive this ID from :doc:`get_project` 
 
 
 Return Codes
@@ -28,10 +28,6 @@ Return Codes
 | Status                  | Code                    | Comments                |
 +=========================+=========================+=========================+
 | Success                 | 200                     | Successful request      |
-+-------------------------+-------------------------+-------------------------+
-| No Content              | 204                     | The files are not yet   |
-|                         |                         |                         |
-|                         |                         | ready                   |
 +-------------------------+-------------------------+-------------------------+
 | Bad Request             | 400                     |                         |
 +-------------------------+-------------------------+-------------------------+
@@ -50,12 +46,6 @@ Return Codes
 |                         |                         | to a file that the      |
 |                         |                         |                         |
 |                         |                         | account owns.           |
-+-------------------------+-------------------------+-------------------------+
-| Gone                    | 410                     | The files have gone     |
-|                         |                         |                         |
-|                         |                         | past their retention    |
-|                         |                         |                         |
-|                         |                         | period                  |
 +-------------------------+-------------------------+-------------------------+
 
 Response Body
