@@ -1,5 +1,5 @@
 =======================================
-Lionbridge Content API (V. 2014-09-04)
+Lionbridge Content API (V. 2015-02-23)
 =======================================
 
 The Lionbridge Content API is a RESTful programming interface to Lionbridge's onDemand Translation Service.  With the Lionbridge Content API you can:
@@ -13,10 +13,11 @@ The Lionbridge Content API is a RESTful programming interface to Lionbridge's on
 The API can be used against the `Lionbridge onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `Lionbridge onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
 
 
-**Version:** 2014-09-04 *Latest*
+**Version:** 2015-02-23 *Latest*
 
 Earlier Releases:
 
+- `Version 2014-09-04 <./archive/2014-09-04/>`_
 - `Version 2014-06-10 <./archive/2014-06-10/>`_
 - `Version 2014-02-28 <./archive/2014-02-28/>`_
 
