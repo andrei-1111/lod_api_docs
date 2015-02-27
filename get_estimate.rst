@@ -5,7 +5,7 @@ Get Estimate
 +---------------+----------------------------------------------------------------------------------------------------+
 | **Resource:** | .. container:: notrans                                                                             |
 |               |                                                                                                    |
-|               |    /api/estimate?service_id=10&unit_count=10&source_lang=en-gb&target_lang=it-it,de-de             |
+|               |    /api/estimate?service_id=10&unit_count=10&source_lang=en-gb&target_langs=it-it,de-de            |
 +---------------+----------------------------------------------------------------------------------------------------+
 | **Method:**   | .. container:: notrans                                                                             |
 |               |                                                                                                    |
