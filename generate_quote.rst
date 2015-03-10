@@ -725,7 +725,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
-|    Files                |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -733,7 +737,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Original name of the    |
 |                         |                         |                         |
-|    Files                |                         | file.                   |
+|    Projects             |                         | file.                   |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -978,13 +986,6 @@ File-Based Quote Response Example
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
 
-        <Files>
-                <File>
-                    <AssetID>999</AssetID>
-                    <FileName>example.txt</FileName>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate>
-                </File>
-        </Files>
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</Asset>
@@ -1009,6 +1010,13 @@ File-Based Quote Response Example
                                     <LanguageCode>fr-fr</LanguageCode>
                                 </TargetLanguage>
                     </TargetLanguages>
+                    <Files>
+                            <File>
+                                <AssetID>999</AssetID>
+                                <FileName>example.txt</FileName>
+                                <DueDate>2014-02-11T10:22:46Z</DueDate>
+                            </File>
+                    </Files>
                 </Project>
         </Projects>
     </Quote>

@@ -277,7 +277,11 @@ The response body contains information about the newly created merchant.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
-|    Files                |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -285,7 +289,11 @@ The response body contains information about the newly created merchant.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Original name of the    |
 |                         |                         |                         |
-|    Files                |                         | file.                   |
+|    Projects             |                         | file.                   |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -293,9 +301,13 @@ The response body contains information about the newly created merchant.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See :doc:`list_files`   |
 |                         |                         |                         |
-|    Files                |                         | for a list of file      |
+|    Projects             |                         | for a list of file      |
 |                         |                         |                         |
-|      .File              |                         | statuses.               |
+|      .Project           |                         | statuses.               |
+|                         |                         |                         |
+|      .Files             |                         |                         |
+|                         |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
 |      .Status            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
