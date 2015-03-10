@@ -598,10 +598,6 @@ not contain a price.  If the submitted files
 |    RejectURL            |                         | quote. See              |
 |                         |                         | :doc:`reject_quote`     |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | ID of Service           |
-|                         |                         |                         |
-|    ServiceID            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    SourceLanguage       |                         | glossary                |
@@ -834,7 +830,6 @@ Product-Based Quote Response Example
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
-        <ServiceID>54</ServiceID>
         <SourceLanguage>
         <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
@@ -900,7 +895,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
@@ -968,7 +962,6 @@ File-Based Quote Response Example
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
-        <ServiceID>54</ServiceID>
         <SourceLanguage>
         <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
@@ -1028,7 +1021,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
@@ -1117,7 +1109,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <ServiceID>54</ServiceID>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>

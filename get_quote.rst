@@ -215,6 +215,14 @@ The response body contains information about the quote.
 |                         |                         |                         |
 |      .ProjectDueDate    |                         | be completed by.        |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | ID of Service           |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ServiceID         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | List of products        |
 |                         |                         |                         |
 |    Projects             |                         | included in the         |
@@ -324,6 +332,7 @@ Quote is ready for payment.
                 <ProjectID>123</ProjectID>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Products>
                     <Product>
                         <AssetID>999</AssetID>
@@ -363,6 +372,7 @@ Quote that has been authorized.
                 <ProjectID>123</ProjectID>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Products>
                     <Product>
                         <AssetID>999</AssetID>
@@ -402,6 +412,7 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Files>
                     <File>
                         <Status>Analyzed</Status>
@@ -441,6 +452,7 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Files>
                     <File>
                         <Status>Analyzed</Status>
@@ -467,6 +479,7 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Files>
                     <File>
                         <Status>Analyzing</Status>
@@ -493,6 +506,7 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
                 <Files>
                     <File>
                         <Status>Analysis Failed</Status>

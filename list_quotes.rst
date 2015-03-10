@@ -205,6 +205,14 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |      .ProjectDueDate    |                         | be completed by.        |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | ID of Service           |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ServiceID         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | List of products        |
 |                         |                         |                         |
 |    Projects             |                         | included in the         |
@@ -315,6 +323,7 @@ Quote is ready for payment.
 	                <ProjectID>123</ProjectID>
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <ServiceID>54</ServiceID>
 	                <Products>
 	                    <Product>
 	                        <AssetID>999</AssetID>
@@ -347,6 +356,7 @@ Quote is ready for payment.
 	                <ProjectID>123</ProjectID>
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <ServiceID>54</ServiceID>
 	                <Products>
 	                    <Product>
 	                        <AssetID>999</AssetID>
@@ -376,6 +386,7 @@ Quote is ready for payment.
 	                <ProjectName>Name of project</ProjectName>
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+	                <ServiceID>54</ServiceID>
 	                <Files>
 	                    <File>
 	                        <Status>Analyzed</Status>
