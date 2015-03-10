@@ -48,6 +48,16 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |    QuoteID              |                         | quote.                  |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | String representing the |
+|                         |                         |                         |
+|    CreationDate         |                         | date/time in the ISO    |
+|                         |                         |                         |
+|                         |                         | 8601 format. that the   |
+|                         |                         |                         |
+|                         |                         | project was created in  |
+|                         |                         |                         |
+|                         |                         | UTC.                    |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of the quote.    |
 |                         |                         |                         |
 |    Status               |                         |  Authorized means that  |
@@ -294,6 +304,7 @@ Quote is ready for payment.
 	<Quotes>
 	   <Quote>
 	        <QuoteID>132</QuoteID>
+	        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
 	        <Status>Pending</Status>
 	        <TotalCost>10.00</TotalCost>
 	        <PrepaidCredit>5.00</PrepaidCredit>
@@ -319,6 +330,7 @@ Quote is ready for payment.
 	    </Quote>
 	   <Quote>
 	        <QuoteID>132</QuoteID>
+	        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
 	        <Status>Authorized</Status>
 	        <TotalCost>10.00</TotalCost>
 	        <Currency>EUR</Currency>
@@ -350,6 +362,7 @@ Quote is ready for payment.
 	    </Quote>
 	   <Quote>
 	        <QuoteID>132</QuoteID>
+	        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
 	        <Status>Pending</Status>
 	        <AuthorizeURL>https://…</AuthorizeURL>
 	        <RejectURL>https://…</RejectURL>
