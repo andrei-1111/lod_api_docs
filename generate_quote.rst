@@ -598,24 +598,6 @@ not contain a price.  If the submitted files
 |    RejectURL            |                         | quote. See              |
 |                         |                         | :doc:`reject_quote`     |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    SourceLanguage       |                         | glossary                |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Container containing    |
-|                         |                         |                         |
-|    TargetLanguages      |                         | target languages.       |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    TargetLanguages      |                         | glossary                |
-|                         |                         |                         |
-|      .TargetLanguage    |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | The number of           |
 |                         |                         |                         |
 |    TotalTranslations    |                         | translations requested. |
@@ -862,17 +844,6 @@ Product-Based Quote Response Example
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
-        <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
         <TranslationCredit>1</TranslationCredit>
         <TotalCost>10.00</TotalCost>
@@ -927,17 +898,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
         <TranslationCredit>1</TranslationCredit>
         <TotalCost/>
@@ -994,17 +954,6 @@ File-Based Quote Response Example
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://</RejectURL>
-        <SourceLanguage>
-        <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
         <TotalCost>10.00</TotalCost>
         <PrepaidCredit>5.00</PrepaidCredit>
         <AmountDue>5.00</AmountDue>
@@ -1053,17 +1002,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
         <TotalCost/>
         <PrepaidCredit/>5.00</PrepaidCredit>
         <AmountDue/>
@@ -1141,17 +1079,6 @@ If the price is not yet ready, the response will look like:
         <QuoteID>132</QuoteID>
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Calculating</Status>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-        </TargetLanguages>
         <TotalCost/>
         <PrepaidCredit/>5.00</PrepaidCredit>
         <AmountDue/>

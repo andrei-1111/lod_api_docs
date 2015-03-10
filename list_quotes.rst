@@ -338,6 +338,36 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    Projects             |                         | glossary                |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .SourceLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container containing    |
+|                         |                         |                         |
+|    Projects             |                         | target languages.       |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    Projects             |                         | glossary                |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
   
 
@@ -363,6 +393,17 @@ Quote is ready for payment.
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
 	                <ServiceID>54</ServiceID>
+	                <SourceLanguage>
+	                    <LanguageCode>en-gb</LanguageCode>
+	                </SourceLanguage>
+	                <TargetLanguages>
+	                    <TargetLanguage>
+	                        <LanguageCode>it-it</LanguageCode>
+	                    </TargetLanguage>
+	                    <TargetLanguage>
+	                        <LanguageCode>fr-fr</LanguageCode>
+	                    </TargetLanguage>
+	                </TargetLanguages>
 	                <Products>
 	                    <Product>
 	                        <AssetID>999</AssetID>
@@ -396,6 +437,17 @@ Quote is ready for payment.
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
 	                <ServiceID>54</ServiceID>
+	                <SourceLanguage>
+	                    <LanguageCode>en-gb</LanguageCode>
+	                </SourceLanguage>
+	                <TargetLanguages>
+	                    <TargetLanguage>
+	                        <LanguageCode>it-it</LanguageCode>
+	                    </TargetLanguage>
+	                    <TargetLanguage>
+	                        <LanguageCode>fr-fr</LanguageCode>
+	                    </TargetLanguage>
+	                </TargetLanguages>
 	                <Products>
 	                    <Product>
 	                        <AssetID>999</AssetID>
@@ -426,6 +478,17 @@ Quote is ready for payment.
 	                <ProjectURL>https://</ProjectURL>
 	                <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
 	                <ServiceID>54</ServiceID>
+	                <SourceLanguage>
+	                    <LanguageCode>en-gb</LanguageCode>
+	                </SourceLanguage>
+	                <TargetLanguages>
+	                    <TargetLanguage>
+	                        <LanguageCode>it-it</LanguageCode>
+	                    </TargetLanguage>
+	                    <TargetLanguage>
+	                        <LanguageCode>fr-fr</LanguageCode>
+	                    </TargetLanguage>
+	                </TargetLanguages>
 	                <Files>
 	                    <File>
 	                        <Status>Analyzed</Status>
