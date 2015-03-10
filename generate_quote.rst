@@ -671,11 +671,19 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  |                         |                         |
 |                         | Container               | Container of products   |
-|    Products             |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of SKU        |
 |                         |                         |                         |
-|    Products             |                         | elements                |
+|    Projects             |                         | elements                |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
 |      .Product           |                         |                         |
 |                         |                         |                         |
@@ -683,7 +691,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of a SKU      |
 |                         |                         |                         |
-|    Products             |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
 |      .Product           |                         |                         |
 |                         |                         |                         |
@@ -693,7 +705,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Item SKU                |
 |                         |                         |                         |
-|    Products             |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
 |      .Product           |                         |                         |
 |                         |                         |                         |
@@ -705,7 +721,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | onDemand internal ID    |
 |                         |                         |                         |
-|    Products             |                         | for the listing         |
+|    Projects             |                         | for the listing         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Products          |                         |                         |
 |                         |                         |                         |
 |      .Product           |                         |                         |
 |                         |                         |                         |
@@ -713,15 +733,15 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
-|    Products             |                         | date/time (ISO 8601     |
+|    Projects             |                         | date/time (ISO 8601     |
 |                         |                         |                         |
-|      .Product           |                         | format) that the        |
+|      .Project           |                         | format) that the        |
 |                         |                         |                         |
-|      .DueDate           |                         | translation of the item |
+|      .Products          |                         | translation of the item |
 |                         |                         |                         |
-|                         |                         | is scheduled to be      |
+|      .Product           |                         | is scheduled to be      |
 |                         |                         |                         |
-|                         |                         | completed in UTC        |
+|      .DueDate           |                         | completed in UTC        |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
@@ -856,17 +876,6 @@ Product-Based Quote Response Example
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
 
-        <Products>
-                <Product>
-                    <AssetID>999</AssetID>
-                    <SKUs>
-                        <SKU>
-                            <SKUNumber>123</SKUNumber>
-                        </SKU>
-                    </SKUs>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate>
-                </Product>
-        </Products>
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</Asset>
@@ -891,6 +900,17 @@ Product-Based Quote Response Example
                                     <LanguageCode>fr-fr</LanguageCode>
                                 </TargetLanguage>
                     </TargetLanguages>
+                    <Products>
+                            <Product>
+                                <AssetID>999</AssetID>
+                                <SKUs>
+                                    <SKU>
+                                        <SKUNumber>123</SKUNumber>
+                                    </SKU>
+                                </SKUs>
+                                <DueDate>2014-02-11T10:22:46Z</DueDate>
+                            </Product>
+                    </Products>
                 </Project>
         </Projects>
     </Quote>
@@ -921,16 +941,6 @@ If the price is not yet ready, the response will look like:
         <AmountDue/>
         <Currency>EUR</Currency>
 
-        <Products>
-                <Product>
-                    <AssetID>999</AssetID>
-                    <SKUs>
-                        <SKU>
-                            <SKUNumber>123</SKUNumber>
-                        </SKU>
-                    </SKUs>
-                </Product>
-        </Products>
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</Asset>
@@ -955,6 +965,16 @@ If the price is not yet ready, the response will look like:
                                     <LanguageCode>fr-fr</LanguageCode>
                                 </TargetLanguage>
                     </TargetLanguages>
+                    <Products>
+                            <Product>
+                                <AssetID>999</AssetID>
+                                <SKUs>
+                                    <SKU>
+                                        <SKUNumber>123</SKUNumber>
+                                    </SKU>
+                                </SKUs>
+                            </Product>
+                    </Products>
                 </Project>
         </Projects>
     </Quote>
