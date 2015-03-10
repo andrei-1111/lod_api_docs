@@ -99,7 +99,7 @@ The response body shows information about the product.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
-|    SourceLanguagee      |                         | glossary                |
+|    SourceLanguage       |                         | glossary                |
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 |                         |                         |                         |
