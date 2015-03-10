@@ -824,13 +824,13 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container for a         |
 |                         |                         |                         |
-|    ReferenceFiles       |                         | reference file. A       |
+|    Projects             |                         | reference file. A       |
 |                         |                         |                         |
-|      .ReferenceFile     |                         | reference file is used  |
+|      .Project           |                         | reference file is used  |
 |                         |                         |                         |
-|                         |                         | to inform the work that |
+|      .ReferenceFiles    |                         | to inform the work that |
 |                         |                         |                         |
-|                         |                         | is being done. There is |
+|      .ReferenceFile     |                         | is being done. There is |
 |                         |                         |                         |
 |                         |                         | no charge for reference |
 |                         |                         |                         |
@@ -839,7 +839,11 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Asset ID of the         |
 |                         |                         |                         |
-|    ReferenceFiles       |                         | reference file.         |
+|    Projects             |                         | reference file.         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
 |                         |                         |                         |
 |      .ReferenceFile     |                         |                         |
 |                         |                         |                         |
@@ -876,14 +880,6 @@ Product-Based Quote Response Example
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
 
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -911,6 +907,14 @@ Product-Based Quote Response Example
                                 <DueDate>2014-02-11T10:22:46Z</DueDate>
                             </Product>
                     </Products>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</Asset>
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</Asset>
+                        </ReferenceFile>
+                    </ReferenceFiles>
                 </Project>
         </Projects>
     </Quote>
@@ -941,14 +945,6 @@ If the price is not yet ready, the response will look like:
         <AmountDue/>
         <Currency>EUR</Currency>
 
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -975,6 +971,14 @@ If the price is not yet ready, the response will look like:
                                 </SKUs>
                             </Product>
                     </Products>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</Asset>
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</Asset>
+                        </ReferenceFile>
+                    </ReferenceFiles>
                 </Project>
         </Projects>
     </Quote>
@@ -1006,14 +1010,6 @@ File-Based Quote Response Example
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
 
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</Asset>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</Asset>
-            </ReferenceFile>
-        </ReferenceFiles>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -1037,6 +1033,14 @@ File-Based Quote Response Example
                                 <DueDate>2014-02-11T10:22:46Z</DueDate>
                             </File>
                     </Files>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</Asset>
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</Asset>
+                        </ReferenceFile>
+                    </ReferenceFiles>
                 </Project>
         </Projects>
     </Quote>

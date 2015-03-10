@@ -321,6 +321,33 @@ The response body contains information about the quote.
 |                         |                         |                         |
 |      .Status            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    Projects             |                         | reference file.         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
   
 

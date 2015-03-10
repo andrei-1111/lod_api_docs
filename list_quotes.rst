@@ -311,6 +311,33 @@ The response body contains information about the newly created merchant.
 |                         |                         |                         |
 |      .Status            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    Projects             |                         | reference file.         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
   
 
