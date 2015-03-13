@@ -12,5 +12,5 @@ $( document ).ready(function() {
   $("[data-toggle='rst-current-version']").click(function() {
     $("[data-toggle='rst-versions']").toggleClass("shift-up");
   });
-  $("table.docutils:not(.field-list").wrap("<div class='wy-table-responsive'></div>");
+  $("table.docutils:not(.field-list)").wrap("<div class='wy-table-responsive'></div>");
 });

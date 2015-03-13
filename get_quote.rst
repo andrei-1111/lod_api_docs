@@ -58,6 +58,16 @@ The response body contains information about the quote.
 |                         |                         |                         |
 |    QuoteID              |                         | quote.                  |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | String representing the |
+|                         |                         |                         |
+|    CreationDate         |                         | date/time in the ISO    |
+|                         |                         |                         |
+|                         |                         | 8601 format. that the   |
+|                         |                         |                         |
+|                         |                         | project was created in  |
+|                         |                         |                         |
+|                         |                         | UTC.                    |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of the quote.    |
 |                         |                         |                         |
 |    Status               |                         |  Authorized means that  |
@@ -205,6 +215,14 @@ The response body contains information about the quote.
 |                         |                         |                         |
 |      .ProjectDueDate    |                         | be completed by.        |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | ID of Service           |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ServiceID         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | List of products        |
 |                         |                         |                         |
 |    Projects             |                         | included in the         |
@@ -269,7 +287,11 @@ The response body contains information about the quote.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 | Asset ID of the file.   |
 |                         |                         |                         |
-|    Files                |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -277,7 +299,11 @@ The response body contains information about the quote.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Original name of the    |
 |                         |                         |                         |
-|    Files                |                         | file.                   |
+|    Projects             |                         | file.                   |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .Files             |                         |                         |
 |                         |                         |                         |
 |      .File              |                         |                         |
 |                         |                         |                         |
@@ -285,11 +311,72 @@ The response body contains information about the quote.
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See :doc:`list_files`   |
 |                         |                         |                         |
-|    Files                |                         | for a list of file      |
+|    Projects             |                         | for a list of file      |
 |                         |                         |                         |
-|      .File              |                         | statuses.               |
+|      .Project           |                         | statuses.               |
+|                         |                         |                         |
+|      .Files             |                         |                         |
+|                         |                         |                         |
+|      .File              |                         |                         |
 |                         |                         |                         |
 |      .Status            |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container for a         |
+|                         |                         |                         |
+|    Projects             |                         | reference file.         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the file.   |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .AssetID           |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    Projects             |                         | glossary                |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .SourceLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Container containing    |
+|                         |                         |                         |
+|    Projects             |                         | target languages.       |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    Projects             |                         | glossary                |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 
   
@@ -303,6 +390,7 @@ Quote is ready for payment.
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Pending</Status>
         <TotalCost>10.00</TotalCost>
         <PrepaidCredit>5.00</PrepaidCredit>
@@ -313,6 +401,18 @@ Quote is ready for payment.
                 <ProjectID>123</ProjectID>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Products>
                     <Product>
                         <AssetID>999</AssetID>
@@ -335,6 +435,7 @@ Quote that has been authorized.
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Authorized</Status>
         <TotalCost>10.00</TotalCost>
         <Currency>EUR</Currency>
@@ -351,6 +452,18 @@ Quote that has been authorized.
                 <ProjectID>123</ProjectID>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Products>
                     <Product>
                         <AssetID>999</AssetID>
@@ -376,6 +489,7 @@ File-Based Quote Response Example
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://…</RejectURL>
@@ -389,6 +503,18 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Files>
                     <File>
                         <Status>Analyzed</Status>
@@ -406,6 +532,7 @@ File-Based Quote Response Example
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Pending</Status>
         <AuthorizeURL>https://…</AuthorizeURL>
         <RejectURL>https://…</RejectURL>
@@ -427,6 +554,18 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Files>
                     <File>
                         <Status>Analyzed</Status>
@@ -444,6 +583,7 @@ File-Based Quote Response Example
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <TotalCost/>
         <Projects>
@@ -452,6 +592,18 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Files>
                     <File>
                         <Status>Analyzing</Status>
@@ -469,6 +621,7 @@ File-Based Quote Response Example
 
    <Quote>
         <QuoteID>132</QuoteID>
+        <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Error</Status>
         <TotalCost>/>
         <Projects>
@@ -477,6 +630,18 @@ File-Based Quote Response Example
                 <ProjectName>Name of project</ProjectName>
                 <ProjectURL>https://</ProjectURL>
                 <ProjectDueDate>2014-02-11T10:22:46Z</ProjectDueDate>
+                <ServiceID>54</ServiceID>
+                <SourceLanguage>
+                    <LanguageCode>en-gb</LanguageCode>
+                </SourceLanguage>
+                <TargetLanguages>
+                    <TargetLanguage>
+                        <LanguageCode>it-it</LanguageCode>
+                    </TargetLanguage>
+                    <TargetLanguage>
+                        <LanguageCode>fr-fr</LanguageCode>
+                    </TargetLanguage>
+                </TargetLanguages>
                 <Files>
                     <File>
                         <Status>Analysis Failed</Status>
