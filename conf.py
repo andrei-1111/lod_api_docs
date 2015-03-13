@@ -45,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Lionbridge Content API Documentation'
-copyright = u'2014, Lionbridge Technologies'
+copyright = u'2015, Lionbridge Technologies'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
