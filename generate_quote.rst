@@ -435,10 +435,10 @@ Product Request Example
         </Products>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </GenerateQuote>
@@ -472,10 +472,10 @@ File Request Example
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </GenerateQuote>
@@ -880,10 +880,10 @@ Product-Based Quote Response Example
                     </Products>
                     <ReferenceFiles>
                         <ReferenceFile>
-                            <AssetID>12345</Asset>
+                            <AssetID>12345</AssetID>
                         </ReferenceFile>
                         <ReferenceFile>
-                            <AssetID>12346</Asset>
+                            <AssetID>12346</AssetID>
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -933,10 +933,10 @@ If the price is not yet ready, the response will look like:
                     </Products>
                     <ReferenceFiles>
                         <ReferenceFile>
-                            <AssetID>12345</Asset>
+                            <AssetID>12345</AssetID>
                         </ReferenceFile>
                         <ReferenceFile>
-                            <AssetID>12346</Asset>
+                            <AssetID>12346</AssetID>
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -984,10 +984,10 @@ File-Based Quote Response Example
                     </Files>
                     <ReferenceFiles>
                         <ReferenceFile>
-                            <AssetID>12345</Asset>
+                            <AssetID>12345</AssetID>
                         </ReferenceFile>
                         <ReferenceFile>
-                            <AssetID>12346</Asset>
+                            <AssetID>12346</AssetID>
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -1015,10 +1015,10 @@ If the price is not yet ready, the response will look like:
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </Quote>
