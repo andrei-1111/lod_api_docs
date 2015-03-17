@@ -73,114 +73,17 @@ The response body shows information about the product.
 |      .LanguageCode      |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | If the file is          |
+| .. container:: notrans  | Integer                 | If the file is          |
 |                         |                         |                         |
-|    Project              |                         | associated with a       |
+|    ProjectID            |                         | associated with a       |
 |                         |                         |                         |
 |                         |                         | project, this element   |
 |                         |                         |                         |
-|                         |                         | will contain            |
+|                         |                         | contains the ID.        |
 |                         |                         |                         |
-|                         |                         | information about       |
 |                         |                         |                         |
-|                         |                         | the project.            |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | The onDemand ID of the  |
 |                         |                         |                         |
-|    Project              |                         | Project                 |
 |                         |                         |                         |
-|      .ProjectID         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The URL to retrieve the |
-|                         |                         |                         |
-|    Project              |                         | project. See            |
-|                         |                         |                         |
-|      .URL               |                         | GetProject.             |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The name of the project |
-|                         |                         |                         |
-|    Project              |                         | Either provided or      |
-|                         |                         |                         |
-|      .ProjectName       |                         | system generated.       |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The status of the       |
-|                         |                         |                         |
-|    Project              |                         | Project                 |
-|                         |                         |                         |
-|      .Status            |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | The onDemand service    |
-|                         |                         |                         |
-|    Project              |                         | configuration used for  |
-|                         |                         |                         |
-|      .ServiceID         |                         | the project             |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Decimal                 | Price charged for the   |
-|                         |                         |                         |
-|    Project              |                         | project                 |
-|                         |                         |                         |
-|      .Price             |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | The currency that the   |
-|                         |                         |                         |
-|    Project              |                         | project was paid in.    |
-|                         |                         |                         |
-|      .Currency          |                         |  See glossary for list  |
-|                         |                         |                         |
-|                         |                         | of valid currencies.    |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | DateTime                | String representing     |
-|                         |                         |                         |
-|    Project              |                         | Date/Time (ISO 8601)    |
-|                         |                         |                         |
-|      .CreationDate      |                         |  that the Item was      |
-|                         |                         |                         |
-|                         |                         | added to onDemand.      |
-|                         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | DateTime                | String representing     |
-|                         |                         |                         |
-|    Project              |                         | Date/Time (ISO 8601)    |
-|                         |                         |                         |
-|      .DueDate           |                         |  that the translation   |
-|                         |                         |                         |
-|                         |                         | of the item is          |
-|                         |                         |                         |
-|                         |                         | scheduled to be         |
-|                         |                         |                         |
-|                         |                         | completed.              |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | DateTime                | String representing     |
-|                         |                         |                         |
-|    Project              |                         | Date/Time (ISO 8601)    |
-|                         |                         |                         |
-|      .CompletionDate    |                         |  that the translation   |
-|                         |                         |                         |
-|                         |                         | of the item was         |
-|                         |                         |                         |
-|                         |                         | completed.              |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    Project              |                         | the glossary.           |
-|                         |                         |                         |
-|      .SourceLanguage    |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | Container containing    |
-|                         |                         |                         |
-|    Project              |                         | target languages.       |
-|                         |                         |                         |
-|       .TargetLanguages  |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    Project              |                         | the glossary.           |
-|                         |                         |                         |
-|      .TargetLanguages   |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | If the file is not      |
 |                         |                         |                         |
@@ -326,28 +229,7 @@ Response Example
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>
-        <Project>
-            <ProjectID>10001</ProjectID>
-            <URL>https://ondemand...</URL>
-            <Status>Complete</Status>
-            <ServiceID>14</ServiceID>
-            <Price>100.00</Price>
-            <Currency>USD</Currency>
-            <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-            <DueDate>2014-01-25T10:32:02Z</DueDate>
-            <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
-            <SourceLanguage>
-                <LanguageCode>en-gb</LanguageCode>
-            </SourceLanguage>
-            <TargetLanguages>
-                <TargetLanguage>
-                    <LanguageCode>fr-fr</LanguageCode>
-                </TargetLanguage>
-                <TargetLanguage>
-                    <LanguageCode>it-it</LanguageCode>
-                </TargetLanguage>
-            </TargetLanguages>
-        </Project>
+        <ProjectID>10001</ProjectID>
         <AvailableServices>
             <Service>
                 <ServiceID>123</ServiceID>
