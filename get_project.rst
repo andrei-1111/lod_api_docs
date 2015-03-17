@@ -399,10 +399,10 @@ Example of get project response for product-based projects.
         
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </Project>
@@ -449,10 +449,10 @@ Example of get project response for file-based projects.
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </Project>

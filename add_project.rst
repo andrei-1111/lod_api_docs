@@ -384,10 +384,10 @@ Product Request Example
         </Products>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
 
@@ -422,10 +422,10 @@ File Request Example
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
-                <AssetID>12345</Asset>
+                <AssetID>12345</AssetID>
             </ReferenceFile>
             <ReferenceFile>
-                <AssetID>12346</Asset>
+                <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
     </AddProject>
