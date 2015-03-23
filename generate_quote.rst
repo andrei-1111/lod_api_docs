@@ -1006,21 +1006,24 @@ If the price is not yet ready, the response will look like:
         <PrepaidCredit/>5.00</PrepaidCredit>
         <AmountDue/>
         <Currency>EUR</Currency>
-
-        <Files>
-                <File>
-                    <AssetID>999</AssetID>
-                    <FileName>example.txt</FileName>
-                </File>
-        </Files>
-        <ReferenceFiles>
-            <ReferenceFile>
-                <AssetID>12345</AssetID>
-            </ReferenceFile>
-            <ReferenceFile>
-                <AssetID>12346</AssetID>
-            </ReferenceFile>
-        </ReferenceFiles>
+        <Projects>
+            <Project>
+                <Files>
+                    <File>
+                        <AssetID>999</AssetID>
+                        <FileName>example.txt</FileName>
+                    </File>
+                </Files>
+                <ReferenceFiles>
+                    <ReferenceFile>
+                        <AssetID>12345</AssetID>
+                    </ReferenceFile>
+                    <ReferenceFile>
+                        <AssetID>12346</AssetID>
+                    </ReferenceFile>
+                </ReferenceFiles>
+            </Project>
+        </Projects>
     </Quote>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
