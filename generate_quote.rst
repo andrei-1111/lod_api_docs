@@ -832,6 +832,42 @@ not contain a price.  If the submitted files
 |      .AssetID           |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Original name of        |
+|                         |                         |                         |
+|    Projects             |                         | the file.               |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | URL where the file      |
+|                         |                         |                         |
+|    Projects             |                         | can be downloaded.      |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Empty element.          |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 Product-Based Quote Response Example
 ====================================
@@ -881,9 +917,15 @@ Product-Based Quote Response Example
                     <ReferenceFiles>
                         <ReferenceFile>
                             <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                         <ReferenceFile>
                             <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -934,9 +976,15 @@ If the price is not yet ready, the response will look like:
                     <ReferenceFiles>
                         <ReferenceFile>
                             <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                         <ReferenceFile>
                             <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -985,9 +1033,15 @@ File-Based Quote Response Example
                     <ReferenceFiles>
                         <ReferenceFile>
                             <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                         <ReferenceFile>
                             <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
                 </Project>
@@ -1017,9 +1071,15 @@ If the price is not yet ready, the response will look like:
                 <ReferenceFiles>
                     <ReferenceFile>
                         <AssetID>12345</AssetID>
+                        <FileName>my-file.txt</FileName>
+                        <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                        <TargetLanguages />
                     </ReferenceFile>
                     <ReferenceFile>
                         <AssetID>12346</AssetID>
+                        <FileName>my-file.txt</FileName>
+                        <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                        <TargetLanguages />
                     </ReferenceFile>
                 </ReferenceFiles>
             </Project>

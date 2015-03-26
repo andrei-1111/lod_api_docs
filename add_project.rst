@@ -664,6 +664,33 @@ not contain a price.  If the submitted files
 |      .AssetID           |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Original name of        |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | the file.               |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | URL where the file can  |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | be downloaded.          |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Empty element.          |
+|                         |                         |                         |
+|    ReferenceFiles       |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 Product-Based Project Response Example
 =======================================

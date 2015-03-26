@@ -348,6 +348,42 @@ The response body contains information about the quote.
 |                         |                         |                         |
 |      .AssetID           |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Original name of        |
+|                         |                         |                         |
+|    Projects             |                         | the file.               |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | URL where the file      |
+|                         |                         |                         |
+|    Projects             |                         | can be downloaded.      |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Empty element.          |
+|                         |                         |                         |
+|    Projects             |                         |                         |
+|                         |                         |                         |
+|      .Project           |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFiles    |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    Projects             |                         | glossary                |
