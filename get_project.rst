@@ -323,6 +323,33 @@ The response body shows information about the project.
 |      .AssetID           |                         |                         |
 |                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Original name of        |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | the file.               |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .FileName          |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | URL where the file can  |
+|                         |                         |                         |
+|    ReferenceFiles       |                         | be downloaded.          |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Container               | Empty element.          |
+|                         |                         |                         |
+|    ReferenceFiles       |                         |                         |
+|                         |                         |                         |
+|      .ReferenceFile     |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 
 
 
@@ -400,9 +427,15 @@ Example of get project response for product-based projects.
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</AssetID>
+                <FileName>my-file.txt</FileName>
+                <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                <TargetLanguages />
             </ReferenceFile>
             <ReferenceFile>
                 <AssetID>12346</AssetID>
+                <FileName>my-other-file.txt</FileName>
+                <URL>https://ondemand.liondemand.com/api/files/<AssetID>12346</AssetID></URL>
+                <TargetLanguages />
             </ReferenceFile>
         </ReferenceFiles>
     </Project>
@@ -450,9 +483,15 @@ Example of get project response for file-based projects.
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</AssetID>
+                <FileName>my-file.txt</FileName>
+                <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                <TargetLanguages />
             </ReferenceFile>
             <ReferenceFile>
                 <AssetID>12346</AssetID>
+                <FileName>my-file.txt</FileName>
+                <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                <TargetLanguages />
             </ReferenceFile>
         </ReferenceFiles>
     </Project>

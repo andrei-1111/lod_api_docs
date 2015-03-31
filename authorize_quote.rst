@@ -34,28 +34,6 @@ Request Body
 |                         |                         |                                   |
 |                         |                         | created in UTC.                   |
 +-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | Integer                 | ID of Service                     |
-|                         |                         |                                   |
-|    ServiceID            |                         |                                   |
-+-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in               |
-|                         |                         |                                   |
-|    SourceLanguage       |                         | glossary                          |
-|                         |                         |                                   |
-|      .LanguageCode      |                         |                                   |
-+-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | Container               | Container containing              |
-|                         |                         |                                   |
-|    TargetLanguages      |                         | target languages.                 |
-+-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in               |
-|                         |                         |                                   |
-|    TargetLanguages      |                         | glossary                          |
-|                         |                         |                                   |
-|      .TargetLangauge    |                         |                                   |
-|                         |                         |                                   |
-|      .LanaguageCode     |                         |                                   |
-+-------------------------+-------------------------+-----------------------------------+
 | .. container:: notrans  | Integer                 | The number of                     |
 |                         |                         |                                   |
 |    TotalTranslations    |                         | translations requested.           |
@@ -162,6 +140,221 @@ Request Body
 |                         |                         | PrepaidCredit                     |
 |    AmountDue            |                         |                                   |
 +-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         |                         |                                   |
+|     Projects            | Integer                 | ProjectID of included             |
+|                         |                         |                                   |
+|       .Project          |                         | project                           |
+|                         |                         |                                   |
+|       .ProjectID        |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         |                         |                                   |
+|     Projects            | String                  | The name of the project           |
+|                         |                         |                                   |
+|       .Project          |                         |                                   |
+|                         |                         |                                   |
+|       .ProjectName      |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         |                         |                                   |
+|     Projects            | Integer                 | The ID of the service             |
+|                         |                         |                                   |
+|       .Project          |                         | used.                             |
+|                         |                         |                                   |
+|       .ServiceID        |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         |                         |                                   |
+|     Projects            | String                  | The language code of              |
+|                         |                         |                                   |
+|       .Project          |                         | source language.                  |
+|                         |                         |                                   |
+|       .SourceLanguage   |                         |                                   |
+|                         |                         |                                   |
+|       .LanguageCode     |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         |                         |                                   |
+|     Projects            | String                  | The language code of              |
+|                         |                         |                                   |
+|       .Project          |                         | a target language.                |
+|                         |                         |                                   |
+|       .TargetLanguages  |                         |                                   |
+|                         |                         |                                   |
+|       .TargetLanguage   |                         |                                   |
+|                         |                         |                                   |
+|       .LanguageCode     |                         |                                   |
+|                         |                         |                                   |
+|                         |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  |                         |                                   |
+|                         | Container               | Container of products             |
+|    Projects             |                         |                                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Products          |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Container               | Container of SKU                  |
+|                         |                         |                                   |
+|    Projects             |                         | elements                          |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Products          |                         |                                   |
+|                         |                         |                                   |
+|      .Product           |                         |                                   |
+|                         |                         |                                   |
+|      .SKUs              |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Container               | Container of a SKU                |
+|                         |                         |                                   |
+|    Projects             |                         |                                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Products          |                         |                                   |
+|                         |                         |                                   |
+|      .Product           |                         |                                   |
+|                         |                         |                                   |
+|      .SKUs              |                         |                                   |
+|                         |                         |                                   |
+|      .SKU               |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | Item SKU                          |
+|                         |                         |                                   |
+|    Projects             |                         |                                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Products          |                         |                                   |
+|                         |                         |                                   |
+|      .Product           |                         |                                   |
+|                         |                         |                                   |
+|      .SKUs              |                         |                                   |
+|                         |                         |                                   |
+|      .SKU               |                         |                                   |
+|                         |                         |                                   |
+|      .SKUNumber         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | onDemand internal ID              |
+|                         |                         |                                   |
+|    Projects             |                         | for the listing                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Products          |                         |                                   |
+|                         |                         |                                   |
+|      .Product           |                         |                                   |
+|                         |                         |                                   |
+|      .AssetID           |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | String representing               |
+|                         |                         |                                   |
+|    Projects             |                         | date/time (ISO 8601               |
+|                         |                         |                                   |
+|      .Project           |                         | format) that the                  |
+|                         |                         |                                   |
+|      .Products          |                         | translation of the item           |
+|                         |                         |                                   |
+|      .Product           |                         | is scheduled to be                |
+|                         |                         |                                   |
+|      .DueDate           |                         | completed in UTC                  |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the file.             |
+|                         |                         |                                   |
+|    Projects             |                         |                                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Files             |                         |                                   |
+|                         |                         |                                   |
+|      .File              |                         |                                   |
+|                         |                         |                                   |
+|      .AssetID           |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | Original name of the              |
+|                         |                         |                                   |
+|    Projects             |                         | file.                             |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .Files             |                         |                                   |
+|                         |                         |                                   |
+|      .File              |                         |                                   |
+|                         |                         |                                   |
+|      .FileName          |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Container               | Container for a                   |
+|                         |                         |                                   |
+|    Projects             |                         | reference file. A                 |
+|                         |                         |                                   |
+|      .Project           |                         | reference file is used            |
+|                         |                         |                                   |
+|      .ReferenceFiles    |                         | to inform the work that           |
+|                         |                         |                                   |
+|      .ReferenceFile     |                         | is being done. There is           |
+|                         |                         |                                   |
+|                         |                         | no charge for reference           |
+|                         |                         |                                   |
+|                         |                         | files.                            |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Integer                 | Asset ID of the                   |
+|                         |                         |                                   |
+|    Projects             |                         | reference file.                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFiles    |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFile     |                         |                                   |
+|                         |                         |                                   |
+|      .AssetID           |                         |                                   |
+|                         |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | Original name of                  |
+|                         |                         |                                   |
+|    Projects             |                         | the file.                         |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFiles    |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFile     |                         |                                   |
+|                         |                         |                                   |
+|      .FileName          |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | String                  | URL where the file                |
+|                         |                         |                                   |
+|    Projects             |                         | can be downloaded.                |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFiles    |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFile     |                         |                                   |
+|                         |                         |                                   |
+|      .URL               |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
+| .. container:: notrans  | Container               | Empty element.                    |
+|                         |                         |                                   |
+|    Projects             |                         |                                   |
+|                         |                         |                                   |
+|      .Project           |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFiles    |                         |                                   |
+|                         |                         |                                   |
+|      .ReferenceFile     |                         |                                   |
+|                         |                         |                                   |
+|      .TargetLanguages   |                         |                                   |
++-------------------------+-------------------------+-----------------------------------+
           
 
 Pay As You Go Request Example          
@@ -172,24 +365,55 @@ Pay As You Go Request Example
     <Quote>
         <QuoteID>795</QuoteID>
         <CreationDate>2014-06-25T16:39:07Z</CreationDate>
-        <ServiceID>112</ServiceID>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-            <TargetLanguage>
-                <LanguageCode>fr-fr</LanguageCode>
-            </TargetLanguage>
-            <TargetLanguage>
-                <LanguageCode>it-it</LanguageCode>
-            </TargetLanguage>
-        </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
         <TranslationCredit>49984</TranslationCredit>
         <TotalCost>0.00</TotalCost>
         <PrepaidCredit>118.99</PrepaidCredit>
         <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
+        <Projects>
+                <Project>
+                    <ProjectID>999</ProjectID>
+                    <ProjectName>Name of project</ProjectName>
+                    <ServiceID>54</ServiceID>
+                    <SourceLanguage>
+                        <LanguageCode>en-gb</LanguageCode>
+                    </SourceLanguage>
+                    <TargetLanguages>
+                                <TargetLanguage>
+                                    <LanguageCode>it-it</LanguageCode>
+                                </TargetLanguage>
+                                <TargetLanguage>
+                                    <LanguageCode>fr-fr</LanguageCode>
+                                </TargetLanguage>
+                    </TargetLanguages>
+                    <Products>
+                            <Product>
+                                <AssetID>999</AssetID>
+                                <SKUs>
+                                    <SKU>
+                                        <SKUNumber>123</SKUNumber>
+                                    </SKU>
+                                </SKUs>
+                                <DueDate>2014-02-11T10:22:46Z</DueDate>
+                            </Product>
+                    </Products>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                    </ReferenceFiles>
+                </Project>
+        </Projects>
     </Quote>
 
 
@@ -201,18 +425,6 @@ Chargeback Request Example
     <Quote>
         <QuoteID>795</QuoteID>
         <CreationDate>2014-06-25T16:39:07Z</CreationDate>
-        <ServiceID>112</ServiceID>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-            <TargetLanguage>
-                <LanguageCode>fr-fr</LanguageCode>
-            </TargetLanguage>
-            <TargetLanguage>
-                <LanguageCode>it-it</LanguageCode>
-            </TargetLanguage>
-        </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
         <TranslationCredit>49984</TranslationCredit>
         <TotalCost>0.00</TotalCost>
@@ -220,6 +432,49 @@ Chargeback Request Example
         <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
         <InternalBillingCode>ABCD100001</InternalBillingCode>
+        <Projects>
+                <Project>
+                    <ProjectID>999</ProjectID>
+                    <ProjectName>Name of project</ProjectName>
+                    <ServiceID>54</ServiceID>
+                    <SourceLanguage>
+                        <LanguageCode>en-gb</LanguageCode>
+                    </SourceLanguage>
+                    <TargetLanguages>
+                                <TargetLanguage>
+                                    <LanguageCode>it-it</LanguageCode>
+                                </TargetLanguage>
+                                <TargetLanguage>
+                                    <LanguageCode>fr-fr</LanguageCode>
+                                </TargetLanguage>
+                    </TargetLanguages>
+                    <Products>
+                            <Product>
+                                <AssetID>999</AssetID>
+                                <SKUs>
+                                    <SKU>
+                                        <SKUNumber>123</SKUNumber>
+                                    </SKU>
+                                </SKUs>
+                                <DueDate>2014-02-11T10:22:46Z</DueDate>
+                            </Product>
+                    </Products>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                    </ReferenceFiles>
+                </Project>
+        </Projects>
     </Quote>
 
 Provisioning Request Example          
@@ -230,18 +485,6 @@ Provisioning Request Example
     <Quote>
         <QuoteID>795</QuoteID>
         <CreationDate>2014-06-25T16:39:07Z</CreationDate>
-        <ServiceID>112</ServiceID>
-        <SourceLanguage>
-            <LanguageCode>en-gb</LanguageCode>
-        </SourceLanguage>
-        <TargetLanguages>
-            <TargetLanguage>
-                <LanguageCode>fr-fr</LanguageCode>
-            </TargetLanguage>
-            <TargetLanguage>
-                <LanguageCode>it-it</LanguageCode>
-            </TargetLanguage>
-        </TargetLanguages>
         <TotalTranslations>2</TotalTranslations>
         <TranslationCredit>49984</TranslationCredit>
         <TotalCost>0.00</TotalCost>
@@ -250,6 +493,49 @@ Provisioning Request Example
         <Currency>EUR</Currency>
         <PurchaseOrderNumber>001-005-100</PurchaseOrderNumber>
         <InternalBillingCode>ABCD100001</InternalBillingCode>
+        <Projects>
+                <Project>
+                    <ProjectID>999</ProjectID>
+                    <ProjectName>Name of project</ProjectName>
+                    <ServiceID>54</ServiceID>
+                    <SourceLanguage>
+                        <LanguageCode>en-gb</LanguageCode>
+                    </SourceLanguage>
+                    <TargetLanguages>
+                                <TargetLanguage>
+                                    <LanguageCode>it-it</LanguageCode>
+                                </TargetLanguage>
+                                <TargetLanguage>
+                                    <LanguageCode>fr-fr</LanguageCode>
+                                </TargetLanguage>
+                    </TargetLanguages>
+                    <Products>
+                            <Product>
+                                <AssetID>999</AssetID>
+                                <SKUs>
+                                    <SKU>
+                                        <SKUNumber>123</SKUNumber>
+                                    </SKU>
+                                </SKUs>
+                                <DueDate>2014-02-11T10:22:46Z</DueDate>
+                            </Product>
+                    </Products>
+                    <ReferenceFiles>
+                        <ReferenceFile>
+                            <AssetID>12345</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12345</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                        <ReferenceFile>
+                            <AssetID>12346</AssetID>
+                            <FileName>my-file.txt</FileName>
+                            <URL>https://ondemand.liondemand.com/api/files/12346</URL>
+                            <TargetLanguages />
+                        </ReferenceFile>
+                    </ReferenceFiles>
+                </Project>
+        </Projects>
     </Quote>
 
 
