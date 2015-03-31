@@ -749,18 +749,6 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | String representing     |
-|                         |                         |                         |
-|    Files                |                         | date/time (ISO 8601     |
-|                         |                         |                         |
-|      .File              |                         | format) that the        |
-|                         |                         |                         |
-|      .DueDate           |                         | translation of the item |
-|                         |                         |                         |
-|                         |                         | is scheduled to be      |
-|                         |                         |                         |
-|                         |                         | completed in UTC        |
-+-------------------------+-------------------------+-------------------------+
 | Projects                | Integer                 | ProjectID of included   |
 |                         |                         |                         |
 | .Project                |                         | project                 |
@@ -1027,7 +1015,6 @@ File-Based Quote Response Example
                             <File>
                                 <AssetID>999</AssetID>
                                 <FileName>example.txt</FileName>
-                                <DueDate>2014-02-11T10:22:46Z</DueDate>
                             </File>
                     </Files>
                     <ReferenceFiles>

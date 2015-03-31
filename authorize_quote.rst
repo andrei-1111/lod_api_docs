@@ -291,18 +291,6 @@ Request Body
 |                         |                         |                                   |
 |      .FileName          |                         |                                   |
 +-------------------------+-------------------------+-----------------------------------+
-| .. container:: notrans  | String                  | String representing               |
-|                         |                         |                                   |
-|    Files                |                         | date/time (ISO 8601               |
-|                         |                         |                                   |
-|      .File              |                         | format) that the                  |
-|                         |                         |                                   |
-|      .DueDate           |                         | translation of the item           |
-|                         |                         |                                   |
-|                         |                         | is scheduled to be                |
-|                         |                         |                                   |
-|                         |                         | completed in UTC                  |
-+-------------------------+-------------------------+-----------------------------------+
 | .. container:: notrans  | Container               | Container for a                   |
 |                         |                         |                                   |
 |    Projects             |                         | reference file. A                 |
