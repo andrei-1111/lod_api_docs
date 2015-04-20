@@ -563,7 +563,7 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | The status of the quote.|
 |                         |                         |                         |
-|    Status               |                         | "Ready" means that the  |
+|    Status               |                         | "Pending" means that the|
 |                         |                         |                         |
 |                         |                         | source content has been |
 |                         |                         |                         |
