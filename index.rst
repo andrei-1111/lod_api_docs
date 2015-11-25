@@ -80,6 +80,13 @@ The Lionbridge Content API integration support team is eager to help you be succ
 The best way to reach them is through the `onDemand Support Portal <https://support.liondemand.com/>`_.
 There you will find support articles and a form to submit a support ticket.
 
+Libraries and Sample Code
+=========================
+
+PHP developers will find `this sample code by Andrey Artiushenko <https://github.com/workaandrey/ondemand-php-sdk>`_  helpful. You can import it into your project and use it as is or just borrow the bits that deal with authenticating requests.
+
+`Dan Spector <https://www.linkedin.com/in/danspector03>`_ has written an `onDemand API client library in C# <https://github.com/DanSpector/lionbridge-ondemand-client-csharp>`_ for .NET developers. This library is very actively used in the `Clay Tablet <http://clay-tablet.com>`_ connector for onDemand.
+
 
 Getting API Keys
 ================
