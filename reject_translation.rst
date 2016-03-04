@@ -267,7 +267,7 @@ Response Body
     <File>
       <AssetID>1711</AssetID>
       <Name>500errors.txt</Name>
-      <Status>Translated</Status>
+      <Status>Rejected</Status>
       <SourceLanguage>
         <LanguageCode>
           <LanguageCode>en-gb</LanguageCode>
