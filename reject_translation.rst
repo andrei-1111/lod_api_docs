@@ -12,7 +12,7 @@ Reject Translation
 |               |    POST                                                           |
 +---------------+-------------------------------------------------------------------+
 
-This interface rejects a file translation. 
+This API is typically used to report structural issues with the deliverables such as validation failures or missing tokens. When the Reject API is called, the translated file goes into a "rejected" status and a remediation workflow is started at Lionbridge. When the issue is resolved, the project is re-delivered with a "project complete" notification.
 
 
 Request Body
