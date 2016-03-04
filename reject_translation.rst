@@ -1,6 +1,6 @@
-==============
-Reject Quote
-==============
+==================
+Reject Translation
+==================
 
 +---------------+-------------------------------------------------------------------+
 | **Resource:** | .. container:: notrans                                            |
@@ -70,193 +70,192 @@ Reject Translation Example
 Response Body
 =============
 
-# Insert Response body description
-
-+-------------------------+-------------------------+---------------------------------+
-| Parameter               | Type                    | Comments                        |
-+=========================+=========================+=================================+
-| .. container:: notrans  | Integer                 | ID of the uploaded file         |
-|                         |                         |                                 |
-|    AssetID              |                         | this ID will be used            |
-|                         |                         |                                 |
-|                         |                         | when creating a quote           |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | Name of the file passed         |
-|                         |                         |                                 |
-|    Name                 |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | The status of the file.         |
-|                         |                         |                                 |
-|    Status               |                         | Rejected                        |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in             |
-|                         |                         |                                 |
-|    SourceLanguage       |                         | glossary                        |
-|                         |                         |                                 |
-|      .LanguageCode      |                         | The LanguageCode element        |
-|                         |                         |                                 |
-|                         |                         | will be empty if the            |
-|                         |                         |                                 |
-|                         |                         | client requested                |
-|                         |                         |                                 |
-|                         |                         | language detection and          |
-|                         |                         |                                 |
-|                         |                         | the file has not been           |
-|                         |                         |                                 |
-|                         |                         | analyzed yet or if              |
-|                         |                         |                                 |
-|                         |                         | language detection              |
-|                         |                         |                                 |
-|                         |                         | failed.                         |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | String represents               |
-|                         |                         |                                 |
-|    TargetLanguage       |                         | the rejected                    |
-|                         |                         |                                 |
-|      .LanguageCode      |                         | language code                   |
-|                         |                         |                                 |
-|                         |                         | See LanguageCode in             |
-|                         |                         |                                 |
-|                         |                         | glossary                        |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Container               | Contains information            |
-|                         |                         |                                 |
-|    Rejection            |                         | on rejecting                    |
-|                         |                         |                                 |
-|                         |                         | translated file.                |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | Integer representing            |
-|                         |                         |                                 |
-|    Rejection            |                         | the reason number of            |
-|                         |                         |                                 |
-|    .ReasonCode          |                         | rejecting translated file.      |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String (optional)       | String representing             |
-|                         |                         |                                 |
-|    Rejection            |                         | the description of rejecting    |
-|                         |                         |                                 |
-|     .ReasonDescription  |                         | translated file.                |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Container               | Contains information            |
-|                         |                         |                                 |
-|    Project              |                         | on project                      |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Integer                 | onDemand ID of the              |
-|                         |                         |                                 |
-|    Project              |                         | project                         |
-|                         |                         |                                 |
-|    .ProjectID           |                         |                                 |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | A URL that can be               |
-|                         |                         |                                 |
-|    Project              |                         | checked for the status          |
-|                         |                         |                                 |
-|      .URL               |                         | of the project.                 |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | Status of the project           |
-|                         |                         |                                 | 
-|    Project              |                         |                                 |
-|                         |                         |                                 |
-|    .Status              |                         |                                 | 
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | Name of the project             |
-|                         |                         |                                 | 
-|    Project              |                         |                                 |
-|                         |                         |                                 |
-|    .ProjectName         |                         |                                 | 
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Integer                 |                                 |
-|                         |                         |                                 | 
-|    Project              |                         |                                 |
-|                         |                         |                                 | 
-|    .ServiceID           |                         |                                 | 
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Decimal                 |                                 |
-|                         |                         |                                 | 
-|    Project              |                         |                                 |
-|                         |                         |                                 | 
-|    .Price               |                         |                                 | 
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | Currency paid for the           |
-|                         |                         |                                 |
-|    Project              |                         | project.  See glossary          |
-|                         |                         |                                 | 
-|    .Currency            |                         | for list of valid               |
-|                         |                         |                                 |
-|                         |                         | currencies.                     |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | String representing             |
-|                         |                         |                                 |
-|    Project              |                         | Date/Time (ISO 8601)            |
-|                         |                         |                                 |
-|    .CreationDate        |                         | that the Item was               |
-|                         |                         |                                 |
-|                         |                         | added to onDemand.              |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | String representing             |
-|                         |                         |                                 |
-|    Project              |                         | Date/Time (ISO 8601)            |
-|                         |                         |                                 |
-|    .DueDate             |                         | that the translation            |
-|                         |                         |                                 |
-|                         |                         | of the project is               |
-|                         |                         |                                 |
-|                         |                         | scheduled to be                 |
-|                         |                         |                                 |
-|                         |                         | completed.                      |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | String representing             |
-|                         |                         |                                 |
-|    Project              |                         | Date/Time (ISO 8601)            |
-|                         |                         |                                 |
-|    .CompletionDate      |                         | that the translation of         |
-|                         |                         |                                 |
-|                         |                         | the item was completed.         |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in             |
-|                         |                         |                                 |
-|    Project              |                         | glossary                        |
-|                         |                         |                                 |
-|    .SourceLanguage      |                         |                                 |
-|                         |                         |                                 | 
-|      .LanguageCode      |                         |                                 |
-|                         |                         |                                 | 
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | Container               | Container containing            |
-|                         |                         |                                 |
-|    Project              |                         | target languages.               |
-|                         |                         |                                 |
-|    .TargetLanguages     |                         |                                 |
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in             |
-|                         |                         |                                 |
-|    Project              |                         | glossary                        |
-|                         |                         |                                 |
-|    .TargetLanguages     |                         |                                 |
-|                         |                         |                                 |
-|      .TargetLanguage    |                         |                                 |
-|                         |                         |                                 |
-|         .LanguageCode   |                         |                                 | 
-|                         |                         |                                 |
-+-------------------------+-------------------------+---------------------------------+
++---------------------------+-------------------------+---------------------------------+
+| Parameter                 | Type                    | Comments                        |
++===========================+=========================+=================================+
+| .. container:: notrans    | Integer                 | ID of the uploaded file         |
+|                           |                         |                                 |
+|    AssetID                |                         | this ID will be used            |
+|                           |                         |                                 |
+|                           |                         | when creating a quote           |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | Name of the file passed         |
+|                           |                         |                                 |
+|    Name                   |                         |                                 |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | The status of the file.         |
+|                           |                         |                                 |
+|    Status                 |                         | Rejected                        |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | See LanguageCode in             |
+|                           |                         |                                 |
+|    SourceLanguage         |                         | glossary                        |
+|                           |                         |                                 |
+|      .LanguageCode        |                         | The LanguageCode element        |
+|                           |                         |                                 |
+|                           |                         | will be empty if the            |
+|                           |                         |                                 |
+|                           |                         | client requested                |
+|                           |                         |                                 |
+|                           |                         | language detection and          |
+|                           |                         |                                 |
+|                           |                         | the file has not been           |
+|                           |                         |                                 |
+|                           |                         | analyzed yet or if              |
+|                           |                         |                                 |
+|                           |                         | language detection              |
+|                           |                         |                                 |
+|                           |                         | failed.                         |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | String represents               |
+|                           |                         |                                 |
+|    TargetLanguage         |                         | the rejected                    |
+|                           |                         |                                 |
+|      .LanguageCode        |                         | language code                   |
+|                           |                         |                                 |
+|                           |                         | See LanguageCode in             |
+|                           |                         |                                 |
+|                           |                         | glossary                        |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Container               | Contains information            |
+|                           |                         |                                 |
+|    Rejection              |                         | on rejecting                    |
+|                           |                         |                                 |
+|                           |                         | translated file.                |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | Integer representing            |
+|                           |                         |                                 |
+|    Rejection              |                         | the reason number of            |
+|                           |                         |                                 |
+|      .ReasonCode          |                         | rejecting translated file.      |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String (optional)       | String representing             |
+|                           |                         |                                 |
+|    Rejection              |                         | the description of rejecting    |
+|                           |                         |                                 |
+|      .ReasonDescription   |                         | translated file.                |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Container               | Contains information            |
+|                           |                         |                                 |
+|    Project                |                         | on project                      |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Integer                 | onDemand ID of the              |
+|                           |                         |                                 |
+|    Project                |                         | project                         |
+|                           |                         |                                 |
+|      .ProjectID           |                         |                                 |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | A URL that can be               |
+|                           |                         |                                 |
+|    Project                |                         | checked for the status          |
+|                           |                         |                                 |
+|      .URL                 |                         | of the project.                 |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | Status of the project           |
+|                           |                         |                                 | 
+|    Project                |                         |                                 |
+|                           |                         |                                 |
+|      .Status              |                         |                                 | 
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | Name of the project             |
+|                           |                         |                                 | 
+|    Project                |                         |                                 |
+|                           |                         |                                 |
+|      .ProjectName         |                         |                                 | 
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Integer                 |                                 |
+|                           |                         |                                 | 
+|    Project                |                         |                                 |
+|                           |                         |                                 | 
+|      .ServiceID           |                         |                                 | 
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Decimal                 |                                 |
+|                           |                         |                                 | 
+|    Project                |                         |                                 |
+|                           |                         |                                 | 
+|      .Price               |                         |                                 | 
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | Currency paid for the           |
+|                           |                         |                                 |
+|    Project                |                         | project.  See glossary          |
+|                           |                         |                                 | 
+|      .Currency            |                         | for list of valid               |
+|                           |                         |                                 |
+|                           |                         | currencies.                     |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | String representing             |
+|                           |                         |                                 |
+|    Project                |                         | Date/Time (ISO 8601)            |
+|                           |                         |                                 |
+|      .CreationDate        |                         | that the Item was               |
+|                           |                         |                                 |
+|                           |                         | added to onDemand.              |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | String representing             |
+|                           |                         |                                 |
+|    Project                |                         | Date/Time (ISO 8601)            |
+|                           |                         |                                 |
+|     .DueDate              |                         | that the translation            |
+|                           |                         |                                 |
+|                           |                         | of the project is               |
+|                           |                         |                                 |
+|                           |                         | scheduled to be                 |
+|                           |                         |                                 |
+|                           |                         | completed.                      |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | String representing             |
+|                           |                         |                                 |
+|    Project                |                         | Date/Time (ISO 8601)            |
+|                           |                         |                                 |
+|      .CompletionDate      |                         | that the translation of         |
+|                           |                         |                                 |
+|                           |                         | the item was completed.         |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | See LanguageCode in             |
+|                           |                         |                                 |
+|    Project                |                         | glossary                        |
+|                           |                         |                                 |
+|      .SourceLanguage      |                         |                                 |
+|                           |                         |                                 | 
+|        .LanguageCode      |                         |                                 |
+|                           |                         |                                 | 
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | Container               | Container containing            |
+|                           |                         |                                 |
+|    Project                |                         | target languages.               |
+|                           |                         |                                 |
+|      .TargetLanguages     |                         |                                 |
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
+| .. container:: notrans    | String                  | See LanguageCode in             |
+|                           |                         |                                 |
+|    Project                |                         | glossary                        |
+|                           |                         |                                 |
+|      .TargetLanguages     |                         |                                 |
+|                           |                         |                                 |
+|        .TargetLanguage    |                         |                                 |
+|                           |                         |                                 |
+|           .LanguageCode   |                         |                                 | 
+|                           |                         |                                 |
++---------------------------+-------------------------+---------------------------------+
 
 
 Response Body
