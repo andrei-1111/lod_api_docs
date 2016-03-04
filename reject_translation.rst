@@ -269,9 +269,7 @@ Response Body
       <Name>500errors.txt</Name>
       <Status>Rejected</Status>
       <SourceLanguage>
-        <LanguageCode>
-          <LanguageCode>en-gb</LanguageCode>
-        </LanguageCode>
+        <LanguageCode>en-gb</LanguageCode>
       </SourceLanguage>
       <TargetLanguage>
         <LanguageCode>es-us</LanguageCode>
