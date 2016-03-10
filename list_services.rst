@@ -41,6 +41,17 @@ The List Services API can filter services using query string arguments.  The sup
 
 - **extension:** This is a file extension such as "docx". For example, the URL /api/services?extension=docx will return all services that accept Microsoft Word documents as an input format.  If you are looking for services that accept products, use /api/services?extension=product .  If you would like a list of services that support both docx _and_ doc, you can use ?extension=doc+docx.  If you would like a service that supports _either_ docx _or_ doc, use ?extension=doc,docx.  
 
+- **source_language** and **target_languages**: These are language code that filters services by language support.  For example:
+
+.. code-block:: python
+
+    # return all services that accept en-us as a source language
+    ?source_language=en-us
+    # return all services that accept en-us into fr-fr
+    ?source_language=en-us&target_languages=fr-fr
+    # return all services that accept en-us into fr-fr and es-es
+    ?source_language=en-us&target_languages=fr-fr,es-es
+
 Return Codes
 ============
 
