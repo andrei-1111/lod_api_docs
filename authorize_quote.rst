@@ -491,7 +491,7 @@ Provisioning Request Example
         <PrepaidCredit>118.99</PrepaidCredit>
         <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
-        <PurchaseOrderNumber>001-005-100</PurchaseOrderNumber>
+        <PurchaseOrderNumber>123456</PurchaseOrderNumber>
         <InternalBillingCode>ABCD100001</InternalBillingCode>
         <Projects>
                 <Project>

@@ -310,7 +310,7 @@ Request Body
 |      .AssetID           |                         |                                 |
 |                         |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
-        
+
 
 
 Product Request Example
@@ -343,7 +343,7 @@ Product Request Example
                 <CategoryPath>Clothing : Menswear : Shoes</CategoryPath>
                 <Description>
                     <!--
-                        This can be an XML block containing arbitrary, 
+                        This can be an XML block containing arbitrary,
                         well formed sub elements.
                     -->
 
@@ -471,7 +471,7 @@ Response Body
 =============
 
 The response body contains a quote for a project. Please note: the response may
-not contain a price.  If the submitted files 
+not contain a price.  If the submitted files
 
 +-------------------------+-------------------------+-------------------------+
 | Property                | Type                    | Comments                |
@@ -568,7 +568,7 @@ not contain a price.  If the submitted files
 |                         |                         |                         |
 |      .Product           |                         |                         |
 |                         |                         |                         |
-|      .SKUs              |                         |                         | 
+|      .SKUs              |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of a SKU      |
 |                         |                         |                         |
@@ -706,16 +706,18 @@ Product-Based Project Response Example
         <Currency>EUR</Currency>
 
         <Products>
-                <Product>
-                    <AssetID>999</AssetID>
-                    <SKUs>
-                        <SKU>
-                            <SKUNumber>123</SKUNumber>
-                        </SKU>
-                    </SKUs>
-                    <DueDate>2014-02-11T10:22:46Z</DueDate> 
-                </Product>
-            </Products>
+            <Product>
+                <AssetID>999</AssetID>
+                <SKUs>
+                    <SKU>
+                        <SKUNumber>123</SKUNumber>
+                    </SKU>
+                </SKUs>
+                <DueDate>2014-02-11T10:22:46Z</DueDate>
+            </Product>
+        </Products>
+        <ReferenceFiles/>
+        <Errors></Errors>
     </Project>
 
 If the price is not yet ready, the response will look like:
@@ -752,6 +754,8 @@ If the price is not yet ready, the response will look like:
                 </SKUs>
             </Product>
         </Products>
+        <ReferenceFiles/>
+        <Errors></Errors>
     </Project>
 
 File-Based Project Response Example
@@ -785,6 +789,9 @@ File-Based Project Response Example
                 <FileName>example.txt</FileName>
             </File>
         </Files>
+
+        <ReferenceFiles/>
+        <Errors></Errors>
     </Project>
 
 If the price is not yet ready, the response will look like:
@@ -813,11 +820,14 @@ If the price is not yet ready, the response will look like:
         <Currency>EUR</Currency>
 
         <Files>
-                <File>
-                    <AssetID>999</AssetID>
-                    <FileName>example.txt</FileName>
-                </File>
+            <File>
+                <AssetID>999</AssetID>
+                <FileName>example.txt</FileName>
+            </File>
         </Files>
+
+        <ReferenceFiles/>
+        <Errors></Errors>
     </Project>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
@@ -836,7 +846,7 @@ If one of or more files submitted are not compatible with the selected service, 
 Errors
 ======
 If generate quote encountered an error, the response will contain an Error element consisting of
-a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more 
+a ReasonCode, SimpleMessage, and DetailedMessage elements. See :doc:`error_handling` for more
 information. Here are some common cases.
 
 +-------------------------+-------------------------+-------------------------+
@@ -891,4 +901,3 @@ information. Here are some common cases.
 |                         |                         |                         |
 |                         |                         | this project            |
 +-------------------------+-------------------------+-------------------------+
-
