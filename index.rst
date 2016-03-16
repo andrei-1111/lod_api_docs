@@ -13,7 +13,7 @@ The Lionbridge Content API is a RESTful programming interface to Lionbridge's on
 The API can be used against the `Lionbridge onDemand Retail site <https://ondemand.lionbridge.com>`_ or an `Lionbridge onDemand Enterprise <http://info.lionbridge.com/onDemand-Enterprise.html>`_ site. Scroll down for a :ref:`high_level_workflow`
 
 
-**Version:** 2015-02-23 *Latest*
+**Version:** 2016-03-15 *Latest*
 
 Earlier Releases:
 
