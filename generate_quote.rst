@@ -563,7 +563,7 @@ not contain a price.  If the submitted files
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | The status of the quote.|
 |                         |                         |                         |
-|    Status               |                         | "Ready" means that the  |
+|    Status               |                         | "Pending" means that the|
 |                         |                         |                         |
 |                         |                         | source content has been |
 |                         |                         |                         |
@@ -918,6 +918,7 @@ Product-Based Quote Response Example
                     </ReferenceFiles>
                 </Project>
         </Projects>
+        <Errors></Errors>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -977,6 +978,7 @@ If the price is not yet ready, the response will look like:
                     </ReferenceFiles>
                 </Project>
         </Projects>
+        <Errors></Errors>
     </Quote>
 
 File-Based Quote Response Example
@@ -1033,6 +1035,7 @@ File-Based Quote Response Example
                     </ReferenceFiles>
                 </Project>
         </Projects>
+        <Errors></Errors>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -1071,6 +1074,7 @@ If the price is not yet ready, the response will look like:
                 </ReferenceFiles>
             </Project>
         </Projects>
+        <Errors></Errors>
     </Quote>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
@@ -1117,8 +1121,11 @@ Project Based Quote Response Example
                                     <LanguageCode>fr-fr</LanguageCode>
                                 </TargetLanguage>
                     </TargetLanguages>
+                <ReferenceFiles/>
                 </Project>
         </Projects>
+
+        <Errors></Errors>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -1150,8 +1157,11 @@ If the price is not yet ready, the response will look like:
                                     <LanguageCode>fr-fr</LanguageCode>
                                 </TargetLanguage>
                     </TargetLanguages>
+                    <ReferenceFiles/>
                 </Project>
         </Projects>
+
+        <Errors></Errors>
     </Quote>
 
 If one of or more of the projects is already included in another quote, the response will look like this:
