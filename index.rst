@@ -17,6 +17,7 @@ The API can be used against the `Lionbridge onDemand Retail site <https://ondema
 
 Earlier Releases:
 
+- `Version 2015-02-23 <./archive/2015-02-23/>`_
 - `Version 2014-09-04 <./archive/2014-09-04/>`_
 - `Version 2014-06-10 <./archive/2014-06-10/>`_
 - `Version 2014-02-28 <./archive/2014-02-28/>`_
@@ -26,11 +27,10 @@ Earlier Releases:
 New in This Release
 ===================
 
-- Responses from GenerateQuote now include ``<Project/>`` data, to be more
-  consistent with other quote responses.
-- Responses from GenerateQuote and GetQuote have been homogenized. Previously
-  GetQuote did not return as much information as GenerateQuote, and it was not
-  always possible to authorize a quote with that data.
+- We have a new :doc:`reject_file_translation` API. As the documentation states, this should be primarily used for cases where the translated files fail validation. It should not be used for feedback on the translaton itself. If you are not satisified with a translation, you should open a `support case <https://support.liondemand.com>`_.
+- There are now two methods to "Accept" a translation. The default method is "implied." With implied, Lionbridge considers the translated file "accepted" when it is downloaded. The "acknowledge" accept method can be specified a new optional TranslationAcceptanceMethod parameter in the :doc:`generate_quote` API. With the acknowledge accept method, Lionbridge waits for a call to the :doc:`accept_file_translation` API before it considers the files accepted.
+- There is another new optional parameter on the :doc:`generate_quote` API:  "SpecialInstructions" are notes to the translator.
+- There is a new :doc:`cancel_quote` API that can be used to cancel a quote after it has been authorized. The amount of refund (if any) will depend on how much work we have already done. Support will contact the sales owner directly to discuss the status of the cancellation.  
 
 
 Contents
@@ -46,7 +46,9 @@ Contents
    account_information
    add_prepaid_balance
    generate_quote
+   reject_quote
    authorize_quote
+   cancel_quote
    get_quote
    list_quotes
    reject_quote
@@ -62,6 +64,7 @@ Contents
    get_file
    get_file_details
    get_file_translation
+   accept_file_translation
    reject_file_translation
    list_products
    get_product
