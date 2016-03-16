@@ -62,6 +62,7 @@ Contents
    get_file
    get_file_details
    get_file_translation
+   reject_file_translation
    list_products
    get_product
    get_product_translation
