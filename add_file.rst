@@ -17,8 +17,8 @@ This interface adds a file to the system.
 The URL for this method includes two parameters.  
 
 
-- language_code is a locale code like "en-gb" where "en" the 2 character ISO language code for English and "gb" is the 2 character ISO country code for Great Britain.  If you don't know the language code, you can use "detect-language" instead of a language code and onDemand will attempt to detect the language.
-- filename is the original name of the file.  It needs to be url encoded.
+- **language_code** is a locale code (e.g. ``en-gb`` where ``en`` is the two-letter ISO language code for English and ``gb`` is the two-letter ISO country code for Great Britain). This language code refers to the file you are adding, not its translations. If you don't know the language code, you can use ``detect-language`` here and onDemand will attempt to detect it.
+- **filename** is the original name of the file.  It must be URL encoded.
 
 Files are then used to generate quotes.  If a file is not used in a quote
 within 1 hour of it being uploaded it will be deleted from the system.  Lionbridge onDemand has a general retention 
