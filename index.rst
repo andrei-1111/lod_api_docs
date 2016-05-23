@@ -74,6 +74,7 @@ Contents
    get_estimate
    list_locales
    get_terms
+   request_quote_cancellation
 
 
 
