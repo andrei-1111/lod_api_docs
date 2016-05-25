@@ -414,6 +414,7 @@ Pay As You Go Request Example
         <PrepaidCredit>118.99</PrepaidCredit>
         <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -475,6 +476,7 @@ Chargeback Request Example
         <AmountDue>0.00</AmountDue>
         <Currency>EUR</Currency>
         <InternalBillingCode>ABCD100001</InternalBillingCode>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -536,6 +538,7 @@ Provisioning Request Example
         <Currency>EUR</Currency>
         <PurchaseOrderNumber>123456</PurchaseOrderNumber>
         <InternalBillingCode>ABCD100001</InternalBillingCode>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
                 <Project>
                     <ProjectID>999</ProjectID>
@@ -642,123 +645,133 @@ Response Body
 =============
 
 
-+-------------------------+-------------------------+-------------------------+
-| Parameter               | Type                    | Comment                 |
-+=========================+=========================+=========================+
-| .. container:: notrans  | String                  | Status of the quote.    |
-|                         |                         |                         |
-|    Status               |                         |  Authorized means that  |
-|                         |                         |                         |
-|                         |                         | the projects have been  |
-|                         |                         |                         |
-|                         |                         | paid for and the        |
-|                         |                         |                         |
-|                         |                         | project can start.      |
-|                         |                         |                         |
-|                         |                         |  Pending means that the |
-|                         |                         |                         |
-|                         |                         | merchant must execute a |
-|                         |                         |                         |
-|                         |                         | transaction to pay for  |
-|                         |                         |                         |
-|                         |                         | the project.  Look for  |
-|                         |                         |                         |
-|                         |                         | a PaymentURL for the    |
-|                         |                         |                         |
-|                         |                         | merchant to click       |
-|                         |                         |                         |
-|                         |                         | through.                |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | If additional funds are |
-|                         |                         |                         |
-|    PaymentURL           |                         | required, the status    |
-|                         |                         |                         |
-|                         |                         | code of 402 will be     |
-|                         |                         |                         |
-|                         |                         | returned and the        |
-|                         |                         |                         |
-|                         |                         | response will include a |
-|                         |                         |                         |
-|                         |                         | PaymentURL that         |
-|                         |                         |                         |
-|                         |                         | includes a link to a    |
-|                         |                         |                         |
-|                         |                         | paypal page.            |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | URL that can be used to |
-|                         |                         |                         |
-|    QuoteURL             |                         | check the status of the |
-|                         |                         |                         |
-|                         |                         | quote.  This is useful  |
-|                         |                         |                         |
-|                         |                         | for polling quotes that |
-|                         |                         |                         |
-|                         |                         | are externally paid     |
-|                         |                         |                         |
-|                         |                         | for.  See Get Quote.    |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | A list of projects that |
-|                         |                         |                         |
-|    Projects             |                         | have been generated by  |
-|                         |                         |                         |
-|                         |                         | this transaction.       |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | onDemand Project ID for |
-|                         |                         |                         |
-|    Projects             |                         | the project.            |
-|                         |                         |                         |
-|      .Project           |                         |                         |
-|                         |                         |                         |
-|      .ProjectID         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | A URL that can be       |
-|                         |                         |                         |
-|    Projects             |                         | checked for the status  |
-|                         |                         |                         |
-|      .Project           |                         | of the project.         |
-|                         |                         |                         |
-|      .ProjectURL        |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | String representing the |
-|                         |                         |                         |
-|    Projects             |                         | date/time (ISO 8601)    |
-|                         |                         |                         |
-|      .Project           |                         | that the project will   |
-|                         |                         |                         |
-|      .ProjectDueDate    |                         | be completed by.        |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Container               | List of products        |
-|                         |                         |                         |
-|    Projects             |                         | included in the         |
-|                         |                         |                         |
-|      .Project           |                         | product.                |
-|                         |                         |                         |
-|      .Products          |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | Client supplied SKU     |
-|                         |                         |                         |
-|    Projects             |                         | Number                  |
-|                         |                         |                         |
-|      .Project           |                         |                         |
-|                         |                         |                         |
-|      .Products          |                         |                         |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .SKUNumber         |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | Integer                 | Internal onDemand ID    |
-|                         |                         |                         |
-|    Projects             |                         | for this product.       |
-|                         |                         |                         |
-|      .Project           |                         |                         |
-|                         |                         |                         |
-|      .Products          |                         |                         |
-|                         |                         |                         |
-|      .Product           |                         |                         |
-|                         |                         |                         |
-|      .AssetID           |                         |                         |
-+-------------------------+-------------------------+-------------------------+
++---------------------------+-------------------------+-------------------------+
+| Parameter                 | Type                    | Comment                 |
++===========================+=========================+=========================+
+| .. container:: notrans    | String                  | Status of the quote.    |
+|                           |                         |                         |
+|    Status                 |                         |  Authorized means that  |
+|                           |                         |                         |
+|                           |                         | the projects have been  |
+|                           |                         |                         |
+|                           |                         | paid for and the        |
+|                           |                         |                         |
+|                           |                         | project can start.      |
+|                           |                         |                         |
+|                           |                         |  Pending means that the |
+|                           |                         |                         |
+|                           |                         | merchant must execute a |
+|                           |                         |                         |
+|                           |                         | transaction to pay for  |
+|                           |                         |                         |
+|                           |                         | the project.  Look for  |
+|                           |                         |                         |
+|                           |                         | a PaymentURL for the    |
+|                           |                         |                         |
+|                           |                         | merchant to click       |
+|                           |                         |                         |
+|                           |                         | through.                |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | If additional funds are |
+|                           |                         |                         |
+|    PaymentURL             |                         | required, the status    |
+|                           |                         |                         |
+|                           |                         | code of 402 will be     |
+|                           |                         |                         |
+|                           |                         | returned and the        |
+|                           |                         |                         |
+|                           |                         | response will include a |
+|                           |                         |                         |
+|                           |                         | PaymentURL that         |
+|                           |                         |                         |
+|                           |                         | includes a link to a    |
+|                           |                         |                         |
+|                           |                         | paypal page.            |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | URL that can be used to |
+|                           |                         |                         |
+|    QuoteURL               |                         | check the status of the |
+|                           |                         |                         |
+|                           |                         | quote.  This is useful  |
+|                           |                         |                         |
+|                           |                         | for polling quotes that |
+|                           |                         |                         |
+|                           |                         | are externally paid     |
+|                           |                         |                         |
+|                           |                         | for.  See Get Quote.    |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | Method to track file    |
+|                           |                         |                         |
+|                           |                         | acceptance.  Defaults to|
+|                           |                         |                         |
+|TranslationAcceptanceMethod|                         | "implicit" if not       |
+|                           |                         |                         |
+|                           |                         | supplied during         |
+|                           |                         |                         |
+|                           |                         | generate quote.         |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | Container               | A list of projects that |
+|                           |                         |                         |
+|    Projects               |                         | have been generated by  |
+|                           |                         |                         |
+|                           |                         | this transaction.       |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | Integer                 | onDemand Project ID for |
+|                           |                         |                         |
+|    Projects               |                         | the project.            |
+|                           |                         |                         |
+|      .Project             |                         |                         |
+|                           |                         |                         |
+|      .ProjectID           |                         |                         |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | A URL that can be       |
+|                           |                         |                         |
+|    Projects               |                         | checked for the status  |
+|                           |                         |                         |
+|      .Project             |                         | of the project.         |
+|                           |                         |                         |
+|      .ProjectURL          |                         |                         |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | String representing the |
+|                           |                         |                         |
+|    Projects               |                         | date/time (ISO 8601)    |
+|                           |                         |                         |
+|      .Project             |                         | that the project will   |
+|                           |                         |                         |
+|      .ProjectDueDate      |                         | be completed by.        |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | Container               | List of products        |
+|                           |                         |                         |
+|    Projects               |                         | included in the         |
+|                           |                         |                         |
+|      .Project             |                         | product.                |
+|                           |                         |                         |
+|      .Products            |                         |                         |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | String                  | Client supplied SKU     |
+|                           |                         |                         |
+|    Projects               |                         | Number                  |
+|                           |                         |                         |
+|      .Project             |                         |                         |
+|                           |                         |                         |
+|      .Products            |                         |                         |
+|                           |                         |                         |
+|      .Product             |                         |                         |
+|                           |                         |                         |
+|      .SKUNumber           |                         |                         |
++---------------------------+-------------------------+-------------------------+
+| .. container:: notrans    | Integer                 | Internal onDemand ID    |
+|                           |                         |                         |
+|    Projects               |                         | for this product.       |
+|                           |                         |                         |
+|      .Project             |                         |                         |
+|                           |                         |                         |
+|      .Products            |                         |                         |
+|                           |                         |                         |
+|      .Product             |                         |                         |
+|                           |                         |                         |
+|      .AssetID             |                         |                         |
++---------------------------+-------------------------+-------------------------+
 
 
 
@@ -774,6 +787,7 @@ Product-Based Quote Authorization Response Example
     <QuoteAuthorization>
         <Status>Authorized</Status>
         <QuoteURL>https://</QuoteURL>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -801,6 +815,7 @@ Product-Based Quote Authorization Response Example
         <Status>Pending</Status>
         <PaymentURL>https://</PaymentURL>
         <QuoteURL>https://</QuoteURL>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -831,6 +846,7 @@ File-Based Quote Authorization Response Example
     <QuoteAuthorization>
         <Status>Authorized</Status>
         <QuoteURL>https://</QuoteURL>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -855,6 +871,7 @@ File-Based Quote Authorization Response Example
         <Status>Pending</Status>
         <PaymentURL>https://</PaymentURL>
         <QuoteURL>https://</QuoteURL>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -880,6 +897,7 @@ If one or more of the files submitted for this quote did not parse properly
     <QuoteAuthorization>
         <Status>Error</Status>
         <QuoteURL>https://</QuoteURL>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>

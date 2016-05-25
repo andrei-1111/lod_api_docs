@@ -466,6 +466,7 @@ Quote is ready for payment.
 	        <PrepaidCredit>5.00</PrepaidCredit>
 	        <AmountDue>5.00</AmountDue>
 	        <Currency>EUR</Currency>
+	        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
 	        <Projects>
 	            <Project>
 	                <ProjectID>123</ProjectID>
@@ -510,6 +511,7 @@ Quote is ready for payment.
 	                <PaymentCurrency>EURO</PaymentCurrency>
 	            </Payment>
 	        <Payments>
+	        <TranslationAcceptanceMethod>explicit</TranslationAcceptanceMethod>
 	        <Projects>
 	            <Project>
 	                <ProjectID>123</ProjectID>
@@ -550,6 +552,7 @@ Quote is ready for payment.
 	        <PrepaidCredit>5.00</PrepaidCredit>
 	        <AmountDue>5.00</AmountDue>
 	        <Currency>EUR</Currency>
+	        <TranslationAcceptanceMethod>explicit</TranslationAcceptanceMethod>
 	        <Projects>
 	            <Project>
 	                <ProjectID>123</ProjectID>

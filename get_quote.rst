@@ -474,6 +474,7 @@ Quote is ready for payment.
         <PrepaidCredit>5.00</PrepaidCredit>
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -525,6 +526,7 @@ Quote that has been authorized.
                 <PaymentCurrency>EURO</PaymentCurrency>
             </Payment>
         <Payments>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -575,6 +577,7 @@ File-Based Quote Response Example
         <PrepaidCredit>5.00</PrepaidCredit>
         <AmountDue>5.00</AmountDue>
         <Currency>EUR</Currency>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -626,6 +629,7 @@ File-Based Quote Response Example
                 <PaymentCurrency>EURO</PaymentCurrency>
             </Payment>
         <Payments>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -664,6 +668,7 @@ File-Based Quote Response Example
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>New</Status>
         <TotalCost/>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
@@ -702,6 +707,7 @@ File-Based Quote Response Example
         <CreationDate>2014-01-25T10:32:02Z</CreationDate>
         <Status>Error</Status>
         <TotalCost>/>
+        <TranslationAcceptanceMethod>implicit</TranslationAcceptanceMethod>
         <Projects>
             <Project>
                 <ProjectID>123</ProjectID>
