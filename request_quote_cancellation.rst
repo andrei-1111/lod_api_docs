@@ -12,7 +12,7 @@ Request Quote Cancellation
 |               |    POST                                         |
 +---------------+-------------------------------------------------+
 
-Creates a ZenDesk ticket for the quote cancellation request.
+Submits a request to cancel a purchased quote. This API can only be use on quotes that in a started or partially completed state. The request will be reviewed by the Lionbridge team. Depending on how much work has been completed on the projects, Lionbridge may issue a partial or full refund.
 
 Arguments
 =========
