@@ -48,7 +48,6 @@ Contents
    generate_quote
    reject_quote
    authorize_quote
-   cancel_quote
    get_quote
    list_quotes
    reject_quote
