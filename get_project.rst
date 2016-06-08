@@ -299,6 +299,44 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         |                         |
+|                         |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | file and has been       |
+|                         |                         |                         |
+|      .TargetLanguage    |                         | accepted, the user who  |
+|                         |                         |                         |
+|      .AcceptedBy        |                         | accepted it.            |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         | file and has been       |
+|                         |                         |                         |
+|      .File              |                         | accepted, the date it   |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | was accepted.           |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .AcceptedDate      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         | file and has been       |
+|                         |                         |                         |
+|      .File              |                         | accepted, the method of |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | acceptance (implicit or |
+|                         |                         |                         |
+|      .TargetLanguage    |                         | explicit).              |
+|                         |                         |                         |
+|      .AcceptedMethod    |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container for a         |
 |                         |                         |                         |
 |    ReferenceFiles       |                         | reference file. A       |
@@ -475,10 +513,13 @@ Example of get project response for file-based projects.
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
                         <URL>https://</URL>
+                        <AcceptedBy> Example &lt;user@example.com&gt; </AcceptedBy>
+                        <AcceptedDate>2016-03-15T04:00:00Z</AcceptedDate>
+                        <AcceptedMethod>implicit</AcceptedMethod>
                     </TargetLanguage>
                     ...
                 </TargetLanguages>
-            </File>   
+            </File>
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
