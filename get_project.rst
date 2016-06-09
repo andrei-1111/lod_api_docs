@@ -118,7 +118,7 @@ The response body shows information about the project.
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    SourceLanguage       |                         | glossary                |
-|                         |                         |                         | 
+|                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container containing    |
@@ -250,14 +250,16 @@ The response body shows information about the project.
 |      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of individual    |
+|                         |                         | file.                   |
+|    Files                |                         |                         |
 |                         |                         |                         |
-|    Files                |                         | file.  Options include  |
+|      .File              |                         |                         |
 |                         |                         |                         |
-|      .File              |                         | Analyzing, Analyzed,    |
+|      .Status            |                         |                         |
 |                         |                         |                         |
-|      .Status            |                         | Analysis Failed, In     |
 |                         |                         |                         |
-|                         |                         | Translation, Translated |
+|                         |                         |                         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | URL to download the     |
 |                         |                         |                         |
@@ -275,41 +277,17 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .TargetLanguages   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | See LanguageCode in     |
-|                         |                         |                         |
-|    Files                |                         | glossary                |
-|                         |                         |                         |
-|      .File              |                         |                         |
-|                         |                         |                         |
-|      .TargetLanguages   |                         |                         |
-|                         |                         |                         |
-|      .TargetLanguage    |                         |                         |
-|                         |                         |                         |
-|      .LanguageCode      |                         |                         |
-+-------------------------+-------------------------+-------------------------+
-| .. container:: notrans  | String                  | String representing     |
-|                         |                         |                         |
-|    Files                |                         | the url to download     |
-|                         |                         |                         |
-|      .File              |                         | the translated file.    |
-|                         |                         |                         |
-|      .TargetLanguages   |                         |                         |
-|                         |                         |                         |
-|      .TargetLanguage    |                         |                         |
-|                         |                         |                         |
-|      .URL               |                         |                         |
-+-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  |                         | If the file is a target |
 |                         |                         |                         |
-|    Files                |                         |                         |
+|    Files                |                         | file and has been       |
 |                         |                         |                         |
-|      .File              |                         |                         |
+|      .File              |                         | accepted, the user who  |
 |                         |                         |                         |
-|      .TargetLanguages   |                         | file and has been       |
+|      .TargetLanguages   |                         | accepted it.            |
 |                         |                         |                         |
-|      .TargetLanguage    |                         | accepted, the user who  |
+|      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
-|      .AcceptedBy        |                         | accepted it.            |
+|      .AcceptedBy        |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  |                         | If the file is a target |
 |                         |                         |                         |
@@ -336,6 +314,42 @@ The response body shows information about the project.
 |      .AcceptedMethod    |                         |                         |
 |                         |                         |                         |
 |                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | See LanguageCode in     |
+|                         |                         |                         |
+|    Files                |                         | glossary                |
+|                         |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Status of this target   |
+|                         |                         |                         |
+|    Files                |                         | file.                   |
+|                         |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .Status            |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | String representing     |
+|                         |                         |                         |
+|    Files                |                         | the url to download     |
+|                         |                         |                         |
+|      .File              |                         | the translated file.    |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .URL               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container for a         |
 |                         |                         |                         |
@@ -513,6 +527,7 @@ Example of get project response for file-based projects.
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
                         <URL>https://</URL>
+                        <Status>Accepted</Status>
                         <AcceptedBy> Example &lt;user@example.com&gt; </AcceptedBy>
                         <AcceptedDate>2016-03-15T04:00:00Z</AcceptedDate>
                         <AcceptedMethod>implicit</AcceptedMethod>
