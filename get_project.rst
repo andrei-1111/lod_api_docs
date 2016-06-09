@@ -131,7 +131,7 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
-|      .LanguageCode      |                         |                         | 
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of Products.  |
 |                         |                         |                         |
@@ -250,12 +250,14 @@ The response body shows information about the project.
 |      .FileName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of individual    |
-|                         |                         | file.                   |
-|    Files                |                         |                         |
 |                         |                         |                         |
-|      .File              |                         |                         |
+|    Files                |                         | file.  Options include  |
 |                         |                         |                         |
-|      .Status            |                         |                         |
+|      .File              |                         | Analyzing, Analyzed,    |
+|                         |                         |                         |
+|      .Status            |                         | Analysis Failed, In     |
+|                         |                         |                         |
+|                         |                         | Translation, Translated |
 |                         |                         |                         |
 |                         |                         |                         |
 |                         |                         |                         |
