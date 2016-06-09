@@ -80,6 +80,14 @@ Request Body
 |                         |                         |                                 |
 |      .LanguageCode      |                         |                                 |
 +-------------------------+-------------------------+---------------------------------+
+| .. container:: notrans  | String (optional)       | Special instructions for use    |
+|                         |                         |                                 |
+|   TranslationOptions    |                         | by translators. This will be    |
+|                         |                         |                                 |
+|     .SpecialInstructions|                         | recorded on each project in the |
+|                         |                         |                                 |
+|                         |                         | quote.                          |
++-------------------------+-------------------------+---------------------------------+
 | .. container:: notrans  | Container               | Contains 1 or more              |
 |                         |                         |                                 |
 |    TranslationOptions   |                         | target languages                |
