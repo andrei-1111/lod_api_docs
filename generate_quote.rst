@@ -593,328 +593,328 @@ Response Body
 The response body contains a quote for a project. Please note: the response may
 not contain a price.  If the submitted files
 
-+---------------------------+-------------------------+-------------------------+
-| Property                  | Type                    | Comments                |
-+===========================+=========================+=========================+
-| .. container:: notrans    | Integer                 | onDemand ID of the      |
-|                           |                         |                         |
-|    QuoteID                |                         | Quote.                  |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | String representing the |
-|                           |                         |                         |
-|    CreationDate           |                         | date/time in the ISO    |
-|                           |                         |                         |
-|                           |                         | 8601 format. that the   |
-|                           |                         |                         |
-|                           |                         | project was created in  |
-|                           |                         |                         |
-|                           |                         | UTC.                    |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | The status of the quote.|
-|                           |                         |                         |
-|    Status                 |                         | "Pending" means that the|
-|                           |                         |                         |
-|                           |                         | source content has been |
-|                           |                         |                         |
-|                           |                         | analyzed and the        |
-|                           |                         |                         |
-|                           |                         | project(s) has/have     |
-|                           |                         |                         |
-|                           |                         | been priced.            |
-|                           |                         |                         |
-|                           |                         | "Analyzing" means that  |
-|                           |                         |                         |
-|                           |                         | the price is still      |
-|                           |                         |                         |
-|                           |                         | being determined and    |
-|                           |                         |                         |
-|                           |                         | the client should       |
-|                           |                         |                         |
-|                           |                         | call :doc:`get_quote`   |
-|                           |                         |                         |
-|                           |                         | later to check on the   |
-|                           |                         |                         |
-|                           |                         | status.                 |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | URL to authorize the    |
-|                           |                         |                         |
-|    AuthorizeURL           |                         | quote.  See             |
-|                           |                         |                         |
-|                           |                         | :doc:`authorize_quote`  |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Use this to reject the  |
-|                           |                         |                         |
-|    RejectURL              |                         | quote. See              |
-|                           |                         | :doc:`reject_quote`     |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Integer                 | The number of           |
-|                           |                         |                         |
-|    TotalTranslations      |                         | translations requested. |
-|                           |                         |                         |
-|                           |                         | For example, if the     |
-|                           |                         |                         |
-|                           |                         | merchant sends 5        |
-|                           |                         |                         |
-|                           |                         | products to be          |
-|                           |                         |                         |
-|                           |                         | translated into 3       |
-|                           |                         |                         |
-|                           |                         | languages, the value of |
-|                           |                         |                         |
-|                           |                         | TotalTranslations would |
-|                           |                         |                         |
-|                           |                         | be 15.                  |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Integer                 | Number of free          |
-|                           |                         |                         |
-|    TranslationCredit      |                         | translations available  |
-|                           |                         |                         |
-|                           |                         | at the selected service |
-|                           |                         |                         |
-|                           |                         | level.                  |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Currency that the price |
-|                           |                         |                         |
-|    Currency               |                         | is in. See glossary     |
-|                           |                         |                         |
-|                           |                         | for list of valid       |
-|                           |                         |                         |
-|                           |                         | currencies.             |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Decimal                 | Total price that needs  |
-|                           |                         |                         |
-|    TotalCost              |                         | to be paid. Exclude     |
-|                           |                         |                         |
-|                           |                         | translation credit.     |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Decimal                 | If a merchant has a     |
-|                           |                         |                         |
-|    PrepaidCredit          |                         | positive credit balance |
-|                           |                         |                         |
-|                           |                         | with onDemand, it will  |
-|                           |                         |                         |
-|                           |                         | be reported here.       |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Decimal                 | TotalCost -             |
-|                           |                         | PrepaidCredit           |
-|    AmountDue              |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Method to track file    |
-|                           |                         |                         |
-|                           |                         | acceptance.             |
-|                           |                         |                         |
-|TranslationAcceptanceMethod|                         |                         |
-|                           |                         |                         |
-|                           |                         |                         |
-|                           |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    |                         |                         |
-|                           | Container               | Container of products   |
-|    Projects               |                         |                         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Products            |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Container               | Container of SKU        |
-|                           |                         |                         |
-|    Projects               |                         | elements                |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Products            |                         |                         |
-|                           |                         |                         |
-|      .Product             |                         |                         |
-|                           |                         |                         |
-|      .SKUs                |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Container               | Container of a SKU      |
-|                           |                         |                         |
-|    Projects               |                         |                         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Products            |                         |                         |
-|                           |                         |                         |
-|      .Product             |                         |                         |
-|                           |                         |                         |
-|      .SKUs                |                         |                         |
-|                           |                         |                         |
-|      .SKU                 |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Item SKU                |
-|                           |                         |                         |
-|    Projects               |                         |                         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Products            |                         |                         |
-|                           |                         |                         |
-|      .Product             |                         |                         |
-|                           |                         |                         |
-|      .SKUs                |                         |                         |
-|                           |                         |                         |
-|      .SKU                 |                         |                         |
-|                           |                         |                         |
-|      .SKUNumber           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Integer                 | onDemand internal ID    |
-|                           |                         |                         |
-|    Projects               |                         | for the listing         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Products            |                         |                         |
-|                           |                         |                         |
-|      .Product             |                         |                         |
-|                           |                         |                         |
-|      .AssetID             |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | String representing     |
-|                           |                         |                         |
-|    Projects               |                         | date/time (ISO 8601     |
-|                           |                         |                         |
-|      .Project             |                         | format) that the        |
-|                           |                         |                         |
-|      .Products            |                         | translation of the item |
-|                           |                         |                         |
-|      .Product             |                         | is scheduled to be      |
-|                           |                         |                         |
-|      .DueDate             |                         | completed in UTC        |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Integer                 | Asset ID of the file.   |
-|                           |                         |                         |
-|    Projects               |                         |                         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Files               |                         |                         |
-|                           |                         |                         |
-|      .File                |                         |                         |
-|                           |                         |                         |
-|      .AssetID             |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Original name of the    |
-|                           |                         |                         |
-|    Projects               |                         | file.                   |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .Files               |                         |                         |
-|                           |                         |                         |
-|      .File                |                         |                         |
-|                           |                         |                         |
-|      .FileName            |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| Projects                  | Integer                 | ProjectID of included   |
-|                           |                         |                         |
-| .Project                  |                         | project                 |
-|                           |                         |                         |
-| .ProjectID                |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| Projects                  | String                  | The name of the project |
-|                           |                         |                         |
-| .Project                  |                         |                         |
-|                           |                         |                         |
-| .ProjectName              |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| Projects                  | Integer                 | The ID of the service   |
-|                           |                         |                         |
-| .Project                  |                         | used.                   |
-|                           |                         |                         |
-| .ServiceID                |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| Projects                  | String                  | The language code of    |
-|                           |                         |                         |
-| .Project                  |                         | source language.        |
-|                           |                         |                         |
-| .SourceLanguage           |                         |                         |
-|                           |                         |                         |
-| .LanguageCode             |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| Projects                  | String                  | The language code of    |
-|                           |                         |                         |
-| .Project                  |                         | a target language.      |
-|                           |                         |                         |
-| .TargetLanguages          |                         |                         |
-|                           |                         |                         |
-| .TargetLanguage           |                         |                         |
-|                           |                         |                         |
-| .LanguageCode             |                         |                         |
-|                           |                         |                         |
-|                           |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Container               | Container for a         |
-|                           |                         |                         |
-|    Projects               |                         | reference file. A       |
-|                           |                         |                         |
-|      .Project             |                         | reference file is used  |
-|                           |                         |                         |
-|      .ReferenceFiles      |                         | to inform the work that |
-|                           |                         |                         |
-|      .ReferenceFile       |                         | is being done. There is |
-|                           |                         |                         |
-|                           |                         | no charge for reference |
-|                           |                         |                         |
-|                           |                         | files.                  |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Integer                 | Asset ID of the         |
-|                           |                         |                         |
-|    Projects               |                         | reference file.         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFiles      |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFile       |                         |                         |
-|                           |                         |                         |
-|      .AssetID             |                         |                         |
-|                           |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | Original name of        |
-|                           |                         |                         |
-|    Projects               |                         | the file.               |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFiles      |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFile       |                         |                         |
-|                           |                         |                         |
-|      .FileName            |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | String                  | URL where the file      |
-|                           |                         |                         |
-|    Projects               |                         | can be downloaded.      |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFiles      |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFile       |                         |                         |
-|                           |                         |                         |
-|      .URL                 |                         |                         |
-+---------------------------+-------------------------+-------------------------+
-| .. container:: notrans    | Container               | Empty element.          |
-|                           |                         |                         |
-|    Projects               |                         |                         |
-|                           |                         |                         |
-|      .Project             |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFiles      |                         |                         |
-|                           |                         |                         |
-|      .ReferenceFile       |                         |                         |
-|                           |                         |                         |
-|      .TargetLanguages     |                         |                         |
-+---------------------------+-------------------------+-------------------------+
++--------------------------------+-------------------------+-------------------------+
+| Property                       | Type                    | Comments                |
++================================+=========================+=========================+
+| .. container:: notrans         | Integer                 | onDemand ID of the      |
+|                                |                         |                         |
+|    QuoteID                     |                         | Quote.                  |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | String representing the |
+|                                |                         |                         |
+|    CreationDate                |                         | date/time in the ISO    |
+|                                |                         |                         |
+|                                |                         | 8601 format. that the   |
+|                                |                         |                         |
+|                                |                         | project was created in  |
+|                                |                         |                         |
+|                                |                         | UTC.                    |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | The status of the quote.|
+|                                |                         |                         |
+|    Status                      |                         | "Pending" means that the|
+|                                |                         |                         |
+|                                |                         | source content has been |
+|                                |                         |                         |
+|                                |                         | analyzed and the        |
+|                                |                         |                         |
+|                                |                         | project(s) has/have     |
+|                                |                         |                         |
+|                                |                         | been priced.            |
+|                                |                         |                         |
+|                                |                         | "Analyzing" means that  |
+|                                |                         |                         |
+|                                |                         | the price is still      |
+|                                |                         |                         |
+|                                |                         | being determined and    |
+|                                |                         |                         |
+|                                |                         | the client should       |
+|                                |                         |                         |
+|                                |                         | call :doc:`get_quote`   |
+|                                |                         |                         |
+|                                |                         | later to check on the   |
+|                                |                         |                         |
+|                                |                         | status.                 |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | URL to authorize the    |
+|                                |                         |                         |
+|    AuthorizeURL                |                         | quote.  See             |
+|                                |                         |                         |
+|                                |                         | :doc:`authorize_quote`  |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Use this to reject the  |
+|                                |                         |                         |
+|    RejectURL                   |                         | quote. See              |
+|                                |                         | :doc:`reject_quote`     |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Integer                 | The number of           |
+|                                |                         |                         |
+|    TotalTranslations           |                         | translations requested. |
+|                                |                         |                         |
+|                                |                         | For example, if the     |
+|                                |                         |                         |
+|                                |                         | merchant sends 5        |
+|                                |                         |                         |
+|                                |                         | products to be          |
+|                                |                         |                         |
+|                                |                         | translated into 3       |
+|                                |                         |                         |
+|                                |                         | languages, the value of |
+|                                |                         |                         |
+|                                |                         | TotalTranslations would |
+|                                |                         |                         |
+|                                |                         | be 15.                  |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Integer                 | Number of free          |
+|                                |                         |                         |
+|    TranslationCredit           |                         | translations available  |
+|                                |                         |                         |
+|                                |                         | at the selected service |
+|                                |                         |                         |
+|                                |                         | level.                  |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Currency that the price |
+|                                |                         |                         |
+|    Currency                    |                         | is in. See glossary     |
+|                                |                         |                         |
+|                                |                         | for list of valid       |
+|                                |                         |                         |
+|                                |                         | currencies.             |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Decimal                 | Total price that needs  |
+|                                |                         |                         |
+|    TotalCost                   |                         | to be paid. Exclude     |
+|                                |                         |                         |
+|                                |                         | translation credit.     |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Decimal                 | If a merchant has a     |
+|                                |                         |                         |
+|    PrepaidCredit               |                         | positive credit balance |
+|                                |                         |                         |
+|                                |                         | with onDemand, it will  |
+|                                |                         |                         |
+|                                |                         | be reported here.       |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Decimal                 | TotalCost -             |
+|                                |                         | PrepaidCredit           |
+|    AmountDue                   |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Method to track file    |
+|                                |                         |                         |
+|    TranslationAcceptanceMethod |                         | acceptance.             |
+|                                |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         |                         |                         |
+|                                | Container               | Container of products   |
+|    Projects                    |                         |                         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Products                 |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Container               | Container of SKU        |
+|                                |                         |                         |
+|    Projects                    |                         | elements                |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Products                 |                         |                         |
+|                                |                         |                         |
+|      .Product                  |                         |                         |
+|                                |                         |                         |
+|      .SKUs                     |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Container               | Container of a SKU      |
+|                                |                         |                         |
+|    Projects                    |                         |                         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Products                 |                         |                         |
+|                                |                         |                         |
+|      .Product                  |                         |                         |
+|                                |                         |                         |
+|      .SKUs                     |                         |                         |
+|                                |                         |                         |
+|      .SKU                      |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Item SKU                |
+|                                |                         |                         |
+|    Projects                    |                         |                         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Products                 |                         |                         |
+|                                |                         |                         |
+|      .Product                  |                         |                         |
+|                                |                         |                         |
+|      .SKUs                     |                         |                         |
+|                                |                         |                         |
+|      .SKU                      |                         |                         |
+|                                |                         |                         |
+|      .SKUNumber                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Integer                 | onDemand internal ID    |
+|                                |                         |                         |
+|    Projects                    |                         | for the listing         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Products                 |                         |                         |
+|                                |                         |                         |
+|      .Product                  |                         |                         |
+|                                |                         |                         |
+|      .AssetID                  |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | String representing     |
+|                                |                         |                         |
+|    Projects                    |                         | date/time (ISO 8601     |
+|                                |                         |                         |
+|      .Project                  |                         | format) that the        |
+|                                |                         |                         |
+|      .Products                 |                         | translation of the item |
+|                                |                         |                         |
+|      .Product                  |                         | is scheduled to be      |
+|                                |                         |                         |
+|      .DueDate                  |                         | completed in UTC        |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Integer                 | Asset ID of the file.   |
+|                                |                         |                         |
+|    Projects                    |                         |                         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Files                    |                         |                         |
+|                                |                         |                         |
+|      .File                     |                         |                         |
+|                                |                         |                         |
+|      .AssetID                  |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Original name of the    |
+|                                |                         |                         |
+|    Projects                    |                         | file.                   |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .Files                    |                         |                         |
+|                                |                         |                         |
+|      .File                     |                         |                         |
+|                                |                         |                         |
+|      .FileName                 |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| Projects                       | Integer                 | ProjectID of included   |
+|                                |                         |                         |
+| .Project                       |                         | project                 |
+|                                |                         |                         |
+| .ProjectID                     |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| Projects                       | String                  | The name of the project |
+|                                |                         |                         |
+| .Project                       |                         |                         |
+|                                |                         |                         |
+| .ProjectName                   |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| Projects                       | Integer                 | The ID of the service   |
+|                                |                         |                         |
+| .Project                       |                         | used.                   |
+|                                |                         |                         |
+| .ServiceID                     |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| Projects                       | String                  | The language code of    |
+|                                |                         |                         |
+| .Project                       |                         | source language.        |
+|                                |                         |                         |
+| .SourceLanguage                |                         |                         |
+|                                |                         |                         |
+| .LanguageCode                  |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| Projects                       | String                  | The language code of    |
+|                                |                         |                         |
+| .Project                       |                         | a target language.      |
+|                                |                         |                         |
+| .TargetLanguages               |                         |                         |
+|                                |                         |                         |
+| .TargetLanguage                |                         |                         |
+|                                |                         |                         |
+| .LanguageCode                  |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Container               | Container for a         |
+|                                |                         |                         |
+|    Projects                    |                         | reference file. A       |
+|                                |                         |                         |
+|      .Project                  |                         | reference file is used  |
+|                                |                         |                         |
+|      .ReferenceFiles           |                         | to inform the work that |
+|                                |                         |                         |
+|      .ReferenceFile            |                         | is being done. There is |
+|                                |                         |                         |
+|                                |                         | no charge for reference |
+|                                |                         |                         |
+|                                |                         | files.                  |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Integer                 | Asset ID of the         |
+|                                |                         |                         |
+|    Projects                    |                         | reference file.         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFiles           |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFile            |                         |                         |
+|                                |                         |                         |
+|      .AssetID                  |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Original name of        |
+|                                |                         |                         |
+|    Projects                    |                         | the file.               |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFiles           |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFile            |                         |                         |
+|                                |                         |                         |
+|      .FileName                 |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | URL where the file      |
+|                                |                         |                         |
+|    Projects                    |                         | can be downloaded.      |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFiles           |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFile            |                         |                         |
+|                                |                         |                         |
+|      .URL                      |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Container               | Empty element.          |
+|                                |                         |                         |
+|    Projects                    |                         |                         |
+|                                |                         |                         |
+|      .Project                  |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFiles           |                         |                         |
+|                                |                         |                         |
+|      .ReferenceFile            |                         |                         |
+|                                |                         |                         |
+|      .TargetLanguages          |                         |                         |
++--------------------------------+-------------------------+-------------------------+
 
 Product-Based Quote Response Example
 ====================================
