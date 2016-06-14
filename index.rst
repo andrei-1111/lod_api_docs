@@ -30,7 +30,7 @@ New in This Release
 - We have a new :doc:`reject_file_translation` API. As the documentation states, this should be primarily used for cases where the translated files fail validation. It should not be used for feedback on the translaton itself. If you are not satisified with a translation, you should open a `support case <https://support.liondemand.com>`_.
 - There are now two methods to "Accept" a translation. The default method is "implied." With implied, Lionbridge considers the translated file "accepted" when it is downloaded. The "acknowledge" accept method can be specified a new optional TranslationAcceptanceMethod parameter in the :doc:`generate_quote` API. With the acknowledge accept method, Lionbridge waits for a call to the :doc:`accept_file_translation` API before it considers the files accepted.
 - There is another new optional parameter on the :doc:`generate_quote` API:  "SpecialInstructions" are notes to the translator.
-- There is a new :doc:`cancel_quote` API that can be used to cancel a quote after it has been authorized. The amount of refund (if any) will depend on how much work we have already done. Support will contact the sales owner directly to discuss the status of the cancellation.  
+- There is a new :doc:`request_quote_cancellation` API that can be used to cancel a quote after it has been authorized. The amount of refund (if any) will depend on how much work we have already done. Support will contact the sales owner directly to discuss the status of the cancellation.  
 
 
 Contents
@@ -143,7 +143,3 @@ This is list of terminology used in this document.
 * Project. Like items are grouped into a Project and delivered to the translation system.  Translation completion notifications is done at the project level.  For translation efficiency, all products in project must be in the same top level category and have the same language and quality settings.
 * Service.  A service defines pricing and quality level for a project.
 * Quote. A quote maps to a transaction which can include 1 or more projects.
-
-
-
-
