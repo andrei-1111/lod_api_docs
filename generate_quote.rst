@@ -129,6 +129,12 @@ Request Body
 |                                   |                         |                                    |
 |      .LanguageCode                |                         |                                    |
 +-----------------------------------+-------------------------+------------------------------------+
+| .. container:: notrans            | String (optional)       | Special instructions for use       |
+|                                   |                         |                                    |
+|    TranslationOptions             |                         | by translators.                    |
+|                                   |                         |                                    |
+|      .SpecialInstructions         |                         |                                    |
++-----------------------------------+-------------------------+------------------------------------+
 | .. container:: notrans            | Container               | Contains 1 or more                 |
 |                                   |                         |                                    |
 |    TranslationOptions             |                         | target languages. This             |
