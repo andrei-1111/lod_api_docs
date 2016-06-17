@@ -19,7 +19,7 @@ project.
 Arguments
 =========
 
-- **Project ID:** The onDemand Project ID.  You will receive this ID from :doc:`generate_quote` 
+- **Project ID:** The onDemand Project ID.  You will receive this ID from :doc:`generate_quote`
 
 
 Return Codes
@@ -58,24 +58,24 @@ The response body shows information about the project.
 | Property                | Type                    | Comments                |
 +=========================+=========================+=========================+
 | .. container:: notrans  | Integer                 | onDemand ID of the      |
-|                         |                         |                         | 
+|                         |                         |                         |
 |    ProjectID            |                         | project                 |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of the project   |
-|                         |                         |                         | 
-|    Status               |                         |                         | 
+|                         |                         |                         |
+|    Status               |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Name of the project     |
-|                         |                         |                         | 
-|    ProjectName          |                         |                         | 
+|                         |                         |                         |
+|    ProjectName          |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Integer                 |                         |
-|                         |                         |                         | 
-|    ServiceID            |                         |                         | 
+|                         |                         |                         |
+|    ServiceID            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Decimal                 |                         |
-|                         |                         |                         | 
-|    Price                |                         |                         | 
+|                         |                         |                         |
+|    Price                |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Currency paid for the   |
 |                         |                         |                         |
@@ -118,7 +118,7 @@ The response body shows information about the project.
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    SourceLanguage       |                         | glossary                |
-|                         |                         |                         | 
+|                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container containing    |
@@ -131,7 +131,7 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
-|      .LanguageCode      |                         |                         | 
+|      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of Products.  |
 |                         |                         |                         |
@@ -423,7 +423,7 @@ Example of get project response for product-based projects.
                 </TargetLanguages>
             </Product>
         </Products>
-        
+
         <ReferenceFiles>
             <ReferenceFile>
                 <AssetID>12345</AssetID>
@@ -438,6 +438,7 @@ Example of get project response for product-based projects.
                 <TargetLanguages />
             </ReferenceFile>
         </ReferenceFiles>
+        <SpecialInstructions/>
     </Project>
 
 Example of get project response for file-based projects.
@@ -478,7 +479,7 @@ Example of get project response for file-based projects.
                     </TargetLanguage>
                     ...
                 </TargetLanguages>
-            </File>   
+            </File>
         </Files>
         <ReferenceFiles>
             <ReferenceFile>
@@ -494,4 +495,5 @@ Example of get project response for file-based projects.
                 <TargetLanguages />
             </ReferenceFile>
         </ReferenceFiles>
+        <SpecialInstructions/>
     </Project>

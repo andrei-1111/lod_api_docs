@@ -539,6 +539,7 @@ Quote is ready for payment.
 	                        </SKUs>
 	                    </Product>
 	                </Products>
+                  <SpecialInstructions/>
 	            </Project>
 	        </Projects>
 	    </Quote>
@@ -578,6 +579,7 @@ Quote is ready for payment.
 	                        <FileName>example.txt</FileName>
 	                    </File>
 	                </Files>
+                 <SpecialInstructions/>
 	            </Project>
 	        </Projects>
 	    </Quote>

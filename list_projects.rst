@@ -137,7 +137,7 @@ credentials.
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
-  
+
 
 Response Example
 ================
@@ -166,5 +166,6 @@ Response Example
                         <LanguageCode>it-it</LanguageCode>
                     </TargetLanguage>
                 </TargetLanguages>
+                <SpecialInstructions/>
         </Project>
     </Projects>
