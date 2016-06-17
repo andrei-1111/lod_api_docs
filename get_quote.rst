@@ -502,6 +502,7 @@ Quote is ready for payment.
                         </SKUs>
                     </Product>
                 </Products>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>
@@ -554,6 +555,7 @@ Quote that has been authorized.
                         </SKUs>
                     </Product>
                 </Products>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>
@@ -603,6 +605,7 @@ File-Based Quote Response Example
                         <FileName>example.txt</FileName>
                     </File>
                 </Files>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>
@@ -655,6 +658,7 @@ File-Based Quote Response Example
                         <FileName>example.txt</FileName>
                     </File>
                 </Files>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>
@@ -694,6 +698,7 @@ File-Based Quote Response Example
                         <FileName>example.txt</FileName>
                     </File>
                 </Files>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>
@@ -733,6 +738,7 @@ File-Based Quote Response Example
                         <FileName>example.txt</FileName>
                     </File>
                 </Files>
+                <SpecialInstructions/>
             </Project>
         </Projects>
     </Quote>

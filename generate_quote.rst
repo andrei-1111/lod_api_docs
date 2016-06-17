@@ -435,6 +435,7 @@ Product Request Example
                         <LanguageCode>fr-fr</LanguageCode>
                     </TargetLanguage>
              </TargetLanguages>
+            <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         </TranslationOptions>
         <Products>
             <Product>
@@ -538,6 +539,7 @@ Project Request Example
     <GenerateQuote>
         <TranslationOptions>
             <Currency>EUR</Currency>
+            <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         </TranslationOptions>
         <Projects>
             <Project>
@@ -975,6 +977,7 @@ Product-Based Quote Response Example
                             <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
+                    <SpecialInstructions>Special instructions for this project</SpecialInstructions>
                 </Project>
         </Projects>
         <Errors></Errors>
@@ -1035,6 +1038,7 @@ If the price is not yet ready, the response will look like:
                             <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
+                    <SpecialInstructions>Special instructions for this project</SpecialInstructions>
                 </Project>
         </Projects>
         <Errors></Errors>
@@ -1092,6 +1096,7 @@ File-Based Quote Response Example
                             <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
+                    <SpecialInstructions/>
                 </Project>
         </Projects>
         <Errors></Errors>
@@ -1132,6 +1137,7 @@ If the price is not yet ready, the response will look like:
                         <TargetLanguages />
                     </ReferenceFile>
                 </ReferenceFiles>
+                <SpecialInstructions/>
             </Project>
         </Projects>
         <Errors></Errors>
@@ -1182,6 +1188,7 @@ Project Based Quote Response Example
                                 </TargetLanguage>
                     </TargetLanguages>
                 <ReferenceFiles/>
+                <SpecialInstructions>Special instructions for this project</SpecialInstructions>
                 </Project>
         </Projects>
 
@@ -1218,6 +1225,7 @@ If the price is not yet ready, the response will look like:
                                 </TargetLanguage>
                     </TargetLanguages>
                     <ReferenceFiles/>
+                    <SpecialInstructions>Special instructions for this project</SpecialInstructions>
                 </Project>
         </Projects>
 
