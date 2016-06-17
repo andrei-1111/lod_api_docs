@@ -342,8 +342,8 @@ Product Request Example
                         <LanguageCode>fr-fr</LanguageCode>
                     </TargetLanguage>
              </TargetLanguages>
+            <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         </TranslationOptions>
-        <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         <Products>
             <Product>
                 <Title>The title of the item</Title>
@@ -725,8 +725,8 @@ Product-Based Project Response Example
                 <DueDate>2014-02-11T10:22:46Z</DueDate>
             </Product>
         </Products>
-        <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         <ReferenceFiles/>
+        <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         <Errors></Errors>
     </Project>
 
@@ -764,8 +764,8 @@ If the price is not yet ready, the response will look like:
                 </SKUs>
             </Product>
         </Products>
-        <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         <ReferenceFiles/>
+        <SpecialInstructions>Special instructions for this project</SpecialInstructions>
         <Errors></Errors>
     </Project>
 
@@ -800,8 +800,8 @@ File-Based Project Response Example
                 <FileName>example.txt</FileName>
             </File>
         </Files>
-        <SpecialInstructions/>
         <ReferenceFiles/>
+        <SpecialInstructions/>
         <Errors></Errors>
     </Project>
 
@@ -836,8 +836,8 @@ If the price is not yet ready, the response will look like:
                 <FileName>example.txt</FileName>
             </File>
         </Files>
-        <SpecialInstructions/>
         <ReferenceFiles/>
+        <SpecialInstructions/>
         <Errors></Errors>
     </Project>
 

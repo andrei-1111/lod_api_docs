@@ -1096,7 +1096,7 @@ File-Based Quote Response Example
                             <TargetLanguages />
                         </ReferenceFile>
                     </ReferenceFiles>
-                    <SpecialInstructions/>
+                    <SpecialInstructions></SpecialInstructions>
                 </Project>
         </Projects>
         <Errors></Errors>
@@ -1137,7 +1137,7 @@ If the price is not yet ready, the response will look like:
                         <TargetLanguages />
                     </ReferenceFile>
                 </ReferenceFiles>
-                <SpecialInstructions/>
+                <SpecialInstructions></SpecialInstructions>
             </Project>
         </Projects>
         <Errors></Errors>
