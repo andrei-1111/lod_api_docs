@@ -86,7 +86,7 @@ Libraries and Sample Code
 
 PHP developers will find `this sample code by Andrey Artiushenko <https://github.com/workaandrey/ondemand-php-sdk>`_  helpful. You can import it into your project and use it as is or just borrow the bits that deal with authenticating requests.
 
-`Dan Spector <https://www.linkedin.com/in/danspector03>`_ has written an `onDemand API client library in C# <https://github.com/DanSpector/lionbridge-ondemand-client-csharp>`_ for .NET developers. This library is very actively used in the `Clay Tablet <http://clay-tablet.com>`_ connector for onDemand.
+`Dan Spector <https://www.linkedin.com/in/danspector03>`_ has written an `onDemand API client library in C# <https://github.com/DanSpector/lionbridge-ondemand-client-csharp>`_ for .NET developers (`NuGet <https://www.nuget.org/packages/Lionbridge.onDemand.Client>`_). This library is very actively used in the `Clay Tablet <http://clay-tablet.com>`_ connector for onDemand.
 
 
 Getting API Keys
