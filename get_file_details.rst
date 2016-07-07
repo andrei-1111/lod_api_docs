@@ -51,7 +51,7 @@ Return Codes
 Response Body
 =============
 
-The response body shows information about the product.
+The response body shows information about the file.
 
 
 +-------------------------+-------------------------+-------------------------+
@@ -80,21 +80,48 @@ The response body shows information about the product.
 |                         |                         | project, this element   |
 |                         |                         |                         |
 |                         |                         | contains the ID.        |
-|                         |                         |                         |
-|                         |                         |                         |
-|                         |                         |                         |
-|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    AcceptedBy           |                         | file and has been       |
+|                         |                         |                         |
+|                         |                         | accepted, the user who  |
+|                         |                         |                         |
+|                         |                         | accepted it.            |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    AcceptedDate         |                         | file and has been       |
+|                         |                         |                         |
+|                         |                         | accepted, the date it   |
+|                         |                         |                         |
+|                         |                         | was accepted.           |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    AcceptedMethod       |                         | file and has been       |
+|                         |                         |                         |
+|                         |                         | accepted, the method of |
+|                         |                         |                         |
+|                         |                         | acceptance (implicit or |
+|                         |                         |                         |
+|                         |                         | explicit).              |
++-------------------------+-------------------------+-------------------------+
+
+
 
 Response Example
 ================
 
 ::
- 
+
     <File>
         <AssetID>123456</AssetID>
         <Name>Foo.txt</Name>
-        <Status>Analyzed</Status>
+        <Status>Complete</Status>
+        <AcceptedBy> Example &lt;user@example.com&gt; </AcceptedBy>
+        <AcceptedDate>2016-03-15T04:00:00Z</AcceptedDate>
+        <AcceptedMethod>implicit</AcceptedMethod>
         <SourceLanguage>
             <LanguageCode>en-gb</LanguageCode>
         </SourceLanguage>

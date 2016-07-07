@@ -258,6 +258,10 @@ The response body shows information about the project.
 |      .Status            |                         | Analysis Failed, In     |
 |                         |                         |                         |
 |                         |                         | Translation, Translated |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | URL to download the     |
 |                         |                         |                         |
@@ -275,6 +279,44 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .TargetLanguages   |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         | file and has been       |
+|                         |                         |                         |
+|      .File              |                         | accepted, the user who  |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | accepted it.            |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .AcceptedBy        |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         | file and has been       |
+|                         |                         |                         |
+|      .File              |                         | accepted, the date it   |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | was accepted.           |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .AcceptedDate      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  |                         | If the file is a target |
+|                         |                         |                         |
+|    Files                |                         | file and has been       |
+|                         |                         |                         |
+|      .File              |                         | accepted, the method of |
+|                         |                         |                         |
+|      .TargetLanguages   |                         | acceptance (implicit or |
+|                         |                         |                         |
+|      .TargetLanguage    |                         | explicit).              |
+|                         |                         |                         |
+|      .AcceptedMethod    |                         |                         |
+|                         |                         |                         |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | See LanguageCode in     |
 |                         |                         |                         |
 |    Files                |                         | glossary                |
@@ -286,6 +328,18 @@ The response body shows information about the project.
 |      .TargetLanguage    |                         |                         |
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
++-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | String                  | Status of this target   |
+|                         |                         |                         |
+|    Files                |                         | file.                   |
+|                         |                         |                         |
+|      .File              |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguages   |                         |                         |
+|                         |                         |                         |
+|      .TargetLanguage    |                         |                         |
+|                         |                         |                         |
+|      .Status            |                         |                         |
 +-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | String representing     |
 |                         |                         |                         |
@@ -476,6 +530,10 @@ Example of get project response for file-based projects.
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
                         <URL>https://</URL>
+                        <Status>Accepted</Status>
+                        <AcceptedBy> Example &lt;user@example.com&gt; </AcceptedBy>
+                        <AcceptedDate>2016-03-15T04:00:00Z</AcceptedDate>
+                        <AcceptedMethod>implicit</AcceptedMethod>
                     </TargetLanguage>
                     ...
                 </TargetLanguages>
