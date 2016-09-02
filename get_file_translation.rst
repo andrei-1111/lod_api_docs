@@ -46,14 +46,6 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | site.                   |
 +-------------------------+-------------------------+-------------------------+
-| Conflict                | 409                     | A translation has been  |
-|                         |                         |                         |
-|                         |                         | rejected and cannot be  |
-|                         |                         |                         |
-|                         |                         | retrieved until it is   |
-|                         |                         |                         |
-|                         |                         | fixed.                  | 
-+-------------------------+-------------------------+-------------------------+
 | Not Found               | 404                     | The URL does not relate |
 |                         |                         |                         |
 |                         |                         | to a file that the      |
@@ -65,6 +57,14 @@ Return Codes
 |                         |                         | language does not exist |
 |                         |                         |                         |
 |                         |                         | for this file.          |
++-------------------------+-------------------------+-------------------------+
+| Conflict                | 409                     | A translation has been  |
+|                         |                         |                         |
+|                         |                         | rejected and cannot be  |
+|                         |                         |                         |
+|                         |                         | retrieved until it is   |
+|                         |                         |                         |
+|                         |                         | fixed.                  | 
 +-------------------------+-------------------------+-------------------------+
 
 
