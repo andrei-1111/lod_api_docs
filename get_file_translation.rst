@@ -58,6 +58,14 @@ Return Codes
 |                         |                         |                         |
 |                         |                         | for this file.          |
 +-------------------------+-------------------------+-------------------------+
+| Conflict                | 409                     | A translation has been  |
+|                         |                         |                         |
+|                         |                         | rejected and cannot be  |
+|                         |                         |                         |
+|                         |                         | retrieved until it is   |
+|                         |                         |                         |
+|                         |                         | fixed.                  | 
++-------------------------+-------------------------+-------------------------+
 
 
 Response Body
@@ -77,3 +85,19 @@ is the first byte desired (0-based), ``999`` is the last bite desired.
 .. note:: If the requested translation consists of two files, they will be
           returned in a single zip file, and Range will not be supported. The
           whole file will be returned regardless of a Range header.
+
+
+Errors
+======
+
++-------------------------+-------------------------+-------------------------+
+| ReasonCode              | SimpleMessage           | DetailedMessage         |
++=========================+=========================+=========================+
+| 601                     | Rejected target file    | This target file was    |
+|                         |                         |                         |
+|                         |                         | rejected and cannot be  |
+|                         |                         |                         |
+|                         |                         | retrieved untile it is  |
+|                         |                         |                         |
+|                         |                         | fixed.                  |
++-------------------------+-------------------------+-------------------------+
