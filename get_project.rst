@@ -61,6 +61,10 @@ The response body shows information about the project.
 |                         |                         |                         |
 |    ProjectID            |                         | project                 |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | onDemand ID of the      |
+|                         |                         |                         |
+|    QuoteID              |                         | quote                   |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | Status of the project   |
 |                         |                         |                         |
 |    Status               |                         |                         |
@@ -417,6 +421,7 @@ Example of get project response for product-based projects.
 
     <Project>
         <ProjectID>10001</ProjectID>
+        <QuoteID>12345</QuoteID>
         <Status>Complete</ProjectStatus>
         <ServiceID>14</ServiceID>
         <TotalWords>1000</TotalWords>
@@ -501,6 +506,7 @@ Example of get project response for file-based projects.
 
     <Project>
         <ProjectID>10001</ProjectID>
+        <QuoteID>12345</QuoteID>
         <Status>Complete</ProjectStatus>
         <ServiceID>14</ServiceID>
         <TotalWords>1000</TotalWords>
