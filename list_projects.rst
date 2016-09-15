@@ -50,6 +50,12 @@ credentials.
 |                         |                         |                         |
 |      .ProjectID         |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | The onDemand ID of the  |
+|                         |                         |                         |
+|    Project              |                         | Quote                   |
+|                         |                         |                         |
+|      .QuoteID           |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | String                  | The URL to retrieve the |
 |                         |                         |                         |
 |    Project              |                         | project. See            |
@@ -147,25 +153,26 @@ Response Example
     <Projects>
         <Project>
             <ProjectID>10001</ProjectID>
-                <URL>https://ondemand...</URL>
-                <Status>Complete</Status>
-                <ServiceID>14</ServiceID>
-                <Price>100.00</Price>
-                <Currency>USD</Currency>
-                <CreationDate>2014-01-25T10:32:02Z</CreationDate>
-                <DueDate>2014-01-25T10:32:02Z</DueDate>
-                <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
-                <SourceLanguage>
-                    <LanguageCode>en-gb</LanguageCode>
-                </SourceLanguage>
-                <TargetLanguages>
-                    <TargetLanguage>
-                        <LanguageCode>fr-fr</LanguageCode>
-                    </TargetLanguage>
-                    <TargetLanguage>
-                        <LanguageCode>it-it</LanguageCode>
-                    </TargetLanguage>
-                </TargetLanguages>
-                <SpecialInstructions/>
+            <QuoteID>12345</QuoteID>
+            <URL>https://ondemand...</URL>
+            <Status>Complete</Status>
+            <ServiceID>14</ServiceID>
+            <Price>100.00</Price>
+            <Currency>USD</Currency>
+            <CreationDate>2014-01-25T10:32:02Z</CreationDate>
+            <DueDate>2014-01-25T10:32:02Z</DueDate>
+            <CompletionDate>2014-01-25T10:32:02Z</CompletionDate>
+            <SourceLanguage>
+                <LanguageCode>en-gb</LanguageCode>
+            </SourceLanguage>
+            <TargetLanguages>
+                <TargetLanguage>
+                    <LanguageCode>fr-fr</LanguageCode>
+                </TargetLanguage>
+                <TargetLanguage>
+                    <LanguageCode>it-it</LanguageCode>
+                </TargetLanguage>
+            </TargetLanguages>
+            <SpecialInstructions/>
         </Project>
     </Projects>
