@@ -137,6 +137,33 @@ The response body shows information about the project.
 |                         |                         |                         |
 |      .LanguageCode      |                         |                         |
 +-------------------------+-------------------------+-------------------------+
+| .. container:: notrans  | Integer                 | The estimated number of |
+|                         |                         |                         |
+|    TargetLanguages      |                         | words, minutes, or pages|
+|                         |                         |                         |
+|      .TargetLanguage    |                         | counted in the source   |
+|                         |                         |                         |
+|      .Units             |                         | file. Depending on the  |
+|                         |                         |                         |
+|                         |                         | pricing algorithm, this |
+|                         |                         |                         |
+|                         |                         | this unit count could be|
+|                         |                         |                         |
+|                         |                         | used to price the       |
+|                         |                         |                         |
+|                         |                         | project. This feature is|
+|                         |                         |                         |
+|                         |                         | only enabled on certain |
+|                         |                         |                         |
+|                         |                         | enterprise sites. Talk  |
+|                         |                         |                         |
+|                         |                         | to your account         |
+|                         |                         |                         |
+|                         |                         | representatives for     |
+|                         |                         |                         |
+|                         |                         | details.                |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
 | .. container:: notrans  | Container               | Container of Products.  |
 |                         |                         |                         |
 |    Products             |                         | This element will be    |

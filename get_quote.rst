@@ -456,6 +456,25 @@ The response body contains information about the quote.
 |                             |                         |                                    |
 |      .LanguageCode          |                         |                                    |
 +-----------------------------+-------------------------+------------------------------------+
+| .. container:: notrans      | Integer                 | The estimated number of words,     |
+|                             |                         |                                    |
+|    Projects                 |                         | minutes, or pages counted in the   |
+|                             |                         |                                    |
+|      .Project               |                         | source file. Depending on the      |
+|                             |                         |                                    |
+|      .TargetLanguages       |                         | pricing algorithm, this unit count |
+|                             |                         |                                    |
+|      .TargetLanguage        |                         | could be used to price the project.|
+|                             |                         |                                    |
+|      .Units                 |                         | This feature is only enabled on    |
+|                             |                         |                                    |
+|                             |                         | certain enterprise sites. Talk to  |
+|                             |                         |                                    |
+|                             |                         | your account representatives for   |
+|                             |                         |                                    |
+|                             |                         | details.                           |
+|                             |                         |                                    |
++-----------------------------+-------------------------+------------------------------------+
 
 
 
