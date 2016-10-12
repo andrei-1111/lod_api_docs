@@ -413,6 +413,34 @@ Request Body
 |                                   |                         |                                    |
 |                                   |                         |                                    |
 +-----------------------------------+-------------------------+------------------------------------+
+| .. container:: notrans            | Container               | Container for a notification       |
+|                                   |                         |                                    |
+|    NotificationSubscriptions      |                         | subscription. See the              |
+|                                   |                         |                                    |
+|      .NotificationSubscription    |                         | :doc:`notification_subscriptions`  |
+|                                   |                         |                                    |
+|                                   |                         | page for more information          |
++-----------------------------------+-------------------------+------------------------------------+
+| .. container:: notrans            | String                  | Event in a project's life cycle    |
+|                                   |                         |                                    |
+|    NotificationSubscriptions      |                         | that will trigger the sending of   |
+|                                   |                         |                                    |
+|       .NotificationSubscription   |                         | the notification.                  |
+|                                   |                         |                                    |
+|       .Trigger                    |                         |                                    |
+|                                   |                         |                                    |
++-----------------------------------+-------------------------+------------------------------------+
+| .. container:: notrans            | String                  | Where the notification should be   |
+|                                   |                         |                                    |
+|    NotificationSubscriptions      |                         | sent.                              |
+|                                   |                         |                                    |
+|       .NotificationSubscription   |                         |                                    |
+|                                   |                         |                                    |
+|       .Endpoint                   |                         |                                    |
+|                                   |                         |                                    |
++-----------------------------------+-------------------------+------------------------------------+
+
+
 
 
 Product Request Example
@@ -491,6 +519,16 @@ Product Request Example
                 <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </GenerateQuote>
 
 
@@ -528,6 +566,16 @@ File Request Example
                 <AssetID>12346</AssetID>
             </ReferenceFile>
         </ReferenceFiles>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </GenerateQuote>
 
 
@@ -917,6 +965,32 @@ not contain a price.  If the submitted files
 |                                |                         |                         |
 |      .TargetLanguages          |                         |                         |
 +--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | Container               | Container for a         |
+|                                |                         |                         |
+|    NotificationSubscriptions   |                         | notification            | 
+|                                |                         |                         |
+|      .NotificationSubscription |                         | subscription.           |
+|                                |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Event in a project's    |
+|                                |                         |                         |
+|    NotificationSubscriptions   |                         | life cycle that will    |
+|                                |                         |                         |
+|       .NotificationSubscription|                         | trigger the sending of  |
+|                                |                         |                         |
+|       .Trigger                 |                         | the notification.       |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
+| .. container:: notrans         | String                  | Where the notification  |
+|                                |                         |                         |
+|    NotificationSubscriptions   |                         | will be sent.           |
+|                                |                         |                         |
+|       .NotificationSubscription|                         |                         |
+|                                |                         |                         |
+|       .Endpoint                |                         |                         |
+|                                |                         |                         |
++--------------------------------+-------------------------+-------------------------+
 
 Product-Based Quote Response Example
 ====================================
@@ -980,7 +1054,27 @@ Product-Based Quote Response Example
                     <SpecialInstructions>Special instructions for this project</SpecialInstructions>
                 </Project>
         </Projects>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -1042,6 +1136,16 @@ If the price is not yet ready, the response will look like:
                 </Project>
         </Projects>
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 File-Based Quote Response Example
@@ -1100,6 +1204,16 @@ File-Based Quote Response Example
                 </Project>
         </Projects>
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -1141,6 +1255,16 @@ If the price is not yet ready, the response will look like:
             </Project>
         </Projects>
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 If one of or more files submitted are not compatible with the selected service, the response will look like
@@ -1193,6 +1317,16 @@ Project Based Quote Response Example
         </Projects>
 
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 If the price is not yet ready, the response will look like:
@@ -1230,6 +1364,16 @@ If the price is not yet ready, the response will look like:
         </Projects>
 
         <Errors></Errors>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <Trigger>quote-ready</Trigger>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </Quote>
 
 If one of or more of the projects is already included in another quote, the response will look like this:

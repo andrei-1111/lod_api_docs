@@ -1,0 +1,82 @@
+==========================
+Notification Subscriptions
+==========================
+
+If the quote creation request included NotificationSubscriptions, notifications
+will be sent to the supplied endpoint based on the supplied enpoint.
+
+Options
+=======
+
+Notification Subscriptions support different options for how notifications will
+be sent. The desired option is determined by what is supplied in the <Endpoint>
+element. We currently support POST and Email based notifications. Not all triggers
+will support every option, however.
+
+POST Notification Example
+=========================
+
+If the endpoint of the subscription begins with :code:`http://` or :code:`https://`, a POST
+request will be sent to the supplied endpoint when the trigger occurs.
+
+::
+
+    <NotificationSubscriptions>
+        <NotificationSubscription>
+            <Endpoint>http://www.test.com</Endpoint>
+            <Trigger>quote-ready</Trigger>
+        </NotificationSubscription>
+        <NotificationSubscription>
+            <Endpoint>https://www.test.com</Endpoint>
+            <Trigger>quote-paid</Trigger>
+        </NotificationSubscription>
+    </NotificationSubscriptions>
+
+
+Email Notification Example
+=========================
+
+If the endpoint of the subscription begins with :code:`mailto:`, an email notification
+will be sent to the supplied endpoint when the trigger occurs. To send the
+notification to multiple email addresses, supply a comma separated list of email
+addresses.
+
+::
+
+    <NotificationSubscriptions>
+        <NotificationSubscription>
+            <Endpoint>mailto:dev@lionbridge.com</Endpoint>
+            <Trigger>quote-ready</Trigger>
+        </NotificationSubscription>
+        <NotificationSubscription>
+            <Endpoint>mailto:dev1@lionbridge.com,dev2@lionbridge.com</Endpoint>
+            <Trigger>quote-paid</Trigger>
+        </NotificationSubscription>
+    </NotificationSubscriptions>
+
+
+Available Notification Subscription Triggers
+============================================
+
++-----------------------+------------------+-------------------+---------------------------------+
+| Trigger               | XML Value        | Options           | Description                     |
++=======================+==================+===================+=================================+
+| .. container:: notrans| quote-ready      | POST, EMAIL       | When the quote has been priced  |
+|                       |                  |                   |                                 |
+|    Quote Ready        |                  |                   | and is ready for payment.       |
+|                       |                  |                   |                                 | 
++-----------------------+------------------+-------------------+---------------------------------+
+| .. container:: notrans| quote-paid       | POST, EMAIL       | When the quote has been paid.   |
+|                       |                  |                   |                                 |
+|    Quote Paid         |                  |                   | This is useful when the customer|
+|                       |                  |                   |                                 | 
+|                       |                  |                   | must go to another site such as |
+|                       |                  |                   |                                 | 
+|                       |                  |                   | PayPal to pay the quote balance.|
+|                       |                  |                   |                                 | 
++-----------------------+------------------+-------------------+---------------------------------+
+| .. container:: notrans| project-complete | POST, EMAIL       | When a project within the quote |
+|                       |                  |                   |                                 |
+|    Project Complete   |                  |                   | is completed.                   |
+|                       |                  |                   |                                 |
++-----------------------+------------------+-------------------+---------------------------------+
