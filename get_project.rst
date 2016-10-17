@@ -463,9 +463,11 @@ Example of get project response for product-based projects.
         <TargetLanguages>
             <TargetLanguage>
                 <LanguageCode>de-de</LanguageCode>
+                <Units>21</Units>
             </TargetLanguage>
             <TargetLanguage>
                 <LanguageCode>fr-fr</LanguageCode>
+                <Units>21</Units>
             </TargetLanguage>
         </TargetLanguages>
         <Products>
@@ -548,9 +550,11 @@ Example of get project response for file-based projects.
         <TargetLanguages>
             <TargetLanguage>
                 <LanguageCode>de-de</LanguageCode>
+                <Units>21</Units>
             </TargetLanguage>
             <TargetLanguage>
                 <LanguageCode>fr-fr</LanguageCode>
+                <Units>21</Units>
             </TargetLanguage>
         </TargetLanguages>
         <Files>

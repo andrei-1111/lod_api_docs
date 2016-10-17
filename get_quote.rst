@@ -506,9 +506,11 @@ Quote is ready for payment.
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Products>
@@ -559,9 +561,11 @@ Quote that has been authorized.
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Products>
@@ -612,9 +616,11 @@ File-Based Quote Response Example
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Files>
@@ -665,9 +671,11 @@ File-Based Quote Response Example
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Files>
@@ -705,9 +713,11 @@ File-Based Quote Response Example
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Files>
@@ -745,9 +755,11 @@ File-Based Quote Response Example
                 <TargetLanguages>
                     <TargetLanguage>
                         <LanguageCode>it-it</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                     <TargetLanguage>
                         <LanguageCode>fr-fr</LanguageCode>
+                        <Units>21</Units>
                     </TargetLanguage>
                 </TargetLanguages>
                 <Files>
