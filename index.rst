@@ -31,7 +31,7 @@ New in This Release
 - There are now two methods to "Accept" a translation. The default method is "implied." With implied, Lionbridge considers the translated file "accepted" when it is downloaded. The "acknowledge" accept method can be specified a new optional TranslationAcceptanceMethod parameter in the :doc:`generate_quote` API. With the acknowledge accept method, Lionbridge waits for a call to the :doc:`accept_file_translation` API before it considers the files accepted.
 - There is another new optional parameter on the :doc:`generate_quote` API:  "SpecialInstructions" are notes to the translator.
 - There is a new :doc:`request_quote_cancellation` API that can be used to cancel a quote after it has been authorized. The amount of refund (if any) will depend on how much work we have already done. Support will contact the sales owner directly to discuss the status of the cancellation.  
-
+- The :doc:`get_quote` and :doc:`get_project` API's now display unit counts per target language.  
 
 Contents
 ========
