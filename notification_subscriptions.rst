@@ -3,7 +3,7 @@ Notification Subscriptions
 ==========================
 
 If the quote creation request included NotificationSubscriptions, notifications
-will be sent to the supplied endpoint based on the supplied enpoint.
+will be sent to the supplied endpoints.
 
 Options
 =======
@@ -21,6 +21,7 @@ request will be sent to the supplied endpoint when the trigger occurs.
 
 ::
 
+    ...
     <NotificationSubscriptions>
         <NotificationSubscription>
             <Endpoint>http://www.test.com</Endpoint>
@@ -31,6 +32,7 @@ request will be sent to the supplied endpoint when the trigger occurs.
             <EventName>quote-paid</EventName>
         </NotificationSubscription>
     </NotificationSubscriptions>
+    ...
 
 
 Email Notification Example
@@ -43,6 +45,7 @@ addresses.
 
 ::
 
+    ...
     <NotificationSubscriptions>
         <NotificationSubscription>
             <Endpoint>mailto:dev@lionbridge.com</Endpoint>
@@ -53,6 +56,7 @@ addresses.
             <EventName>quote-paid</EventName>
         </NotificationSubscription>
     </NotificationSubscriptions>
+    ...
 
 
 Available Notification Subscription Triggers

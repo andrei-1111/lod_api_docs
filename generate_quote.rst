@@ -427,7 +427,7 @@ Request Body
 |                                   |                         |                                    |
 |       .NotificationSubscription   |                         | the notification.                  |
 |                                   |                         |                                    |
-|       .Trigger                    |                         |                                    |
+|       .EventName                  |                         |                                    |
 |                                   |                         |                                    |
 +-----------------------------------+-------------------------+------------------------------------+
 | .. container:: notrans            | String                  | Where the notification should be   |
@@ -521,11 +521,11 @@ Product Request Example
         </ReferenceFiles>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -568,11 +568,11 @@ File Request Example
         </ReferenceFiles>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -979,7 +979,7 @@ not contain a price.  If the submitted files
 |                                |                         |                         |
 |       .NotificationSubscription|                         | trigger the sending of  |
 |                                |                         |                         |
-|       .Trigger                 |                         | the notification.       |
+|       .EventName               |                         | the notification.       |
 |                                |                         |                         |
 +--------------------------------+-------------------------+-------------------------+
 | .. container:: notrans         | String                  | Where the notification  |
@@ -1056,22 +1056,22 @@ Product-Based Quote Response Example
         </Projects>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -1138,11 +1138,11 @@ If the price is not yet ready, the response will look like:
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -1206,11 +1206,11 @@ File-Based Quote Response Example
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -1257,11 +1257,11 @@ If the price is not yet ready, the response will look like:
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <Trigge>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -1319,11 +1319,11 @@ Project Based Quote Response Example
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
@@ -1366,11 +1366,11 @@ If the price is not yet ready, the response will look like:
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
-                <Trigger>quote-ready</Trigger>
+                <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
         </NotificationSubscription>
