@@ -55,6 +55,7 @@ Contents
    notify_quote_ready
    notify_quote_paid
    notification_subscriptions
+   list_available_events
    add_project
    list_projects
    get_project

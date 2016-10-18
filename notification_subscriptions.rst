@@ -8,10 +8,10 @@ will be sent to the supplied endpoint based on the supplied enpoint.
 Options
 =======
 
-Notification Subscriptions support different options for how notifications will
-be sent. The desired option is determined by what is supplied in the <Endpoint>
+Notification Subscriptions support different methods for how notifications will
+be sent. The desired method is determined by what is supplied in the :code:`<Endpoint>`
 element. We currently support POST and Email based notifications. Not all triggers
-will support every option, however.
+will support every method, however.
 
 POST Notification Example
 =========================
@@ -24,11 +24,11 @@ request will be sent to the supplied endpoint when the trigger occurs.
     <NotificationSubscriptions>
         <NotificationSubscription>
             <Endpoint>http://www.test.com</Endpoint>
-            <Trigger>quote-ready</Trigger>
+            <EventName>quote-ready</EventName>
         </NotificationSubscription>
         <NotificationSubscription>
             <Endpoint>https://www.test.com</Endpoint>
-            <Trigger>quote-paid</Trigger>
+            <EventName>quote-paid</EventName>
         </NotificationSubscription>
     </NotificationSubscriptions>
 
@@ -46,11 +46,11 @@ addresses.
     <NotificationSubscriptions>
         <NotificationSubscription>
             <Endpoint>mailto:dev@lionbridge.com</Endpoint>
-            <Trigger>quote-ready</Trigger>
+            <EventName>quote-ready</EventName>
         </NotificationSubscription>
         <NotificationSubscription>
             <Endpoint>mailto:dev1@lionbridge.com,dev2@lionbridge.com</Endpoint>
-            <Trigger>quote-paid</Trigger>
+            <EventName>quote-paid</EventName>
         </NotificationSubscription>
     </NotificationSubscriptions>
 
@@ -59,7 +59,7 @@ Available Notification Subscription Triggers
 ============================================
 
 +-----------------------+------------------+-------------------+---------------------------------+
-| Trigger               | XML Value        | Options           | Description                     |
+| Trigger               | XML Value        | Methods           | Description                     |
 +=======================+==================+===================+=================================+
 | .. container:: notrans| quote-ready      | POST, EMAIL       | When the quote has been priced  |
 |                       |                  |                   |                                 |
