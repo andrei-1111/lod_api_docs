@@ -10,14 +10,14 @@ Options
 
 Notification Subscriptions support different methods for how notifications will
 be sent. The desired method is determined by what is supplied in the :code:`<Endpoint>`
-element. We currently support POST and Email based notifications. Not all triggers
+element. We currently support POST and Email based notifications. Not all events
 will support every method, however.
 
 POST Notification Example
 =========================
 
 If the endpoint of the subscription begins with :code:`http://` or :code:`https://`, a POST
-request will be sent to the supplied endpoint when the trigger occurs.
+request will be sent to the supplied endpoint when the event occurs.
 
 ::
 
@@ -39,7 +39,7 @@ Email Notification Example
 =========================
 
 If the endpoint of the subscription begins with :code:`mailto:`, an email notification
-will be sent to the supplied endpoint when the trigger occurs. To send the
+will be sent to the supplied endpoint when the event occurs. To send the
 notification to multiple email addresses, supply a comma separated list of email
 addresses.
 
@@ -59,11 +59,11 @@ addresses.
     ...
 
 
-Available Notification Subscription Triggers
-============================================
+Available Notification Subscription Events
+==========================================
 
 +-----------------------+------------------+-------------------+---------------------------------+
-| Trigger               | XML Value        | Methods           | Description                     |
+| Event                 | XML Value        | Methods           | Description                     |
 +=======================+==================+===================+=================================+
 | .. container:: notrans| quote-ready      | POST, EMAIL       | When the quote has been priced  |
 |                       |                  |                   |                                 |
