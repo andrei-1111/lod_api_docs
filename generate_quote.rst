@@ -51,38 +51,6 @@ Request Body
 |                                   |                         | currencies.                        |
 |                                   |                         |                                    |
 +-----------------------------------+-------------------------+------------------------------------+
-| .. container:: notrans            | String (optional)       | When a project is                  |
-|                                   |                         |                                    |
-|    TranslationOptions             |                         | complete, the API                  |
-|                                   |                         |                                    |
-|     .NotifyCompleteURL            |                         | will send a POST                   |
-|                                   |                         |                                    |
-|                                   |                         | request to this URL. See the       |
-|                                   |                         |                                    |
-|                                   |                         | :doc:`notify_project_complete`     |
-|                                   |                         |                                    |
-|                                   |                         | API documentation for the          |
-|                                   |                         |                                    |
-|                                   |                         | structure of the post body.        |
-|                                   |                         |                                    |
-+-----------------------------------+-------------------------+------------------------------------+
-| .. container:: notrans            | String (optional)       | When the quote has been            |
-|                                   |                         |                                    |
-|    TranslationOptions             |                         | priced and is ready for            |
-|                                   |                         |                                    |
-|     .NotifyQuoteReadyURL          |                         | purchase, the API will             |
-|                                   |                         |                                    |
-|                                   |                         | send a post request to             |
-|                                   |                         |                                    |
-|                                   |                         | this URL.                          |
-|                                   |                         |                                    |
-+-----------------------------------+-------------------------+------------------------------------+
-| .. container:: notrans            | String (optional)       | When the quote has been            |
-|                                   |                         |                                    |
-|    TranslationOptions             |                         | paid, the API will send            |
-|                                   |                         |                                    |
-|      .NotifyQuotePaidURL          |                         | a POST to this URL.                |
-+-----------------------------------+-------------------------+------------------------------------+
 | .. container:: notrans            | Integer                 | Numeric service code               |
 |                                   |                         |                                    |
 |    TranslationOptions             |                         | for the translation                |
