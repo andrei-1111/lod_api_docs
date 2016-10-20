@@ -1225,7 +1225,7 @@ If the price is not yet ready, the response will look like:
         <Errors></Errors>
         <NotificationSubscriptions>
             <NotificationSubscription>
-                <Trigge>quote-ready</EventName>
+                <EventName>quote-ready</EventName>
                 <Endpoint>mailto:test@test.com</Endpoint>
             </NotificationSubscription>
             <NotificationSubscription>
