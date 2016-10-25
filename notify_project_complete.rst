@@ -2,8 +2,9 @@
 Project Complete Notification
 =============================
 
-If the quote creation request included a NotificationURL or NotifyCompleteURL, when a project
-within the quote is complete, onDemand will POST to that URL.  
+If the quote creation request included an http-based notification subscription
+to the project complete event, when a project within the quote is complete, 
+onDemand will POST to that URL.  
 
 Incoming POST Body
 ==================

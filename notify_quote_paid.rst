@@ -2,10 +2,10 @@
 Quote Paid Notification
 =============================
 
-If a quote was generated with a NotifyQuotePaidURL parameter, the API will post the following
-information to that URL when the quote has been paid.  This is useful when the customer must go 
-to another site such as PayPal to pay the quote balance.  The API will not send this
-notification for transactions that require future payment such as an invoice.  
+If a quote was generated with an http-based notification subscription to the quote paid event,
+the API will post the following information to that URL when the quote has been paid.  
+This is useful when the customer must go to another site such as PayPal to pay the quote balance.
+The API will not send this notification for transactions that require future payment such as an invoice.  
 
 
 

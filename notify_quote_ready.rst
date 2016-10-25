@@ -2,8 +2,8 @@
 Quote Ready Notification
 ========================
 
-If a quote was generated with a NotifyQuoteReadyURL parameter, the API will post the following
-informattion to that URL when the quote has been priced and is ready for payment.
+If a quote was generated with an http-based notification subscription to the quote ready event, 
+the API will post the following informattion to that URL when the quote has been priced and is ready for payment.
 
 
 

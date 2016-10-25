@@ -62,25 +62,31 @@ addresses.
 Available Notification Subscription Events
 ==========================================
 
-+-----------------------+------------------+-------------------+---------------------------------+
-| Event                 | XML Value        | Methods           | Description                     |
-+=======================+==================+===================+=================================+
-| .. container:: notrans| quote-ready      | POST, EMAIL       | When the quote has been priced  |
-|                       |                  |                   |                                 |
-|    Quote Ready        |                  |                   | and is ready for payment.       |
-|                       |                  |                   |                                 | 
-+-----------------------+------------------+-------------------+---------------------------------+
-| .. container:: notrans| quote-paid       | POST, EMAIL       | When the quote has been paid.   |
-|                       |                  |                   |                                 |
-|    Quote Paid         |                  |                   | This is useful when the customer|
-|                       |                  |                   |                                 | 
-|                       |                  |                   | must go to another site such as |
-|                       |                  |                   |                                 | 
-|                       |                  |                   | PayPal to pay the quote balance.|
-|                       |                  |                   |                                 | 
-+-----------------------+------------------+-------------------+---------------------------------+
-| .. container:: notrans| project-complete | POST, EMAIL       | When a project within the quote |
-|                       |                  |                   |                                 |
-|    Project Complete   |                  |                   | is completed.                   |
-|                       |                  |                   |                                 |
-+-----------------------+------------------+-------------------+---------------------------------+
++-----------------------+------------------+-------------------+-----------------------------------+
+| Event                 | XML Value        | Methods           | Description                       |
++=======================+==================+===================+===================================+
+| .. container:: notrans| quote-ready      | POST, EMAIL       | When the quote has been priced    |
+|                       |                  |                   |                                   |
+|    Quote Ready        |                  |                   | and is ready for payment.         |
+|                       |                  |                   |                                   |
+|                       |                  |                   | See :doc:`notify_quote_ready`     |   
+|                       |                  |                   |                                   |
++-----------------------+------------------+-------------------+-----------------------------------+
+| .. container:: notrans| quote-paid       | POST, EMAIL       | When the quote has been paid.     |
+|                       |                  |                   |                                   |
+|    Quote Paid         |                  |                   | This is useful when the customer  |
+|                       |                  |                   |                                   |   
+|                       |                  |                   | must go to another site such as   |
+|                       |                  |                   |                                   |   
+|                       |                  |                   | PayPal to pay the quote balance.  |
+|                       |                  |                   |                                   |
+|                       |                  |                   | See :doc:`notify_quote_paid`      |
+|                       |                  |                   |                                   | 
++-----------------------+------------------+-------------------+-----------------------------------+
+| .. container:: notrans| project-complete | POST, EMAIL       | When a project within the quote   |
+|                       |                  |                   |                                   |
+|    Project Complete   |                  |                   | is completed.                     |
+|                       |                  |                   |                                   |
+|                       |                  |                   | See :doc:`notify_project_complete`|
+|                       |                  |                   |                                   |
++-----------------------+------------------+-------------------+-----------------------------------+
