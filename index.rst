@@ -90,7 +90,7 @@ PHP developers will find `this sample code by Andrey Artiushenko <https://github
 
 `Dan Spector <https://www.linkedin.com/in/danspector03>`_ has written an `onDemand API client library in C# <https://bitbucket.org/liox-ondemand/lionbridge-csharp>`_ for .NET developers (`NuGet <https://www.nuget.org/packages/Lionbridge.onDemand.Client>`_). This library is very actively used in the `Clay Tablet <http://clay-tablet.com>`_ connector for onDemand.
 
-`Quoin <https://www.quoininc.com/>`_ has written an `onDemand API client library in Java <https://bitbucket.org/liox-ondemand/lionbridge-java>`_. This library is very actively used in the `Lionbridge onDemand <http://www.lionbridge.com>`_ connector for `_Adobe Experence Manager <http://www.adobe.com/marketing-cloud/enterprise-content-management.html>_`.
+`Quoin <https://www.quoininc.com/>`_ has written an `onDemand API client library in Java <https://bitbucket.org/liox-ondemand/lionbridge-java>`_. This library is very actively used in the `Lionbridge onDemand <http://www.lionbridge.com>`_ connector for `Adobe Experence Manager <http://www.adobe.com/marketing-cloud/enterprise-content-management.html>`_.
 
 
 Getting API Keys
