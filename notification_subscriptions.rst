@@ -36,7 +36,7 @@ request will be sent to the supplied endpoint when the event occurs.
 
 
 Email Notification Example
-=========================
+==========================
 
 If the endpoint of the subscription begins with :code:`mailto:`, an email notification
 will be sent to the supplied endpoint when the event occurs. To send the
