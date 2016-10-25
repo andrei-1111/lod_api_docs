@@ -73,7 +73,10 @@ Contents
    list_locales
    get_terms
    request_quote_cancellation
-
+   notify_quote_ready
+   notify_quote_paid
+   notify_project_complete
+   
 
 
 Getting Help
