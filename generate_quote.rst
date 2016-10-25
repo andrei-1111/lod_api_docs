@@ -562,6 +562,16 @@ Project Request Example
                 <ProjectID>123456</ProjectID>
             </Project>
         </Projects>
+        <NotificationSubscriptions>
+            <NotificationSubscription>
+                <EventName>quote-ready</EventName>
+                <Endpoint>mailto:test@test.com</Endpoint>
+            </NotificationSubscription>
+            <NotificationSubscription>
+                <EventName>quote-ready</EventName>
+                <Endpoint>http://www.test.com</Endpoint>
+            </NotificationSubscription>
+        </NotificationSubscription>
     </GenerateQuote>
 
 

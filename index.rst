@@ -32,6 +32,8 @@ New in This Release
 - There is another new optional parameter on the :doc:`generate_quote` API:  "SpecialInstructions" are notes to the translator.
 - There is a new :doc:`request_quote_cancellation` API that can be used to cancel a quote after it has been authorized. The amount of refund (if any) will depend on how much work we have already done. Support will contact the sales owner directly to discuss the status of the cancellation.  
 - The :doc:`get_quote` and :doc:`get_project` API's now display unit counts per target language.  
+- We've added the ability to subscribe to various types of notification that will be sent at various points during a project's life cycle. These :doc:`notification_subscriptions` can be added when using the :doc:`generate_quote` and :doc:`add_project` API.
+- There is a new :doc:`list_available_events` API that can be used to find which events and notification methods can be used when creating notification subscriptions.
 
 Contents
 ========
