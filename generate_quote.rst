@@ -496,7 +496,7 @@ Product Request Example
                 <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
-        </NotificationSubscription>
+        </NotificationSubscriptions>
     </GenerateQuote>
 
 
@@ -543,7 +543,7 @@ File Request Example
                 <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
-        </NotificationSubscription>
+        </NotificationSubscriptions>
     </GenerateQuote>
 
 
@@ -571,7 +571,7 @@ Project Request Example
                 <EventName>quote-ready</EventName>
                 <Endpoint>http://www.test.com</Endpoint>
             </NotificationSubscription>
-        </NotificationSubscription>
+        </NotificationSubscriptions>
     </GenerateQuote>
 
 
@@ -945,7 +945,7 @@ not contain a price.  If the submitted files
 +--------------------------------+-------------------------+-------------------------+
 | .. container:: notrans         | Container               | Container for a         |
 |                                |                         |                         |
-|    NotificationSubscriptions   |                         | notification            | 
+|    NotificationSubscriptions   |                         | notification            |
 |                                |                         |                         |
 |      .NotificationSubscription |                         | subscription.           |
 |                                |                         |                         |
